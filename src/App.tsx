@@ -77,7 +77,7 @@ function App() {
   async function handleAnalyze(): Promise<void> {
     if (!image || busy) return
     if (import.meta.env.PROD && !accessKey.trim()) {
-      setError('Inserisci la password del sito configurata su Vercel prima di avviare l’analisi.')
+      setError('Inserisci la password del sito prima di avviare l’analisi.')
       setStatus('error')
       return
     }
@@ -169,12 +169,12 @@ function App() {
             <div className="min-w-0 flex-1">
               <label className="text-[11px] font-extrabold tracking-[0.14em] text-amber uppercase" htmlFor="access-key">Password del sito</label>
               <div className="relative mt-1.5">
-                <input id="access-key" className="h-11 w-full rounded-xl border border-line bg-surface px-3 pr-11 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-brand focus:ring-3 focus:ring-brand/15" type={showAccessKey ? 'text' : 'password'} value={accessKey} onChange={(event) => setAccessKey(event.target.value)} placeholder="APP_ACCESS_KEY configurata su Vercel" autoComplete="current-password" />
+                <input id="access-key" className="h-11 w-full rounded-xl border border-line bg-surface px-3 pr-11 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-brand focus:ring-3 focus:ring-brand/15" type={showAccessKey ? 'text' : 'password'} value={accessKey} onChange={(event) => setAccessKey(event.target.value)} placeholder="Inserisci la password" autoComplete="current-password" />
                 <button className="absolute inset-y-0 right-0 grid w-11 place-items-center text-muted transition hover:text-brand" type="button" onClick={() => setShowAccessKey((visible) => !visible)} aria-label={showAccessKey ? 'Nascondi password' : 'Mostra password'}>{showAccessKey ? <EyeOffIcon className="size-4" /> : <EyeIcon className="size-4" />}</button>
               </div>
             </div>
           </div>
-          <p className="mt-3 max-w-md text-xs leading-5 text-muted sm:mt-0">Protegge il proxy pubblico e resta soltanto nella sessione corrente del browser.</p>
+          <p className="mt-3 max-w-md text-xs leading-5 text-muted sm:mt-0">Serve per accedere all’analisi e resta memorizzata solo finché questa scheda rimane aperta.</p>
         </section>
 
         <div className="grid items-start gap-4 lg:grid-cols-[0.88fr_1.12fr]">

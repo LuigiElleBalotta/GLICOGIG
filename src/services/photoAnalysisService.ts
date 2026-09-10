@@ -9,12 +9,14 @@ import type {
 } from '../types/analysis'
 import { createEphemeralRequestDeviceId } from './requestDeviceId'
 
+const INVALID_ANALYSIS_MESSAGE = 'Non sono riuscito a interpretare il risultato. Riprova con una foto più nitida.'
+
 const STATUS_MESSAGES: Partial<Record<number, string>> = {
-  400: 'La foto o i dati inviati non sono validi.',
-  401: 'Chiave personale non valida. Controllala e riprova.',
-  402: 'La quota disponibile non consente questa analisi.',
-  413: 'La foto è troppo grande per essere inviata.',
-  429: 'Troppe richieste ravvicinate. Attendi un momento e riprova.',
+  400: 'Non riesco ad analizzare questa foto. Provane una più nitida.',
+  401: 'Password non corretta. Controllala e riprova.',
+  402: 'Al momento non è possibile avviare un’altra analisi.',
+  413: 'La foto è troppo grande. Scegline una più leggera.',
+  429: 'Hai avviato troppe analisi ravvicinate. Attendi un momento e riprova.',
 }
 
 export class AnalysisError extends Error {
@@ -34,18 +36,18 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 function parseIngredient(value: unknown): AnalizzaIngredient {
-  if (!isRecord(value)) throw new AnalysisError('La risposta contiene un ingrediente non valido.')
+  if (!isRecord(value)) throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   if (typeof value.nome !== 'string' || !value.nome.trim()) {
-    throw new AnalysisError('La risposta contiene un ingrediente senza nome.')
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
   if (typeof value.grammi !== 'number' || !Number.isFinite(value.grammi)) {
-    throw new AnalysisError(`Quantità non valida per l’ingrediente “${value.nome}”.`)
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
   if (value.catalogo_id != null && typeof value.catalogo_id !== 'string') {
-    throw new AnalysisError(`catalogo_id non valido per l’ingrediente “${value.nome}”.`)
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
   if (value.cottura != null && typeof value.cottura !== 'string') {
-    throw new AnalysisError(`Cottura non valida per l’ingrediente “${value.nome}”.`)
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
 
   return {
@@ -59,12 +61,12 @@ function parseIngredient(value: unknown): AnalizzaIngredient {
 
 function parseAnalizzaResponse(value: unknown): AnalizzaResponse {
   if (!isRecord(value) || typeof value.e_cibo !== 'boolean') {
-    throw new AnalysisError('Il server non ha restituito un AnalizzaResponse valido.')
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
 
   const rawIngredients = value.ingredienti
   if (value.e_cibo && !Array.isArray(rawIngredients)) {
-    throw new AnalysisError('La risposta non contiene ingredienti validi.')
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
 
   return {
@@ -87,7 +89,7 @@ async function readResponse(response: Response): Promise<unknown> {
   try {
     return JSON.parse(text) as unknown
   } catch {
-    if (response.ok) throw new AnalysisError('Il server ha restituito una risposta non valida.', response.status)
+    if (response.ok) throw new AnalysisError(INVALID_ANALYSIS_MESSAGE, response.status)
     return { error: text }
   }
 }
@@ -129,11 +131,8 @@ export function createPhotoAnalysisService(config: PhotoAnalysisServiceConfig): 
       const data = await readResponse(response)
       if (!response.ok) {
         const serverError = errorPayload(data)
-        const serverMessage = serverError.error || serverError.message
         throw new AnalysisError(
-          typeof serverMessage === 'string'
-            ? serverMessage
-            : STATUS_MESSAGES[response.status] || 'Analisi non riuscita. Riprova tra poco.',
+          STATUS_MESSAGES[response.status] || 'Analisi non riuscita. Riprova tra poco.',
           response.status,
           serverError.code || 'ANALYSIS_ERROR',
         )
