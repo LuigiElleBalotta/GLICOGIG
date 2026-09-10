@@ -21,6 +21,7 @@ Funzionalità disponibili:
 - parsing rigoroso della risposta fotografica;
 - catalogo APK completo di 228 alimenti e lookup esatto tramite `catalogo_id`;
 - nutrienti totali e normalizzati per 100 g;
+- totale dei carboidrati disponibili messo in primo piano come valore da inserire nel campo “Carboidrati” del controller microinfusore, con avviso quando il calcolo è parziale;
 - carico glicemico totale, fascia, affidabilità e contributi principali;
 - grammi modificabili con ricalcolo immediato e interamente locale;
 - interfaccia mobile-first dark con azzurro elettrico e accenti oro;

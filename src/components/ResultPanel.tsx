@@ -128,6 +128,27 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
         </div>
       </div>
 
+      <section className="relative mt-6 overflow-hidden rounded-3xl border border-brand/45 bg-gradient-to-br from-brand-soft via-surface to-amber-soft/40 p-5 shadow-[0_0_42px_rgb(41_182_255_/_0.12)] sm:p-6">
+        <div className="pointer-events-none absolute -top-16 -right-14 size-40 rounded-full bg-brand/15 blur-3xl" aria-hidden="true" />
+        <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-[11px] font-extrabold tracking-[0.18em] text-amber uppercase">Controller microinfusore</p>
+            <h3 className="mt-1 font-display text-2xl font-extrabold text-ink">Carboidrati da inserire</h3>
+            <p className="mt-2 text-sm leading-6 text-muted">Nel campo <strong className="text-ink">“Carboidrati”</strong> del controller inserisci questo totale:</p>
+          </div>
+          <output className="shrink-0 text-6xl font-black leading-none tracking-[-0.06em] text-brand sm:text-7xl" aria-label={`Carboidrati da inserire: ${formatNumber(meal.nutrition.carboidrati_disponibili_g)} grammi`}>
+            {formatNumber(meal.nutrition.carboidrati_disponibili_g)}<span className="ml-2 text-2xl font-extrabold tracking-normal text-amber">g</span>
+          </output>
+        </div>
+        <div className={`relative mt-5 rounded-2xl border px-4 py-3 text-xs leading-5 ${meal.unresolved.length ? 'border-coral/35 bg-coral-soft text-coral' : 'border-brand/20 bg-brand-deep/55 text-muted'}`}>
+          {meal.unresolved.length ? (
+            <p><strong>Stima parziale:</strong> {meal.unresolved.length} {meal.unresolved.length === 1 ? 'ingrediente è escluso' : 'ingredienti sono esclusi'} dal calcolo. Correggi ingredienti e quantità prima di usare il valore.</p>
+          ) : (
+            <p><strong className="text-brand">Calcolo completo:</strong> tutti gli ingredienti riconosciuti sono inclusi. Controlla comunque ingredienti e grammi prima di confermare sul dispositivo.</p>
+          )}
+        </div>
+      </section>
+
       <section className="mt-6 grid gap-3 sm:grid-cols-[0.75fr_1.25fr]">
         <div className={`rounded-3xl p-5 ${impactClasses(impact.fascia)}`}>
           <p className="text-xs font-extrabold tracking-[0.16em] uppercase">Carico glicemico</p>
