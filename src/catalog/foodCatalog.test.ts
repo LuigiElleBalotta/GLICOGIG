@@ -25,7 +25,7 @@ describe('foodCatalog VERIFIED #14256', () => {
     expect(getFoodByCatalogId('id-non-presente')).toBeUndefined()
   })
 
-  it('dichiara esplicitamente che il dataset corrente è un subset di 228 voci', () => {
-    expect(CATALOG_EXTRACTION_META).toMatchObject({ totalEntriesInApk: 228, extractedEntries: 7, evidence: 'VERIFIED' })
+  it('dichiara il catalogo completo estratto dall’APK', () => {
+    expect(CATALOG_EXTRACTION_META).toMatchObject({ totalEntriesInApk: 228, extractedEntries: 228, evidence: 'VERIFIED' })
   })
 })

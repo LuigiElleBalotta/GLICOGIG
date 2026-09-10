@@ -1,37 +1,87 @@
 # GLICOGIG
 
-Web app personale per analizzare la foto di un piatto e trasformare la risposta del backend GLICOGIG in ingredienti, quantità e dati nutrizionali verificabili.
+Web app personale per analizzare la foto di un piatto e trasformare la risposta del backend GLICOGIG in ingredienti, quantità, valori nutrizionali e carico glicemico consultabili.
 
-Il progetto è una riscrittura web in React e TypeScript della pipeline fotografica osservata nell'APK GLICODEN. Non usa cataloghi nutrizionali esterni e non inventa valori mancanti.
+È una riscrittura web in React e TypeScript della pipeline fotografica osservata nell'APK GLICODEN. Il catalogo è estratto direttamente dal bundle Hermes dell'APK: il progetto non usa fonti nutrizionali esterne e non completa i dati mancanti con valori inventati.
 
 ## Stato del progetto
 
-La pipeline disponibile è:
-
 ```text
-foto → /api/analyze → /analizza → ingredienti[] → catalogo_id → catalogo locale → calcoli
+foto → /api/analyze → backend /analizza → ingredienti[] → catalogo_id
+     → catalogo APK locale → nutrienti + carico glicemico
 ```
 
-Implementato:
+Funzionalità disponibili:
 
 - acquisizione da fotocamera, selezione file e drag-and-drop;
 - conversione e ridimensionamento locale in JPEG/Base64;
-- richiesta tipizzata al backend con `image_base64`, `device_id`, `mime` e `premium`;
-- nuovo `device_id` con prefisso `dev_` per ogni richiesta, senza persistenza;
-- Function Vercel protetta da chiave personale;
+- richiesta tipizzata con `image_base64`, `device_id`, `mime` e `premium`;
+- nuovo `device_id` effimero con prefisso `dev_` per ogni richiesta;
+- Function Vercel protetta da `APP_ACCESS_KEY`;
 - parsing rigoroso della risposta fotografica;
-- lookup esatto tramite `catalogo_id`;
-- scaling nutrizionale in base ai grammi e aggregazione del piatto;
-- test automatici con Vitest;
-- interfaccia responsive con React 19 e Tailwind CSS 4.
+- catalogo APK completo di 228 alimenti e lookup esatto tramite `catalogo_id`;
+- nutrienti totali e normalizzati per 100 g;
+- carico glicemico totale, fascia, affidabilità e contributi principali;
+- grammi modificabili con ricalcolo immediato e interamente locale;
+- interfaccia responsive in React 19, Tailwind CSS 4 e font Inter;
+- wordmark testuale, senza asset usati come logo.
 
-### Catalogo locale
+## Catalogo APK completo
 
-L'APK contiene un catalogo di **228 alimenti** con 37 campi per voce. Nel repository è attualmente presente un sottoinsieme verificato di **7/228 voci** in `src/catalog/verifiedCatalogData.ts`.
+`src/catalog/apkCatalogData.json` contiene tutte le **228 voci** esportate dalla funzione Hermes `#14256` all'offset `0x002cd72e` del bundle APK:
 
-Le altre 221 voci devono ancora essere estratte automaticamente dal literal buffer Hermes. Fino a quel momento, un `catalogo_id` non presente nel sottoinsieme viene segnalato come non risolto e non riceve valori inventati.
+- 228 ID univoci;
+- 37 campi base per ogni alimento;
+- 219 voci con 37 campi e 9 con 38;
+- campo extra `maturazione` conservato in 8 voci;
+- campo extra `nota_curatela` conservato in 1 voce;
+- stringhe, numeri, booleani, `null`, array e oggetti preservati senza arricchimenti esterni.
 
-Le evidenze e il livello di affidabilità di ogni comportamento ricostruito sono documentati in [`docs/evidence.md`](docs/evidence.md).
+`src/catalog/verifiedCatalogData.ts` espone il JSON completo mantenendo separati i metadati originali. Se il backend restituisce un `catalogo_id` assente o nullo, l'ingrediente viene segnalato e non riceve valori di ripiego inventati.
+
+### Rigenerazione dal bundle
+
+Lo script riproducibile `scripts/extract_apk_catalog.py` emula solo le istruzioni lineari osservate in `#14256` e interrompe l'operazione se versione, offset, struttura, conteggio o unicità degli ID non corrispondono alle evidenze.
+
+Requisiti aggiuntivi: Python 3 e il pacchetto `hermes-dec` disponibile nell'ambiente Python. Con la struttura di questa workspace:
+
+```bash
+python scripts/extract_apk_catalog.py
+```
+
+Percorsi alternativi possono essere passati esplicitamente:
+
+```bash
+python scripts/extract_apk_catalog.py --bundle path/to/index.android.bundle --output src/catalog/apkCatalogData.json
+```
+
+## Calcoli locali
+
+Per ogni ingrediente risolto, i valori nutrizionali sono scalati con:
+
+```text
+valore_porzione = valore_per_100_g × grammi / 100
+```
+
+Il carico glicemico replica `calcolaImpatto #15923`:
+
+```text
+carboidrati_porzione = carboidrati_disponibili_g × grammi / 100
+CG_ingrediente = IG_medio × carboidrati_porzione / 100
+```
+
+Comportamento mantenuto dall'APK:
+
+- usa i grammi positivi ricevuti, altrimenti `porzione_standard_g`;
+- arrotonda CG totale e contributi a un decimale;
+- mostra tra i contributi soltanto valori `CG >= 0,5`;
+- ordina i contributi per CG decrescente;
+- assegna fascia `basso` fino a 10, `medio` fino a 19 e `alto` oltre 19;
+- assegna affidabilità `media` con copertura del catalogo almeno 0,6, altrimenti `bassa`.
+
+La modifica dei grammi applica round e clamp `0..2000` allo stato React. Non ripete l'upload e non effettua una nuova richiesta HTTP: nutrienti, valori per 100 g, CG e contributi vengono ricalcolati dal catalogo locale.
+
+Le evidenze puntuali sono in [`docs/evidence.md`](docs/evidence.md).
 
 ## Stack
 
@@ -73,11 +123,15 @@ Variabili server da configurare su Vercel:
 
 | Variabile | Obbligatoria | Descrizione |
 | --- | --- | --- |
-| `APP_ACCESS_KEY` | Sì | Chiave personale verificata dalla Function |
+| `APP_ACCESS_KEY` | Sì | Password privata verificata dalla Function |
 | `ANALYSIS_ENDPOINT` | No | Endpoint upstream; usa quello previsto dal progetto se assente |
-| `ANALYSIS_PREMIUM` | No | Imposta `false` per disattivare il campo premium inoltrato; default `true` |
+| `ANALYSIS_PREMIUM` | No | Imposta `false` per disattivare `premium`; default `true` |
 
-Non inserire segreti nelle variabili `VITE_*`: vengono incluse nel bundle pubblico del browser.
+### A cosa serve la “Password del sito”
+
+La password richiesta nell'interfaccia è il valore di `APP_ACCESS_KEY` configurato nel progetto Vercel. Non appartiene al backend GLICODEN: protegge la Function pubblica `/api/analyze` dall'uso da parte di terzi.
+
+Il browser la invia nell'header `X-App-Access-Key`; `api/analyze.ts` la confronta prima di inoltrare la foto. Il valore resta nel solo `sessionStorage` della scheda e viene eliminato alla chiusura della sessione. Non inserire segreti nelle variabili `VITE_*`, perché vengono incluse nel bundle pubblico.
 
 ## Comandi
 
@@ -95,20 +149,23 @@ npm run preview    # anteprima locale della build
 2. Seleziona il framework preset **Vite**.
 3. Configura `APP_ACCESS_KEY` nelle variabili ambiente del progetto.
 4. Configura opzionalmente `ANALYSIS_ENDPOINT` e `ANALYSIS_PREMIUM`.
-5. Esegui il deploy.
+5. Imposta `main` come Production Branch.
 
-Il browser invia la chiave nell'header `X-App-Access-Key`; `api/analyze.ts` la confronta in modo timing-safe prima di inoltrare la richiesta. La chiave viene conservata soltanto nel `sessionStorage` del browser.
+Con l'integrazione Git del progetto attiva, Vercel crea un deployment di produzione per ogni push su `main` e deployment di anteprima per gli altri branch. La configurazione di automazione effettiva deve essere verificata sul progetto Vercel associato al repository.
 
 ## Architettura essenziale
 
 ```text
 api/analyze.ts                         Function Vercel e proxy protetto
+scripts/extract_apk_catalog.py         Estrazione riproducibile da Hermes
 src/services/imagePreparation.ts       Preparazione JPEG/Base64
 src/services/requestDeviceId.ts        ID effimero per richiesta
 src/services/photoAnalysisService.ts   Client e parsing della risposta
-src/catalog/                           Dataset locale e lookup esatto
+src/catalog/apkCatalogData.json        Dataset APK completo
+src/catalog/foodCatalog.ts             Lookup esatto per catalogo_id
 src/domain/nutritionCalculator.ts      Scaling e aggregazione nutrizionale
-src/components/                        Interfaccia utente
+src/domain/impactCalculator.ts         CG, fascia, copertura e contributi
+src/components/ResultPanel.tsx         Report e modifica locale dei grammi
 ```
 
 ## Avvertenza

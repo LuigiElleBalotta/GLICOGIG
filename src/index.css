@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --color-brand: #023c69;
-  --color-brand-deep: #012b4c;
-  --color-brand-soft: #e8f3f8;
-  --color-ivory: #fbf8f1;
+  --color-brand: #3730a3;
+  --color-brand-deep: #1e1b4b;
+  --color-brand-soft: #eef2ff;
+  --color-ivory: #f7f7fc;
   --color-paper: #ffffff;
-  --color-ink: #173042;
-  --color-muted: #637480;
-  --color-line: #dce6e9;
-  --color-mint: #2f9e83;
-  --color-mint-soft: #e2f4ee;
-  --color-amber: #e9a23b;
-  --color-amber-soft: #fff1d8;
-  --color-coral: #db6859;
-  --color-coral-soft: #fce9e5;
-  --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Fraunces', ui-serif, Georgia, serif;
-  --shadow-card: 0 24px 70px -34px rgb(2 60 105 / 0.34);
+  --color-surface: #f8fafc;
+  --color-ink: #1f2937;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-mint: #0f766e;
+  --color-mint-soft: #ccfbf1;
+  --color-amber: #d97706;
+  --color-amber-strong: #92400e;
+  --color-amber-soft: #fef3c7;
+  --color-coral: #dc2626;
+  --color-coral-soft: #fee2e2;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --shadow-card: 0 26px 72px -36px rgb(55 48 163 / 0.34);
 }
 
 :root {

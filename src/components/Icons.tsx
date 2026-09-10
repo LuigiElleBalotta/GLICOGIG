@@ -10,21 +10,6 @@ function SvgIcon({ children, className = 'size-5', ...props }: IconProps & { chi
   )
 }
 
-export function LogoMark({ className = 'size-11' }: Pick<IconProps, 'className'>) {
-  return (
-    <svg aria-hidden="true" className={className} viewBox="0 0 52 52" fill="none">
-      <defs>
-        <linearGradient id="glicogig-ring" x1="5" y1="8" x2="47" y2="44" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#f0ab3c" /><stop offset="0.36" stopColor="#82b857" /><stop offset="0.68" stopColor="#2f9e83" /><stop offset="1" stopColor="#0272a3" />
-        </linearGradient>
-      </defs>
-      <circle cx="26" cy="26" r="22" fill="#fbf8f1" stroke="url(#glicogig-ring)" strokeWidth="5" />
-      <path d="M34 18.4a12 12 0 1 0 1.4 13.7" stroke="#023c69" strokeWidth="4.2" />
-      <path d="M23 27h4l2-4 3 8 2-4h5" stroke="#023c69" strokeWidth="2.5" />
-    </svg>
-  )
-}
-
 export const CameraIcon = (props: IconProps) => <SvgIcon {...props}><path d="M14.5 5 13 3h-2L9.5 5H6a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3h-3.5Z" /><circle cx="12" cy="12" r="4" /></SvgIcon>
 export const ImageIcon = (props: IconProps) => <SvgIcon {...props}><rect x="3" y="4" width="18" height="16" rx="3" /><circle cx="8.5" cy="9" r="1.5" /><path d="m4 17 4.5-4.5 3 3 2-2 6.5 5" /></SvgIcon>
 export const LockIcon = (props: IconProps) => <SvgIcon {...props}><rect x="5" y="10" width="14" height="11" rx="3" /><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" /></SvgIcon>

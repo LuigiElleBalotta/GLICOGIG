@@ -5,6 +5,11 @@ export interface CatalogRevision {
   nota: string
 }
 
+export interface CatalogRipenessNote {
+  sensibile: boolean
+  nota: string
+}
+
 export interface FoodCatalogEntry {
   id: string
   nome: string
@@ -42,6 +47,8 @@ export interface FoodCatalogEntry {
   tipo_dato_ig: string
   data_aggiornamento: string
   stato_editoriale: string
+  maturazione?: CatalogRipenessNote
+  nota_curatela?: string
   revisione: CatalogRevision | null
 }
 

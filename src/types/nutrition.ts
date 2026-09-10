@@ -33,3 +33,20 @@ export interface MealNutrition {
   resolved: ResolvedIngredientNutrition[]
   unresolved: UnresolvedIngredient[]
 }
+
+export type GlycemicImpactBand = 'basso' | 'medio' | 'alto'
+export type GlycemicImpactReliability = 'media' | 'bassa'
+
+export interface GlycemicImpactContribution {
+  nome: string
+  cg: number
+}
+
+export interface GlycemicImpact {
+  cg: number
+  fascia: GlycemicImpactBand
+  trovati: number
+  totali: number
+  affidabilita: GlycemicImpactReliability
+  contributi: GlycemicImpactContribution[]
+}
