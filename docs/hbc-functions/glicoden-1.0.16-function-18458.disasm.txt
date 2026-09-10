@@ -1,0 +1,20 @@
+# Function #18458 'livelloStabilita'
+# offset=4977022 bytes=57
+
+00000000: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000003: <LoadConstUInt8>: <Reg8: 0, UInt8: 85>
+00000006: <GreaterEq>: <Reg8: 1, Reg8: 3, Reg8: 0>
+0000000a: <LoadConstString>: <Reg8: 0, string_id: 41243>  # String: 'moltoStabile' (Identifier)
+0000000e: <JmpTrue>: <Addr8: 41, Reg8: 1>  # Address: 00000037
+00000011: <LoadConstUInt8>: <Reg8: 1, UInt8: 70>
+00000014: <GreaterEq>: <Reg8: 2, Reg8: 3, Reg8: 1>
+00000018: <LoadConstString>: <Reg8: 1, string_id: 34509>  # String: 'bellaGiornata' (Identifier)
+0000001c: <JmpTrue>: <Addr8: 24, Reg8: 2>  # Address: 00000034
+0000001f: <LoadConstUInt8>: <Reg8: 2, UInt8: 55>
+00000022: <GreaterEq>: <Reg8: 3, Reg8: 3, Reg8: 2>
+00000026: <LoadConstString>: <Reg8: 2, string_id: 34510>  # String: 'impegnativa' (Identifier)
+0000002a: <JmpFalse>: <Addr8: 7, Reg8: 3>  # Address: 00000031
+0000002d: <LoadConstString>: <Reg8: 2, string_id: 41939>  # String: 'nellaMedia' (Identifier)
+00000031: <Mov>: <Reg8: 1, Reg8: 2>
+00000034: <Mov>: <Reg8: 0, Reg8: 1>
+00000037: <Ret>: <Reg8: 0>

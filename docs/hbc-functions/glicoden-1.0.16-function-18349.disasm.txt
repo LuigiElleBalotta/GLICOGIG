@@ -1,0 +1,81 @@
+# Function #18349 'snapshotDaVoce'
+# offset=4960362 bytes=330
+
+00000000: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000003: <LoadParam>: <Reg8: 4, UInt8: 2>
+00000006: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000009: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 4>
+0000000d: <GetById>: <Reg8: 5, Reg8: 2, UInt8: 1, string_id: 49083>  # String: 'metodoPasto' (Identifier)
+00000013: <NewArray>: <Reg8: 2, UInt16: 1>
+00000017: <PutOwnByIndex>: <Reg8: 2, Reg8: 0, UInt8: 0>
+0000001b: <LoadConstUndefined>: <Reg8: 3>
+0000001d: <Call2>: <Reg8: 10, Reg8: 5, Reg8: 3, Reg8: 2>
+00000022: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 2, string_id: 135>  # String: 'grammi' (Identifier)
+00000027: <JmpTrue>: <Addr8: 5, Reg8: 2>  # Address: 0000002c
+0000002a: <LoadConstZero>: <Reg8: 2>
+0000002c: <GetById>: <Reg8: 5, Reg8: 0, UInt8: 3, string_id: 48456>  # String: 'fibre100' (Identifier)
+00000032: <LoadConstNull>: <Reg8: 11>
+00000034: <Neq>: <Reg8: 6, Reg8: 5, Reg8: 11>
+00000038: <LoadConstZero>: <Reg8: 5>
+0000003a: <JmpFalse>: <Addr8: 20, Reg8: 6>  # Address: 0000004e
+0000003d: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 3, string_id: 48456>  # String: 'fibre100' (Identifier)
+00000043: <Mul>: <Reg8: 6, Reg8: 0, Reg8: 2>
+00000047: <LoadConstUInt8>: <Reg8: 0, UInt8: 100>
+0000004a: <Div>: <Reg8: 5, Reg8: 6, Reg8: 0>
+0000004e: <GetById>: <Reg8: 8, Reg8: 10, UInt8: 4, string_id: 36826>  # String: 'totCarbo' (Identifier)
+00000054: <GetById>: <Reg8: 7, Reg8: 10, UInt8: 5, string_id: 37270>  # String: 'totProt' (Identifier)
+0000005a: <GetById>: <Reg8: 6, Reg8: 10, UInt8: 6, string_id: 39922>  # String: 'totGrassi' (Identifier)
+00000060: <GetByIdShort>: <Reg8: 0, Reg8: 4, UInt8: 7, string_id: 109>  # String: 'kcal' (Identifier)
+00000065: <JNotEqual>: <Addr8: 43, Reg8: 0, Reg8: 11>  # Address: 00000090
+00000069: <LoadConstUInt8>: <Reg8: 0, UInt8: 4>
+0000006c: <Mul>: <Reg8: 13, Reg8: 8, Reg8: 0>
+00000070: <Mul>: <Reg8: 12, Reg8: 7, Reg8: 0>
+00000074: <LoadConstUInt8>: <Reg8: 0, UInt8: 9>
+00000077: <Mul>: <Reg8: 9, Reg8: 6, Reg8: 0>
+0000007b: <LoadConstUInt8>: <Reg8: 0, UInt8: 2>
+0000007e: <MulN>: <Reg8: 0, Reg8: 5, Reg8: 0>
+00000082: <AddN>: <Reg8: 0, Reg8: 13, Reg8: 0>
+00000086: <AddN>: <Reg8: 0, Reg8: 0, Reg8: 12>
+0000008a: <AddN>: <Reg8: 9, Reg8: 0, Reg8: 9>
+0000008e: <Jmp>: <Addr8: 7>  # Address: 00000095
+00000090: <GetByIdShort>: <Reg8: 9, Reg8: 4, UInt8: 7, string_id: 109>  # String: 'kcal' (Identifier)
+00000095: <NewObject>: <Reg8: 0>
+00000097: <GetByIdShort>: <Reg8: 12, Reg8: 4, UInt8: 8, string_id: 185>  # String: 'nome' (Identifier)
+0000009c: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 12, string_id: 185>  # String: 'nome' (Identifier)
+000000a0: <GetByIdShort>: <Reg8: 12, Reg8: 4, UInt8: 9, string_id: 187>  # String: 'nome_en' (Identifier)
+000000a5: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 12, string_id: 187>  # String: 'nome_en' (Identifier)
+000000a9: <GetByIdShort>: <Reg8: 12, Reg8: 4, UInt8: 10, string_id: 188>  # String: 'nome_es' (Identifier)
+000000ae: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 12, string_id: 188>  # String: 'nome_es' (Identifier)
+000000b2: <GetByIdShort>: <Reg8: 12, Reg8: 4, UInt8: 11, string_id: 186>  # String: 'nome_de' (Identifier)
+000000b7: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 12, string_id: 186>  # String: 'nome_de' (Identifier)
+000000bb: <GetByIdShort>: <Reg8: 12, Reg8: 4, UInt8: 12, string_id: 189>  # String: 'nome_fr' (Identifier)
+000000c0: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 12, string_id: 189>  # String: 'nome_fr' (Identifier)
+000000c4: <GetById>: <Reg8: 12, Reg8: 4, UInt8: 13, string_id: 32276>  # String: 'fonte' (Identifier)
+000000ca: <PutNewOwnById>: <Reg8: 0, Reg8: 12, string_id: 32276>  # String: 'fonte' (Identifier)
+000000cf: <GetByIdShort>: <Reg8: 12, Reg8: 4, UInt8: 14, string_id: 114>  # String: 'fascia' (Identifier)
+000000d4: <JNotEqual>: <Addr8: 9, Reg8: 12, Reg8: 11>  # Address: 000000dd
+000000d8: <GetByIdShort>: <Reg8: 12, Reg8: 10, UInt8: 14, string_id: 114>  # String: 'fascia' (Identifier)
+000000dd: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 12, string_id: 114>  # String: 'fascia' (Identifier)
+000000e1: <GetById>: <Reg8: 4, Reg8: 4, UInt8: 15, string_id: 32303>  # String: 'cg' (Identifier)
+000000e7: <JNotEqual>: <Addr8: 10, Reg8: 4, Reg8: 11>  # Address: 000000f1
+000000eb: <GetById>: <Reg8: 4, Reg8: 10, UInt8: 15, string_id: 32303>  # String: 'cg' (Identifier)
+000000f1: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32303>  # String: 'cg' (Identifier)
+000000f6: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 6>
+000000fa: <Call2>: <Reg8: 4, Reg8: 4, Reg8: 3, Reg8: 9>
+000000ff: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 109>  # String: 'kcal' (Identifier)
+00000103: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 6>
+00000107: <Call2>: <Reg8: 4, Reg8: 4, Reg8: 3, Reg8: 8>
+0000010c: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32041>  # String: 'carbo' (Identifier)
+00000111: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 6>
+00000115: <Call2>: <Reg8: 4, Reg8: 4, Reg8: 3, Reg8: 7>
+0000011a: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32608>  # String: 'prot' (Identifier)
+0000011f: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 6>
+00000123: <Call2>: <Reg8: 4, Reg8: 4, Reg8: 3, Reg8: 6>
+00000128: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32318>  # String: 'grassi' (Identifier)
+0000012d: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 6>
+00000131: <Call2>: <Reg8: 4, Reg8: 4, Reg8: 3, Reg8: 5>
+00000136: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32250>  # String: 'fibre' (Identifier)
+0000013b: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 6>
+0000013f: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 3, Reg8: 2>
+00000144: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 1, string_id: 135>  # String: 'grammi' (Identifier)
+00000148: <Ret>: <Reg8: 0>

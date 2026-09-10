@@ -1,0 +1,313 @@
+# Function #18423 'calcolaImpatto'
+# offset=4972542 bytes=1207
+
+00000000: <LoadParam>: <Reg8: 4, UInt8: 1>
+00000003: <CreateEnvironment>: <Reg8: 7>
+00000005: <LoadConstUndefined>: <Reg8: 16>
+00000007: <LoadConstUndefined>: <Reg8: 26>
+00000009: <LoadConstUndefined>: <Reg8: 27>
+0000000b: <LoadConstUndefined>: <Reg8: 28>
+0000000d: <LoadConstUndefined>: <Reg8: 29>
+0000000f: <LoadConstUndefined>: <Reg8: 30>
+00000011: <LoadConstUndefined>: <Reg8: 31>
+00000013: <LoadConstUndefined>: <Reg8: 32>
+00000015: <LoadConstZero>: <Reg8: 6>
+00000017: <LoadConstZero>: <Reg8: 15>
+00000019: <LoadConstZero>: <Reg8: 14>
+0000001b: <LoadConstZero>: <Reg8: 13>
+0000001d: <LoadConstZero>: <Reg8: 12>
+0000001f: <LoadConstZero>: <Reg8: 9>
+00000021: <LoadConstZero>: <Reg8: 24>
+00000023: <StoreNPToEnvironment>: <Reg8: 7, UInt8: 0, Reg8: 6>
+00000027: <LoadConstNull>: <Reg8: 19>
+00000029: <LoadConstNull>: <Reg8: 8>
+0000002b: <LoadConstZero>: <Reg8: 25>
+0000002d: <LoadConstNull>: <Reg8: 18>
+0000002f: <LoadConstZero>: <Reg8: 5>
+00000031: <LoadConstFalse>: <Reg8: 2>
+00000033: <NewArray>: <Reg8: 3, UInt16: 0>
+00000037: <Mov>: <Reg8: 23, Reg8: 4>
+0000003a: <IteratorBegin>: <Reg8: 21, Reg8: 23>
+0000003d: <GetGlobalObject>: <Reg8: 11>
+0000003f: <LoadConstUInt8>: <Reg8: 10, UInt8: 10>
+00000042: <LoadConstDouble>: <Reg8: 22, Double: 0.5>
+0000004c: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+0000004f: <LoadConstUInt8>: <Reg8: 1, UInt8: 100>
+00000052: <IteratorNext>: <Reg8: 34, Reg8: 21, Reg8: 23>
+00000056: <Mov>: <Reg8: 33, Reg8: 21>
+00000059: <JStrictEqualLong>: <Addr32: 566, Reg8: 33, Reg8: 16>  # Address: 0000028f
+00000060: <Mov>: <Reg8: 26, Reg8: 34>
+00000063: <GetById>: <Reg8: 35, Reg8: 34, UInt8: 1, string_id: 36961>  # String: 'catalogo_id' (Identifier)
+00000069: <LoadConstUndefined>: <Reg8: 34>
+0000006b: <JmpFalse>: <Addr8: 27, Reg8: 35>  # Address: 00000086
+0000006e: <LoadFromEnvironment>: <Reg8: 35, Reg8: 0, UInt8: 0>
+00000072: <GetById>: <Reg8: 36, Reg8: 35, UInt8: 2, string_id: 37466>  # String: 'alimentoById' (Identifier)
+00000078: <Mov>: <Reg8: 35, Reg8: 26>
+0000007b: <GetById>: <Reg8: 35, Reg8: 35, UInt8: 1, string_id: 36961>  # String: 'catalogo_id' (Identifier)
+00000081: <Call2>: <Reg8: 34, Reg8: 36, Reg8: 16, Reg8: 35>
+00000086: <Mov>: <Reg8: 33, Reg8: 34>
+00000089: <JmpTrue>: <Addr8: 20, Reg8: 34>  # Address: 0000009d
+0000008c: <LoadFromEnvironment>: <Reg8: 35, Reg8: 0, UInt8: 7>
+00000090: <Mov>: <Reg8: 34, Reg8: 26>
+00000093: <GetByIdShort>: <Reg8: 34, Reg8: 34, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000098: <Call2>: <Reg8: 33, Reg8: 35, Reg8: 16, Reg8: 34>
+0000009d: <Mov>: <Reg8: 27, Reg8: 33>
+000000a0: <JmpTrue>: <Addr8: 5, Reg8: 33>  # Address: 000000a5
+000000a3: <Jmp>: <Addr8: -81>  # Address: 00000052
+000000a5: <Mov>: <Reg8: 33, Reg8: 5>
+000000a8: <Inc>: <Reg8: 5, Reg8: 33>
+000000ab: <LoadFromEnvironment>: <Reg8: 33, Reg8: 0, UInt8: 2>
+000000af: <GetById>: <Reg8: 34, Reg8: 33, UInt8: 4, string_id: 37550>  # String: 'pesatoCotto' (Identifier)
+000000b5: <Mov>: <Reg8: 33, Reg8: 27>
+000000b8: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+000000bd: <Call2>: <Reg8: 33, Reg8: 34, Reg8: 16, Reg8: 33>
+000000c2: <JmpTrue>: <Addr8: 29, Reg8: 33>  # Address: 000000df
+000000c5: <LoadFromEnvironment>: <Reg8: 33, Reg8: 0, UInt8: 2>
+000000c9: <GetById>: <Reg8: 34, Reg8: 33, UInt8: 4, string_id: 37550>  # String: 'pesatoCotto' (Identifier)
+000000cf: <Mov>: <Reg8: 33, Reg8: 26>
+000000d2: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+000000d7: <Call2>: <Reg8: 33, Reg8: 34, Reg8: 16, Reg8: 33>
+000000dc: <JmpFalse>: <Addr8: 5, Reg8: 33>  # Address: 000000e1
+000000df: <LoadConstTrue>: <Reg8: 2>
+000000e1: <Mov>: <Reg8: 33, Reg8: 26>
+000000e4: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 5, string_id: 135>  # String: 'grammi' (Identifier)
+000000e9: <JmpFalse>: <Addr8: 15, Reg8: 33>  # Address: 000000f8
+000000ec: <Mov>: <Reg8: 33, Reg8: 26>
+000000ef: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 5, string_id: 135>  # String: 'grammi' (Identifier)
+000000f4: <JGreater>: <Addr8: 25, Reg8: 33, Reg8: 6>  # Address: 0000010d
+000000f8: <Mov>: <Reg8: 34, Reg8: 27>
+000000fb: <GetByIdShort>: <Reg8: 34, Reg8: 34, UInt8: 6, string_id: 60>  # String: 'porzione_standard_g' (Identifier)
+00000100: <Mov>: <Reg8: 33, Reg8: 34>
+00000103: <JmpTrue>: <Addr8: 5, Reg8: 34>  # Address: 00000108
+00000106: <LoadConstZero>: <Reg8: 33>
+00000108: <Mov>: <Reg8: 34, Reg8: 33>
+0000010b: <Jmp>: <Addr8: 10>  # Address: 00000115
+0000010d: <Mov>: <Reg8: 33, Reg8: 26>
+00000110: <GetByIdShort>: <Reg8: 34, Reg8: 33, UInt8: 5, string_id: 135>  # String: 'grammi' (Identifier)
+00000115: <Mov>: <Reg8: 28, Reg8: 34>
+00000118: <Mov>: <Reg8: 33, Reg8: 24>
+0000011b: <Add>: <Reg8: 33, Reg8: 33, Reg8: 34>
+0000011f: <Mov>: <Reg8: 24, Reg8: 33>
+00000122: <StoreToEnvironment>: <Reg8: 7, UInt8: 0, Reg8: 33>
+00000126: <Mov>: <Reg8: 33, Reg8: 27>
+00000129: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 7, string_id: 116>  # String: 'fibre_g' (Identifier)
+0000012e: <JEqual>: <Addr8: 30, Reg8: 33, Reg8: 19>  # Address: 0000014c
+00000132: <Mov>: <Reg8: 34, Reg8: 13>
+00000135: <Mov>: <Reg8: 33, Reg8: 27>
+00000138: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 7, string_id: 116>  # String: 'fibre_g' (Identifier)
+0000013d: <Mov>: <Reg8: 33, Reg8: 28>
+00000140: <Mul>: <Reg8: 33, Reg8: 35, Reg8: 33>
+00000144: <Div>: <Reg8: 33, Reg8: 33, Reg8: 1>
+00000148: <Add>: <Reg8: 13, Reg8: 34, Reg8: 33>
+0000014c: <Mov>: <Reg8: 33, Reg8: 27>
+0000014f: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 8, string_id: 213>  # String: 'proteine_g' (Identifier)
+00000154: <JEqual>: <Addr8: 30, Reg8: 33, Reg8: 19>  # Address: 00000172
+00000158: <Mov>: <Reg8: 34, Reg8: 12>
+0000015b: <Mov>: <Reg8: 33, Reg8: 27>
+0000015e: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 8, string_id: 213>  # String: 'proteine_g' (Identifier)
+00000163: <Mov>: <Reg8: 33, Reg8: 28>
+00000166: <Mul>: <Reg8: 33, Reg8: 35, Reg8: 33>
+0000016a: <Div>: <Reg8: 33, Reg8: 33, Reg8: 1>
+0000016e: <Add>: <Reg8: 12, Reg8: 34, Reg8: 33>
+00000172: <Mov>: <Reg8: 33, Reg8: 27>
+00000175: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 9, string_id: 138>  # String: 'grassi_totali_g' (Identifier)
+0000017a: <JEqual>: <Addr8: 30, Reg8: 33, Reg8: 19>  # Address: 00000198
+0000017e: <Mov>: <Reg8: 34, Reg8: 9>
+00000181: <Mov>: <Reg8: 33, Reg8: 27>
+00000184: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 9, string_id: 138>  # String: 'grassi_totali_g' (Identifier)
+00000189: <Mov>: <Reg8: 33, Reg8: 28>
+0000018c: <Mul>: <Reg8: 33, Reg8: 35, Reg8: 33>
+00000190: <Div>: <Reg8: 33, Reg8: 33, Reg8: 1>
+00000194: <Add>: <Reg8: 9, Reg8: 34, Reg8: 33>
+00000198: <Mov>: <Reg8: 33, Reg8: 27>
+0000019b: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 10, string_id: 54>  # String: 'carboidrati_disponibili_g' (Identifier)
+000001a0: <Mov>: <Reg8: 29, Reg8: 33>
+000001a3: <JEqual>: <Addr8: 31, Reg8: 33, Reg8: 19>  # Address: 000001c2
+000001a7: <Mov>: <Reg8: 33, Reg8: 28>
+000001aa: <JmpFalse>: <Addr8: 24, Reg8: 33>  # Address: 000001c2
+000001ad: <Mov>: <Reg8: 34, Reg8: 14>
+000001b0: <Mov>: <Reg8: 35, Reg8: 29>
+000001b3: <Mov>: <Reg8: 33, Reg8: 28>
+000001b6: <Mul>: <Reg8: 33, Reg8: 35, Reg8: 33>
+000001ba: <Div>: <Reg8: 33, Reg8: 33, Reg8: 1>
+000001be: <Add>: <Reg8: 14, Reg8: 34, Reg8: 33>
+000001c2: <Mov>: <Reg8: 33, Reg8: 27>
+000001c5: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 11, string_id: 154>  # String: 'ig_medio' (Identifier)
+000001ca: <Mov>: <Reg8: 30, Reg8: 33>
+000001cd: <JEqualLong>: <Addr32: 182, Reg8: 33, Reg8: 19>  # Address: 00000283
+000001d4: <Mov>: <Reg8: 33, Reg8: 29>
+000001d7: <JEqualLong>: <Addr32: 172, Reg8: 33, Reg8: 19>  # Address: 00000283
+000001de: <Mov>: <Reg8: 33, Reg8: 28>
+000001e1: <JmpFalseLong>: <Addr32: 162, Reg8: 33>  # Address: 00000283
+000001e7: <LoadFromEnvironment>: <Reg8: 33, Reg8: 0, UInt8: 2>
+000001eb: <GetById>: <Reg8: 36, Reg8: 33, UInt8: 12, string_id: 42348>  # String: 'aggiustaIGperPreparazione' (Identifier)
+000001f1: <Mov>: <Reg8: 35, Reg8: 30>
+000001f4: <Mov>: <Reg8: 33, Reg8: 26>
+000001f7: <GetById>: <Reg8: 34, Reg8: 33, UInt8: 13, string_id: 32723>  # String: 'cottura' (Identifier)
+000001fd: <GetByIdShort>: <Reg8: 33, Reg8: 33, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000202: <Call4>: <Reg8: 34, Reg8: 36, Reg8: 16, Reg8: 35, Reg8: 34, Reg8: 33>
+00000209: <Mov>: <Reg8: 31, Reg8: 34>
+0000020c: <Mov>: <Reg8: 35, Reg8: 29>
+0000020f: <Mov>: <Reg8: 33, Reg8: 28>
+00000212: <Mul>: <Reg8: 33, Reg8: 35, Reg8: 33>
+00000216: <Div>: <Reg8: 33, Reg8: 33, Reg8: 1>
+0000021a: <Mul>: <Reg8: 33, Reg8: 34, Reg8: 33>
+0000021e: <DivN>: <Reg8: 34, Reg8: 33, Reg8: 1>
+00000222: <Mov>: <Reg8: 32, Reg8: 34>
+00000225: <Mov>: <Reg8: 33, Reg8: 15>
+00000228: <Add>: <Reg8: 15, Reg8: 33, Reg8: 34>
+0000022c: <Mov>: <Reg8: 33, Reg8: 25>
+0000022f: <JNotGreater>: <Addr8: 13, Reg8: 34, Reg8: 33>  # Address: 0000023c
+00000233: <Mov>: <Reg8: 25, Reg8: 32>
+00000236: <Mov>: <Reg8: 8, Reg8: 31>
+00000239: <Mov>: <Reg8: 18, Reg8: 27>
+0000023c: <Mov>: <Reg8: 33, Reg8: 32>
+0000023f: <JNotGreaterEqual>: <Addr8: 63, Reg8: 33, Reg8: 22>  # Address: 0000027e
+00000243: <Mov>: <Reg8: 35, Reg8: 3>
+00000246: <GetByIdShort>: <Reg8: 34, Reg8: 35, UInt8: 14, string_id: 214>  # String: 'push' (Identifier)
+0000024b: <NewObject>: <Reg8: 33>
+0000024d: <Mov>: <Reg8: 36, Reg8: 27>
+00000250: <GetByIdShort>: <Reg8: 36, Reg8: 36, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000255: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 36, string_id: 185>  # String: 'nome' (Identifier)
+00000259: <TryGetById>: <Reg8: 38, Reg8: 11, UInt8: 15, string_id: 12>  # String: 'Math' (Identifier)
+0000025f: <GetByIdShort>: <Reg8: 37, Reg8: 38, UInt8: 16, string_id: 37>  # String: 'round' (Identifier)
+00000264: <Mov>: <Reg8: 36, Reg8: 32>
+00000267: <Mul>: <Reg8: 36, Reg8: 36, Reg8: 10>
+0000026b: <Call2>: <Reg8: 36, Reg8: 37, Reg8: 38, Reg8: 36>
+00000270: <Div>: <Reg8: 36, Reg8: 36, Reg8: 10>
+00000274: <PutNewOwnById>: <Reg8: 33, Reg8: 36, string_id: 32303>  # String: 'cg' (Identifier)
+00000279: <Call2>: <Reg8: 33, Reg8: 34, Reg8: 35, Reg8: 33>
+0000027e: <JmpLong>: <Addr32: -556>  # Address: 00000052
+00000283: <JmpLong>: <Addr32: -561>  # Address: 00000052
+00000288: <Catch>: <Reg8: 1>
+0000028a: <IteratorClose>: <Reg8: 21, UInt8: 1>
+0000028d: <Throw>: <Reg8: 1>
+0000028f: <TryGetById>: <Reg8: 22, Reg8: 11, UInt8: 15, string_id: 12>  # String: 'Math' (Identifier)
+00000295: <GetByIdShort>: <Reg8: 21, Reg8: 22, UInt8: 16, string_id: 37>  # String: 'round' (Identifier)
+0000029a: <Mov>: <Reg8: 1, Reg8: 15>
+0000029d: <Mul>: <Reg8: 1, Reg8: 1, Reg8: 10>
+000002a1: <Call2>: <Reg8: 1, Reg8: 21, Reg8: 22, Reg8: 1>
+000002a6: <Div>: <Reg8: 15, Reg8: 1, Reg8: 10>
+000002aa: <TryGetById>: <Reg8: 22, Reg8: 11, UInt8: 15, string_id: 12>  # String: 'Math' (Identifier)
+000002b0: <GetByIdShort>: <Reg8: 21, Reg8: 22, UInt8: 16, string_id: 37>  # String: 'round' (Identifier)
+000002b5: <Mov>: <Reg8: 1, Reg8: 14>
+000002b8: <Call2>: <Reg8: 14, Reg8: 21, Reg8: 22, Reg8: 1>
+000002bd: <Mov>: <Reg8: 22, Reg8: 3>
+000002c0: <GetById>: <Reg8: 21, Reg8: 22, UInt8: 17, string_id: 36204>  # String: 'sort' (Identifier)
+000002c6: <CreateClosure>: <Reg8: 1, Reg8: 7, function_id: 18424>  # Function: [#18424  of 24 bytes]: 3 params @ offset 0x004be4b5
+000002cb: <Call2>: <Reg8: 1, Reg8: 21, Reg8: 22, Reg8: 1>
+000002d0: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 9>
+000002d4: <Call2>: <Reg8: 22, Reg8: 1, Reg8: 16, Reg8: 4>
+000002d9: <LoadFromEnvironment>: <Reg8: 21, Reg8: 0, UInt8: 10>
+000002dd: <LoadParam>: <Reg8: 1, UInt8: 2>
+000002e0: <Call3>: <Reg8: 21, Reg8: 21, Reg8: 16, Reg8: 1, Reg8: 22>
+000002e6: <LoadConstFalse>: <Reg8: 1>
+000002e8: <JmpFalse>: <Addr8: 79, Reg8: 21>  # Address: 00000337
+000002eb: <GetById>: <Reg8: 23, Reg8: 21, UInt8: 18, string_id: 32041>  # String: 'carbo' (Identifier)
+000002f1: <Mov>: <Reg8: 22, Reg8: 14>
+000002f4: <Greater>: <Reg8: 22, Reg8: 23, Reg8: 22>
+000002f8: <LoadConstFalse>: <Reg8: 1>
+000002fa: <JmpFalse>: <Addr8: 61, Reg8: 22>  # Address: 00000337
+000002fd: <Mov>: <Reg8: 22, Reg8: 14>
+00000300: <JLess>: <Addr8: 36, Reg8: 22, Reg8: 10>  # Address: 00000324
+00000304: <GetById>: <Reg8: 23, Reg8: 21, UInt8: 18, string_id: 32041>  # String: 'carbo' (Identifier)
+0000030a: <Mov>: <Reg8: 24, Reg8: 14>
+0000030d: <LoadConstDouble>: <Reg8: 22, Double: 1.9>
+00000317: <Mul>: <Reg8: 22, Reg8: 24, Reg8: 22>
+0000031b: <LessEq>: <Reg8: 22, Reg8: 23, Reg8: 22>
+0000031f: <LoadConstFalse>: <Reg8: 1>
+00000321: <JmpFalse>: <Addr8: 22, Reg8: 22>  # Address: 00000337
+00000324: <GetById>: <Reg8: 14, Reg8: 21, UInt8: 18, string_id: 32041>  # String: 'carbo' (Identifier)
+0000032a: <GetById>: <Reg8: 15, Reg8: 21, UInt8: 19, string_id: 32303>  # String: 'cg' (Identifier)
+00000330: <GetByIdShort>: <Reg8: 8, Reg8: 21, UInt8: 20, string_id: 31>  # String: 'ig' (Identifier)
+00000335: <LoadConstTrue>: <Reg8: 1>
+00000337: <GetByIdShort>: <Reg8: 20, Reg8: 4, UInt8: 21, string_id: 171>  # String: 'length' (Identifier)
+0000033c: <LoadConstZero>: <Reg8: 6>
+0000033e: <JmpFalse>: <Addr8: 15, Reg8: 20>  # Address: 0000034d
+00000341: <Mov>: <Reg8: 21, Reg8: 5>
+00000344: <GetByIdShort>: <Reg8: 20, Reg8: 4, UInt8: 21, string_id: 171>  # String: 'length' (Identifier)
+00000349: <Div>: <Reg8: 6, Reg8: 21, Reg8: 20>
+0000034d: <CreateClosure>: <Reg8: 21, Reg8: 7, function_id: 18425>  # Function: [#18425 per100 of 38 bytes]: 2 params @ offset 0x004be4cd
+00000352: <Mov>: <Reg8: 7, Reg8: 18>
+00000355: <LoadConstFalse>: <Reg8: 17>
+00000357: <JmpFalse>: <Addr8: 26, Reg8: 7>  # Address: 00000371
+0000035a: <LoadFromEnvironment>: <Reg8: 22, Reg8: 0, UInt8: 8>
+0000035e: <Mov>: <Reg8: 7, Reg8: 18>
+00000361: <GetByIdShort>: <Reg8: 20, Reg8: 7, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000366: <GetByIdShort>: <Reg8: 7, Reg8: 7, UInt8: 22, string_id: 63>  # String: 'categoria' (Identifier)
+0000036b: <Call3>: <Reg8: 17, Reg8: 22, Reg8: 16, Reg8: 20, Reg8: 7>
+00000371: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 2>
+00000375: <GetById>: <Reg8: 7, Reg8: 0, UInt8: 23, string_id: 47715>  # String: 'classificaFascia' (Identifier)
+0000037b: <NewObject>: <Reg8: 0>
+0000037d: <Mov>: <Reg8: 20, Reg8: 15>
+00000380: <PutNewOwnById>: <Reg8: 0, Reg8: 20, string_id: 32303>  # String: 'cg' (Identifier)
+00000385: <Mov>: <Reg8: 20, Reg8: 14>
+00000388: <PutNewOwnById>: <Reg8: 0, Reg8: 20, string_id: 32041>  # String: 'carbo' (Identifier)
+0000038d: <Mov>: <Reg8: 20, Reg8: 8>
+00000390: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 20, string_id: 31>  # String: 'ig' (Identifier)
+00000394: <Mov>: <Reg8: 23, Reg8: 13>
+00000397: <PutNewOwnById>: <Reg8: 0, Reg8: 23, string_id: 32250>  # String: 'fibre' (Identifier)
+0000039c: <Mov>: <Reg8: 22, Reg8: 12>
+0000039f: <PutNewOwnById>: <Reg8: 0, Reg8: 22, string_id: 32609>  # String: 'proteine' (Identifier)
+000003a4: <Mov>: <Reg8: 20, Reg8: 9>
+000003a7: <PutNewOwnById>: <Reg8: 0, Reg8: 20, string_id: 32318>  # String: 'grassi' (Identifier)
+000003ac: <Call2>: <Reg8: 23, Reg8: 21, Reg8: 16, Reg8: 23>
+000003b1: <PutNewOwnById>: <Reg8: 0, Reg8: 23, string_id: 48456>  # String: 'fibre100' (Identifier)
+000003b6: <Call2>: <Reg8: 22, Reg8: 21, Reg8: 16, Reg8: 22>
+000003bb: <PutNewOwnById>: <Reg8: 0, Reg8: 22, string_id: 42895>  # String: 'proteine100' (Identifier)
+000003c0: <Call2>: <Reg8: 20, Reg8: 21, Reg8: 16, Reg8: 20>
+000003c5: <PutNewOwnById>: <Reg8: 0, Reg8: 20, string_id: 35212>  # String: 'grassi100' (Identifier)
+000003ca: <Mov>: <Reg8: 21, Reg8: 18>
+000003cd: <Eq>: <Reg8: 22, Reg8: 21, Reg8: 19>
+000003d1: <LoadConstUndefined>: <Reg8: 20>
+000003d3: <JmpTrue>: <Addr8: 8, Reg8: 22>  # Address: 000003db
+000003d6: <GetByIdShort>: <Reg8: 20, Reg8: 21, UInt8: 24, string_id: 254>  # String: 'zuccheri_g' (Identifier)
+000003db: <JNotEqual>: <Addr8: 6, Reg8: 20, Reg8: 19>  # Address: 000003e1
+000003df: <LoadConstNull>: <Reg8: 20>
+000003e1: <PutNewOwnById>: <Reg8: 0, Reg8: 20, string_id: 42003>  # String: 'zuccheri100' (Identifier)
+000003e6: <Mov>: <Reg8: 20, Reg8: 18>
+000003e9: <Eq>: <Reg8: 21, Reg8: 20, Reg8: 19>
+000003ed: <LoadConstUndefined>: <Reg8: 18>
+000003ef: <JmpTrue>: <Addr8: 8, Reg8: 21>  # Address: 000003f7
+000003f2: <GetByIdShort>: <Reg8: 18, Reg8: 20, UInt8: 10, string_id: 54>  # String: 'carboidrati_disponibili_g' (Identifier)
+000003f7: <JNotEqual>: <Addr8: 6, Reg8: 18, Reg8: 19>  # Address: 000003fd
+000003fb: <LoadConstNull>: <Reg8: 18>
+000003fd: <PutNewOwnById>: <Reg8: 0, Reg8: 18, string_id: 43588>  # String: 'carbo100' (Identifier)
+00000402: <PutNewOwnById>: <Reg8: 0, Reg8: 17, string_id: 45621>  # String: 'liquido' (Identifier)
+00000407: <Call2>: <Reg8: 0, Reg8: 7, Reg8: 16, Reg8: 0>
+0000040c: <GetByIdShort>: <Reg8: 7, Reg8: 0, UInt8: 25, string_id: 114>  # String: 'fascia' (Identifier)
+00000411: <NewObject>: <Reg8: 0>
+00000413: <PutNewOwnById>: <Reg8: 0, Reg8: 15, string_id: 32303>  # String: 'cg' (Identifier)
+00000418: <PutNewOwnById>: <Reg8: 0, Reg8: 14, string_id: 32041>  # String: 'carbo' (Identifier)
+0000041d: <TryGetById>: <Reg8: 15, Reg8: 11, UInt8: 15, string_id: 12>  # String: 'Math' (Identifier)
+00000423: <GetByIdShort>: <Reg8: 14, Reg8: 15, UInt8: 16, string_id: 37>  # String: 'round' (Identifier)
+00000428: <Mul>: <Reg8: 13, Reg8: 13, Reg8: 10>
+0000042c: <Call2>: <Reg8: 13, Reg8: 14, Reg8: 15, Reg8: 13>
+00000431: <Div>: <Reg8: 13, Reg8: 13, Reg8: 10>
+00000435: <PutNewOwnById>: <Reg8: 0, Reg8: 13, string_id: 32250>  # String: 'fibre' (Identifier)
+0000043a: <TryGetById>: <Reg8: 14, Reg8: 11, UInt8: 15, string_id: 12>  # String: 'Math' (Identifier)
+00000440: <GetByIdShort>: <Reg8: 13, Reg8: 14, UInt8: 16, string_id: 37>  # String: 'round' (Identifier)
+00000445: <Mul>: <Reg8: 12, Reg8: 12, Reg8: 10>
+00000449: <Call2>: <Reg8: 12, Reg8: 13, Reg8: 14, Reg8: 12>
+0000044e: <Div>: <Reg8: 12, Reg8: 12, Reg8: 10>
+00000452: <PutNewOwnById>: <Reg8: 0, Reg8: 12, string_id: 32608>  # String: 'prot' (Identifier)
+00000457: <TryGetById>: <Reg8: 12, Reg8: 11, UInt8: 15, string_id: 12>  # String: 'Math' (Identifier)
+0000045d: <GetByIdShort>: <Reg8: 11, Reg8: 12, UInt8: 16, string_id: 37>  # String: 'round' (Identifier)
+00000462: <Mul>: <Reg8: 9, Reg8: 9, Reg8: 10>
+00000466: <Call2>: <Reg8: 9, Reg8: 11, Reg8: 12, Reg8: 9>
+0000046b: <Div>: <Reg8: 9, Reg8: 9, Reg8: 10>
+0000046f: <PutNewOwnById>: <Reg8: 0, Reg8: 9, string_id: 32318>  # String: 'grassi' (Identifier)
+00000474: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 8, string_id: 31>  # String: 'ig' (Identifier)
+00000478: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 7, string_id: 114>  # String: 'fascia' (Identifier)
+0000047c: <PutNewOwnById>: <Reg8: 0, Reg8: 5, string_id: 38949>  # String: 'trovati' (Identifier)
+00000481: <GetByIdShort>: <Reg8: 4, Reg8: 4, UInt8: 21, string_id: 171>  # String: 'length' (Identifier)
+00000486: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32057>  # String: 'totali' (Identifier)
+0000048b: <LoadConstString>: <Reg8: 4, string_id: 35157>  # String: 'bassa' (Identifier)
+0000048f: <LoadConstDouble>: <Reg8: 5, Double: 0.6>
+00000499: <JNotGreaterEqual>: <Addr8: 8, Reg8: 6, Reg8: 5>  # Address: 000004a1
+0000049d: <LoadConstString>: <Reg8: 4, string_id: 33888>  # String: 'media' (Identifier)
+000004a1: <PutNewOwnById>: <Reg8: 0, Reg8: 4, string_id: 32375>  # String: 'affidabilita' (Identifier)
+000004a6: <PutNewOwnById>: <Reg8: 0, Reg8: 3, string_id: 47486>  # String: 'contributi' (Identifier)
+000004ab: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 34722>  # String: 'cotto' (Identifier)
+000004b0: <PutNewOwnById>: <Reg8: 0, Reg8: 1, string_id: 49015>  # String: 'pianoIntero' (Identifier)
+000004b5: <Ret>: <Reg8: 0>

@@ -1,0 +1,100 @@
+# Function #18411 ''
+# offset=4971083 bytes=670
+
+00000000: <CreateEnvironment>: <Reg8: 2>
+00000002: <LoadParam>: <Reg8: 3, UInt8: 2>
+00000005: <LoadParam>: <Reg8: 1, UInt8: 6>
+00000008: <LoadParam>: <Reg8: 4, UInt8: 7>
+0000000b: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18412>  # Function: [#18412 matchForte of 182 bytes]: 3 params @ offset 0x004bdce9
+00000010: <StoreToEnvironment>: <Reg8: 2, UInt8: 6, Reg8: 0>
+00000014: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18416>  # Function: [#18416 riconosciDalNome of 87 bytes]: 2 params @ offset 0x004bddb0
+00000019: <StoreToEnvironment>: <Reg8: 2, UInt8: 7, Reg8: 0>
+0000001d: <CreateClosure>: <Reg8: 6, Reg8: 2, function_id: 18419>  # Function: [#18419 isBevanda of 43 bytes]: 3 params @ offset 0x004bde77
+00000022: <StoreToEnvironment>: <Reg8: 2, UInt8: 8, Reg8: 6>
+00000026: <CreateClosure>: <Reg8: 5, Reg8: 2, function_id: 18420>  # Function: [#18420 pesoCibo of 200 bytes]: 2 params @ offset 0x004bdea2
+0000002b: <StoreToEnvironment>: <Reg8: 2, UInt8: 9, Reg8: 5>
+0000002f: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18421>  # Function: [#18421 stimaPiattoIntero of 148 bytes]: 3 params @ offset 0x004bdf6a
+00000034: <StoreToEnvironment>: <Reg8: 2, UInt8: 10, Reg8: 0>
+00000038: <GetGlobalObject>: <Reg8: 7>
+0000003a: <TryGetById>: <Reg8: 10, Reg8: 7, UInt8: 1, string_id: 14>  # String: 'Object' (Identifier)
+00000040: <GetByIdShort>: <Reg8: 9, Reg8: 10, UInt8: 2, string_id: 96>  # String: 'defineProperty' (Identifier)
+00000045: <NewObject>: <Reg8: 8>
+00000047: <LoadConstTrue>: <Reg8: 7>
+00000049: <PutNewOwnByIdShort>: <Reg8: 8, Reg8: 7, string_id: 251>  # String: 'value' (Identifier)
+0000004d: <LoadConstString>: <Reg8: 7, string_id: 27>  # String: '__esModule' (Identifier)
+00000051: <Call4>: <Reg8: 7, Reg8: 9, Reg8: 10, Reg8: 1, Reg8: 7, Reg8: 8>
+00000058: <CreateClosure>: <Reg8: 7, Reg8: 2, function_id: 18417>  # Function: [#18417 pesoRealisticoPiatto of 84 bytes]: 3 params @ offset 0x004bde07
+0000005d: <PutById>: <Reg8: 1, Reg8: 7, UInt8: 1, string_id: 43671>  # String: 'pesoRealisticoPiatto' (Identifier)
+00000063: <PutById>: <Reg8: 1, Reg8: 6, UInt8: 2, string_id: 36358>  # String: 'isBevanda' (Identifier)
+00000069: <PutById>: <Reg8: 1, Reg8: 5, UInt8: 3, string_id: 34828>  # String: 'pesoCibo' (Identifier)
+0000006f: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 4, string_id: 34204>  # String: 'stimaPiattoIntero' (Identifier)
+00000075: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18423>  # Function: [#18423 calcolaImpatto of 1207 bytes]: 3 params @ offset 0x004bdffe
+0000007a: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 5, string_id: 40489>  # String: 'calcolaImpatto' (Identifier)
+00000080: <LoadConstZero>: <Reg8: 0>
+00000082: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 0>
+00000086: <LoadConstUndefined>: <Reg8: 0>
+00000088: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+0000008d: <StoreToEnvironment>: <Reg8: 2, UInt8: 0, Reg8: 1>
+00000091: <LoadConstUInt8>: <Reg8: 1, UInt8: 1>
+00000094: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 1>
+00000098: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+0000009d: <StoreToEnvironment>: <Reg8: 2, UInt8: 1, Reg8: 1>
+000000a1: <LoadConstUInt8>: <Reg8: 1, UInt8: 2>
+000000a4: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 1>
+000000a8: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+000000ad: <StoreToEnvironment>: <Reg8: 2, UInt8: 2, Reg8: 1>
+000000b1: <CreateClosure>: <Reg8: 1, Reg8: 2, function_id: 18426>  # Function: [#18426 normNome of 130 bytes]: 2 params @ offset 0x004be4f3
+000000b6: <StoreToEnvironment>: <Reg8: 2, UInt8: 3, Reg8: 1>
+000000ba: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 83965>  # Object: {'re': null, 'carbo100': 30, 'ig': 70, 'pesoTipico': 380, 'bumpMin': 200, 'floor': true}
+000000c8: <CreateRegExp>: <Reg8: 1, string_id: 35334, string_id: 31833, UInt32: 287>  # String: 'pizza' (Identifier)  # String: 'i' (Identifier)
+000000d6: <PutById>: <Reg8: 3, Reg8: 1, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+000000dc: <NewArray>: <Reg8: 1, UInt16: 12>
+000000e0: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 0>
+000000e4: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 83995>  # Object: {'re': null, 'carbo100': 48, 'ig': 70, 'pesoTipico': 180, 'bumpMin': 100, 'floor': true}
+000000f2: <CreateRegExp>: <Reg8: 4, string_id: 21833, string_id: 31833, UInt32: 288>  # String: 'focacc' (String)  # String: 'i' (Identifier)
+00000100: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+00000106: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 1>
+0000010a: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84025>  # Object: {'re': null, 'carbo100': 33, 'ig': 68, 'pesoTipico': 300, 'bumpMin': 170, 'floor': true}
+00000118: <CreateRegExp>: <Reg8: 4, string_id: 2062, string_id: 31833, UInt32: 289>  # String: 'calzone|panzerott' (String)  # String: 'i' (Identifier)
+00000126: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+0000012c: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 2>
+00000130: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84055>  # Object: {'re': null, 'carbo100': 18, 'ig': 55, 'pesoTipico': 350, 'bumpMin': 200, 'floor': true}
+0000013e: <CreateRegExp>: <Reg8: 4, string_id: 14713, string_id: 31833, UInt32: 290>  # String: 'lasagn' (String)  # String: 'i' (Identifier)
+0000014c: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+00000152: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 3>
+00000156: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84085>  # Object: {'re': null, 'carbo100': 20, 'ig': 55, 'pesoTipico': 350, 'bumpMin': 200, 'floor': true}
+00000164: <CreateRegExp>: <Reg8: 4, string_id: 5878, string_id: 31833, UInt32: 291>  # String: 'pasta al forno|timball|cannellon' (String)  # String: 'i' (Identifier)
+00000172: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+00000178: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 4>
+0000017c: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84115>  # Object: {'re': null, 'carbo100': 9, 'ig': 45, 'pesoTipico': 350, 'bumpMin': 200, 'floor': true}
+0000018a: <CreateRegExp>: <Reg8: 4, string_id: 8034, string_id: 31833, UInt32: 292>  # String: 'parmigian' (String)  # String: 'i' (Identifier)
+00000198: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+0000019e: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 5>
+000001a2: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84145>  # Object: {'re': null, 'carbo100': 22, 'ig': 60, 'pesoTipico': 240, 'bumpMin': 140, 'floor': true}
+000001b0: <CreateRegExp>: <Reg8: 4, string_id: 560, string_id: 31833, UInt32: 293>  # String: 'burger|hamburger|cheeseburger|panino con' (String)  # String: 'i' (Identifier)
+000001be: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+000001c4: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 6>
+000001c8: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84175>  # Object: {'re': null, 'carbo100': 34, 'ig': 68, 'pesoTipico': 250, 'bumpMin': 140, 'floor': true}
+000001d6: <CreateRegExp>: <Reg8: 4, string_id: 581, string_id: 31833, UInt32: 294>  # String: 'piadin' (String)  # String: 'i' (Identifier)
+000001e4: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+000001ea: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 7>
+000001ee: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 84205>  # Object: {'re': null, 'carbo100': 22, 'ig': 60, 'pesoTipico': 350, 'bumpMin': 200, 'floor': true}
+000001fc: <CreateRegExp>: <Reg8: 4, string_id: 11321, string_id: 31833, UInt32: 295>  # String: 'kebab' (String)  # String: 'i' (Identifier)
+0000020a: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+00000210: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 8>
+00000214: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 179522>  # Object: {'re': null, 'carbo100': 16, 'ig': 55, 'pesoTipico': 400, 'bumpMin': 250, 'floor': false}
+00000222: <CreateRegExp>: <Reg8: 4, string_id: 3933, string_id: 31833, UInt32: 296>  # String: 'poke' (String)  # String: 'i' (Identifier)
+00000230: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+00000236: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 9>
+0000023a: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 179541>  # Object: {'re': null, 'carbo100': 28, 'ig': 72, 'pesoTipico': 350, 'bumpMin': 200, 'floor': false}
+00000248: <CreateRegExp>: <Reg8: 4, string_id: 6543, string_id: 31833, UInt32: 297>  # String: 'risott' (String)  # String: 'i' (Identifier)
+00000256: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+0000025c: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 10>
+00000260: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 6, UInt16: 6, UInt32: 47484, UInt32: 179560>  # Object: {'re': null, 'carbo100': 28, 'ig': 55, 'pesoTipico': 320, 'bumpMin': 180, 'floor': false}
+0000026e: <CreateRegExp>: <Reg8: 4, string_id: 23748, string_id: 31833, UInt32: 298>  # String: 'pasta|spaghett|\\bpenne\\b|rigaton|fusill|tagliatell|bucatin|linguin|maccheron|orecchiett|trofie|carbonara|amatrician|arrabbiat|puttanesc|cacio e pepe|pesto|rag[uù]|bolognes' (String)  # String: 'i' (Identifier)
+0000027c: <PutById>: <Reg8: 3, Reg8: 4, UInt8: 6, string_id: 31867>  # String: 're' (Identifier)
+00000282: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 11>
+00000286: <StoreToEnvironment>: <Reg8: 2, UInt8: 4, Reg8: 1>
+0000028a: <CreateRegExp>: <Reg8: 1, string_id: 30368, string_id: 31833, UInt32: 299>  # String: '\\bvino\\b|\\bbirra\\b|spritz|prosecc|\\bcola\\b|bibita|bevanda|aranciat|gassos|\\bsucco\\b|spremut|cocktail|aperol|\\bacqua\\b|caff[eè]|\\bt[eè]\\b|energy' (String)  # String: 'i' (Identifier)
+00000298: <StoreToEnvironment>: <Reg8: 2, UInt8: 5, Reg8: 1>
+0000029c: <Ret>: <Reg8: 0>

@@ -1,0 +1,28 @@
+# Function #19745 'giornoIndice'
+# offset=5260043 bytes=96
+
+00000000: <LoadConstUndefined>: <Reg8: 3>
+00000002: <LoadConstUndefined>: <Reg8: 1>
+00000004: <GetArgumentsLength>: <Reg8: 2, Reg8: 1>
+00000007: <LoadConstZero>: <Reg8: 0>
+00000009: <JNotGreater>: <Addr8: 12, Reg8: 2, Reg8: 0>  # Address: 00000015
+0000000d: <GetArgumentsPropByVal>: <Reg8: 2, Reg8: 0, Reg8: 1>
+00000011: <JStrictNotEqual>: <Addr8: 34, Reg8: 2, Reg8: 3>  # Address: 00000033
+00000015: <GetGlobalObject>: <Reg8: 2>
+00000017: <TryGetById>: <Reg8: 2, Reg8: 2, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+0000001d: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 157>  # String: 'prototype' (Identifier)
+00000022: <CreateThis>: <Reg8: 3, Reg8: 3, Reg8: 2>
+00000026: <Mov>: <Reg8: 5, Reg8: 3>
+00000029: <Construct>: <Reg8: 2, Reg8: 2, UInt8: 1>
+0000002d: <SelectObject>: <Reg8: 3, Reg8: 3, Reg8: 2>
+00000031: <Jmp>: <Addr8: 6>  # Address: 00000037
+00000033: <GetArgumentsPropByVal>: <Reg8: 3, Reg8: 0, Reg8: 1>
+00000037: <GetGlobalObject>: <Reg8: 0>
+00000039: <TryGetById>: <Reg8: 2, Reg8: 0, UInt8: 3, string_id: 12>  # String: 'Math' (Identifier)
+0000003f: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 4, string_id: 34181>  # String: 'floor' (Identifier)
+00000045: <GetById>: <Reg8: 0, Reg8: 3, UInt8: 5, string_id: 54448>  # String: 'getTime' (Identifier)
+0000004b: <Call1>: <Reg8: 3, Reg8: 0, Reg8: 3>
+0000004f: <LoadConstInt>: <Reg8: 0, Imm32: 86400000>
+00000055: <Div>: <Reg8: 0, Reg8: 3, Reg8: 0>
+00000059: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+0000005e: <Ret>: <Reg8: 0>

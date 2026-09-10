@@ -1,0 +1,38 @@
+
+==== Falling back to Disassembly ====
+=> [Function #19763 "" of 115 bytes]: 1 params, frame size=19, strict=1, exc handler=0, debug info=0  @ offset 0x00504a22
+
+Bytecode listing:
+
+==> 00000000: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+==> 00000003: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 3>
+==> 00000007: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 1, string_id: 177>  # String: 'map' (Identifier)
+==> 0000000c: <CreateEnvironment>: <Reg8: 0>
+==> 0000000e: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 19764>  # Function: [#19764  of 5 bytes]: 3 params @ offset 0x00328661
+==> 00000013: <Call2>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 0>
+==> 00000018: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 6>
+==> 0000001c: <LoadConstUndefined>: <Reg8: 6>
+==> 0000001e: <LoadConstInt>: <Reg8: 1, Imm32: 20260807>
+==> 00000024: <Call2>: <Reg8: 5, Reg8: 2, Reg8: 6, Reg8: 1>
+==> 00000029: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 2, string_id: 171>  # String: 'length' (Identifier)
+==> 0000002e: <LoadConstUInt8>: <Reg8: 4, UInt8: 1>
+==> 00000031: <Sub>: <Reg8: 3, Reg8: 1, Reg8: 4>
+==> 00000035: <GetGlobalObject>: <Reg8: 2>
+==> 00000037: <LoadConstZero>: <Reg8: 1>
+==> 00000039: <JNotGreaterN>: <Addr8: 56, Reg8: 3, Reg8: 1>  # Address: 00000071
+==> 0000003d: <TryGetById>: <Reg8: 9, Reg8: 2, UInt8: 3, string_id: 12>  # String: 'Math' (Identifier)
+==> 00000043: <GetById>: <Reg8: 8, Reg8: 9, UInt8: 4, string_id: 34181>  # String: 'floor' (Identifier)
+==> 00000049: <Call1>: <Reg8: 10, Reg8: 5, Reg8: 6>
+==> 0000004d: <Add>: <Reg8: 7, Reg8: 3, Reg8: 4>
+==> 00000051: <Mul>: <Reg8: 7, Reg8: 10, Reg8: 7>
+==> 00000055: <Call2>: <Reg8: 8, Reg8: 8, Reg8: 9, Reg8: 7>
+==> 0000005a: <GetByVal>: <Reg8: 7, Reg8: 0, Reg8: 3>
+==> 0000005e: <GetByVal>: <Reg8: 9, Reg8: 0, Reg8: 8>
+==> 00000062: <PutByVal>: <Reg8: 0, Reg8: 3, Reg8: 9>
+==> 00000066: <PutByVal>: <Reg8: 0, Reg8: 8, Reg8: 7>
+==> 0000006a: <Dec>: <Reg8: 3, Reg8: 3>
+==> 0000006d: <JGreater>: <Addr8: -48, Reg8: 3, Reg8: 1>  # Address: 0000003d
+==> 00000071: <Ret>: <Reg8: 0>
+
+
+===============

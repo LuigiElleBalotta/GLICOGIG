@@ -1,0 +1,55 @@
+# Function #18454 'indiceStabilita'
+# offset=4976488 bytes=175
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <LoadConstUndefined>: <Reg8: 8>
+00000005: <LoadConstUndefined>: <Reg8: 3>
+00000007: <LoadConstUndefined>: <Reg8: 0>
+00000009: <LoadConstUndefined>: <Reg8: 9>
+0000000b: <LoadConstUndefined>: <Reg8: 10>
+0000000d: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000012: <JmpTrue>: <Addr8: 7, Reg8: 2>  # Address: 00000019
+00000015: <LoadConstNull>: <Reg8: 2>
+00000017: <Ret>: <Reg8: 2>
+00000019: <LoadConstZero>: <Reg8: 3>
+0000001b: <LoadConstZero>: <Reg8: 0>
+0000001d: <Mov>: <Reg8: 6, Reg8: 1>
+00000020: <IteratorBegin>: <Reg8: 4, Reg8: 6>
+00000023: <LoadConstUInt8>: <Reg8: 5, UInt8: 8>
+00000026: <GetGlobalObject>: <Reg8: 1>
+00000028: <GetEnvironment>: <Reg8: 2, UInt8: 0>
+0000002b: <IteratorNext>: <Reg8: 12, Reg8: 4, Reg8: 6>
+0000002f: <Mov>: <Reg8: 11, Reg8: 4>
+00000032: <JStrictEqual>: <Addr8: 103, Reg8: 11, Reg8: 8>  # Address: 00000099
+00000036: <Mov>: <Reg8: 9, Reg8: 12>
+00000039: <LoadFromEnvironment>: <Reg8: 13, Reg8: 2, UInt8: 19>
+0000003d: <GetById>: <Reg8: 12, Reg8: 12, UInt8: 2, string_id: 32303>  # String: 'cg' (Identifier)
+00000043: <Mov>: <Reg8: 11, Reg8: 12>
+00000046: <JmpTrue>: <Addr8: 5, Reg8: 12>  # Address: 0000004b
+00000049: <LoadConstZero>: <Reg8: 11>
+0000004b: <Mov>: <Reg8: 12, Reg8: 11>
+0000004e: <Mov>: <Reg8: 14, Reg8: 9>
+00000051: <GetByIdShort>: <Reg8: 11, Reg8: 14, UInt8: 3, string_id: 114>  # String: 'fascia' (Identifier)
+00000056: <Call3>: <Reg8: 10, Reg8: 13, Reg8: 8, Reg8: 12, Reg8: 11>
+0000005c: <TryGetById>: <Reg8: 13, Reg8: 1, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+00000062: <GetByIdShort>: <Reg8: 12, Reg8: 13, UInt8: 5, string_id: 153>  # String: 'max' (Identifier)
+00000067: <GetById>: <Reg8: 14, Reg8: 14, UInt8: 2, string_id: 32303>  # String: 'cg' (Identifier)
+0000006d: <Mov>: <Reg8: 11, Reg8: 14>
+00000070: <JmpTrue>: <Addr8: 5, Reg8: 14>  # Address: 00000075
+00000073: <LoadConstZero>: <Reg8: 11>
+00000075: <Call3>: <Reg8: 12, Reg8: 12, Reg8: 13, Reg8: 11, Reg8: 5>
+0000007b: <Mov>: <Reg8: 13, Reg8: 3>
+0000007e: <Mov>: <Reg8: 11, Reg8: 10>
+00000081: <Mul>: <Reg8: 11, Reg8: 11, Reg8: 12>
+00000085: <Add>: <Reg8: 3, Reg8: 13, Reg8: 11>
+00000089: <Mov>: <Reg8: 11, Reg8: 0>
+0000008c: <Add>: <Reg8: 0, Reg8: 11, Reg8: 12>
+00000090: <Jmp>: <Addr8: -101>  # Address: 0000002b
+00000092: <Catch>: <Reg8: 2>
+00000094: <IteratorClose>: <Reg8: 4, UInt8: 1>
+00000097: <Throw>: <Reg8: 2>
+00000099: <TryGetById>: <Reg8: 2, Reg8: 1, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+0000009f: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 6, string_id: 37>  # String: 'round' (Identifier)
+000000a4: <Div>: <Reg8: 0, Reg8: 3, Reg8: 0>
+000000a8: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+000000ad: <Ret>: <Reg8: 0>

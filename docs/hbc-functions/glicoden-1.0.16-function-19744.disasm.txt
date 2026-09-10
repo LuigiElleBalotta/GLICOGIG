@@ -1,0 +1,37 @@
+# Function #19744 ''
+# offset=5259900 bytes=143
+
+00000000: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 0>
+00000007: <LoadConstInt>: <Reg8: 0, Imm32: 1831565813>
+0000000d: <Add>: <Reg8: 0, Reg8: 2, Reg8: 0>
+00000011: <ToInt32>: <Reg8: 0, Reg8: 0>
+00000014: <StoreNPToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 0>
+00000018: <GetGlobalObject>: <Reg8: 0>
+0000001a: <TryGetById>: <Reg8: 4, Reg8: 0, UInt8: 1, string_id: 12>  # String: 'Math' (Identifier)
+00000020: <GetById>: <Reg8: 3, Reg8: 4, UInt8: 2, string_id: 33131>  # String: 'imul' (Identifier)
+00000026: <LoadFromEnvironment>: <Reg8: 5, Reg8: 1, UInt8: 0>
+0000002a: <LoadConstUInt8>: <Reg8: 1, UInt8: 15>
+0000002d: <URshift>: <Reg8: 1, Reg8: 5, Reg8: 1>
+00000031: <BitXor>: <Reg8: 2, Reg8: 5, Reg8: 1>
+00000035: <LoadConstUInt8>: <Reg8: 1, UInt8: 1>
+00000038: <BitOr>: <Reg8: 1, Reg8: 1, Reg8: 5>
+0000003c: <Call3>: <Reg8: 1, Reg8: 3, Reg8: 4, Reg8: 2, Reg8: 1>
+00000042: <TryGetById>: <Reg8: 4, Reg8: 0, UInt8: 1, string_id: 12>  # String: 'Math' (Identifier)
+00000048: <GetById>: <Reg8: 3, Reg8: 4, UInt8: 2, string_id: 33131>  # String: 'imul' (Identifier)
+0000004e: <LoadConstUInt8>: <Reg8: 0, UInt8: 7>
+00000051: <URshift>: <Reg8: 0, Reg8: 1, Reg8: 0>
+00000055: <BitXor>: <Reg8: 2, Reg8: 1, Reg8: 0>
+00000059: <LoadConstUInt8>: <Reg8: 0, UInt8: 61>
+0000005c: <BitOr>: <Reg8: 0, Reg8: 0, Reg8: 1>
+00000060: <Call3>: <Reg8: 0, Reg8: 3, Reg8: 4, Reg8: 2, Reg8: 0>
+00000066: <Add>: <Reg8: 0, Reg8: 1, Reg8: 0>
+0000006a: <BitXor>: <Reg8: 1, Reg8: 0, Reg8: 1>
+0000006e: <LoadConstUInt8>: <Reg8: 0, UInt8: 14>
+00000071: <URshift>: <Reg8: 0, Reg8: 1, Reg8: 0>
+00000075: <BitXor>: <Reg8: 1, Reg8: 1, Reg8: 0>
+00000079: <LoadConstZero>: <Reg8: 0>
+0000007b: <URshift>: <Reg8: 1, Reg8: 1, Reg8: 0>
+0000007f: <LoadConstDouble>: <Reg8: 0, Double: 4294967296.0>
+00000089: <DivN>: <Reg8: 0, Reg8: 1, Reg8: 0>
+0000008d: <Ret>: <Reg8: 0>

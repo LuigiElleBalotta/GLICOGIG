@@ -1,0 +1,24 @@
+# Function #18350 'emit'
+# offset=4960692 bytes=85
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000005: <LoadFromEnvironment>: <Reg8: 6, Reg8: 0, UInt8: 7>
+00000009: <NewArray>: <Reg8: 2, UInt16: 0>
+0000000d: <LoadConstZero>: <Reg8: 5>
+0000000f: <Mov>: <Reg8: 7, Reg8: 2>
+00000012: <CallBuiltin>: <Reg8: 3, UInt8: 46, UInt8: 4>  # Built-in function: [#46 arraySpread]
+00000016: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 2>
+0000001a: <LoadFromEnvironment>: <Reg8: 3, Reg8: 0, UInt8: 9>
+0000001e: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 1, string_id: 130>  # String: 'forEach' (Identifier)
+00000023: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 18351>  # Function: [#18351  of 19 bytes]: 2 params @ offset 0x002eae4a
+00000028: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1>
+0000002d: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 3>
+00000031: <GetById>: <Reg8: 3, Reg8: 1, UInt8: 2, string_id: 42267>  # String: 'setJSON' (Identifier)
+00000037: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 3>
+0000003b: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 3, string_id: 32909>  # String: 'K' (Identifier)
+00000041: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 4, string_id: 35355>  # String: 'diario' (Identifier)
+00000047: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 7>
+0000004b: <LoadConstUndefined>: <Reg8: 0>
+0000004d: <Call3>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 2, Reg8: 1>
+00000053: <Ret>: <Reg8: 0>

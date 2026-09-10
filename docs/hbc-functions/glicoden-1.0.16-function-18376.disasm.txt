@@ -1,0 +1,19 @@
+# Function #18376 'uid'
+# offset=4962254 bytes=62
+
+00000000: <GetGlobalObject>: <Reg8: 0>
+00000002: <TryGetById>: <Reg8: 1, Reg8: 0, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000008: <GetById>: <Reg8: 0, Reg8: 1, UInt8: 2, string_id: 34390>  # String: 'now' (Identifier)
+0000000e: <Call1>: <Reg8: 2, Reg8: 0, Reg8: 1>
+00000012: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 3, string_id: 19>  # String: 'toString' (Identifier)
+00000017: <LoadConstUInt8>: <Reg8: 0, UInt8: 36>
+0000001a: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 2, Reg8: 0>
+0000001f: <LoadConstString>: <Reg8: 0, string_id: 31904>  # String: 'd' (Identifier)
+00000023: <Add>: <Reg8: 1, Reg8: 0, Reg8: 1>
+00000027: <GetEnvironment>: <Reg8: 3, UInt8: 0>
+0000002a: <LoadFromEnvironment>: <Reg8: 0, Reg8: 3, UInt8: 10>
+0000002e: <ToNumeric>: <Reg8: 0, Reg8: 0>
+00000031: <Inc>: <Reg8: 2, Reg8: 0>
+00000034: <StoreToEnvironment>: <Reg8: 3, UInt8: 10, Reg8: 2>
+00000038: <Add>: <Reg8: 0, Reg8: 1, Reg8: 0>
+0000003c: <Ret>: <Reg8: 0>

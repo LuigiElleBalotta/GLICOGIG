@@ -1,0 +1,15 @@
+# Function #19702 'mergeTraduzione'
+# offset=5240852 bytes=42
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+00000009: <LoadParam>: <Reg8: 1, UInt8: 2>
+0000000c: <StoreToEnvironment>: <Reg8: 0, UInt8: 1, Reg8: 1>
+00000010: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000013: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 5>
+00000017: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 130>  # String: 'forEach' (Identifier)
+0000001c: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 19703>  # Function: [#19703  of 95 bytes]: 2 params @ offset 0x004ff83e
+00000021: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+00000026: <LoadConstUndefined>: <Reg8: 0>
+00000028: <Ret>: <Reg8: 0>

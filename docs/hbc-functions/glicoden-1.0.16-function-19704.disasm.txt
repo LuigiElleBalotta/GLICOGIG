@@ -1,0 +1,72 @@
+# Function #19704 ''
+# offset=5240989 bytes=284
+
+00000000: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000003: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000006: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 0>
+0000000a: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 1, string_id: 16>  # String: 'b' (Identifier)
+0000000f: <LoadParam>: <Reg8: 0, UInt8: 2>
+00000012: <GetByVal>: <Reg8: 0, Reg8: 1, Reg8: 0>
+00000016: <JmpTrue>: <Addr8: 7, Reg8: 0>  # Address: 0000001d
+00000019: <LoadConstUndefined>: <Reg8: 1>
+0000001b: <Ret>: <Reg8: 1>
+0000001d: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+00000022: <LoadConstString>: <Reg8: 1, string_id: 31914>  # String: 'p' (Identifier)
+00000026: <JStrictEqualLong>: <Addr32: 210, Reg8: 3, Reg8: 1>  # Address: 000000f8
+0000002d: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+00000032: <LoadConstString>: <Reg8: 1, string_id: 190>  # String: 'nota' (Identifier)
+00000036: <JStrictEqualLong>: <Addr32: 194, Reg8: 3, Reg8: 1>  # Address: 000000f8
+0000003d: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+00000042: <LoadConstString>: <Reg8: 1, string_id: 37334>  # String: 'esempio' (Identifier)
+00000046: <JStrictEqual>: <Addr8: 112, Reg8: 3, Reg8: 1>  # Address: 000000b6
+0000004a: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+0000004f: <LoadConstString>: <Reg8: 1, string_id: 32816>  # String: 'link' (Identifier)
+00000053: <JStrictEqual>: <Addr8: 62, Reg8: 3, Reg8: 1>  # Address: 00000091
+00000057: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+0000005c: <LoadConstString>: <Reg8: 1, string_id: 41699>  # String: 'punti' (Identifier)
+00000060: <JStrictNotEqualLong>: <Addr32: 184, Reg8: 3, Reg8: 1>  # Address: 00000118
+00000067: <GetById>: <Reg8: 1, Reg8: 0, UInt8: 3, string_id: 34177>  # String: 'voci' (Identifier)
+0000006d: <JmpFalseLong>: <Addr32: 171, Reg8: 1>  # Address: 00000118
+00000073: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+00000076: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 1>
+0000007a: <LoadConstString>: <Reg8: 1, string_id: 34177>  # String: 'voci' (Identifier)
+0000007e: <Add>: <Reg8: 3, Reg8: 1, Reg8: 3>
+00000082: <GetById>: <Reg8: 1, Reg8: 0, UInt8: 3, string_id: 34177>  # String: 'voci' (Identifier)
+00000088: <PutByVal>: <Reg8: 2, Reg8: 3, Reg8: 1>
+0000008c: <JmpLong>: <Addr32: 140>  # Address: 00000118
+00000091: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 4, string_id: 41>  # String: 'label' (Identifier)
+00000096: <JmpFalseLong>: <Addr32: 130, Reg8: 1>  # Address: 00000118
+0000009c: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+0000009f: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 1>
+000000a3: <LoadConstString>: <Reg8: 1, string_id: 41>  # String: 'label' (Identifier)
+000000a7: <Add>: <Reg8: 3, Reg8: 1, Reg8: 3>
+000000ab: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 4, string_id: 41>  # String: 'label' (Identifier)
+000000b0: <PutByVal>: <Reg8: 2, Reg8: 3, Reg8: 1>
+000000b4: <Jmp>: <Addr8: 100>  # Address: 00000118
+000000b6: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 5, string_id: 243>  # String: 'testo' (Identifier)
+000000bb: <JmpFalse>: <Addr8: 27, Reg8: 1>  # Address: 000000d6
+000000be: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+000000c1: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 1>
+000000c5: <LoadConstString>: <Reg8: 1, string_id: 243>  # String: 'testo' (Identifier)
+000000c9: <Add>: <Reg8: 3, Reg8: 1, Reg8: 3>
+000000cd: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 5, string_id: 243>  # String: 'testo' (Identifier)
+000000d2: <PutByVal>: <Reg8: 2, Reg8: 3, Reg8: 1>
+000000d6: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 6, string_id: 75>  # String: 'cibo' (Identifier)
+000000db: <JmpFalse>: <Addr8: 61, Reg8: 1>  # Address: 00000118
+000000de: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+000000e1: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 1>
+000000e5: <LoadConstString>: <Reg8: 1, string_id: 75>  # String: 'cibo' (Identifier)
+000000e9: <Add>: <Reg8: 3, Reg8: 1, Reg8: 3>
+000000ed: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 6, string_id: 75>  # String: 'cibo' (Identifier)
+000000f2: <PutByVal>: <Reg8: 2, Reg8: 3, Reg8: 1>
+000000f6: <Jmp>: <Addr8: 34>  # Address: 00000118
+000000f8: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 5, string_id: 243>  # String: 'testo' (Identifier)
+000000fd: <JmpFalse>: <Addr8: 27, Reg8: 1>  # Address: 00000118
+00000100: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+00000103: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 1>
+00000107: <LoadConstString>: <Reg8: 1, string_id: 243>  # String: 'testo' (Identifier)
+0000010b: <Add>: <Reg8: 1, Reg8: 1, Reg8: 3>
+0000010f: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 5, string_id: 243>  # String: 'testo' (Identifier)
+00000114: <PutByVal>: <Reg8: 2, Reg8: 1, Reg8: 0>
+00000118: <LoadConstUndefined>: <Reg8: 0>
+0000011a: <Ret>: <Reg8: 0>

@@ -1,0 +1,119 @@
+# Function #18459 'datiAnelliOggi'
+# offset=4977079 bytes=465
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadConstUndefined>: <Reg8: 11>
+00000004: <LoadConstUndefined>: <Reg8: 1>
+00000006: <LoadConstUndefined>: <Reg8: 2>
+00000008: <LoadConstUndefined>: <Reg8: 12>
+0000000a: <GetEnvironment>: <Reg8: 3, UInt8: 0>
+0000000d: <LoadFromEnvironment>: <Reg8: 3, Reg8: 3, UInt8: 1>
+00000011: <GetById>: <Reg8: 3, Reg8: 3, UInt8: 1, string_id: 34178>  # String: 'vociDelGiorno' (Identifier)
+00000017: <Call1>: <Reg8: 6, Reg8: 3, Reg8: 11>
+0000001b: <GetByIdShort>: <Reg8: 3, Reg8: 6, UInt8: 2, string_id: 171>  # String: 'length' (Identifier)
+00000020: <JmpTrue>: <Addr8: 15, Reg8: 3>  # Address: 0000002f
+00000023: <NewObjectWithBuffer>: <Reg8: 3, UInt16: 3, UInt16: 3, UInt16: 43182, UInt16: 35252>  # Object: {'equilibrio': 0, 'freni': 0, 'varieta': 0}
+0000002d: <Ret>: <Reg8: 3>
+0000002f: <GetByIdShort>: <Reg8: 4, Reg8: 6, UInt8: 3, string_id: 119>  # String: 'filter' (Identifier)
+00000034: <CreateClosure>: <Reg8: 3, Reg8: 0, function_id: 18460>  # Function: [#18460  of 34 bytes]: 2 params @ offset 0x004bf388
+00000039: <Call2>: <Reg8: 3, Reg8: 4, Reg8: 6, Reg8: 3>
+0000003e: <GetByIdShort>: <Reg8: 7, Reg8: 3, UInt8: 2, string_id: 171>  # String: 'length' (Identifier)
+00000043: <GetGlobalObject>: <Reg8: 5>
+00000045: <TryGetById>: <Reg8: 8, Reg8: 5, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+0000004b: <GetByIdShort>: <Reg8: 4, Reg8: 8, UInt8: 5, string_id: 37>  # String: 'round' (Identifier)
+00000050: <GetByIdShort>: <Reg8: 3, Reg8: 6, UInt8: 2, string_id: 171>  # String: 'length' (Identifier)
+00000055: <Div>: <Reg8: 3, Reg8: 7, Reg8: 3>
+00000059: <LoadConstUInt8>: <Reg8: 7, UInt8: 100>
+0000005c: <Mul>: <Reg8: 3, Reg8: 3, Reg8: 7>
+00000060: <Call2>: <Reg8: 3, Reg8: 4, Reg8: 8, Reg8: 3>
+00000065: <LoadConstZero>: <Reg8: 10>
+00000067: <LoadConstZero>: <Reg8: 1>
+00000069: <LoadConstZero>: <Reg8: 2>
+0000006b: <Mov>: <Reg8: 9, Reg8: 6>
+0000006e: <IteratorBegin>: <Reg8: 8, Reg8: 9>
+00000071: <LoadConstUInt8>: <Reg8: 4, UInt8: 2>
+00000074: <IteratorNext>: <Reg8: 15, Reg8: 8, Reg8: 9>
+00000078: <Mov>: <Reg8: 13, Reg8: 8>
+0000007b: <JStrictEqual>: <Addr8: 107, Reg8: 13, Reg8: 11>  # Address: 000000e6
+0000007f: <Mov>: <Reg8: 12, Reg8: 15>
+00000082: <Mov>: <Reg8: 14, Reg8: 1>
+00000085: <GetById>: <Reg8: 15, Reg8: 15, UInt8: 6, string_id: 32041>  # String: 'carbo' (Identifier)
+0000008b: <Mov>: <Reg8: 13, Reg8: 15>
+0000008e: <JmpTrue>: <Addr8: 5, Reg8: 15>  # Address: 00000093
+00000091: <LoadConstZero>: <Reg8: 13>
+00000093: <Add>: <Reg8: 1, Reg8: 14, Reg8: 13>
+00000097: <Mov>: <Reg8: 14, Reg8: 2>
+0000009a: <Mov>: <Reg8: 15, Reg8: 12>
+0000009d: <GetById>: <Reg8: 15, Reg8: 15, UInt8: 7, string_id: 32250>  # String: 'fibre' (Identifier)
+000000a3: <Mov>: <Reg8: 13, Reg8: 15>
+000000a6: <JmpTrue>: <Addr8: 5, Reg8: 15>  # Address: 000000ab
+000000a9: <LoadConstZero>: <Reg8: 13>
+000000ab: <Mul>: <Reg8: 15, Reg8: 13, Reg8: 4>
+000000af: <Mov>: <Reg8: 16, Reg8: 12>
+000000b2: <GetById>: <Reg8: 16, Reg8: 16, UInt8: 8, string_id: 32608>  # String: 'prot' (Identifier)
+000000b8: <Mov>: <Reg8: 13, Reg8: 16>
+000000bb: <JmpTrue>: <Addr8: 5, Reg8: 16>  # Address: 000000c0
+000000be: <LoadConstZero>: <Reg8: 13>
+000000c0: <Add>: <Reg8: 15, Reg8: 15, Reg8: 13>
+000000c4: <Mov>: <Reg8: 16, Reg8: 12>
+000000c7: <GetById>: <Reg8: 16, Reg8: 16, UInt8: 9, string_id: 32318>  # String: 'grassi' (Identifier)
+000000cd: <Mov>: <Reg8: 13, Reg8: 16>
+000000d0: <JmpTrue>: <Addr8: 5, Reg8: 16>  # Address: 000000d5
+000000d3: <LoadConstZero>: <Reg8: 13>
+000000d5: <Add>: <Reg8: 13, Reg8: 15, Reg8: 13>
+000000d9: <Add>: <Reg8: 2, Reg8: 14, Reg8: 13>
+000000dd: <Jmp>: <Addr8: -105>  # Address: 00000074
+000000df: <Catch>: <Reg8: 4>
+000000e1: <IteratorClose>: <Reg8: 8, UInt8: 1>
+000000e4: <Throw>: <Reg8: 4>
+000000e6: <Mov>: <Reg8: 4, Reg8: 1>
+000000e9: <LoadConstUInt8>: <Reg8: 13, UInt8: 1>
+000000ec: <Mov>: <Reg8: 12, Reg8: 13>
+000000ef: <JNotGreater>: <Addr8: 8, Reg8: 4, Reg8: 10>  # Address: 000000f7
+000000f3: <Div>: <Reg8: 12, Reg8: 2, Reg8: 1>
+000000f7: <TryGetById>: <Reg8: 4, Reg8: 5, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+000000fd: <GetByIdShort>: <Reg8: 2, Reg8: 4, UInt8: 5, string_id: 37>  # String: 'round' (Identifier)
+00000102: <TryGetById>: <Reg8: 9, Reg8: 5, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+00000108: <GetByIdShort>: <Reg8: 8, Reg8: 9, UInt8: 10, string_id: 153>  # String: 'max' (Identifier)
+0000010d: <TryGetById>: <Reg8: 11, Reg8: 5, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+00000113: <GetById>: <Reg8: 1, Reg8: 11, UInt8: 11, string_id: 32390>  # String: 'min' (Identifier)
+00000119: <Call3>: <Reg8: 1, Reg8: 1, Reg8: 11, Reg8: 13, Reg8: 12>
+0000011f: <Call3>: <Reg8: 1, Reg8: 8, Reg8: 9, Reg8: 10, Reg8: 1>
+00000125: <Mul>: <Reg8: 1, Reg8: 1, Reg8: 7>
+00000129: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 4, Reg8: 1>
+0000012e: <TryGetById>: <Reg8: 8, Reg8: 5, UInt8: 12, string_id: 18>  # String: 'Set' (Identifier)
+00000134: <GetByIdShort>: <Reg8: 4, Reg8: 6, UInt8: 13, string_id: 177>  # String: 'map' (Identifier)
+00000139: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18461>  # Function: [#18461  of 37 bytes]: 2 params @ offset 0x004bf3aa
+0000013e: <Call2>: <Reg8: 19, Reg8: 4, Reg8: 6, Reg8: 1>
+00000143: <GetByIdShort>: <Reg8: 4, Reg8: 8, UInt8: 14, string_id: 157>  # String: 'prototype' (Identifier)
+00000148: <CreateThis>: <Reg8: 4, Reg8: 4, Reg8: 8>
+0000014c: <Mov>: <Reg8: 20, Reg8: 4>
+0000014f: <Construct>: <Reg8: 1, Reg8: 8, UInt8: 2>
+00000153: <SelectObject>: <Reg8: 8, Reg8: 4, Reg8: 1>
+00000157: <TryGetById>: <Reg8: 4, Reg8: 5, UInt8: 12, string_id: 18>  # String: 'Set' (Identifier)
+0000015d: <GetByIdShort>: <Reg8: 1, Reg8: 6, UInt8: 13, string_id: 177>  # String: 'map' (Identifier)
+00000162: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18462>  # Function: [#18462  of 19 bytes]: 2 params @ offset 0x004bf3cf
+00000167: <Call2>: <Reg8: 19, Reg8: 1, Reg8: 6, Reg8: 0>
+0000016c: <GetByIdShort>: <Reg8: 1, Reg8: 4, UInt8: 14, string_id: 157>  # String: 'prototype' (Identifier)
+00000171: <CreateThis>: <Reg8: 1, Reg8: 1, Reg8: 4>
+00000175: <Mov>: <Reg8: 20, Reg8: 1>
+00000178: <Construct>: <Reg8: 0, Reg8: 4, UInt8: 2>
+0000017c: <SelectObject>: <Reg8: 0, Reg8: 1, Reg8: 0>
+00000180: <TryGetById>: <Reg8: 4, Reg8: 5, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+00000186: <GetByIdShort>: <Reg8: 1, Reg8: 4, UInt8: 5, string_id: 37>  # String: 'round' (Identifier)
+0000018b: <TryGetById>: <Reg8: 6, Reg8: 5, UInt8: 4, string_id: 12>  # String: 'Math' (Identifier)
+00000191: <GetById>: <Reg8: 5, Reg8: 6, UInt8: 11, string_id: 32390>  # String: 'min' (Identifier)
+00000197: <GetByIdShort>: <Reg8: 9, Reg8: 8, UInt8: 15, string_id: 227>  # String: 'size' (Identifier)
+0000019c: <LoadConstUInt8>: <Reg8: 8, UInt8: 12>
+0000019f: <Mul>: <Reg8: 8, Reg8: 9, Reg8: 8>
+000001a3: <GetByIdShort>: <Reg8: 9, Reg8: 0, UInt8: 15, string_id: 227>  # String: 'size' (Identifier)
+000001a8: <LoadConstUInt8>: <Reg8: 0, UInt8: 8>
+000001ab: <Mul>: <Reg8: 0, Reg8: 9, Reg8: 0>
+000001af: <AddN>: <Reg8: 0, Reg8: 8, Reg8: 0>
+000001b3: <Call3>: <Reg8: 0, Reg8: 5, Reg8: 6, Reg8: 7, Reg8: 0>
+000001b9: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 4, Reg8: 0>
+000001be: <NewObject>: <Reg8: 0>
+000001c0: <PutNewOwnById>: <Reg8: 0, Reg8: 3, string_id: 38793>  # String: 'equilibrio' (Identifier)
+000001c5: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 35354>  # String: 'freni' (Identifier)
+000001ca: <PutNewOwnById>: <Reg8: 0, Reg8: 1, string_id: 47645>  # String: 'varieta' (Identifier)
+000001cf: <Ret>: <Reg8: 0>

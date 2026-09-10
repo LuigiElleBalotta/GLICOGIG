@@ -1,0 +1,41 @@
+# Function #18421 'stimaPiattoIntero'
+# offset=4972394 bytes=148
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000005: <LoadParam>: <Reg8: 5, UInt8: 2>
+00000008: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+0000000c: <JmpFalse>: <Addr8: 6, Reg8: 1>  # Address: 00000012
+0000000f: <JmpTrue>: <Addr8: 7, Reg8: 5>  # Address: 00000016
+00000012: <LoadConstNull>: <Reg8: 1>
+00000014: <Ret>: <Reg8: 1>
+00000016: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000019: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 4>
+0000001d: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 35610>  # String: 'find' (Identifier)
+00000023: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18422>  # Function: [#18422  of 28 bytes]: 2 params @ offset 0x004bde5b
+00000028: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 2, Reg8: 0>
+0000002d: <JmpFalse>: <Addr8: 12, Reg8: 1>  # Address: 00000039
+00000030: <GetById>: <Reg8: 0, Reg8: 1, UInt8: 2, string_id: 34181>  # String: 'floor' (Identifier)
+00000036: <JmpTrue>: <Addr8: 7, Reg8: 0>  # Address: 0000003d
+00000039: <LoadConstNull>: <Reg8: 0>
+0000003b: <Ret>: <Reg8: 0>
+0000003d: <GetGlobalObject>: <Reg8: 0>
+0000003f: <TryGetById>: <Reg8: 4, Reg8: 0, UInt8: 3, string_id: 12>  # String: 'Math' (Identifier)
+00000045: <GetByIdShort>: <Reg8: 3, Reg8: 4, UInt8: 4, string_id: 37>  # String: 'round' (Identifier)
+0000004a: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 5, string_id: 43588>  # String: 'carbo100' (Identifier)
+00000050: <Mul>: <Reg8: 2, Reg8: 2, Reg8: 5>
+00000054: <LoadConstUInt8>: <Reg8: 5, UInt8: 100>
+00000057: <Div>: <Reg8: 2, Reg8: 2, Reg8: 5>
+0000005b: <Call2>: <Reg8: 3, Reg8: 3, Reg8: 4, Reg8: 2>
+00000060: <TryGetById>: <Reg8: 4, Reg8: 0, UInt8: 3, string_id: 12>  # String: 'Math' (Identifier)
+00000066: <GetByIdShort>: <Reg8: 2, Reg8: 4, UInt8: 4, string_id: 37>  # String: 'round' (Identifier)
+0000006b: <GetByIdShort>: <Reg8: 0, Reg8: 1, UInt8: 6, string_id: 31>  # String: 'ig' (Identifier)
+00000070: <Mul>: <Reg8: 0, Reg8: 0, Reg8: 3>
+00000074: <Div>: <Reg8: 0, Reg8: 0, Reg8: 5>
+00000078: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 4, Reg8: 0>
+0000007d: <NewObject>: <Reg8: 0>
+0000007f: <PutNewOwnById>: <Reg8: 0, Reg8: 3, string_id: 32041>  # String: 'carbo' (Identifier)
+00000084: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 32303>  # String: 'cg' (Identifier)
+00000089: <GetByIdShort>: <Reg8: 1, Reg8: 1, UInt8: 6, string_id: 31>  # String: 'ig' (Identifier)
+0000008e: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 1, string_id: 31>  # String: 'ig' (Identifier)
+00000092: <Ret>: <Reg8: 0>

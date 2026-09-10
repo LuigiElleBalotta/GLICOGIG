@@ -1,0 +1,82 @@
+# Function #19755 '?anon_0_'
+# offset=5260754 bytes=285
+
+00000000: <StartGenerator>: <>
+00000001: <ResumeGenerator>: <Reg8: 0, Reg8: 1>
+00000004: <JmpTrueLong>: <Addr32: 278, Reg8: 1>  # Address: 0000011a
+0000000a: <GetEnvironment>: <Reg8: 4, UInt8: 2>
+0000000d: <LoadFromEnvironment>: <Reg8: 1, Reg8: 4, UInt8: 7>
+00000011: <LoadConstUndefined>: <Reg8: 9>
+00000013: <Call1>: <Reg8: 8, Reg8: 1, Reg8: 9>
+00000017: <LoadFromEnvironment>: <Reg8: 1, Reg8: 4, UInt8: 1>
+0000001b: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 1, string_id: 34877>  # String: 'getJSON' (Identifier)
+00000021: <LoadFromEnvironment>: <Reg8: 1, Reg8: 4, UInt8: 1>
+00000025: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 2, string_id: 32909>  # String: 'K' (Identifier)
+0000002b: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 3, string_id: 55223>  # String: 'quizGiorno' (Identifier)
+00000031: <LoadConstInt>: <Reg8: 6, Imm32: -1>
+00000037: <Call3>: <Reg8: 1, Reg8: 2, Reg8: 9, Reg8: 1, Reg8: 6>
+0000003d: <SaveGenerator>: <Addr8: 4>  # Address: 00000041
+0000003f: <Ret>: <Reg8: 1>
+00000041: <ResumeGenerator>: <Reg8: 1, Reg8: 2>
+00000044: <JmpTrueLong>: <Addr32: 211, Reg8: 2>  # Address: 00000117
+0000004a: <LoadFromEnvironment>: <Reg8: 2, Reg8: 4, UInt8: 1>
+0000004e: <GetById>: <Reg8: 3, Reg8: 2, UInt8: 1, string_id: 34877>  # String: 'getJSON' (Identifier)
+00000054: <LoadFromEnvironment>: <Reg8: 2, Reg8: 4, UInt8: 1>
+00000058: <GetById>: <Reg8: 2, Reg8: 2, UInt8: 2, string_id: 32909>  # String: 'K' (Identifier)
+0000005e: <GetById>: <Reg8: 2, Reg8: 2, UInt8: 4, string_id: 56014>  # String: 'quizStreak' (Identifier)
+00000064: <LoadConstZero>: <Reg8: 7>
+00000066: <Call3>: <Reg8: 2, Reg8: 3, Reg8: 9, Reg8: 2, Reg8: 7>
+0000006c: <SaveGenerator>: <Addr8: 4>  # Address: 00000070
+0000006e: <Ret>: <Reg8: 2>
+00000070: <ResumeGenerator>: <Reg8: 2, Reg8: 3>
+00000073: <JmpTrueLong>: <Addr32: 161, Reg8: 3>  # Address: 00000114
+00000079: <LoadFromEnvironment>: <Reg8: 3, Reg8: 4, UInt8: 1>
+0000007d: <GetById>: <Reg8: 5, Reg8: 3, UInt8: 1, string_id: 34877>  # String: 'getJSON' (Identifier)
+00000083: <LoadFromEnvironment>: <Reg8: 3, Reg8: 4, UInt8: 1>
+00000087: <GetById>: <Reg8: 3, Reg8: 3, UInt8: 2, string_id: 32909>  # String: 'K' (Identifier)
+0000008d: <GetById>: <Reg8: 3, Reg8: 3, UInt8: 5, string_id: 36329>  # String: 'quizBest' (Identifier)
+00000093: <Call3>: <Reg8: 3, Reg8: 5, Reg8: 9, Reg8: 3, Reg8: 7>
+00000099: <SaveGenerator>: <Addr8: 4>  # Address: 0000009d
+0000009b: <Ret>: <Reg8: 3>
+0000009d: <ResumeGenerator>: <Reg8: 3, Reg8: 5>
+000000a0: <JmpTrue>: <Addr8: 113, Reg8: 5>  # Address: 00000111
+000000a3: <LoadFromEnvironment>: <Reg8: 5, Reg8: 4, UInt8: 1>
+000000a7: <GetById>: <Reg8: 5, Reg8: 5, UInt8: 1, string_id: 34877>  # String: 'getJSON' (Identifier)
+000000ad: <LoadFromEnvironment>: <Reg8: 4, Reg8: 4, UInt8: 1>
+000000b1: <GetById>: <Reg8: 4, Reg8: 4, UInt8: 2, string_id: 32909>  # String: 'K' (Identifier)
+000000b7: <GetById>: <Reg8: 4, Reg8: 4, UInt8: 6, string_id: 54478>  # String: 'quizScoreOggi' (Identifier)
+000000bd: <Call3>: <Reg8: 4, Reg8: 5, Reg8: 9, Reg8: 4, Reg8: 6>
+000000c3: <SaveGenerator>: <Addr8: 4>  # Address: 000000c7
+000000c5: <Ret>: <Reg8: 4>
+000000c7: <ResumeGenerator>: <Reg8: 4, Reg8: 5>
+000000ca: <JmpTrue>: <Addr8: 68, Reg8: 5>  # Address: 0000010e
+000000cd: <StrictEq>: <Reg8: 9, Reg8: 1, Reg8: 8>
+000000d1: <NewObject>: <Reg8: 5>
+000000d3: <JmpTrue>: <Addr8: 16, Reg8: 9>  # Address: 000000e3
+000000d6: <LoadConstUInt8>: <Reg8: 6, UInt8: 1>
+000000d9: <Sub>: <Reg8: 8, Reg8: 8, Reg8: 6>
+000000dd: <LoadConstZero>: <Reg8: 6>
+000000df: <JStrictNotEqual>: <Addr8: 7, Reg8: 1, Reg8: 8>  # Address: 000000e6
+000000e3: <Mov>: <Reg8: 6, Reg8: 2>
+000000e6: <PutNewOwnById>: <Reg8: 5, Reg8: 6, string_id: 46166>  # String: 'streak' (Identifier)
+000000eb: <PutNewOwnById>: <Reg8: 5, Reg8: 3, string_id: 33310>  # String: 'record' (Identifier)
+000000f0: <PutNewOwnById>: <Reg8: 5, Reg8: 9, string_id: 42818>  # String: 'fattoOggi' (Identifier)
+000000f5: <LoadConstNull>: <Reg8: 6>
+000000f7: <JmpFalse>: <Addr8: 15, Reg8: 9>  # Address: 00000106
+000000fa: <GreaterEq>: <Reg8: 7, Reg8: 4, Reg8: 7>
+000000fe: <LoadConstNull>: <Reg8: 6>
+00000100: <JmpFalse>: <Addr8: 6, Reg8: 7>  # Address: 00000106
+00000103: <Mov>: <Reg8: 6, Reg8: 4>
+00000106: <PutNewOwnById>: <Reg8: 5, Reg8: 6, string_id: 54475>  # String: 'punteggioOggi' (Identifier)
+0000010b: <CompleteGenerator>: <>
+0000010c: <Ret>: <Reg8: 5>
+0000010e: <CompleteGenerator>: <>
+0000010f: <Ret>: <Reg8: 4>
+00000111: <CompleteGenerator>: <>
+00000112: <Ret>: <Reg8: 3>
+00000114: <CompleteGenerator>: <>
+00000115: <Ret>: <Reg8: 2>
+00000117: <CompleteGenerator>: <>
+00000118: <Ret>: <Reg8: 1>
+0000011a: <CompleteGenerator>: <>
+0000011b: <Ret>: <Reg8: 0>

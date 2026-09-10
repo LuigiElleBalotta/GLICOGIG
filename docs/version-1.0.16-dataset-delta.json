@@ -1,0 +1,6475 @@
+{
+  "method": {
+    "description": "Confronto ricorsivo per ID; i campi con suffisso lingua sono esclusi dal delta non-localizzazione.",
+    "translation_suffixes_excluded": [
+      "_en",
+      "_es",
+      "_de",
+      "_fr"
+    ],
+    "list_comparison": "posizionale e ricorsivo",
+    "sources": {
+      "catalog_baseline": "docs\\extracted\\glicoden-1.0.0-catalog-14256.json",
+      "catalog_candidate": "docs\\extracted\\glicoden-1.0.16-catalog-17813.json",
+      "recipes_baseline": "docs\\extracted\\glicoden-1.0.0-recipes-14257.json",
+      "recipes_candidate": "docs\\extracted\\glicoden-1.0.16-recipes-17814.json"
+    }
+  },
+  "catalog": {
+    "kind": "catalog",
+    "root_key": "alimenti",
+    "counts": {
+      "baseline": 228,
+      "candidate": 307,
+      "common": 228,
+      "added": 79,
+      "removed": 0,
+      "unchanged": 0,
+      "translation_only_changed": 51,
+      "non_translation_changed": 177
+    },
+    "added_ids": [
+      "acqua-frizzante",
+      "ali-di-pollo",
+      "amaranto-cotto",
+      "besciamella",
+      "bevanda-zero",
+      "brasato",
+      "brioche",
+      "bruschetta",
+      "burro-di-arachidi",
+      "canederli",
+      "cannolo",
+      "carpaccio-di-manzo",
+      "ciambella",
+      "cicoria-cotta",
+      "cioccolato-bianco",
+      "costine-di-maiale",
+      "cotoletta-milanese",
+      "crauti",
+      "crepe",
+      "crostata",
+      "energy-drink",
+      "eritritolo",
+      "falafel",
+      "fiocchi-di-avena",
+      "fiocchi-di-latte",
+      "gallette-di-riso",
+      "gattuccio",
+      "ginseng-bevanda-zuccherata",
+      "grano-saraceno-cotto",
+      "gulasch",
+      "gyoza",
+      "hummus",
+      "impasto-pizza",
+      "insalata-di-alghe",
+      "maki-hosomaki",
+      "minestrone",
+      "mochi",
+      "nespole",
+      "nigiri",
+      "onigiri",
+      "orzotto-orzo-perlato-cotto",
+      "pancake",
+      "pane-croccante-segale",
+      "panna-cotta",
+      "pasta-cotta-al-dente",
+      "pasta-e-fagioli",
+      "pasta-fresca-alluovo-cotta",
+      "pasta-sfoglia-cotta",
+      "patatine-fritte",
+      "pesce-spada",
+      "pesto-rosso",
+      "pita",
+      "pizzoccheri-cotti",
+      "pollo-teriyaki",
+      "proteine-polvere",
+      "ramen-udon",
+      "rapa",
+      "riso-parboiled-cotto",
+      "riso-per-sushi",
+      "roast-beef",
+      "salsa-di-soia",
+      "sashimi",
+      "sciroppo-d-acero",
+      "seitan",
+      "semi-di-chia",
+      "semi-di-zucca",
+      "spinaci-crudi",
+      "stinco-maiale",
+      "surimi",
+      "taralli",
+      "tempura",
+      "tiramisu",
+      "tisana",
+      "torta-dolce",
+      "tortellini",
+      "totani",
+      "uramaki",
+      "valeriana-songino",
+      "zuppa-di-miso"
+    ],
+    "removed_ids": [],
+    "unchanged_ids": [],
+    "translation_only_changed_ids": [
+      "aceto-balsamico",
+      "aglio-crudo",
+      "asparagi-cotti",
+      "bietola-cotta",
+      "brie",
+      "broccoli-cotti",
+      "burrata",
+      "burro",
+      "carciofo-cotto",
+      "carota-cruda",
+      "cavoletti-di-bruxelles-cotti",
+      "cavolfiore-cotto",
+      "cavolo-cotto",
+      "cavolo-nero-cotto",
+      "cetriolo-crudo",
+      "cheddar",
+      "cipolla-cruda",
+      "emmental",
+      "fagiolini-cotti",
+      "feta",
+      "finocchio-crudo",
+      "fontina",
+      "formaggio-spalmabile",
+      "funghi-cotti",
+      "gorgonzola",
+      "ketchup",
+      "lattuga-romana-cruda",
+      "maionese",
+      "mascarpone",
+      "mozzarella",
+      "olive-nere",
+      "panna-da-montare",
+      "parmigiano",
+      "pecorino-romano",
+      "peperone-rosso-crudo",
+      "pesto",
+      "pomodoro-crudo",
+      "porro-cotto",
+      "provolone",
+      "radicchio",
+      "ravanelli",
+      "robiola",
+      "rucola",
+      "salsa-di-pomodoro",
+      "scamorza",
+      "sedano-crudo",
+      "senape",
+      "spinaci-cotti",
+      "stracchino",
+      "verza",
+      "zucchine-cotte"
+    ],
+    "non_translation_changed_ids": [
+      "acciughe-sottolio",
+      "agnello",
+      "albicocca",
+      "albicocche-secche",
+      "albume-duovo",
+      "anacardi",
+      "ananas",
+      "anguria",
+      "arachidi",
+      "arancia",
+      "avocado",
+      "baguette",
+      "banana",
+      "barbabietola-cotta",
+      "bibita-tipo-cola",
+      "birra",
+      "biscotti-frollini",
+      "branzino-cotto",
+      "bresaola",
+      "bulgur-cotto",
+      "cacao-amaro-in-polvere",
+      "cachi",
+      "caffe-espresso",
+      "calamari",
+      "cappuccino",
+      "caramelle",
+      "castagne-arrostite",
+      "ceci-cotti",
+      "ciliegie",
+      "cioccolato-al-latte",
+      "cioccolato-fondente",
+      "cocco-fresco",
+      "coniglio-cotto",
+      "controfiletto-di-manzo-cotto",
+      "coppa",
+      "corn-flakes",
+      "cornetto-croissant",
+      "cotechino",
+      "couscous-cotto",
+      "cozze-cotte",
+      "crackers",
+      "crema-alla-nocciola",
+      "culatello",
+      "datteri",
+      "edamame",
+      "fagioli-borlotti-cotti",
+      "fagioli-cannellini-cotti",
+      "fagioli-neri-cotti",
+      "farina-00",
+      "farro-cotto",
+      "fave-cotte",
+      "fette-biscottate",
+      "fichi",
+      "fichi-secchi",
+      "focaccia",
+      "fragole",
+      "gamberi-cotti",
+      "gelato-alla-vaniglia",
+      "gnocchi-di-patate",
+      "grissini",
+      "guanciale",
+      "hamburger-di-manzo",
+      "kefir",
+      "kiwi",
+      "krapfen",
+      "lamponi",
+      "latte-di-mandorla",
+      "latte-di-soia",
+      "latte-intero",
+      "latte-scremato",
+      "lenticchie-cotte",
+      "limoncello",
+      "limone",
+      "lonza-di-maiale-cotta",
+      "lupini",
+      "mais-dolce-cotto",
+      "mandarino",
+      "mandorle",
+      "mango",
+      "manzo-macinato-cotto",
+      "marmellata",
+      "mela-con-buccia",
+      "melanzana-cotta",
+      "melograno",
+      "melone",
+      "merluzzo-cotto",
+      "miele",
+      "miglio-cotto",
+      "mirtilli",
+      "more",
+      "mortadella",
+      "muesli",
+      "nocciole",
+      "noci",
+      "olio-di-semi-di-girasole",
+      "olio-extravergine-doliva",
+      "orata",
+      "orzo-perlato-cotto",
+      "pan-di-spagna",
+      "pancetta-cotta",
+      "pane-bianco",
+      "pane-di-segale",
+      "pane-integrale",
+      "papaya",
+      "passata-di-pomodoro",
+      "pasta-integrale-cotta",
+      "patata-al-forno",
+      "patata-dolce-cotta",
+      "patata-lessa",
+      "patatine-in-busta",
+      "pera",
+      "pesca",
+      "petto-di-pollo-cotto",
+      "petto-di-tacchino-cotto",
+      "piadina",
+      "pinoli",
+      "piselli-cotti",
+      "piselli-spezzati-cotti",
+      "pistacchi",
+      "pizza-margherita",
+      "polenta-semolino-di-mais-cotto",
+      "polpo-cotto",
+      "pompelmo",
+      "popcorn",
+      "porchetta",
+      "porridge-davena",
+      "prosciutto-cotto",
+      "prosciutto-crudo",
+      "prosecco",
+      "prugna",
+      "prugne-secche",
+      "quinoa-cotta",
+      "ribes",
+      "ricotta",
+      "riso-basmati",
+      "riso-bianco-cotto",
+      "riso-integrale-cotto",
+      "riso-venere",
+      "salame",
+      "salatini-pretzel",
+      "salmone-affumicato",
+      "salmone-cotto",
+      "salsiccia-cotta",
+      "sardine-sottolio",
+      "savoiardi",
+      "seppie",
+      "sgombro-cotto",
+      "sogliola",
+      "soia-cotta",
+      "soppressata",
+      "spaghetti-cotti-al-dente",
+      "speck",
+      "spritz",
+      "succo-darancia",
+      "succo-di-mela",
+      "te-nero",
+      "tempeh",
+      "tofu",
+      "tonno-al-naturale",
+      "tortilla-di-frumento",
+      "tortilla-di-mais",
+      "trota-cotta",
+      "uovo-crudo-intero",
+      "uovo-sodo",
+      "uva",
+      "uvetta",
+      "vino-bianco",
+      "vino-rosso",
+      "vitello-cotto",
+      "vongole-cotte",
+      "wafer",
+      "wurstel",
+      "yogurt-greco-bianco",
+      "yogurt-intero-bianco",
+      "yogurt-magro",
+      "zucca-cotta",
+      "zucchero-bianco"
+    ],
+    "non_translation_changed_record_counts_by_classification": {
+      "behavior_or_visibility": 8,
+      "editorial_or_source": 176,
+      "italian_content_or_structure": 18,
+      "nutrition_or_portion": 33
+    },
+    "translation_field_change_count_in_common_records": 3648,
+    "most_common_raw_change_paths": {
+      "$.categoria_de": 228,
+      "$.categoria_en": 228,
+      "$.categoria_es": 228,
+      "$.categoria_fr": 228,
+      "$.nome_de": 228,
+      "$.nome_en": 228,
+      "$.nome_es": 228,
+      "$.nome_fr": 228,
+      "$.sinonimi_de": 228,
+      "$.sinonimi_en": 228,
+      "$.sinonimi_es": 228,
+      "$.sinonimi_fr": 228,
+      "$.sottocategoria_de": 228,
+      "$.sottocategoria_en": 228,
+      "$.sottocategoria_es": 228,
+      "$.sottocategoria_fr": 228,
+      "$.tipo_dato_ig": 173,
+      "$.ig_da_verificare": 109,
+      "$.data_aggiornamento": 81,
+      "$.stato_editoriale": 76,
+      "$.carico_glicemico_porzione": 19,
+      "$.formula_cg": 18,
+      "$.ig_medio": 16,
+      "$.ig_max": 15,
+      "$.ig_min": 15,
+      "$.sinonimi[0]": 15,
+      "$.fascia_impatto": 14,
+      "$.ig_affidabilita": 12,
+      "$.sinonimi[1]": 11,
+      "$.fonte_ig": 10,
+      "$.ig_variabile": 7,
+      "$.sinonimi[2]": 6,
+      "$.carboidrati_disponibili_g": 5,
+      "$.carboidrati_disponibili_porzione_g": 5,
+      "$.carboidrati_totali_g": 5,
+      "$.zuccheri_g": 5,
+      "$.nota_curatela": 3,
+      "$.revisione.nota": 3,
+      "$.sinonimi[3]": 3,
+      "$.energia_kcal": 2,
+      "$.nome": 2,
+      "$.fibre_g": 1,
+      "$.fonte_macro": 1,
+      "$.fonte_macro_dataType": 1,
+      "$.fonte_macro_descrizione": 1,
+      "$.fonte_macro_fdcId": 1,
+      "$.grassi_saturi_g": 1,
+      "$.grassi_totali_g": 1,
+      "$.proteine_g": 1,
+      "$.revisione.da": 1,
+      "$.revisione.data": 1,
+      "$.revisione.esito": 1,
+      "$.sodio_mg": 1,
+      "$.nascondi": 1,
+      "$.sinonimi[4]": 1,
+      "$.sinonimi[5]": 1,
+      "$.sinonimi[6]": 1,
+      "$.sinonimi[7]": 1,
+      "$.sinonimi[8]": 1,
+      "$.sinonimi[9]": 1,
+      "$.sinonimi[10]": 1,
+      "$.sinonimi[11]": 1,
+      "$.porzione_standard_g": 1,
+      "$.revisione": 1
+    },
+    "non_translation_change_paths": {
+      "$.carboidrati_disponibili_g": 5,
+      "$.carboidrati_disponibili_porzione_g": 5,
+      "$.carboidrati_totali_g": 5,
+      "$.carico_glicemico_porzione": 19,
+      "$.data_aggiornamento": 81,
+      "$.energia_kcal": 2,
+      "$.fascia_impatto": 14,
+      "$.fibre_g": 1,
+      "$.fonte_ig": 10,
+      "$.fonte_macro": 1,
+      "$.fonte_macro_dataType": 1,
+      "$.fonte_macro_descrizione": 1,
+      "$.fonte_macro_fdcId": 1,
+      "$.formula_cg": 18,
+      "$.grassi_saturi_g": 1,
+      "$.grassi_totali_g": 1,
+      "$.ig_affidabilita": 12,
+      "$.ig_da_verificare": 109,
+      "$.ig_max": 15,
+      "$.ig_medio": 16,
+      "$.ig_min": 15,
+      "$.ig_variabile": 7,
+      "$.nascondi": 1,
+      "$.nome": 2,
+      "$.nota_curatela": 3,
+      "$.porzione_standard_g": 1,
+      "$.proteine_g": 1,
+      "$.revisione": 1,
+      "$.revisione.da": 1,
+      "$.revisione.data": 1,
+      "$.revisione.esito": 1,
+      "$.revisione.nota": 3,
+      "$.sinonimi[0]": 15,
+      "$.sinonimi[10]": 1,
+      "$.sinonimi[11]": 1,
+      "$.sinonimi[1]": 11,
+      "$.sinonimi[2]": 6,
+      "$.sinonimi[3]": 3,
+      "$.sinonimi[4]": 1,
+      "$.sinonimi[5]": 1,
+      "$.sinonimi[6]": 1,
+      "$.sinonimi[7]": 1,
+      "$.sinonimi[8]": 1,
+      "$.sinonimi[9]": 1,
+      "$.sodio_mg": 1,
+      "$.stato_editoriale": 76,
+      "$.tipo_dato_ig": 173,
+      "$.zuccheri_g": 5
+    },
+    "meta_changes": [
+      {
+        "path": "$._meta.totale_alimenti",
+        "operation": "added",
+        "after": 240
+      }
+    ],
+    "changed_records": [
+      {
+        "id": "acciughe-sottolio",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "agnello",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "albicocca",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 1
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.nota_curatela",
+            "operation": "added",
+            "after": " IG 57: valore pubblicato per albicocca fresca (range 34-57), tenuto il piu prudente."
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "albicocche-secche",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "albume-duovo",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "anacardi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "ananas",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "anguria",
+        "change_count": 24,
+        "classifications": {
+          "editorial_or_source": 12,
+          "nutrition_or_portion": 12
+        },
+        "changes": [
+          {
+            "path": "$.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 7.15,
+            "after": 3.7
+          },
+          {
+            "path": "$.carboidrati_disponibili_porzione_g",
+            "operation": "changed",
+            "before": 14.3,
+            "after": 7.4
+          },
+          {
+            "path": "$.carboidrati_totali_g",
+            "operation": "changed",
+            "before": 7.55,
+            "after": 3.9
+          },
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 10.9,
+            "after": 5.6
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-10"
+          },
+          {
+            "path": "$.energia_kcal",
+            "operation": "changed",
+            "before": 30,
+            "after": 16
+          },
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "medio",
+            "after": "basso"
+          },
+          {
+            "path": "$.fibre_g",
+            "operation": "changed",
+            "before": 0.4,
+            "after": 0.2
+          },
+          {
+            "path": "$.fonte_macro",
+            "operation": "changed",
+            "before": "USDA FoodData Central",
+            "after": "CREA - Tabelle di composizione degli alimenti"
+          },
+          {
+            "path": "$.fonte_macro_dataType",
+            "operation": "changed",
+            "before": "SR Legacy",
+            "after": "CREA"
+          },
+          {
+            "path": "$.fonte_macro_descrizione",
+            "operation": "changed",
+            "before": "Watermelon, raw",
+            "after": "Cocomero (anguria), parte edibile"
+          },
+          {
+            "path": "$.fonte_macro_fdcId",
+            "operation": "changed",
+            "before": 167765,
+            "after": null
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "76 * (7.15 g/100g * 200 g / 100) / 100 = 10.9",
+            "after": "76 * (3.7 g/100g * 200 g / 100) / 100 = 5.6"
+          },
+          {
+            "path": "$.grassi_saturi_g",
+            "operation": "changed",
+            "before": 0.02,
+            "after": 0
+          },
+          {
+            "path": "$.grassi_totali_g",
+            "operation": "changed",
+            "before": 0.15,
+            "after": 0
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.proteine_g",
+            "operation": "changed",
+            "before": 0.61,
+            "after": 0.4
+          },
+          {
+            "path": "$.revisione.da",
+            "operation": "changed",
+            "before": "Analisi AI (metodo: confronto con tabelle internazionali GI/GL)",
+            "after": "Correzione da segnalazione utente: macro allineati alle Tabelle CREA (fonte italiana)"
+          },
+          {
+            "path": "$.revisione.data",
+            "operation": "changed",
+            "before": "2026-07-23",
+            "after": "2026-08-10"
+          },
+          {
+            "path": "$.revisione.esito",
+            "operation": "changed",
+            "before": "confermato",
+            "after": "corretto"
+          },
+          {
+            "path": "$.revisione.nota",
+            "operation": "changed",
+            "before": "IG 76: valore di riferimento dell'anguria. Confermato.",
+            "after": "Macro CREA: 16 kcal, 3,7 g carbo disponibili/100 g (prima USDA 30 kcal, 7,15 g). Ricalcolati carico glicemico (5,6) e fascia (da medio a basso). IG 76 invariato."
+          },
+          {
+            "path": "$.sodio_mg",
+            "operation": "changed",
+            "before": 1,
+            "after": 3
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          },
+          {
+            "path": "$.zuccheri_g",
+            "operation": "changed",
+            "before": 6.2,
+            "after": 3.7
+          }
+        ]
+      },
+      {
+        "id": "arachidi",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (7.63 g/100g * 30 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "arancia",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "avocado",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (1.83 g/100g * 80 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "baguette",
+        "change_count": 8,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 5,
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 27.7,
+            "after": 31.1
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "80 * (49.5 g/100g * 70 g / 100) / 100 = 27.7",
+            "after": "90 * (49.5 g/100g * 70 g / 100) / 100 = 31.1"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": 80,
+            "after": 90
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "banana",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "barbabietola-cotta",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "bibita-tipo-cola",
+        "change_count": 6,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 4
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "coca cola"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "cola"
+          },
+          {
+            "path": "$.sinonimi[2]",
+            "operation": "added",
+            "after": "pepsi"
+          },
+          {
+            "path": "$.sinonimi[3]",
+            "operation": "added",
+            "after": "bibita gassata"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "birra",
+        "change_count": 5,
+        "classifications": {
+          "editorial_or_source": 4,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "medio"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "biscotti-frollini",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "branzino-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "bresaola",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "bulgur-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cacao-amaro-in-polvere",
+        "change_count": 9,
+        "classifications": {
+          "editorial_or_source": 5,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "20 * (20.9 g/100g * 5 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 20
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "cachi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "caffe-espresso",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "calamari",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "cappuccino",
+        "change_count": 8,
+        "classifications": {
+          "editorial_or_source": 4,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 1
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 40
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 30
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "caramelle",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "medio",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "castagne-arrostite",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "ceci-cotti",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "ciliegie",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cioccolato-al-latte",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 3,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "medio"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.revisione.nota",
+            "operation": "changed",
+            "before": "IG 45: coerente, piu' alto del fondente per lo zucchero e il latte. Confermato.",
+            "after": "IG 45: coerente, piu' alto del fondente per lo zucchero e il latte. Confermato. Rialzata a medio: dolce lavorato ad alto zucchero (51.5g/100g), non deve dire \"stai tranquillo\" (regola doppia onda)."
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cioccolato-fondente",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cocco-fresco",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 1
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "45 * (6.23 g/100g * 40 g / 100) / 100 = 1"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 50
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 45
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 40
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "coniglio-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "controfiletto-di-manzo-cotto",
+        "change_count": 6,
+        "classifications": {
+          "editorial_or_source": 3,
+          "italian_content_or_structure": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "bistecca"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "bistecca di manzo"
+          },
+          {
+            "path": "$.sinonimi[2]",
+            "operation": "added",
+            "after": "bistecca ai ferri"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "coppa",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "corn-flakes",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cornetto-croissant",
+        "change_count": 3,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cotechino",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "couscous-cotto",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "couscous integrale"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "cous cous"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "cozze-cotte",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "crackers",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "crackers integrali"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "cracker"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "crema-alla-nocciola",
+        "change_count": 5,
+        "classifications": {
+          "editorial_or_source": 3,
+          "italian_content_or_structure": 1,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "medio"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.revisione.nota",
+            "operation": "changed",
+            "before": "IG 33: valore comunemente riportato per la crema alla nocciola. Confermato.",
+            "after": "IG 33: valore comunemente riportato per la crema alla nocciola. Confermato. Rialzata a medio: dolce lavorato ad alto zucchero (54.05g/100g), non deve dire \"stai tranquillo\" (regola doppia onda)."
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "nutella"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "culatello",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "datteri",
+        "change_count": 3,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "edamame",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fagioli-borlotti-cotti",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fagioli-cannellini-cotti",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fagioli-neri-cotti",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "farina-00",
+        "change_count": 6,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 4,
+          "italian_content_or_structure": 1
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.nascondi",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.nota_curatela",
+            "operation": "changed",
+            "before": "Porzione simbolica: la farina e' un ingrediente, non un piatto. Valuta il carico glicemico dentro la ricetta.",
+            "after": "Porzione simbolica: la farina e' un ingrediente, non un piatto. Valuta il carico glicemico dentro la ricetta. Nascosta da ricerca/foto: la farina cruda non si mangia da sola, l IG dipende dal prodotto cotto. Resta come ingrediente delle ricette."
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "farro-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fave-cotte",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "fette-biscottate",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fichi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fichi-secchi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "focaccia",
+        "change_count": 5,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "focaccette"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "focaccetta"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "fragole",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "gamberi-cotti",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "gelato-alla-vaniglia",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "gnocchi-di-patate",
+        "change_count": 9,
+        "classifications": {
+          "editorial_or_source": 5,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 25.5,
+            "after": 31
+          },
+          {
+            "path": "$.carboidrati_disponibili_porzione_g",
+            "operation": "changed",
+            "before": 51,
+            "after": 62
+          },
+          {
+            "path": "$.carboidrati_totali_g",
+            "operation": "changed",
+            "before": 27,
+            "after": 32
+          },
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 34.7,
+            "after": 42
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "68 * (25.5 g/100g * 200 g / 100) / 100 = 34.7",
+            "after": "68 * (31 g/100g * 200 g / 100) / 100 = 42"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "grissini",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 4
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "guanciale",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "hamburger-di-manzo",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "kefir",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "kiwi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "krapfen",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "stima"
+          }
+        ]
+      },
+      {
+        "id": "lamponi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "latte-di-mandorla",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "latte-di-soia",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "latte-intero",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          },
+          {
+            "path": "$.zuccheri_g",
+            "operation": "changed",
+            "before": 5.05,
+            "after": 4.8
+          }
+        ]
+      },
+      {
+        "id": "latte-scremato",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          },
+          {
+            "path": "$.zuccheri_g",
+            "operation": "changed",
+            "before": 5.09,
+            "after": 4.86
+          }
+        ]
+      },
+      {
+        "id": "lenticchie-cotte",
+        "change_count": 3,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "limoncello",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": false,
+            "after": true
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "stima"
+          }
+        ]
+      },
+      {
+        "id": "limone",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "20 * (6.52 g/100g * 30 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 20
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "lonza-di-maiale-cotta",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "lupini",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "mais-dolce-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "mandarino",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "medio"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "mandorle",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (9.05 g/100g * 30 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "mango",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "manzo-macinato-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "marmellata",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "mela-con-buccia",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "melanzana-cotta",
+        "change_count": 2,
+        "classifications": {
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "melanzane"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "melanzana"
+          }
+        ]
+      },
+      {
+        "id": "melograno",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "melone",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "merluzzo-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "miele",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "miglio-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "mirtilli",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "more",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "mortadella",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "muesli",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 4
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "nocciole",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (7 g/100g * 30 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "noci",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (7.01 g/100g * 30 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "olio-di-semi-di-girasole",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "olio-extravergine-doliva",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "orata",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "orzo-perlato-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pan-di-spagna",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pancetta-cotta",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 3,
+          "italian_content_or_structure": 1
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "bacon"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "pane-bianco",
+        "change_count": 14,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 12
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "pane tipo 0"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "pane tipo 00"
+          },
+          {
+            "path": "$.sinonimi[2]",
+            "operation": "added",
+            "after": "pane 00"
+          },
+          {
+            "path": "$.sinonimi[3]",
+            "operation": "added",
+            "after": "pane con farina 0"
+          },
+          {
+            "path": "$.sinonimi[4]",
+            "operation": "added",
+            "after": "pane comune"
+          },
+          {
+            "path": "$.sinonimi[5]",
+            "operation": "added",
+            "after": "pagnotta"
+          },
+          {
+            "path": "$.sinonimi[6]",
+            "operation": "added",
+            "after": "michetta"
+          },
+          {
+            "path": "$.sinonimi[7]",
+            "operation": "added",
+            "after": "rosetta"
+          },
+          {
+            "path": "$.sinonimi[8]",
+            "operation": "added",
+            "after": "panino"
+          },
+          {
+            "path": "$.sinonimi[9]",
+            "operation": "added",
+            "after": "panini"
+          },
+          {
+            "path": "$.sinonimi[10]",
+            "operation": "added",
+            "after": "toast"
+          },
+          {
+            "path": "$.sinonimi[11]",
+            "operation": "added",
+            "after": "pane tostato"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pane-di-segale",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pane-integrale",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "papaya",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "passata-di-pomodoro",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pasta-integrale-cotta",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "spaghetti integrali"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "pasta integrale"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "patata-al-forno",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "patata-dolce-cotta",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "patata-lessa",
+        "change_count": 6,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 4
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "patate bollite"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "patata bollita"
+          },
+          {
+            "path": "$.sinonimi[2]",
+            "operation": "added",
+            "after": "patate lesse"
+          },
+          {
+            "path": "$.sinonimi[3]",
+            "operation": "added",
+            "after": "patate lessate"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "patatine-in-busta",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pera",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pesca",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "petto-di-pollo-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "petto-di-tacchino-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "piadina",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 4
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "pinoli",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (9.38 g/100g * 15 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "piselli-cotti",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "piselli-spezzati-cotti",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pistacchi",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "pizza-margherita",
+        "change_count": 11,
+        "classifications": {
+          "editorial_or_source": 3,
+          "nutrition_or_portion": 8
+        },
+        "changes": [
+          {
+            "path": "$.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 28.23,
+            "after": 30
+          },
+          {
+            "path": "$.carboidrati_disponibili_porzione_g",
+            "operation": "changed",
+            "before": 70.6,
+            "after": 105
+          },
+          {
+            "path": "$.carboidrati_totali_g",
+            "operation": "changed",
+            "before": 29.93,
+            "after": 31.7
+          },
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 42.4,
+            "after": 74
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "60 * (28.23 g/100g * 250 g / 100) / 100 = 42.4",
+            "after": "70 * (30 g/100g * 350 g / 100) / 100 = 74"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": 80,
+            "after": 78
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": 60,
+            "after": 70
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": 36,
+            "after": 65
+          },
+          {
+            "path": "$.porzione_standard_g",
+            "operation": "changed",
+            "before": 250,
+            "after": 350
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "stima"
+          }
+        ]
+      },
+      {
+        "id": "polenta-semolino-di-mais-cotto",
+        "change_count": 7,
+        "classifications": {
+          "editorial_or_source": 3,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 20.8,
+            "after": 18
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "79 * (13.16 g/100g * 200 g / 100) / 100 = 20.8",
+            "after": "69 * (13.16 g/100g * 200 g / 100) / 100 = 18"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": 90,
+            "after": 79
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": 79,
+            "after": 69
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": 68,
+            "after": 62
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "polpo-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "pompelmo",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "popcorn",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "porchetta",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "porridge-davena",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "prosciutto-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "prosciutto-crudo",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "prosecco",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "prugna",
+        "change_count": 5,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 3
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "susina"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "susine"
+          },
+          {
+            "path": "$.sinonimi[2]",
+            "operation": "added",
+            "after": "prugne"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "prugne-secche",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "quinoa-cotta",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "ribes",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "ricotta",
+        "change_count": 9,
+        "classifications": {
+          "editorial_or_source": 3,
+          "nutrition_or_portion": 6
+        },
+        "changes": [
+          {
+            "path": "$.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 7.27,
+            "after": 3.5
+          },
+          {
+            "path": "$.carboidrati_disponibili_porzione_g",
+            "operation": "changed",
+            "before": 7.3,
+            "after": 3.5
+          },
+          {
+            "path": "$.carboidrati_totali_g",
+            "operation": "changed",
+            "before": 7.27,
+            "after": 3.5
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-06"
+          },
+          {
+            "path": "$.energia_kcal",
+            "operation": "changed",
+            "before": 150,
+            "after": 135
+          },
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "n/d",
+            "after": "trascurabile"
+          },
+          {
+            "path": "$.revisione",
+            "operation": "changed",
+            "before": null,
+            "after": {
+              "da": "Fabio Denuzzo (nutrizionista)",
+              "data": "2026-08-06",
+              "esito": "corretto",
+              "nota": "Carbo era 7,27 g ma zuccheri 0,27: incoerente (i carbo della ricotta sono lattosio=zucchero) e non combaciava con la fonte USDA (~3 g). Portato a 3,5 g = lattosio ricotta vaccina; zuccheri allineati. Fascia n/d -> trascurabile: carbo porzione 3,5g (<5g), impatto glicemico trascurabile."
+            }
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.zuccheri_g",
+            "operation": "changed",
+            "before": 0.27,
+            "after": 3.5
+          }
+        ]
+      },
+      {
+        "id": "riso-basmati",
+        "change_count": 5,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.nome",
+            "operation": "changed",
+            "before": "Riso basmati",
+            "after": "Riso basmati cotto"
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "riso basmati"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "riso-bianco-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "riso-integrale-cotto",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "riso-venere",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 2,
+          "italian_content_or_structure": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.nome",
+            "operation": "changed",
+            "before": "Riso venere",
+            "after": "Riso venere cotto"
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "riso venere"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "salame",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "salatini-pretzel",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "salmone-affumicato",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "salmone-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "salsiccia-cotta",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "sardine-sottolio",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "savoiardi",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 5,
+          "nutrition_or_portion": 5
+        },
+        "changes": [
+          {
+            "path": "$.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 58.7,
+            "after": 78
+          },
+          {
+            "path": "$.carboidrati_disponibili_porzione_g",
+            "operation": "changed",
+            "before": 17.6,
+            "after": 23.4
+          },
+          {
+            "path": "$.carboidrati_totali_g",
+            "operation": "changed",
+            "before": 59.7,
+            "after": 79
+          },
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 12,
+            "after": 16
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "68 * (58.7 g/100g * 30 g / 100) / 100 = 12.0",
+            "after": "68 * (78 g/100g * 30 g / 100) / 100 = 16"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          },
+          {
+            "path": "$.zuccheri_g",
+            "operation": "changed",
+            "before": null,
+            "after": 35
+          }
+        ]
+      },
+      {
+        "id": "seppie",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "sgombro-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "sogliola",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "soia-cotta",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "soppressata",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "spaghetti-cotti-al-dente",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "speck",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "spritz",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": false,
+            "after": true
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "stima"
+          }
+        ]
+      },
+      {
+        "id": "succo-darancia",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 3,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "medio",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "succo-di-mela",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 3,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "te-nero",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "tempeh",
+        "change_count": 11,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 5
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 1
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "n/d",
+            "after": "basso"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (7.62 g/100g * 100 g / 100) / 100 = 1"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "tofu",
+        "change_count": 10,
+        "classifications": {
+          "editorial_or_source": 6,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": null,
+            "after": 0
+          },
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.fonte_ig",
+            "operation": "changed",
+            "before": null,
+            "after": "Database IG (frutta secca/semi/legumi: IG basso)"
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "IG non applicabile (carboidrati trascurabili)",
+            "after": "15 * (0.48 g/100g * 100 g / 100) / 100 = 0"
+          },
+          {
+            "path": "$.ig_affidabilita",
+            "operation": "changed",
+            "before": "n/a",
+            "after": "media"
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": null,
+            "after": 25
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": null,
+            "after": 15
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": null,
+            "after": 10
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "tonno-al-naturale",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "tortilla-di-frumento",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "tortilla-di-mais",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "trota-cotta",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "uovo-crudo-intero",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "uovo-sodo",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "uva",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "uvetta",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "vino-bianco",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "vino-rosso",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "vitello-cotto",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "vongole-cotte",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "wafer",
+        "change_count": 4,
+        "classifications": {
+          "editorial_or_source": 4
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "stima",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "wurstel",
+        "change_count": 6,
+        "classifications": {
+          "editorial_or_source": 3,
+          "italian_content_or_structure": 3
+        },
+        "changes": [
+          {
+            "path": "$.data_aggiornamento",
+            "operation": "changed",
+            "before": "2026-07-22",
+            "after": "2026-08-08"
+          },
+          {
+            "path": "$.sinonimi[0]",
+            "operation": "added",
+            "after": "hot dog"
+          },
+          {
+            "path": "$.sinonimi[1]",
+            "operation": "added",
+            "after": "hotdog"
+          },
+          {
+            "path": "$.sinonimi[2]",
+            "operation": "added",
+            "after": "hot-dog"
+          },
+          {
+            "path": "$.stato_editoriale",
+            "operation": "changed",
+            "before": "bozza",
+            "after": "rivisto"
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "non_applicabile",
+            "after": "verificato"
+          }
+        ]
+      },
+      {
+        "id": "yogurt-greco-bianco",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "yogurt-intero-bianco",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "yogurt-magro",
+        "change_count": 2,
+        "classifications": {
+          "editorial_or_source": 2
+        },
+        "changes": [
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "zucca-cotta",
+        "change_count": 9,
+        "classifications": {
+          "behavior_or_visibility": 1,
+          "editorial_or_source": 3,
+          "italian_content_or_structure": 1,
+          "nutrition_or_portion": 4
+        },
+        "changes": [
+          {
+            "path": "$.carico_glicemico_porzione",
+            "operation": "changed",
+            "before": 5.7,
+            "after": 5
+          },
+          {
+            "path": "$.formula_cg",
+            "operation": "changed",
+            "before": "75 * (3.8 g/100g * 200 g / 100) / 100 = 5.7",
+            "after": "65 * (3.8 g/100g * 200 g / 100) / 100 = 5"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.ig_max",
+            "operation": "changed",
+            "before": 90,
+            "after": 75
+          },
+          {
+            "path": "$.ig_medio",
+            "operation": "changed",
+            "before": 75,
+            "after": 65
+          },
+          {
+            "path": "$.ig_min",
+            "operation": "changed",
+            "before": 64,
+            "after": 51
+          },
+          {
+            "path": "$.ig_variabile",
+            "operation": "added",
+            "after": true
+          },
+          {
+            "path": "$.nota_curatela",
+            "operation": "added",
+            "after": "IG molto variabile; il valore alto ~75 in letteratura veniva da una zuppa (zucca+patate+panna), non dalla zucca sola. Comunque pochi carboidrati per porzione: impatto trascurabile."
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      },
+      {
+        "id": "zucchero-bianco",
+        "change_count": 3,
+        "classifications": {
+          "editorial_or_source": 2,
+          "nutrition_or_portion": 1
+        },
+        "changes": [
+          {
+            "path": "$.fascia_impatto",
+            "operation": "changed",
+            "before": "basso",
+            "after": "alto"
+          },
+          {
+            "path": "$.ig_da_verificare",
+            "operation": "changed",
+            "before": true,
+            "after": false
+          },
+          {
+            "path": "$.tipo_dato_ig",
+            "operation": "changed",
+            "before": "stimato_letteratura",
+            "after": "verificato_tabelle"
+          }
+        ]
+      }
+    ]
+  },
+  "recipes": {
+    "kind": "recipes",
+    "root_key": "ricette",
+    "counts": {
+      "baseline": 200,
+      "candidate": 209,
+      "common": 200,
+      "added": 9,
+      "removed": 0,
+      "unchanged": 0,
+      "translation_only_changed": 192,
+      "non_translation_changed": 8
+    },
+    "added_ids": [
+      "avocado-uovo-in-camicia",
+      "budino-di-chia-mirtilli",
+      "fiocchi-di-latte-fragole",
+      "frittatina-zucchine-ricotta",
+      "frullato-verde-spinaci",
+      "omelette-funghi-formaggio",
+      "ricotta-frutti-di-bosco-noci",
+      "uova-sode-avocado-pomodorini",
+      "yogurt-greco-frutti-di-bosco-mandorle"
+    ],
+    "removed_ids": [],
+    "unchanged_ids": [],
+    "translation_only_changed_ids": [
+      "arista-con-patate",
+      "avocado-e-gamberi",
+      "baccala-alla-vicentina",
+      "baccala-con-ceci",
+      "banana-e-cioccolato",
+      "banana-e-miele",
+      "barbabietole-in-insalata",
+      "branzino-al-forno-con-patate",
+      "bresaola-rucola-grana",
+      "broccoli-ripassati",
+      "bruschetta-al-pomodoro",
+      "budino-al-cioccolato",
+      "bulgur-con-verdure",
+      "calamari-coi-piselli",
+      "calamari-in-umido",
+      "caponata-di-melanzane",
+      "carciofi-trifolati",
+      "cavolfiore-all-olio",
+      "cavolfiore-gratinato",
+      "ciambellone",
+      "coniglio-in-umido",
+      "cous-cous-verdure-ceci",
+      "cozze-alla-marinara",
+      "cozze-e-patate",
+      "crackers-e-formaggio",
+      "crostata-di-marmellata",
+      "datteri-e-mandorle",
+      "fagioli-all-uccelletto",
+      "fagiolini-all-olio",
+      "farro-con-verdure",
+      "farro-tonno-pomodoro",
+      "fette-biscottate-marmellata",
+      "fette-con-miele",
+      "fette-crema-nocciola",
+      "finocchi-gratinati",
+      "frittata-di-cipolle",
+      "frittata-di-patate",
+      "frittata-di-spinaci",
+      "frittata-di-zucchine",
+      "frittata-patate-dolci",
+      "frittata-zucchine-patate",
+      "frullato-banana-latte",
+      "frullato-di-frutta",
+      "frullato-pre-gara",
+      "frullato-proteico",
+      "frutta-secca-mista",
+      "gamberi-e-cannellini",
+      "gamberi-e-zucchine",
+      "grissini-e-prosciutto",
+      "hamburger-con-insalata",
+      "insalata-caprese",
+      "insalata-ceci-feta",
+      "insalata-ceci-tonno",
+      "insalata-ceci-verdure",
+      "insalata-con-avocado",
+      "insalata-di-bresaola",
+      "insalata-di-farro",
+      "insalata-di-finocchi",
+      "insalata-di-mare",
+      "insalata-di-pollo",
+      "insalata-di-polpo",
+      "insalata-di-pomodori",
+      "insalata-di-riso",
+      "insalata-farro-avocado",
+      "insalata-finocchi-arance",
+      "insalata-greca",
+      "insalata-mista",
+      "insalata-riso-integrale",
+      "insalata-tonno-fagioli-uova",
+      "latte-e-corn-flakes",
+      "macedonia-di-frutta",
+      "mela-cotta",
+      "mela-e-datteri",
+      "mela-e-mandorle",
+      "melanzane-a-funghetto",
+      "merluzzo-al-forno-verdure",
+      "merluzzo-al-pomodoro",
+      "minestra-orzo-verdura",
+      "minestrone-di-verdure",
+      "orzotto-ai-funghi",
+      "orzotto-alle-verdure",
+      "pancake",
+      "pane-e-cioccolato",
+      "pane-e-marmellata",
+      "pane-integrale-burro-miele",
+      "pane-integrale-prosciutto",
+      "panna-cotta",
+      "parmigiana-di-melanzane",
+      "pasta-al-forno",
+      "pasta-al-pesto",
+      "pasta-al-ragu",
+      "pasta-al-salmone",
+      "pasta-al-tonno",
+      "pasta-all-amatriciana",
+      "pasta-alla-boscaiola",
+      "pasta-alla-carbonara",
+      "pasta-alla-gricia",
+      "pasta-alle-zucchine",
+      "pasta-broccoli-salsiccia",
+      "pasta-cacio-e-pepe",
+      "pasta-con-le-sarde",
+      "pasta-e-broccoli",
+      "pasta-e-ceci",
+      "pasta-e-fagioli",
+      "pasta-e-lenticchie",
+      "pasta-e-piselli",
+      "pasta-e-zucca",
+      "pasta-fredda",
+      "pasta-integrale-al-pomodoro",
+      "pasta-integrale-broccoli",
+      "pasta-patate-provola",
+      "pasta-zucchine-gamberi",
+      "patate-al-forno",
+      "penne-all-arrabbiata",
+      "peperonata",
+      "peperoni-e-patate",
+      "pere-e-noci",
+      "petto-di-pollo-e-zucchine",
+      "piselli-al-prosciutto",
+      "pollo-al-limone",
+      "pollo-alla-cacciatora",
+      "pollo-con-peperoni",
+      "pollo-e-riso",
+      "polpette-al-sugo",
+      "polpo-e-patate",
+      "pomodori-col-riso",
+      "porridge-avena-mela-noci",
+      "porridge-banana-miele",
+      "porridge-con-banana",
+      "quinoa-con-verdure",
+      "risi-e-bisi",
+      "riso-al-tonno",
+      "riso-e-lenticchie",
+      "riso-integrale-verdure",
+      "riso-pollo-verdure",
+      "riso-pre-gara",
+      "riso-tonno-piselli",
+      "risotto-agli-asparagi",
+      "risotto-ai-funghi",
+      "risotto-ai-gamberi",
+      "risotto-al-pomodoro",
+      "risotto-alla-parmigiana",
+      "risotto-alla-zucca",
+      "risotto-frutti-di-mare",
+      "salmone-affumicato-e-uova",
+      "salmone-al-forno-patate",
+      "salmone-con-broccoli",
+      "salsiccia-e-cavolo-nero",
+      "sardine-al-pomodoro",
+      "scaloppine-ai-funghi",
+      "scaloppine-al-limone",
+      "segale-salmone-affumicato",
+      "segale-salmone-avocado",
+      "sgombro-alla-griglia",
+      "spaghetti-aglio-olio",
+      "spaghetti-al-pomodoro",
+      "spaghetti-alla-puttanesca",
+      "spaghetti-alle-vongole",
+      "spaghetti-con-le-cozze",
+      "spezzatino-di-manzo",
+      "spiedini-pollo-verdure",
+      "spinaci-all-olio",
+      "straccetti-con-rucola",
+      "tacchino-alla-pizzaiola",
+      "tiramisu",
+      "toast-con-avocado",
+      "toast-con-miele",
+      "toast-prosciutto-formaggio",
+      "tonno-e-fagioli",
+      "torta-di-mele",
+      "trofie-al-pesto",
+      "trota-al-cartoccio",
+      "uova-al-pomodoro",
+      "uova-sode-maionese",
+      "uova-strapazzate-spinaci",
+      "uovo-e-pane-integrale",
+      "vellutata-di-zucca",
+      "verdure-grigliate",
+      "vitello-tonnato",
+      "yogurt-banana-mandorle",
+      "yogurt-banana-miele",
+      "yogurt-datteri-noci",
+      "yogurt-e-corn-flakes",
+      "yogurt-e-miele",
+      "yogurt-greco-frutta-noci",
+      "yogurt-greco-mirtilli",
+      "zucca-al-forno",
+      "zucchine-trifolate",
+      "zuppa-di-ceci",
+      "zuppa-di-lenticchie",
+      "zuppa-di-piselli",
+      "zuppa-farro-fagioli"
+    ],
+    "non_translation_changed_ids": [
+      "fette-ricotta-fragole",
+      "involtini-melanzane-ricotta",
+      "pane-integrale-ricotta-miele",
+      "pasta-alla-norma",
+      "ricotta-e-fragole",
+      "ricotta-e-miele",
+      "segale-ricotta-miele",
+      "spinaci-e-ricotta"
+    ],
+    "non_translation_changed_record_counts_by_classification": {
+      "nutrition_or_portion": 8
+    },
+    "translation_field_change_count_in_common_records": 7134,
+    "most_common_raw_change_paths": {
+      "$.categoria_de": 200,
+      "$.categoria_en": 200,
+      "$.categoria_es": 200,
+      "$.categoria_fr": 200,
+      "$.consigli_de": 200,
+      "$.consigli_en": 200,
+      "$.consigli_es": 200,
+      "$.consigli_fr": 200,
+      "$.descrizione_de": 200,
+      "$.descrizione_en": 200,
+      "$.descrizione_es": 200,
+      "$.descrizione_fr": 200,
+      "$.ingredienti[0].nome_de": 200,
+      "$.ingredienti[0].nome_en": 200,
+      "$.ingredienti[0].nome_es": 200,
+      "$.ingredienti[0].nome_fr": 200,
+      "$.nome_de": 200,
+      "$.nome_en": 200,
+      "$.nome_es": 200,
+      "$.nome_fr": 200,
+      "$.procedimento_de": 200,
+      "$.procedimento_en": 200,
+      "$.procedimento_es": 200,
+      "$.procedimento_fr": 200,
+      "$.ingredienti[1].nome_de": 199,
+      "$.ingredienti[1].nome_en": 199,
+      "$.ingredienti[1].nome_es": 199,
+      "$.ingredienti[1].nome_fr": 199,
+      "$.ingredienti[2].nome_de": 170,
+      "$.ingredienti[2].nome_en": 170,
+      "$.ingredienti[2].nome_es": 170,
+      "$.ingredienti[2].nome_fr": 170,
+      "$.ingredienti[3].nome_de": 109,
+      "$.ingredienti[3].nome_en": 109,
+      "$.ingredienti[3].nome_es": 109,
+      "$.ingredienti[3].nome_fr": 109,
+      "$.alternative[0].gruppo_en": 74,
+      "$.alternative[0].opzioni[0].nome_en": 74,
+      "$.ingredienti[4].nome_de": 34,
+      "$.ingredienti[4].nome_en": 34,
+      "$.ingredienti[4].nome_es": 34,
+      "$.ingredienti[4].nome_fr": 34,
+      "$.alternative[0].opzioni[1].nome_en": 21,
+      "$.alternative[0].opzioni[2].nome_en": 19,
+      "$.alternative[0].opzioni[3].nome_en": 18,
+      "$.alternative[0].opzioni[4].nome_en": 16,
+      "$.alternative[0].opzioni[5].nome_en": 16,
+      "$.ingredienti[5].nome_de": 9,
+      "$.ingredienti[5].nome_en": 9,
+      "$.ingredienti[5].nome_es": 9,
+      "$.ingredienti[5].nome_fr": 9,
+      "$.per_porzione.carboidrati_disponibili_g": 8,
+      "$.per_porzione.kcal": 8,
+      "$.alternative[1].gruppo_en": 2,
+      "$.alternative[1].opzioni[0].nome_en": 2,
+      "$.ingredienti[6].nome_de": 1,
+      "$.ingredienti[6].nome_en": 1,
+      "$.ingredienti[6].nome_es": 1,
+      "$.ingredienti[6].nome_fr": 1,
+      "$.ingredienti[7].nome_de": 1,
+      "$.ingredienti[7].nome_en": 1,
+      "$.ingredienti[7].nome_es": 1,
+      "$.ingredienti[7].nome_fr": 1
+    },
+    "non_translation_change_paths": {
+      "$.per_porzione.carboidrati_disponibili_g": 8,
+      "$.per_porzione.kcal": 8
+    },
+    "meta_changes": [],
+    "changed_records": [
+      {
+        "id": "fette-ricotta-fragole",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 31.4,
+            "after": 28.4
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 263,
+            "after": 251
+          }
+        ]
+      },
+      {
+        "id": "involtini-melanzane-ricotta",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 12.1,
+            "after": 10.2
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 161,
+            "after": 153
+          }
+        ]
+      },
+      {
+        "id": "pane-integrale-ricotta-miele",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 27.3,
+            "after": 25
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 221,
+            "after": 212
+          }
+        ]
+      },
+      {
+        "id": "pasta-alla-norma",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 60.5,
+            "after": 59.7
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 354,
+            "after": 351
+          }
+        ]
+      },
+      {
+        "id": "ricotta-e-fragole",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 22.6,
+            "after": 18.1
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 242,
+            "after": 224
+          }
+        ]
+      },
+      {
+        "id": "ricotta-e-miele",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 21.1,
+            "after": 16.6
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 226,
+            "after": 208
+          }
+        ]
+      },
+      {
+        "id": "segale-ricotta-miele",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 39.4,
+            "after": 36.4
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 295,
+            "after": 283
+          }
+        ]
+      },
+      {
+        "id": "spinaci-e-ricotta",
+        "change_count": 2,
+        "classifications": {
+          "nutrition_or_portion": 2
+        },
+        "changes": [
+          {
+            "path": "$.per_porzione.carboidrati_disponibili_g",
+            "operation": "changed",
+            "before": 6,
+            "after": 3.7
+          },
+          {
+            "path": "$.per_porzione.kcal",
+            "operation": "changed",
+            "before": 152,
+            "after": 143
+          }
+        ]
+      }
+    ]
+  }
+}

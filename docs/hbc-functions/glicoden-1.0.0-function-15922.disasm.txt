@@ -1,0 +1,14 @@
+# Function #15922 'fasciaDa'
+# offset=3167077 bytes=35
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <LoadConstUInt8>: <Reg8: 0, UInt8: 10>
+00000006: <JLessEqual>: <Addr8: 23, Reg8: 1, Reg8: 0>  # Address: 0000001d
+0000000a: <LoadConstUInt8>: <Reg8: 0, UInt8: 19>
+0000000d: <JLessEqual>: <Addr8: 10, Reg8: 1, Reg8: 0>  # Address: 00000017
+00000011: <LoadConstString>: <Reg8: 0, string_id: 16790>  # String: 'alto' (Identifier)
+00000015: <Ret>: <Reg8: 0>
+00000017: <LoadConstString>: <Reg8: 0, string_id: 14047>  # String: 'medio' (Identifier)
+0000001b: <Ret>: <Reg8: 0>
+0000001d: <LoadConstString>: <Reg8: 0, string_id: 17131>  # String: 'basso' (Identifier)
+00000021: <Ret>: <Reg8: 0>

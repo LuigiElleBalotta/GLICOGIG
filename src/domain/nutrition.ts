@@ -1,7 +1,7 @@
 const NUMBER_FORMAT = new Intl.NumberFormat('it-IT', { maximumFractionDigits: 1 })
 
-export function formatNumber(value: number): string {
-  return NUMBER_FORMAT.format(value)
+export function formatNumber(value: number | null | undefined): string {
+  return value == null || !Number.isFinite(value) ? 'n.d.' : NUMBER_FORMAT.format(value)
 }
 
 export function formatConfidence(value: number | undefined): string | null {

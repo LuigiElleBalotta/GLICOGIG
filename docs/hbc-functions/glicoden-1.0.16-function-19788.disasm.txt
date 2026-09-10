@@ -1,0 +1,7 @@
+# Function #19788 ''
+# offset=3613806 bytes=12
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <LoadConstUInt8>: <Reg8: 0, UInt8: 1>
+00000006: <Add>: <Reg8: 0, Reg8: 1, Reg8: 0>
+0000000a: <Ret>: <Reg8: 0>

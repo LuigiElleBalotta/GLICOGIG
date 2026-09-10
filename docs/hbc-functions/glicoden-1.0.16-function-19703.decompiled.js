@@ -1,0 +1,34 @@
+
+==== Falling back to Disassembly ====
+=> [Function #19703 "" of 95 bytes]: 2 params, frame size=14, strict=1, exc handler=0, debug info=0  @ offset 0x004ff83e
+
+Bytecode listing:
+
+==> 00000000: <CreateEnvironment>: <Reg8: 0>
+==> 00000002: <LoadParam>: <Reg8: 1, UInt8: 1>
+==> 00000005: <GetEnvironment>: <Reg8: 3, UInt8: 0>
+==> 00000008: <LoadFromEnvironment>: <Reg8: 4, Reg8: 3, UInt8: 0>
+==> 0000000c: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 1, string_id: 147>  # String: 'id' (Identifier)
+==> 00000011: <GetByVal>: <Reg8: 2, Reg8: 4, Reg8: 2>
+==> 00000015: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 2>
+==> 00000019: <JmpTrue>: <Addr8: 7, Reg8: 2>  # Address: 00000020
+==> 0000001c: <LoadConstUndefined>: <Reg8: 4>
+==> 0000001e: <Ret>: <Reg8: 4>
+==> 00000020: <LoadFromEnvironment>: <Reg8: 4, Reg8: 3, UInt8: 1>
+==> 00000024: <LoadConstString>: <Reg8: 3, string_id: 247>  # String: 'titolo' (Identifier)
+==> 00000028: <Add>: <Reg8: 5, Reg8: 3, Reg8: 4>
+==> 0000002c: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+==> 00000031: <PutByVal>: <Reg8: 1, Reg8: 5, Reg8: 3>
+==> 00000035: <LoadConstString>: <Reg8: 3, string_id: 47763>  # String: 'sottotitolo' (Identifier)
+==> 00000039: <Add>: <Reg8: 3, Reg8: 3, Reg8: 4>
+==> 0000003d: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 3, string_id: 11>  # String: 's' (Identifier)
+==> 00000042: <PutByVal>: <Reg8: 1, Reg8: 3, Reg8: 2>
+==> 00000046: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 4, string_id: 35365>  # String: 'blocchi' (Identifier)
+==> 0000004c: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 5, string_id: 130>  # String: 'forEach' (Identifier)
+==> 00000051: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 19704>  # Function: [#19704  of 284 bytes]: 3 params @ offset 0x004ff89d
+==> 00000056: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+==> 0000005b: <LoadConstUndefined>: <Reg8: 0>
+==> 0000005d: <Ret>: <Reg8: 0>
+
+
+===============

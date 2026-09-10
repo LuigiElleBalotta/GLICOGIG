@@ -1,0 +1,9 @@
+# Function #18462 ''
+# offset=4977615 bytes=19
+
+00000000: <GetEnvironment>: <Reg8: 0, UInt8: 1>
+00000003: <LoadFromEnvironment>: <Reg8: 2, Reg8: 0, UInt8: 18>
+00000007: <LoadConstUndefined>: <Reg8: 1>
+00000009: <LoadParam>: <Reg8: 0, UInt8: 1>
+0000000c: <Call2>: <Reg8: 0, Reg8: 2, Reg8: 1, Reg8: 0>
+00000011: <Ret>: <Reg8: 0>

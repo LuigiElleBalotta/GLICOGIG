@@ -1,0 +1,48 @@
+# Function #18412 'matchForte'
+# offset=4971753 bytes=182
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000005: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 3>
+00000009: <LoadConstUndefined>: <Reg8: 4>
+0000000b: <LoadParam>: <Reg8: 2, UInt8: 1>
+0000000e: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 4, Reg8: 2>
+00000013: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 3>
+00000017: <LoadParam>: <Reg8: 1, UInt8: 2>
+0000001a: <Call2>: <Reg8: 5, Reg8: 3, Reg8: 4, Reg8: 1>
+0000001f: <JmpFalse>: <Addr8: 6, Reg8: 2>  # Address: 00000025
+00000022: <JmpTrue>: <Addr8: 7, Reg8: 5>  # Address: 00000029
+00000025: <LoadConstFalse>: <Reg8: 1>
+00000027: <Ret>: <Reg8: 1>
+00000029: <JStrictEqualLong>: <Addr32: 137, Reg8: 2, Reg8: 5>  # Address: 000000b2
+00000030: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 156>  # String: 'includes' (Identifier)
+00000035: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 2, Reg8: 5>
+0000003a: <JmpTrue>: <Addr8: 120, Reg8: 1>  # Address: 000000b2
+0000003d: <GetByIdShort>: <Reg8: 1, Reg8: 5, UInt8: 1, string_id: 156>  # String: 'includes' (Identifier)
+00000042: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 5, Reg8: 2>
+00000047: <JmpTrue>: <Addr8: 107, Reg8: 1>  # Address: 000000b2
+0000004a: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 2, string_id: 234>  # String: 'split' (Identifier)
+0000004f: <LoadConstString>: <Reg8: 3, string_id: 1229>  # String: ' ' (String)
+00000053: <Call2>: <Reg8: 4, Reg8: 1, Reg8: 2, Reg8: 3>
+00000058: <GetByIdShort>: <Reg8: 2, Reg8: 4, UInt8: 3, string_id: 119>  # String: 'filter' (Identifier)
+0000005d: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18413>  # Function: [#18413  of 17 bytes]: 2 params @ offset 0x004bdd9f
+00000062: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 4, Reg8: 1>
+00000067: <GetGlobalObject>: <Reg8: 1>
+00000069: <TryGetById>: <Reg8: 4, Reg8: 1, UInt8: 4, string_id: 18>  # String: 'Set' (Identifier)
+0000006f: <GetByIdShort>: <Reg8: 1, Reg8: 5, UInt8: 2, string_id: 234>  # String: 'split' (Identifier)
+00000074: <Call2>: <Reg8: 5, Reg8: 1, Reg8: 5, Reg8: 3>
+00000079: <GetByIdShort>: <Reg8: 3, Reg8: 5, UInt8: 3, string_id: 119>  # String: 'filter' (Identifier)
+0000007e: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18414>  # Function: [#18414  of 17 bytes]: 2 params @ offset 0x004bdd9f
+00000083: <Call2>: <Reg8: 6, Reg8: 3, Reg8: 5, Reg8: 1>
+00000088: <GetByIdShort>: <Reg8: 3, Reg8: 4, UInt8: 5, string_id: 157>  # String: 'prototype' (Identifier)
+0000008d: <CreateThis>: <Reg8: 3, Reg8: 3, Reg8: 4>
+00000091: <Mov>: <Reg8: 7, Reg8: 3>
+00000094: <Construct>: <Reg8: 1, Reg8: 4, UInt8: 2>
+00000098: <SelectObject>: <Reg8: 1, Reg8: 3, Reg8: 1>
+0000009c: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+000000a0: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 6, string_id: 34372>  # String: 'some' (Identifier)
+000000a6: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18415>  # Function: [#18415  of 22 bytes]: 2 params @ offset 0x003e9c1b
+000000ab: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+000000b0: <Ret>: <Reg8: 0>
+000000b2: <LoadConstTrue>: <Reg8: 0>
+000000b4: <Ret>: <Reg8: 0>

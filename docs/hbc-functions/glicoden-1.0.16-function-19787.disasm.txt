@@ -1,0 +1,37 @@
+# Function #19787 'rispondi'
+# offset=5286682 bytes=134
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <LoadParam>: <Reg8: 4, UInt8: 1>
+00000005: <GetEnvironment>: <Reg8: 3, UInt8: 0>
+00000008: <LoadFromEnvironment>: <Reg8: 2, Reg8: 3, UInt8: 10>
+0000000c: <LoadConstNull>: <Reg8: 0>
+0000000e: <JNotEqual>: <Addr8: 116, Reg8: 2, Reg8: 0>  # Address: 00000082
+00000012: <LoadFromEnvironment>: <Reg8: 2, Reg8: 3, UInt8: 11>
+00000016: <LoadConstUndefined>: <Reg8: 0>
+00000018: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 0, Reg8: 4>
+0000001d: <LoadFromEnvironment>: <Reg8: 5, Reg8: 3, UInt8: 4>
+00000021: <LoadFromEnvironment>: <Reg8: 2, Reg8: 3, UInt8: 8>
+00000025: <GetByVal>: <Reg8: 2, Reg8: 5, Reg8: 2>
+00000029: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 1, string_id: 86>  # String: 'corretta' (Identifier)
+0000002e: <StrictEq>: <Reg8: 2, Reg8: 4, Reg8: 2>
+00000032: <JmpFalse>: <Addr8: 17, Reg8: 2>  # Address: 00000043
+00000035: <LoadFromEnvironment>: <Reg8: 4, Reg8: 3, UInt8: 13>
+00000039: <CreateClosure>: <Reg8: 3, Reg8: 1, function_id: 19788>  # Function: [#19788  of 12 bytes]: 2 params @ offset 0x0037246e
+0000003e: <Call2>: <Reg8: 3, Reg8: 4, Reg8: 0, Reg8: 3>
+00000043: <GetEnvironment>: <Reg8: 5, UInt8: 1>
+00000046: <LoadFromEnvironment>: <Reg8: 4, Reg8: 5, UInt8: 9>
+0000004a: <GetById>: <Reg8: 3, Reg8: 4, UInt8: 2, string_id: 47421>  # String: 'notificationAsync' (Identifier)
+00000050: <LoadFromEnvironment>: <Reg8: 5, Reg8: 5, UInt8: 9>
+00000054: <GetById>: <Reg8: 5, Reg8: 5, UInt8: 3, string_id: 33110>  # String: 'NotificationFeedbackType' (Identifier)
+0000005a: <JmpTrue>: <Addr8: 11, Reg8: 2>  # Address: 00000065
+0000005d: <GetById>: <Reg8: 2, Reg8: 5, UInt8: 4, string_id: 36939>  # String: 'Warning' (Identifier)
+00000063: <Jmp>: <Addr8: 8>  # Address: 0000006b
+00000065: <GetById>: <Reg8: 2, Reg8: 5, UInt8: 5, string_id: 47180>  # String: 'Success' (Identifier)
+0000006b: <Call2>: <Reg8: 3, Reg8: 3, Reg8: 4, Reg8: 2>
+00000070: <GetById>: <Reg8: 2, Reg8: 3, UInt8: 6, string_id: 45776>  # String: 'catch' (Identifier)
+00000076: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 19789>  # Function: [#19789  of 4 bytes]: 1 params @ offset 0x002e87ac
+0000007b: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1>
+00000080: <Ret>: <Reg8: 0>
+00000082: <LoadConstUndefined>: <Reg8: 0>
+00000084: <Ret>: <Reg8: 0>

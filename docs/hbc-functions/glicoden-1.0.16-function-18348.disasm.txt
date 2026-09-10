@@ -1,0 +1,43 @@
+# Function #18348 'giornoLocale'
+# offset=4960202 bytes=160
+
+00000000: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000003: <LoadConstNull>: <Reg8: 0>
+00000005: <JNotEqual>: <Addr8: 34, Reg8: 2, Reg8: 0>  # Address: 00000027
+00000009: <GetGlobalObject>: <Reg8: 0>
+0000000b: <TryGetById>: <Reg8: 0, Reg8: 0, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000011: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 2, string_id: 157>  # String: 'prototype' (Identifier)
+00000016: <CreateThis>: <Reg8: 1, Reg8: 1, Reg8: 0>
+0000001a: <Mov>: <Reg8: 6, Reg8: 1>
+0000001d: <Construct>: <Reg8: 0, Reg8: 0, UInt8: 1>
+00000021: <SelectObject>: <Reg8: 3, Reg8: 1, Reg8: 0>
+00000025: <Jmp>: <Addr8: 33>  # Address: 00000046
+00000027: <GetGlobalObject>: <Reg8: 0>
+00000029: <TryGetById>: <Reg8: 0, Reg8: 0, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+0000002f: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 2, string_id: 157>  # String: 'prototype' (Identifier)
+00000034: <CreateThis>: <Reg8: 1, Reg8: 1, Reg8: 0>
+00000038: <Mov>: <Reg8: 6, Reg8: 1>
+0000003b: <Mov>: <Reg8: 5, Reg8: 2>
+0000003e: <Construct>: <Reg8: 0, Reg8: 0, UInt8: 2>
+00000042: <SelectObject>: <Reg8: 3, Reg8: 1, Reg8: 0>
+00000046: <GetById>: <Reg8: 0, Reg8: 3, UInt8: 3, string_id: 48572>  # String: 'getTimezoneOffset' (Identifier)
+0000004c: <Call1>: <Reg8: 1, Reg8: 0, Reg8: 3>
+00000050: <LoadConstInt>: <Reg8: 0, Imm32: 60000>
+00000056: <Mul>: <Reg8: 1, Reg8: 1, Reg8: 0>
+0000005a: <GetGlobalObject>: <Reg8: 0>
+0000005c: <TryGetById>: <Reg8: 2, Reg8: 0, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000062: <GetById>: <Reg8: 0, Reg8: 3, UInt8: 4, string_id: 54448>  # String: 'getTime' (Identifier)
+00000068: <Call1>: <Reg8: 0, Reg8: 0, Reg8: 3>
+0000006c: <Sub>: <Reg8: 5, Reg8: 0, Reg8: 1>
+00000070: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 2, string_id: 157>  # String: 'prototype' (Identifier)
+00000075: <CreateThis>: <Reg8: 1, Reg8: 1, Reg8: 2>
+00000079: <Mov>: <Reg8: 6, Reg8: 1>
+0000007c: <Construct>: <Reg8: 0, Reg8: 2, UInt8: 2>
+00000080: <SelectObject>: <Reg8: 1, Reg8: 1, Reg8: 0>
+00000084: <GetById>: <Reg8: 0, Reg8: 1, UInt8: 5, string_id: 38332>  # String: 'toISOString' (Identifier)
+0000008a: <Call1>: <Reg8: 3, Reg8: 0, Reg8: 1>
+0000008e: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 6, string_id: 228>  # String: 'slice' (Identifier)
+00000093: <LoadConstZero>: <Reg8: 1>
+00000095: <LoadConstUInt8>: <Reg8: 0, UInt8: 10>
+00000098: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+0000009e: <Ret>: <Reg8: 0>

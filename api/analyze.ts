@@ -19,6 +19,12 @@ interface ApiResponse {
   end(body: string): void
 }
 
+export interface AnalyzeHandlerConfig {
+  accessKey?: string
+  endpoint?: string
+  premium?: string
+}
+
 function sendJson(response: ApiResponse, status: number, payload: unknown): void {
   response.statusCode = status
   response.setHeader('Content-Type', 'application/json; charset=utf-8')
@@ -51,61 +57,70 @@ function validatePayload(body: unknown): AnalizzaRequest | string {
   return { image_base64: body.image_base64, device_id: body.device_id, mime: 'image/jpeg', premium: Boolean(body.premium) }
 }
 
-export default async function handler(request: ApiRequest, response: ApiResponse): Promise<void> {
-  if (request.method !== 'POST') {
-    response.setHeader('Allow', 'POST')
-    sendJson(response, 405, { error: 'Metodo non consentito.', code: 'METHOD_NOT_ALLOWED' })
-    return
-  }
-
-  const expectedAccessKey = process.env.APP_ACCESS_KEY
-  if (!expectedAccessKey) {
-    sendJson(response, 503, { error: 'APP_ACCESS_KEY non configurata sul server.', code: 'MISSING_SERVER_CONFIG' })
-    return
-  }
-
-  const providedAccessKey = request.headers['x-app-access-key']
-  if (typeof providedAccessKey !== 'string' || !safeEqual(providedAccessKey, expectedAccessKey)) {
-    sendJson(response, 401, { error: 'Chiave personale non valida.', code: 'INVALID_ACCESS_KEY' })
-    return
-  }
-
-  let rawBody: unknown
-  try {
-    rawBody = parseBody(request.body)
-  } catch {
-    sendJson(response, 400, { error: 'Body JSON non valido.', code: 'INVALID_JSON' })
-    return
-  }
-
-  const payload = validatePayload(rawBody)
-  if (typeof payload === 'string') {
-    sendJson(response, 400, { error: payload, code: 'INVALID_PAYLOAD' })
-    return
-  }
-
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS)
-  try {
-    const upstream = await fetch(process.env.ANALYSIS_ENDPOINT || DEFAULT_ANALYSIS_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...payload, premium: process.env.ANALYSIS_PREMIUM?.toLowerCase() !== 'false' }),
-      signal: controller.signal,
-    })
-    const text = await upstream.text()
-    let upstreamPayload: unknown
-    try {
-      upstreamPayload = text ? JSON.parse(text) as unknown : {}
-    } catch {
-      sendJson(response, 502, { error: 'Risposta non valida dal servizio di analisi.', code: 'INVALID_UPSTREAM_RESPONSE' })
+/** Crea lo stesso boundary per Vercel e per il middleware locale Vite. */
+export function createAnalyzeHandler(config: AnalyzeHandlerConfig = {}) {
+  return async function handler(request: ApiRequest, response: ApiResponse): Promise<void> {
+    if (request.method !== 'POST') {
+      response.setHeader('Allow', 'POST')
+      sendJson(response, 405, { error: 'Metodo non consentito.', code: 'METHOD_NOT_ALLOWED' })
       return
     }
-    sendJson(response, upstream.status, upstreamPayload)
-  } catch (error) {
-    const timedOut = error instanceof Error && error.name === 'AbortError'
-    sendJson(response, timedOut ? 504 : 502, { error: timedOut ? 'Il servizio di analisi non ha risposto in tempo.' : 'Servizio di analisi non raggiungibile.', code: timedOut ? 'UPSTREAM_TIMEOUT' : 'UPSTREAM_UNAVAILABLE' })
-  } finally {
-    clearTimeout(timeout)
+
+    const expectedAccessKey = config.accessKey || process.env.APP_ACCESS_KEY
+    if (!expectedAccessKey) {
+      sendJson(response, 503, { error: 'APP_ACCESS_KEY non configurata sul server.', code: 'MISSING_SERVER_CONFIG' })
+      return
+    }
+
+    const providedAccessKey = request.headers['x-app-access-key']
+    if (typeof providedAccessKey !== 'string' || !safeEqual(providedAccessKey, expectedAccessKey)) {
+      sendJson(response, 401, { error: 'Chiave personale non valida.', code: 'INVALID_ACCESS_KEY' })
+      return
+    }
+
+    let rawBody: unknown
+    try {
+      rawBody = parseBody(request.body)
+    } catch {
+      sendJson(response, 400, { error: 'Body JSON non valido.', code: 'INVALID_JSON' })
+      return
+    }
+
+    const payload = validatePayload(rawBody)
+    if (typeof payload === 'string') {
+      sendJson(response, 400, { error: payload, code: 'INVALID_PAYLOAD' })
+      return
+    }
+
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS)
+    try {
+      const premium = (config.premium ?? process.env.ANALYSIS_PREMIUM)?.toLowerCase() !== 'false'
+      const upstream = await fetch(config.endpoint || process.env.ANALYSIS_ENDPOINT || DEFAULT_ANALYSIS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, premium }),
+        signal: controller.signal,
+      })
+      const text = await upstream.text()
+      let upstreamPayload: unknown
+      try {
+        upstreamPayload = text ? JSON.parse(text) as unknown : {}
+      } catch {
+        sendJson(response, 502, { error: 'Risposta non valida dal servizio di analisi.', code: 'INVALID_UPSTREAM_RESPONSE' })
+        return
+      }
+      sendJson(response, upstream.status, upstreamPayload)
+    } catch (error) {
+      const timedOut = error instanceof Error && error.name === 'AbortError'
+      sendJson(response, timedOut ? 504 : 502, {
+        error: timedOut ? 'Il servizio di analisi non ha risposto in tempo.' : 'Servizio di analisi non raggiungibile.',
+        code: timedOut ? 'UPSTREAM_TIMEOUT' : 'UPSTREAM_UNAVAILABLE',
+      })
+    } finally {
+      clearTimeout(timeout)
+    }
   }
 }
+
+export default createAnalyzeHandler()

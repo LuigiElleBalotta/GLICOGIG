@@ -1,0 +1,15 @@
+# Function #18419 'isBevanda'
+# offset=4972151 bytes=43
+
+00000000: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000003: <LoadParam>: <Reg8: 1, UInt8: 2>
+00000006: <LoadConstString>: <Reg8: 0, string_id: 36359>  # String: 'Bevande' (Identifier)
+0000000a: <StrictEq>: <Reg8: 0, Reg8: 1, Reg8: 0>
+0000000e: <JmpTrue>: <Addr8: 27, Reg8: 0>  # Address: 00000029
+00000011: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000014: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 5>
+00000018: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 242>  # String: 'test' (Identifier)
+0000001d: <JmpTrue>: <Addr8: 7, Reg8: 3>  # Address: 00000024
+00000020: <LoadConstString>: <Reg8: 3, string_id: 31798>  # String: '' (Identifier)
+00000024: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 3>
+00000029: <Ret>: <Reg8: 0>

@@ -1,105 +1,135 @@
 # GLICOGIG
 
-Web app personale per analizzare la foto di un piatto e trasformare la risposta del backend GLICOGIG in ingredienti, quantità, valori nutrizionali e carico glicemico consultabili.
+Web app React/TypeScript per analizzare un piatto, consultare alimenti e ricette, registrare un diario locale e usare contenuti educativi verificati. L’interfaccia mantiene brand e palette GLICOGIG; non replica identità, componenti commerciali o telemetria dell’app mobile osservata.
 
-È una riscrittura web in React e TypeScript della pipeline fotografica osservata nell'app Expo di riferimento. Il catalogo è estratto direttamente dal bundle Hermes dell'APK originale: il progetto non usa fonti nutrizionali esterne e non completa i dati mancanti con valori inventati.
+I dataset nutrizionali ed editoriali runtime provengono esclusivamente dall’estrazione verificata di GLICODEN 1.0.16. I valori mancanti restano `null` e vengono mostrati come `n.d.`: non vengono completati con stime o fonti nutrizionali esterne.
 
-## Stato del progetto
+## Stato attuale
+
+La shell usa navigazione hash con sei sezioni:
+
+- **Home**: riepilogo del diario, stabilità degli ultimi sette giorni e sessione multipiatto;
+- **Cerca**: catalogo locale, dettaglio nutrizionale, quantità modificabili e barcode;
+- **Foto**: preparazione locale JPEG/Base64, analisi remota, ricalcolo locale e sessione multipiatto;
+- **Ricette**: 209 ricette embedded con valori per porzione e salvataggio nel diario;
+- **Diario**: voci locali, rinomina/rimozione, progressi, stabilità e condivisione volontaria PNG;
+- **Impara**: 50 capitoli embedded e quiz quotidiano su 157 domande.
+
+I conteggi mostrati nell’interfaccia derivano sempre dalla lunghezza degli array runtime:
+
+| Dataset verificato 1.0.16 | Elementi |
+| --- | ---: |
+| Alimenti | 307 |
+| Ricette | 209 |
+| Capitoli | 50 |
+| Domande quiz | 157 |
+
+I file sono in `src/data/glicoden-1.0.16-*.json` e vengono esposti soltanto da `src/catalog/datasets.ts`. I metadati upstream con totali obsoleti non sono usati per i conteggi.
+
+## Flussi dati
+
+### Foto
 
 ```text
-foto → /api/analyze → backend /analizza → ingredienti[] → catalogo_id
-     → catalogo APK locale → nutrienti + carico glicemico
+foto locale → preparazione JPEG/Base64 → /api/analyze → backend /analizza
+            → ingredienti[] → catalogo embedded → nutrienti + CG
 ```
 
-Funzionalità disponibili:
+- la Function `api/analyze.ts` richiede `APP_ACCESS_KEY`, valida il payload e applica un timeout;
+- verso l’upstream vengono inoltrati solo `Content-Type` e il payload validato;
+- `device_id` è effimero, ha prefisso `dev_` e viene rigenerato a ogni richiesta;
+- il middleware Vite usa lo stesso handler della Function, senza proxy trasparente di header, cookie, origine o referrer;
+- la risposta fotografica accetta ingredienti con grammi finiti nel range operativo `0..2000`;
+- modificare i grammi ricalcola tutto localmente e non ripete l’upload.
 
-- acquisizione da fotocamera, selezione file e drag-and-drop;
-- conversione e ridimensionamento locale in JPEG/Base64;
-- richiesta tipizzata con `image_base64`, `device_id`, `mime` e `premium`;
-- nuovo `device_id` effimero con prefisso `dev_` per ogni richiesta;
-- Function Vercel protetta da `APP_ACCESS_KEY`;
-- parsing rigoroso della risposta fotografica;
-- catalogo APK completo di 228 alimenti e lookup esatto tramite `catalogo_id`;
-- nutrienti totali e normalizzati per 100 g;
-- totale dei carboidrati disponibili messo in primo piano come valore da inserire nel campo “Carboidrati” del controller microinfusore, con avviso quando il calcolo è parziale;
-- carico glicemico totale, fascia, affidabilità e contributi principali;
-- grammi modificabili con ricalcolo immediato e interamente locale;
-- interfaccia mobile-first dark con azzurro elettrico e accenti oro;
-- scansione animata sulla foto durante l'analisi e scroll al risultato completato;
-- installabilità PWA e modalità standalone;
-- interfaccia responsive in React 19, Tailwind CSS 4 e font Inter;
-- wordmark testuale nell'interfaccia e icone dedicate alla PWA.
+Il contratto upstream della foto è rimasto invariato: non sono stati aggiunti campi non verificati.
 
-## Esperienza mobile e PWA
+### Barcode
 
-La web app include manifest, metadati mobile, icone e service worker. Nei browser compatibili compare il pulsante **Installa app** tramite `beforeinstallprompt`; sugli altri browser l'installazione resta disponibile, quando supportata, dal menu del browser. In modalità standalone vengono rispettate le safe area del dispositivo.
+Il browser chiama solo `/api/barcode`. La Function e il middleware locale interrogano Open Food Facts server-side con:
 
-Il service worker viene registrato soltanto in produzione. Gestisce la shell e gli asset same-origin visitati, usa una strategia network-first per le navigazioni e può mostrare la shell già memorizzata quando la rete non è disponibile. Ogni modifica agli asset stabili del service worker richiede l'incremento di `CACHE_NAME`.
+- codice validato da 6 a 14 cifre;
+- timeout di 9 secondi;
+- redirect disabilitati;
+- risposta `no-store`;
+- allowlist dei soli campi nome, marca, porzione, immagine e nutrienti dichiarati.
 
-L'endpoint `/api/` è escluso esplicitamente dalla cache: foto, password e risposte di analisi non vengono conservate dal service worker. Di conseguenza l'interfaccia può essere riaperta in condizioni limitate senza rete, ma una nuova analisi fotografica richiede sempre la connessione. Non viene dichiarato un funzionamento offline completo.
+I dati di etichetta ottenuti su richiesta non arricchiscono né modificano il catalogo embedded. Un prodotto può essere salvato nel diario soltanto quando il nome risolve univocamente un alimento locale e sono disponibili sia l’IG locale sia i carboidrati dichiarati del prodotto. CG e fascia usano quella stessa base coerente; in caso contrario restano non disponibili.
 
-## Parità con l'app Expo
+Lo scanner da immagine usa progressivamente `BarcodeDetector` quando supportato. L’inserimento manuale resta sempre disponibile e non è stata aggiunta alcuna dipendenza npm obbligatoria.
 
-La web app **non è ancora in parità funzionale completa** con l'app Expo di riferimento. Sono disponibili il flusso foto, il catalogo locale usato dai calcoli, i nutrienti/CG e la correzione dei grammi. Restano assenti, tra le altre, navigazione e confronto del catalogo, preferiti, diario e streak, piatti salvati, barcode/Open Food Facts, compositore multi-alimento completo, ricette, piano e lista della spesa, contenuti/onboarding completi, promemoria e acquisti premium.
+## Catalogo e calcoli locali
 
-La matrice verificata delle funzioni e l'inventario degli URL sono in [`docs/expo-parity.md`](docs/expo-parity.md). Nessuna funzione assente viene simulata o presentata come disponibile.
+`src/catalog/foodCatalog.ts` fornisce lookup per ID e fallback deterministico per nome/sinonimo. Le voci con `nascondi=true` non compaiono nella ricerca, ma restano disponibili per risolvere ingredienti ricevuti dal backend. Le collisioni ambigue non vengono risolte arbitrariamente.
 
-## Catalogo APK completo
-
-`src/catalog/apkCatalogData.json` contiene tutte le **228 voci** esportate dalla funzione Hermes `#14256` all'offset `0x002cd72e` del bundle APK:
-
-- 228 ID univoci;
-- 37 campi base per ogni alimento;
-- 219 voci con 37 campi e 9 con 38;
-- campo extra `maturazione` conservato in 8 voci;
-- campo extra `nota_curatela` conservato in 1 voce;
-- stringhe, numeri, booleani, `null`, array e oggetti preservati senza arricchimenti esterni.
-
-`src/catalog/verifiedCatalogData.ts` espone il JSON completo mantenendo separati i metadati originali. Se il backend restituisce un `catalogo_id` assente o nullo, l'ingrediente viene segnalato e non riceve valori di ripiego inventati.
-
-### Rigenerazione dal bundle
-
-Lo script riproducibile `scripts/extract_apk_catalog.py` emula solo le istruzioni lineari osservate in `#14256` e interrompe l'operazione se versione, offset, struttura, conteggio o unicità degli ID non corrispondono alle evidenze.
-
-Requisiti aggiuntivi: Python 3 e il pacchetto `hermes-dec` disponibile nell'ambiente Python. Con la struttura di questa workspace:
-
-```bash
-python scripts/extract_apk_catalog.py
-```
-
-Percorsi alternativi possono essere passati esplicitamente:
-
-```bash
-python scripts/extract_apk_catalog.py --bundle path/to/index.android.bundle --output src/catalog/apkCatalogData.json
-```
-
-## Calcoli locali
-
-Per ogni ingrediente risolto, i valori nutrizionali sono scalati con:
+Per ogni ingrediente risolto:
 
 ```text
 valore_porzione = valore_per_100_g × grammi / 100
+CG_ingrediente = IG_aggiustato × carboidrati_disponibili_porzione / 100
 ```
 
-Il carico glicemico replica `calcolaImpatto #15923`:
+`aggiustaIGperPreparazione` replica la logica verificata `#18406` con fattori cumulativi:
 
-```text
-carboidrati_porzione = carboidrati_disponibili_g × grammi / 100
-CG_ingrediente = IG_medio × carboidrati_porzione / 100
+- al dente `×0,90`;
+- stracotto, frullato o passato `×1,15`;
+- freddo, raffreddato o riposato `×0,88`;
+- aceto, limone o acidulo `×0,92`;
+- clamp finale nell’intervallo consentito dalla funzione osservata.
+
+`src/domain/impactCalculator.ts` implementa il calcolo `#18423`, inclusi contributi `CG >= 0,5`, fascia `trascurabile/basso/medio/alto`, riconoscimento di preparazioni veloci/liquide, pesi cotti e override verificato per alcuni piatti interi. I nutrienti assenti non vengono convertiti implicitamente in dati conosciuti nell’UI aggregata.
+
+## Diario, quiz e condivisione
+
+Diario e quiz usano esclusivamente `localStorage`:
+
+- nessun account o identificatore persistente;
+- massimo 800 voci diario;
+- slot pendente monouso con TTL di 120 secondi;
+- rollover locale per diario/progressi e UTC per il quiz quotidiano;
+- streak incrementata al massimo una volta nello stesso giorno;
+- immagini e Base64 non vengono mai persistiti.
+
+Le card PNG sono generate con Canvas sul dispositivo. Web Share o il download vengono avviati solo da un’azione esplicita dell’utente.
+
+## Privacy e confini intenzionali
+
+- nessun Firebase Analytics/Messaging, advertising ID, SSAID o evento di telemetria;
+- nessun font remoto: viene usato lo stack di sistema;
+- nessuna chiamata browser diretta agli upstream foto o barcode;
+- nessun paywall, referral, invito, chat, autore, libro o contenuto commerciale;
+- nessuna immagine ricetta associata senza una mappa ID→asset verificata;
+- link educativi cliccabili soltanto se HTTPS e non personali/commerciali;
+- nessun dato demo aggiunto al diario o ai progressi.
+
+La password del sito resta nel solo `sessionStorage` della scheda. Non inserire segreti nelle variabili `VITE_*`, perché vengono incluse nel bundle pubblico.
+
+## PWA e offline
+
+Manifest, icone, safe area e service worker rendono l’app installabile. In produzione il service worker:
+
+- scarica l’HTML corrente durante l’installazione;
+- precachea gli asset same-origin referenziati dall’HTML, inclusi i bundle hashati JS/CSS;
+- usa network-first per le navigazioni e cache-first per gli asset;
+- esclude sempre `/api/*` dalla cache;
+- elimina le versioni precedenti della shell.
+
+L’interfaccia e i dataset embedded possono essere riaperti offline dopo un’installazione completata. Analisi foto, lookup barcode e qualsiasi altra operazione remota richiedono la rete.
+
+## Sincronizzazione e prove documentali
+
+Per risincronizzare i quattro dataset verificati dalla documentazione estratta:
+
+```powershell
+python scripts/sync_verified_runtime_data.py
 ```
 
-Comportamento mantenuto dall'APK:
+Lo script valida origine, struttura e conteggi prima di scrivere i file runtime. Approfondimenti:
 
-- usa i grammi positivi ricevuti, altrimenti `porzione_standard_g`;
-- arrotonda CG totale e contributi a un decimale;
-- mostra tra i contributi soltanto valori `CG >= 0,5`;
-- ordina i contributi per CG decrescente;
-- assegna fascia `basso` fino a 10, `medio` fino a 19 e `alto` oltre 19;
-- assegna affidabilità `media` con copertura del catalogo almeno 0,6, altrimenti `bassa`.
-
-La modifica dei grammi applica round e clamp `0..2000` allo stato React. Non ripete l'upload e non effettua una nuova richiesta HTTP: nutrienti, valori per 100 g, CG e contributi vengono ricalcolati dal catalogo locale.
-
-Le evidenze puntuali sono in [`docs/evidence.md`](docs/evidence.md).
+- [`docs/version-1.0.16-delta.md`](docs/version-1.0.16-delta.md): confronto VERIFIED/INFERRED/SDK-only/EXCLUDED;
+- [`docs/version-1.0.16-porting-plan.md`](docs/version-1.0.16-porting-plan.md): mappa di porting e invarianti;
+- [`docs/version-1.0.16-audit.json`](docs/version-1.0.16-audit.json): inventario riproducibile;
+- `docs/hbc-functions/`: disassembly e decompilati Hermes usati come evidenza.
 
 ## Stack
 
@@ -107,94 +137,58 @@ Le evidenze puntuali sono in [`docs/evidence.md`](docs/evidence.md).
 - TypeScript 5.9
 - Vite 7
 - Tailwind CSS 4
-- Vitest 3
-- ESLint 9
 - Vercel Functions
+- PWA senza plugin runtime aggiuntivi
 
 ## Avvio locale
 
-Requisiti: una versione recente di Node.js compatibile con Vite 7 e npm.
+Requisiti: Node.js compatibile con Vite 7 e npm.
 
-```bash
+```powershell
 npm install
 npm run dev
 ```
 
-In sviluppo, Vite inoltra `/api/analyze` al Worker configurato in `vite.config.ts`. L'app è disponibile all'indirizzo mostrato da Vite nel terminale.
+Copia `.env.example` in `.env.local` e imposta una chiave privata per usare anche il flusso foto locale:
 
-## Variabili ambiente
-
-Copia `.env.example` in `.env.local` per personalizzare il client:
-
-```bash
-cp .env.example .env.local
+```powershell
+Copy-Item .env.example .env.local
 ```
 
-Variabili client:
+| Variabile | Ambito | Obbligatoria | Descrizione |
+| --- | --- | --- | --- |
+| `VITE_ANALYSIS_PATH` | Browser | No | Endpoint same-origin; default `/api/analyze` |
+| `VITE_ANALYSIS_PREMIUM` | Browser | No | Campo del payload client; default `true` |
+| `APP_ACCESS_KEY` | Server/Vite dev | Sì | Chiave confrontata prima dell’inoltro foto |
+| `ANALYSIS_ENDPOINT` | Server/Vite dev | No | Endpoint foto configurabile lato server |
+| `ANALYSIS_PREMIUM` | Server/Vite dev | No | `false` disattiva il flag inoltrato; default `true` |
 
-| Variabile | Default | Descrizione |
-| --- | --- | --- |
-| `VITE_ANALYSIS_PATH` | `/api/analyze` | Endpoint chiamato dal browser |
-| `VITE_ANALYSIS_PREMIUM` | `true` | Valore `premium` nel payload client |
+## Deploy Vercel
 
-Variabili server da configurare su Vercel:
+1. Importare il repository con framework preset **Vite**.
+2. Configurare `APP_ACCESS_KEY` nel progetto.
+3. Configurare facoltativamente `ANALYSIS_ENDPOINT` e `ANALYSIS_PREMIUM`.
+4. Usare `main` come Production Branch se si desidera il deploy automatico a ogni push.
 
-| Variabile | Obbligatoria | Descrizione |
-| --- | --- | --- |
-| `APP_ACCESS_KEY` | Sì | Password privata verificata dalla Function |
-| `ANALYSIS_ENDPOINT` | No | Endpoint upstream; usa quello previsto dal progetto se assente |
-| `ANALYSIS_PREMIUM` | No | Imposta `false` per disattivare `premium`; default `true` |
-
-### A cosa serve la “Password del sito”
-
-La password richiesta nell'interfaccia è il valore di `APP_ACCESS_KEY` configurato nel progetto Vercel. Non appartiene al backend di analisi: protegge la Function pubblica `/api/analyze` dall'uso da parte di terzi.
-
-Il browser la invia nell'header `X-App-Access-Key`; `api/analyze.ts` la confronta prima di inoltrare la foto. Il valore resta nel solo `sessionStorage` della scheda e viene eliminato alla chiusura della sessione. Non inserire segreti nelle variabili `VITE_*`, perché vengono incluse nel bundle pubblico.
-
-## Comandi
-
-```bash
-npm run typecheck  # controllo TypeScript
-npm test           # test non interattivi
-npm run lint       # analisi ESLint
-npm run build      # typecheck e build di produzione
-npm run preview    # anteprima locale della build
-```
-
-## Deploy su Vercel
-
-1. Importa il repository GitHub in Vercel.
-2. Seleziona il framework preset **Vite**.
-3. Configura `APP_ACCESS_KEY` nelle variabili ambiente del progetto.
-4. Configura opzionalmente `ANALYSIS_ENDPOINT` e `ANALYSIS_PREMIUM`.
-5. Imposta `main` come Production Branch.
-
-Con l'integrazione Git del progetto attiva, Vercel crea un deployment di produzione per ogni push su `main` e deployment di anteprima per gli altri branch.
-
-L'automazione è stata verificata sul progetto Vercel **`glicogig-diabete`**: il push su `main` del commit applicativo ha creato e completato il relativo deployment Production. Non va aggiunta una GitHub Action con `vercel deploy`, perché duplicherebbe i deployment già generati dall'integrazione nativa.
-
-In precedenza il repository era collegato anche a un secondo progetto Vercel chiamato **`glicogig`**, configurato con la cartella di output errata `build`. La connessione Git del duplicato è stata rimossa senza eliminare il progetto; `glicogig-diabete` resta l'unico progetto collegato e riceve i push su `main`.
+Il progetto collegato è `glicogig-diabete`; il vecchio duplicato `glicogig` non deve essere ricollegato, per evitare deployment doppi con output errato.
 
 ## Architettura essenziale
 
 ```text
-api/analyze.ts                         Function Vercel e proxy protetto
-public/manifest.webmanifest            Metadati installazione PWA
-public/sw.js                           Cache shell/asset; esclusione esplicita /api/
-scripts/extract_apk_catalog.py         Estrazione riproducibile da Hermes
-src/main.tsx                           Bootstrap React e registrazione SW production
-src/services/imagePreparation.ts       Preparazione JPEG/Base64
-src/services/requestDeviceId.ts        ID effimero per richiesta
-src/services/photoAnalysisService.ts   Client e parsing della risposta
-src/catalog/apkCatalogData.json        Dataset APK completo
-src/catalog/foodCatalog.ts             Lookup esatto per catalogo_id
-src/domain/nutritionCalculator.ts      Scaling e aggregazione nutrizionale
-src/domain/impactCalculator.ts         CG, fascia, copertura e contributi
-src/components/InstallPrompt.tsx       Prompt installazione sui browser compatibili
-src/components/PhotoCard.tsx           Acquisizione e animazione della foto
-src/components/ResultPanel.tsx         Report e modifica locale dei grammi
+api/analyze.ts                         boundary foto condiviso da Vercel e Vite dev
+api/barcode.ts                         proxy barcode con allowlist
+public/manifest.webmanifest            metadati PWA
+public/sw.js                           precache shell/asset ed esclusione /api/
+scripts/sync_verified_runtime_data.py  sincronizzazione dataset verificati
+src/catalog/datasets.ts                unico boundary dei quattro dataset 1.0.16
+src/catalog/foodCatalog.ts              ricerca e risoluzione deterministica
+src/domain/                             preparazione, nutrienti, impatto, stabilità e quiz
+src/services/                           client foto/barcode, immagini e share card
+src/storage/                            diario e quiz locali
+src/state/mealSession.tsx               sessione multipiatto solo in memoria
+src/screens/                            sei sezioni della shell hash
 ```
 
 ## Avvertenza
 
-Le stime mostrate sono informative e non sostituiscono indicazioni mediche o nutrizionali professionali.
+Le stime e i contenuti mostrati sono informativi e non sostituiscono diagnosi, terapia o indicazioni mediche e nutrizionali professionali.

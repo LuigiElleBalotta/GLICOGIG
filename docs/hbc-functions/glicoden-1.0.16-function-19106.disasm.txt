@@ -1,0 +1,1667 @@
+# Function #19106 'ScanScreen'
+# offset=5120656 bytes=7557
+
+00000000: <CreateEnvironment>: <Reg8: 7>
+00000002: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000005: <GetById>: <Reg8: 9, Reg8: 0, UInt8: 1, string_id: 32811>  # String: 'navigation' (Identifier)
+0000000b: <StoreToEnvironment>: <Reg8: 7, UInt8: 0, Reg8: 9>
+0000000f: <GetEnvironment>: <Reg8: 13, UInt8: 0>
+00000012: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 9>
+00000016: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 2, string_id: 52338>  # String: 'useColors' (Identifier)
+0000001c: <LoadConstUndefined>: <Reg8: 3>
+0000001e: <Call1>: <Reg8: 29, Reg8: 0, Reg8: 3>
+00000022: <StoreToEnvironment>: <Reg8: 7, UInt8: 1, Reg8: 29>
+00000026: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 22>
+0000002a: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 3, string_id: 49145>  # String: 'useT' (Identifier)
+00000030: <Call1>: <Reg8: 17, Reg8: 0, Reg8: 3>
+00000034: <StoreToEnvironment>: <Reg8: 7, UInt8: 2, Reg8: 17>
+00000038: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 9>
+0000003c: <GetById>: <Reg8: 1, Reg8: 0, UInt8: 4, string_id: 56130>  # String: 'useThemedStyles' (Identifier)
+00000042: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 28>
+00000046: <Call2>: <Reg8: 16, Reg8: 1, Reg8: 3, Reg8: 0>
+0000004b: <StoreToEnvironment>: <Reg8: 7, UInt8: 3, Reg8: 16>
+0000004f: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 7>
+00000053: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 5, string_id: 56124>  # String: 'useSafeAreaInsets' (Identifier)
+00000059: <Call1>: <Reg8: 18, Reg8: 0, Reg8: 3>
+0000005d: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+00000061: <GetById>: <Reg8: 2, Reg8: 0, UInt8: 6, string_id: 47085>  # String: 'useCallback' (Identifier)
+00000067: <NewArray>: <Reg8: 1, UInt16: 1>
+0000006b: <PutOwnByIndex>: <Reg8: 1, Reg8: 9, UInt8: 0>
+0000006f: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19107>  # Function: [#19107  of 26 bytes]: 1 params @ offset 0x004e4015
+00000074: <Call3>: <Reg8: 8, Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 1>
+0000007a: <StoreToEnvironment>: <Reg8: 7, UInt8: 4, Reg8: 8>
+0000007e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 4>
+00000082: <GetById>: <Reg8: 1, Reg8: 0, UInt8: 7, string_id: 47084>  # String: 'useFocusEffect' (Identifier)
+00000088: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+0000008c: <GetById>: <Reg8: 4, Reg8: 0, UInt8: 6, string_id: 47085>  # String: 'useCallback' (Identifier)
+00000092: <NewArray>: <Reg8: 2, UInt16: 1>
+00000096: <PutOwnByIndex>: <Reg8: 2, Reg8: 8, UInt8: 0>
+0000009a: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19108>  # Function: [#19108  of 47 bytes]: 1 params @ offset 0x004e402f
+0000009f: <Call3>: <Reg8: 0, Reg8: 4, Reg8: 3, Reg8: 0, Reg8: 2>
+000000a5: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 3, Reg8: 0>
+000000aa: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 5>
+000000ae: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 8, string_id: 55481>  # String: 'useCameraPermissions' (Identifier)
+000000b4: <Call1>: <Reg8: 1, Reg8: 0, Reg8: 3>
+000000b8: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+000000bc: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+000000c1: <LoadConstUInt8>: <Reg8: 4, UInt8: 2>
+000000c4: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 1, Reg8: 4>
+000000ca: <LoadConstZero>: <Reg8: 37>
+000000cc: <GetByVal>: <Reg8: 1, Reg8: 0, Reg8: 37>
+000000d0: <StoreToEnvironment>: <Reg8: 7, UInt8: 5, Reg8: 1>
+000000d4: <LoadConstUInt8>: <Reg8: 32, UInt8: 1>
+000000d7: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+000000db: <StoreToEnvironment>: <Reg8: 7, UInt8: 6, Reg8: 0>
+000000df: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+000000e3: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+000000e8: <LoadConstString>: <Reg8: 14, string_id: 6386>  # String: 'idle' (String)
+000000ec: <Call2>: <Reg8: 1, Reg8: 0, Reg8: 3, Reg8: 14>
+000000f1: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+000000f5: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+000000fa: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 1, Reg8: 4>
+00000100: <GetByVal>: <Reg8: 15, Reg8: 0, Reg8: 37>
+00000104: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+00000108: <StoreToEnvironment>: <Reg8: 7, UInt8: 7, Reg8: 0>
+0000010c: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+00000110: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+00000115: <LoadConstString>: <Reg8: 1, string_id: 31798>  # String: '' (Identifier)
+00000119: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 1>
+0000011e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+00000122: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00000127: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 4>
+0000012d: <GetByVal>: <Reg8: 49, Reg8: 0, Reg8: 37>
+00000131: <StoreToEnvironment>: <Reg8: 7, UInt8: 8, Reg8: 49>
+00000135: <GetByVal>: <Reg8: 47, Reg8: 0, Reg8: 32>
+00000139: <StoreToEnvironment>: <Reg8: 7, UInt8: 9, Reg8: 47>
+0000013d: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+00000141: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+00000146: <LoadConstNull>: <Reg8: 39>
+00000148: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 39>
+0000014d: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+00000151: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00000156: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 4>
+0000015c: <GetByVal>: <Reg8: 25, Reg8: 0, Reg8: 37>
+00000160: <StoreToEnvironment>: <Reg8: 7, UInt8: 10, Reg8: 25>
+00000164: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+00000168: <StoreToEnvironment>: <Reg8: 7, UInt8: 11, Reg8: 0>
+0000016c: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+00000170: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+00000175: <LoadConstUInt8>: <Reg8: 36, UInt8: 100>
+00000178: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 36>
+0000017d: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+00000181: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00000186: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 4>
+0000018c: <GetByVal>: <Reg8: 46, Reg8: 0, Reg8: 37>
+00000190: <StoreToEnvironment>: <Reg8: 7, UInt8: 12, Reg8: 46>
+00000194: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+00000198: <StoreToEnvironment>: <Reg8: 7, UInt8: 13, Reg8: 0>
+0000019c: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+000001a0: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+000001a5: <Call2>: <Reg8: 1, Reg8: 0, Reg8: 3, Reg8: 1>
+000001aa: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+000001ae: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+000001b3: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 1, Reg8: 4>
+000001b9: <GetByVal>: <Reg8: 43, Reg8: 0, Reg8: 37>
+000001bd: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+000001c1: <StoreToEnvironment>: <Reg8: 7, UInt8: 14, Reg8: 0>
+000001c5: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+000001c9: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+000001ce: <LoadConstFalse>: <Reg8: 1>
+000001d0: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 1>
+000001d5: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+000001d9: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+000001de: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 4>
+000001e4: <GetByVal>: <Reg8: 34, Reg8: 0, Reg8: 37>
+000001e8: <StoreToEnvironment>: <Reg8: 7, UInt8: 15, Reg8: 34>
+000001ec: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+000001f0: <StoreToEnvironment>: <Reg8: 7, UInt8: 16, Reg8: 0>
+000001f4: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+000001f8: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+000001fd: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 37>
+00000202: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 1>
+00000206: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+0000020b: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 4>
+00000211: <GetByVal>: <Reg8: 10, Reg8: 0, Reg8: 37>
+00000215: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 32>
+00000219: <StoreToEnvironment>: <Reg8: 7, UInt8: 17, Reg8: 0>
+0000021d: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 13>
+00000221: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 11, string_id: 56049>  # String: 'usePasto' (Identifier)
+00000227: <Call1>: <Reg8: 42, Reg8: 0, Reg8: 3>
+0000022b: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+0000022f: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 12, string_id: 49139>  # String: 'useRef' (Identifier)
+00000235: <Call2>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 1>
+0000023a: <StoreToEnvironment>: <Reg8: 7, UInt8: 18, Reg8: 0>
+0000023e: <Not>: <Reg8: 1, Reg8: 25>
+00000241: <Not>: <Reg8: 0, Reg8: 1>
+00000244: <JmpTrue>: <Addr8: 13, Reg8: 1>  # Address: 00000251
+00000247: <GetById>: <Reg8: 1, Reg8: 25, UInt8: 13, string_id: 43588>  # String: 'carbo100' (Identifier)
+0000024d: <Eq>: <Reg8: 0, Reg8: 1, Reg8: 39>
+00000251: <JmpFalse>: <Addr8: 13, Reg8: 0>  # Address: 0000025e
+00000254: <GetById>: <Reg8: 1, Reg8: 25, UInt8: 14, string_id: 42003>  # String: 'zuccheri100' (Identifier)
+0000025a: <Eq>: <Reg8: 0, Reg8: 1, Reg8: 39>
+0000025e: <JmpFalse>: <Addr8: 13, Reg8: 0>  # Address: 0000026b
+00000261: <GetById>: <Reg8: 1, Reg8: 25, UInt8: 15, string_id: 42895>  # String: 'proteine100' (Identifier)
+00000267: <Eq>: <Reg8: 0, Reg8: 1, Reg8: 39>
+0000026b: <JmpFalse>: <Addr8: 13, Reg8: 0>  # Address: 00000278
+0000026e: <GetById>: <Reg8: 1, Reg8: 25, UInt8: 16, string_id: 35212>  # String: 'grassi100' (Identifier)
+00000274: <Eq>: <Reg8: 0, Reg8: 1, Reg8: 39>
+00000278: <StoreNPToEnvironment>: <Reg8: 7, UInt8: 19, Reg8: 0>
+0000027c: <LoadFromEnvironment>: <Reg8: 1, Reg8: 13, UInt8: 2>
+00000280: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 17, string_id: 33810>  # String: 'useMemo' (Identifier)
+00000286: <NewArray>: <Reg8: 1, UInt16: 3>
+0000028a: <PutOwnByIndex>: <Reg8: 1, Reg8: 25, UInt8: 0>
+0000028e: <PutOwnByIndex>: <Reg8: 1, Reg8: 0, UInt8: 1>
+00000292: <PutOwnByIndex>: <Reg8: 1, Reg8: 46, UInt8: 2>
+00000296: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19111>  # Function: [#19111  of 122 bytes]: 1 params @ offset 0x004e406f
+0000029b: <Call3>: <Reg8: 38, Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 1>
+000002a1: <StoreToEnvironment>: <Reg8: 7, UInt8: 20, Reg8: 38>
+000002a5: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19112>  # Function: [#19112 cambiaPorzione of 86 bytes]: 2 params @ offset 0x004e40e9
+000002aa: <StoreToEnvironment>: <Reg8: 7, UInt8: 21, Reg8: 0>
+000002ae: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 2>
+000002b2: <GetById>: <Reg8: 2, Reg8: 0, UInt8: 6, string_id: 47085>  # String: 'useCallback' (Identifier)
+000002b8: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19114>  # Function: [#19114  of 37 bytes]: 1 params @ offset 0x004e419a
+000002bd: <Call1>: <Reg8: 1, Reg8: 0, Reg8: 3>
+000002c1: <NewArray>: <Reg8: 0, UInt16: 0>
+000002c5: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+000002cb: <StoreToEnvironment>: <Reg8: 7, UInt8: 22, Reg8: 0>
+000002cf: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19118>  # Function: [#19118  of 37 bytes]: 1 params @ offset 0x004e42f4
+000002d4: <Call1>: <Reg8: 26, Reg8: 0, Reg8: 3>
+000002d8: <CreateClosure>: <Reg8: 0, Reg8: 7, function_id: 19124>  # Function: [#19124  of 37 bytes]: 1 params @ offset 0x004e4436
+000002dd: <Call1>: <Reg8: 48, Reg8: 0, Reg8: 3>
+000002e1: <CreateClosure>: <Reg8: 12, Reg8: 7, function_id: 19129>  # Function: [#19129 ricomincia of 86 bytes]: 1 params @ offset 0x004e4518
+000002e6: <LoadConstString>: <Reg8: 0, string_id: 4345>  # String: 'scanning' (String)
+000002ea: <JStrictEqualLong>: <Addr32: 6277, Reg8: 15, Reg8: 0>  # Address: 00001b6f
+000002f1: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 25>
+000002f5: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+000002fa: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 3>
+000002fe: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000303: <NewObject>: <Reg8: 0>
+00000305: <NewObject>: <Reg8: 4>
+00000307: <PutNewOwnByIdShort>: <Reg8: 4, Reg8: 32, string_id: 121>  # String: 'flex' (Identifier)
+0000030b: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 238>  # String: 'style' (Identifier)
+0000030f: <LoadFromEnvironment>: <Reg8: 4, Reg8: 13, UInt8: 25>
+00000313: <GetByIdShort>: <Reg8: 6, Reg8: 4, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000318: <LoadFromEnvironment>: <Reg8: 4, Reg8: 13, UInt8: 17>
+0000031c: <GetByIdShort>: <Reg8: 5, Reg8: 4, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00000321: <NewObject>: <Reg8: 4>
+00000323: <PutNewOwnByIdShort>: <Reg8: 4, Reg8: 8, string_id: 191>  # String: 'onPress' (Identifier)
+00000327: <Call3>: <Reg8: 5, Reg8: 6, Reg8: 3, Reg8: 5, Reg8: 4>
+0000032d: <NewArray>: <Reg8: 4, UInt16: 3>
+00000331: <PutOwnByIndex>: <Reg8: 4, Reg8: 5, UInt8: 0>
+00000335: <LoadFromEnvironment>: <Reg8: 5, Reg8: 13, UInt8: 25>
+00000339: <GetByIdShort>: <Reg8: 8, Reg8: 5, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000033e: <LoadFromEnvironment>: <Reg8: 5, Reg8: 13, UInt8: 3>
+00000342: <GetById>: <Reg8: 6, Reg8: 5, UInt8: 21, string_id: 35686>  # String: 'ScrollView' (Identifier)
+00000348: <NewObject>: <Reg8: 5>
+0000034a: <GetById>: <Reg8: 11, Reg8: 16, UInt8: 22, string_id: 33002>  # String: 'wrap' (Identifier)
+00000350: <PutNewOwnByIdShort>: <Reg8: 5, Reg8: 11, string_id: 238>  # String: 'style' (Identifier)
+00000354: <NewObjectWithBufferLong>: <Reg8: 11, UInt16: 3, UInt16: 3, UInt32: 46272, UInt32: 179259>  # Object: {'padding': 16, 'paddingTop': null, 'paddingBottom': 40}
+00000362: <LoadConstUInt8>: <Reg8: 28, UInt8: 16>
+00000365: <GetByIdShort>: <Reg8: 20, Reg8: 18, UInt8: 23, string_id: 44>  # String: 'top' (Identifier)
+0000036a: <LoadConstUInt8>: <Reg8: 19, UInt8: 54>
+0000036d: <Add>: <Reg8: 19, Reg8: 20, Reg8: 19>
+00000371: <PutById>: <Reg8: 11, Reg8: 19, UInt8: 1, string_id: 43688>  # String: 'paddingTop' (Identifier)
+00000377: <PutNewOwnById>: <Reg8: 5, Reg8: 11, string_id: 52918>  # String: 'contentContainerStyle' (Identifier)
+0000037c: <LoadConstString>: <Reg8: 11, string_id: 35482>  # String: 'handled' (Identifier)
+00000380: <PutNewOwnById>: <Reg8: 5, Reg8: 11, string_id: 32761>  # String: 'keyboardShouldPersistTaps' (Identifier)
+00000385: <LoadConstString>: <Reg8: 11, string_id: 21969>  # String: 'on-drag' (String)
+00000389: <PutNewOwnById>: <Reg8: 5, Reg8: 11, string_id: 41642>  # String: 'keyboardDismissMode' (Identifier)
+0000038e: <LoadFromEnvironment>: <Reg8: 11, Reg8: 13, UInt8: 25>
+00000392: <GetByIdShort>: <Reg8: 20, Reg8: 11, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000397: <LoadFromEnvironment>: <Reg8: 11, Reg8: 13, UInt8: 3>
+0000039b: <GetByIdShort>: <Reg8: 19, Reg8: 11, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+000003a0: <NewObject>: <Reg8: 11>
+000003a2: <GetById>: <Reg8: 21, Reg8: 16, UInt8: 24, string_id: 41903>  # String: 'tagRow' (Identifier)
+000003a8: <PutNewOwnByIdShort>: <Reg8: 11, Reg8: 21, string_id: 238>  # String: 'style' (Identifier)
+000003ac: <LoadFromEnvironment>: <Reg8: 21, Reg8: 13, UInt8: 25>
+000003b0: <GetByIdShort>: <Reg8: 23, Reg8: 21, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000003b5: <LoadFromEnvironment>: <Reg8: 21, Reg8: 13, UInt8: 3>
+000003b9: <GetByIdShort>: <Reg8: 22, Reg8: 21, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+000003be: <NewObject>: <Reg8: 21>
+000003c0: <GetById>: <Reg8: 24, Reg8: 16, UInt8: 25, string_id: 42636>  # String: 'freeChip' (Identifier)
+000003c6: <PutNewOwnByIdShort>: <Reg8: 21, Reg8: 24, string_id: 238>  # String: 'style' (Identifier)
+000003ca: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 25>
+000003ce: <GetByIdShort>: <Reg8: 30, Reg8: 24, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000003d3: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 3>
+000003d7: <GetByIdShort>: <Reg8: 27, Reg8: 24, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000003dc: <NewObject>: <Reg8: 24>
+000003de: <GetById>: <Reg8: 31, Reg8: 16, UInt8: 27, string_id: 42637>  # String: 'freeChipTxt' (Identifier)
+000003e4: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+000003e8: <LoadConstString>: <Reg8: 31, string_id: 12220>  # String: 'scan.cinqueSett' (String)
+000003ec: <Call2>: <Reg8: 31, Reg8: 17, Reg8: 3, Reg8: 31>
+000003f1: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+000003f5: <Call3>: <Reg8: 24, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 24>
+000003fb: <PutNewOwnByIdShort>: <Reg8: 21, Reg8: 24, string_id: 74>  # String: 'children' (Identifier)
+000003ff: <Call3>: <Reg8: 22, Reg8: 23, Reg8: 3, Reg8: 22, Reg8: 21>
+00000405: <NewArray>: <Reg8: 21, UInt16: 2>
+00000409: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 0>
+0000040d: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+00000411: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000416: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 3>
+0000041a: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+0000041f: <NewObject>: <Reg8: 22>
+00000421: <GetByIdShort>: <Reg8: 27, Reg8: 16, UInt8: 28, string_id: 239>  # String: 'tag' (Identifier)
+00000426: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+0000042a: <LoadConstString>: <Reg8: 27, string_id: 3637>  # String: 'scan.tag' (String)
+0000042e: <Call2>: <Reg8: 27, Reg8: 17, Reg8: 3, Reg8: 27>
+00000433: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000437: <Call3>: <Reg8: 22, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+0000043d: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 1>
+00000441: <PutNewOwnByIdShort>: <Reg8: 11, Reg8: 21, string_id: 74>  # String: 'children' (Identifier)
+00000445: <Call3>: <Reg8: 19, Reg8: 20, Reg8: 3, Reg8: 19, Reg8: 11>
+0000044b: <NewArray>: <Reg8: 11, UInt16: 11>
+0000044f: <PutOwnByIndex>: <Reg8: 11, Reg8: 19, UInt8: 0>
+00000453: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+00000457: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000045c: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 3>
+00000460: <GetByIdShort>: <Reg8: 20, Reg8: 19, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000465: <NewObject>: <Reg8: 19>
+00000467: <GetById>: <Reg8: 22, Reg8: 16, UInt8: 29, string_id: 31850>  # String: 'h' (Identifier)
+0000046d: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+00000471: <LoadConstString>: <Reg8: 22, string_id: 4301>  # String: 'scan.titolo' (String)
+00000475: <Call2>: <Reg8: 22, Reg8: 17, Reg8: 3, Reg8: 22>
+0000047a: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+0000047e: <Call3>: <Reg8: 19, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+00000484: <PutOwnByIndex>: <Reg8: 11, Reg8: 19, UInt8: 1>
+00000488: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+0000048c: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000491: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 3>
+00000495: <GetByIdShort>: <Reg8: 20, Reg8: 19, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+0000049a: <NewObject>: <Reg8: 19>
+0000049c: <GetById>: <Reg8: 22, Reg8: 16, UInt8: 30, string_id: 32912>  # String: 'lead' (Identifier)
+000004a2: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+000004a6: <LoadConstString>: <Reg8: 22, string_id: 1077>  # String: 'scan.lead' (String)
+000004aa: <Call2>: <Reg8: 22, Reg8: 17, Reg8: 3, Reg8: 22>
+000004af: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+000004b3: <Call3>: <Reg8: 19, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+000004b9: <PutOwnByIndex>: <Reg8: 11, Reg8: 19, UInt8: 2>
+000004bd: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+000004c1: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000004c6: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 3>
+000004ca: <GetById>: <Reg8: 20, Reg8: 19, UInt8: 31, string_id: 33641>  # String: 'Image' (Identifier)
+000004d0: <NewObject>: <Reg8: 19>
+000004d2: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 26>
+000004d6: <PutNewOwnById>: <Reg8: 19, Reg8: 22, string_id: 34997>  # String: 'source' (Identifier)
+000004db: <GetById>: <Reg8: 22, Reg8: 16, UInt8: 32, string_id: 34364>  # String: 'hero' (Identifier)
+000004e1: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+000004e5: <LoadConstString>: <Reg8: 31, string_id: 34282>  # String: 'cover' (Identifier)
+000004e9: <PutNewOwnById>: <Reg8: 19, Reg8: 31, string_id: 46651>  # String: 'resizeMode' (Identifier)
+000004ee: <Call3>: <Reg8: 19, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+000004f4: <PutOwnByIndex>: <Reg8: 11, Reg8: 19, UInt8: 3>
+000004f8: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+000004fc: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000501: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 3>
+00000505: <GetByIdShort>: <Reg8: 20, Reg8: 19, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+0000050a: <NewObject>: <Reg8: 19>
+0000050c: <GetById>: <Reg8: 22, Reg8: 16, UInt8: 33, string_id: 47013>  # String: 'freemium' (Identifier)
+00000512: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+00000516: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+0000051a: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000051f: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 8>
+00000523: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000528: <NewObjectWithBufferLong>: <Reg8: 22, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188109>  # Object: {'name': 'barcode-outline', 'size': 15}
+00000536: <LoadConstString>: <Reg8: 33, string_id: 39637>  # String: 'barcode-outline' (Identifier)
+0000053a: <GetByIdShort>: <Reg8: 27, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+0000053f: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 27, string_id: 78>  # String: 'color' (Identifier)
+00000543: <Call3>: <Reg8: 23, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00000549: <NewArray>: <Reg8: 22, UInt16: 2>
+0000054d: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 0>
+00000551: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000555: <GetByIdShort>: <Reg8: 27, Reg8: 23, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000055a: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+0000055e: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000563: <NewObject>: <Reg8: 23>
+00000565: <GetById>: <Reg8: 30, Reg8: 16, UInt8: 36, string_id: 35477>  # String: 'freemiumTxt' (Identifier)
+0000056b: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 30, string_id: 238>  # String: 'style' (Identifier)
+0000056f: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00000573: <GetByIdShort>: <Reg8: 40, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000578: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+0000057c: <GetByIdShort>: <Reg8: 35, Reg8: 30, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000581: <NewObject>: <Reg8: 30>
+00000583: <NewObject>: <Reg8: 41>
+00000585: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 9>
+00000589: <GetByIdShort>: <Reg8: 44, Reg8: 44, UInt8: 37, string_id: 129>  # String: 'fonts' (Identifier)
+0000058e: <GetByIdShort>: <Reg8: 44, Reg8: 44, UInt8: 38, string_id: 48>  # String: 'bold' (Identifier)
+00000593: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 44, string_id: 45>  # String: 'fontFamily' (Identifier)
+00000597: <GetByIdShort>: <Reg8: 44, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+0000059c: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 44, string_id: 78>  # String: 'color' (Identifier)
+000005a0: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 41, string_id: 238>  # String: 'style' (Identifier)
+000005a4: <LoadConstString>: <Reg8: 41, string_id: 828>  # String: 'scan.gratis' (String)
+000005a8: <Call2>: <Reg8: 41, Reg8: 17, Reg8: 3, Reg8: 41>
+000005ad: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 41, string_id: 74>  # String: 'children' (Identifier)
+000005b1: <Call3>: <Reg8: 35, Reg8: 40, Reg8: 3, Reg8: 35, Reg8: 30>
+000005b7: <NewArray>: <Reg8: 30, UInt16: 5>
+000005bb: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 0>
+000005bf: <LoadConstString>: <Reg8: 35, string_id: 1229>  # String: ' ' (String)
+000005c3: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 1>
+000005c7: <LoadConstString>: <Reg8: 35, string_id: 5764>  # String: 'scan.conPre' (String)
+000005cb: <Call2>: <Reg8: 35, Reg8: 17, Reg8: 3, Reg8: 35>
+000005d0: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 2>
+000005d4: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+000005d8: <GetByIdShort>: <Reg8: 41, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000005dd: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+000005e1: <GetByIdShort>: <Reg8: 40, Reg8: 35, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000005e6: <NewObject>: <Reg8: 35>
+000005e8: <NewObject>: <Reg8: 44>
+000005ea: <LoadFromEnvironment>: <Reg8: 45, Reg8: 13, UInt8: 9>
+000005ee: <GetByIdShort>: <Reg8: 45, Reg8: 45, UInt8: 37, string_id: 129>  # String: 'fonts' (Identifier)
+000005f3: <GetByIdShort>: <Reg8: 45, Reg8: 45, UInt8: 38, string_id: 48>  # String: 'bold' (Identifier)
+000005f8: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 45, string_id: 45>  # String: 'fontFamily' (Identifier)
+000005fc: <GetById>: <Reg8: 45, Reg8: 29, UInt8: 39, string_id: 52886>  # String: 'goldInk' (Identifier)
+00000602: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 45, string_id: 78>  # String: 'color' (Identifier)
+00000606: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 44, string_id: 238>  # String: 'style' (Identifier)
+0000060a: <LoadConstString>: <Reg8: 44, string_id: 4063>  # String: 'Plus' (String)
+0000060e: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 44, string_id: 74>  # String: 'children' (Identifier)
+00000612: <Call3>: <Reg8: 35, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 35>
+00000618: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 3>
+0000061c: <LoadConstString>: <Reg8: 35, string_id: 18530>  # String: 'scan.conPost' (String)
+00000620: <Call2>: <Reg8: 35, Reg8: 17, Reg8: 3, Reg8: 35>
+00000625: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 4>
+00000629: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 30, string_id: 74>  # String: 'children' (Identifier)
+0000062d: <Call3>: <Reg8: 23, Reg8: 27, Reg8: 3, Reg8: 24, Reg8: 23>
+00000633: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 1>
+00000637: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+0000063b: <Call3>: <Reg8: 19, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+00000641: <PutOwnByIndex>: <Reg8: 11, Reg8: 19, UInt8: 4>
+00000645: <GetByIdShort>: <Reg8: 19, Reg8: 42, UInt8: 40, string_id: 171>  # String: 'length' (Identifier)
+0000064a: <Greater>: <Reg8: 19, Reg8: 19, Reg8: 37>
+0000064e: <JmpFalseLong>: <Addr32: 252, Reg8: 19>  # Address: 0000074a
+00000654: <LoadFromEnvironment>: <Reg8: 20, Reg8: 13, UInt8: 25>
+00000658: <GetByIdShort>: <Reg8: 22, Reg8: 20, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000065d: <LoadFromEnvironment>: <Reg8: 20, Reg8: 13, UInt8: 3>
+00000661: <GetByIdShort>: <Reg8: 21, Reg8: 20, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+00000666: <NewObject>: <Reg8: 20>
+00000668: <GetById>: <Reg8: 23, Reg8: 16, UInt8: 42, string_id: 55235>  # String: 'pastoBar' (Identifier)
+0000066e: <PutNewOwnByIdShort>: <Reg8: 20, Reg8: 23, string_id: 238>  # String: 'style' (Identifier)
+00000672: <CreateClosure>: <Reg8: 23, Reg8: 7, function_id: 19130>  # Function: [#19130 onPress of 24 bytes]: 1 params @ offset 0x004dbcbb
+00000677: <PutNewOwnByIdShort>: <Reg8: 20, Reg8: 23, string_id: 191>  # String: 'onPress' (Identifier)
+0000067b: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+0000067f: <GetByIdShort>: <Reg8: 27, Reg8: 23, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000684: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 8>
+00000688: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+0000068d: <NewObjectWithBufferLong>: <Reg8: 23, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 106957>  # Object: {'name': 'restaurant', 'size': 16}
+0000069b: <GetByIdShort>: <Reg8: 30, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+000006a0: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 30, string_id: 78>  # String: 'color' (Identifier)
+000006a4: <Call3>: <Reg8: 24, Reg8: 27, Reg8: 3, Reg8: 24, Reg8: 23>
+000006aa: <NewArray>: <Reg8: 23, UInt16: 3>
+000006ae: <PutOwnByIndex>: <Reg8: 23, Reg8: 24, UInt8: 0>
+000006b2: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 25>
+000006b6: <GetByIdShort>: <Reg8: 30, Reg8: 24, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+000006bb: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 3>
+000006bf: <GetByIdShort>: <Reg8: 27, Reg8: 24, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000006c4: <NewObject>: <Reg8: 24>
+000006c6: <GetById>: <Reg8: 35, Reg8: 16, UInt8: 43, string_id: 55236>  # String: 'pastoBarTxt' (Identifier)
+000006cc: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+000006d0: <LoadConstString>: <Reg8: 35, string_id: 6176>  # String: 'pasto.titolo' (String)
+000006d4: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 35>
+000006d9: <NewArray>: <Reg8: 35, UInt16: 3>
+000006dd: <PutOwnByIndex>: <Reg8: 35, Reg8: 40, UInt8: 0>
+000006e1: <LoadConstString>: <Reg8: 40, string_id: 22409>  # String: ' · ' (String)
+000006e5: <PutOwnByIndex>: <Reg8: 35, Reg8: 40, UInt8: 1>
+000006e9: <NewObject>: <Reg8: 41>
+000006eb: <GetByIdShort>: <Reg8: 40, Reg8: 42, UInt8: 40, string_id: 171>  # String: 'length' (Identifier)
+000006f0: <PutNewOwnById>: <Reg8: 41, Reg8: 40, string_id: 34034>  # String: 'count' (Identifier)
+000006f5: <LoadConstString>: <Reg8: 40, string_id: 8773>  # String: 'pasto.nVoci' (String)
+000006f9: <Call3>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40, Reg8: 41>
+000006ff: <PutOwnByIndex>: <Reg8: 35, Reg8: 40, UInt8: 2>
+00000703: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 35, string_id: 74>  # String: 'children' (Identifier)
+00000707: <Call3>: <Reg8: 24, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 24>
+0000070d: <PutOwnByIndex>: <Reg8: 23, Reg8: 24, UInt8: 1>
+00000711: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 25>
+00000715: <GetByIdShort>: <Reg8: 30, Reg8: 24, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000071a: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 8>
+0000071e: <GetByIdShort>: <Reg8: 27, Reg8: 24, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000723: <NewObjectWithBuffer>: <Reg8: 24, UInt16: 3, UInt16: 2, UInt16: 44637, UInt16: 45957>  # Object: {'name': 'chevron-forward', 'size': 16}
+0000072d: <GetByIdShort>: <Reg8: 35, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+00000732: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 35, string_id: 78>  # String: 'color' (Identifier)
+00000736: <Call3>: <Reg8: 24, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 24>
+0000073c: <PutOwnByIndex>: <Reg8: 23, Reg8: 24, UInt8: 2>
+00000740: <PutNewOwnByIdShort>: <Reg8: 20, Reg8: 23, string_id: 74>  # String: 'children' (Identifier)
+00000744: <Call3>: <Reg8: 19, Reg8: 22, Reg8: 3, Reg8: 21, Reg8: 20>
+0000074a: <PutOwnByIndex>: <Reg8: 11, Reg8: 19, UInt8: 5>
+0000074e: <StrictEq>: <Reg8: 14, Reg8: 15, Reg8: 14>
+00000752: <JmpTrue>: <Addr8: 11, Reg8: 14>  # Address: 0000075d
+00000755: <LoadConstString>: <Reg8: 19, string_id: 111>  # String: 'error' (Identifier)
+00000759: <StrictEq>: <Reg8: 14, Reg8: 15, Reg8: 19>
+0000075d: <JmpFalseLong>: <Addr32: 1135, Reg8: 14>  # Address: 00000bcc
+00000763: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+00000767: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000076c: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 3>
+00000770: <GetByIdShort>: <Reg8: 20, Reg8: 19, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000775: <NewObject>: <Reg8: 19>
+00000777: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+0000077b: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000780: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 10>
+00000784: <GetById>: <Reg8: 23, Reg8: 22, UInt8: 44, string_id: 46604>  # String: 'PressableScale' (Identifier)
+0000078a: <NewObject>: <Reg8: 22>
+0000078c: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 45, string_id: 33127>  # String: 'primary' (Identifier)
+00000792: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000796: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 191>  # String: 'onPress' (Identifier)
+0000079a: <LoadFromEnvironment>: <Reg8: 26, Reg8: 13, UInt8: 25>
+0000079e: <GetByIdShort>: <Reg8: 30, Reg8: 26, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000007a3: <LoadFromEnvironment>: <Reg8: 26, Reg8: 13, UInt8: 8>
+000007a7: <GetByIdShort>: <Reg8: 27, Reg8: 26, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+000007ac: <NewObjectWithBufferLong>: <Reg8: 26, UInt16: 3, UInt16: 3, UInt32: 44640, UInt32: 188117>  # Object: {'name': 'barcode-outline', 'size': 20, 'color': '#fff'}
+000007ba: <Call3>: <Reg8: 27, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 26>
+000007c0: <NewArray>: <Reg8: 26, UInt16: 2>
+000007c4: <PutOwnByIndex>: <Reg8: 26, Reg8: 27, UInt8: 0>
+000007c8: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+000007cc: <GetByIdShort>: <Reg8: 35, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000007d1: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 3>
+000007d5: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000007da: <NewObject>: <Reg8: 27>
+000007dc: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 46, string_id: 35779>  # String: 'primaryTxt' (Identifier)
+000007e2: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+000007e6: <LoadConstString>: <Reg8: 40, string_id: 3414>  # String: 'scan.scansiona' (String)
+000007ea: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+000007ef: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+000007f3: <Call3>: <Reg8: 27, Reg8: 35, Reg8: 3, Reg8: 30, Reg8: 27>
+000007f9: <PutOwnByIndex>: <Reg8: 26, Reg8: 27, UInt8: 1>
+000007fd: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 74>  # String: 'children' (Identifier)
+00000801: <Call3>: <Reg8: 23, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00000807: <NewArray>: <Reg8: 22, UInt16: 5>
+0000080b: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 0>
+0000080f: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000813: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000818: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+0000081c: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000821: <NewObject>: <Reg8: 23>
+00000823: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 47, string_id: 55295>  # String: 'manualBox' (Identifier)
+00000829: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+0000082d: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00000831: <GetByIdShort>: <Reg8: 35, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000836: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 3>
+0000083a: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+0000083f: <NewObject>: <Reg8: 27>
+00000841: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 48, string_id: 55298>  # String: 'manualLabel' (Identifier)
+00000847: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+0000084b: <LoadConstString>: <Reg8: 40, string_id: 525>  # String: 'scan.manuale' (String)
+0000084f: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+00000854: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00000858: <Call3>: <Reg8: 30, Reg8: 35, Reg8: 3, Reg8: 30, Reg8: 27>
+0000085e: <NewArray>: <Reg8: 27, UInt16: 2>
+00000862: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 0>
+00000866: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+0000086a: <GetByIdShort>: <Reg8: 40, Reg8: 30, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000086f: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+00000873: <GetByIdShort>: <Reg8: 35, Reg8: 30, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000878: <NewObject>: <Reg8: 30>
+0000087a: <GetById>: <Reg8: 41, Reg8: 16, UInt8: 49, string_id: 55299>  # String: 'manualRow' (Identifier)
+00000880: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 41, string_id: 238>  # String: 'style' (Identifier)
+00000884: <LoadFromEnvironment>: <Reg8: 41, Reg8: 13, UInt8: 25>
+00000888: <GetByIdShort>: <Reg8: 45, Reg8: 41, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000088d: <LoadFromEnvironment>: <Reg8: 41, Reg8: 13, UInt8: 3>
+00000891: <GetById>: <Reg8: 44, Reg8: 41, UInt8: 50, string_id: 35702>  # String: 'TextInput' (Identifier)
+00000897: <NewObject>: <Reg8: 41>
+00000899: <GetById>: <Reg8: 50, Reg8: 16, UInt8: 51, string_id: 55297>  # String: 'manualInput' (Identifier)
+0000089f: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 50, string_id: 238>  # String: 'style' (Identifier)
+000008a3: <LoadConstString>: <Reg8: 50, string_id: 2303>  # String: 'scan.placeholder' (String)
+000008a7: <Call2>: <Reg8: 50, Reg8: 17, Reg8: 3, Reg8: 50>
+000008ac: <PutNewOwnById>: <Reg8: 41, Reg8: 50, string_id: 34501>  # String: 'placeholder' (Identifier)
+000008b1: <GetByIdShort>: <Reg8: 50, Reg8: 29, UInt8: 52, string_id: 163>  # String: 'inkSoft' (Identifier)
+000008b6: <PutNewOwnById>: <Reg8: 41, Reg8: 50, string_id: 47751>  # String: 'placeholderTextColor' (Identifier)
+000008bb: <LoadConstString>: <Reg8: 50, string_id: 973>  # String: 'number-pad' (String)
+000008bf: <PutNewOwnById>: <Reg8: 41, Reg8: 50, string_id: 46323>  # String: 'keyboardType' (Identifier)
+000008c4: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 251>  # String: 'value' (Identifier)
+000008c8: <PutNewOwnById>: <Reg8: 41, Reg8: 47, string_id: 46532>  # String: 'onChangeText' (Identifier)
+000008cd: <LoadConstString>: <Reg8: 47, string_id: 36571>  # String: 'search' (Identifier)
+000008d1: <PutNewOwnById>: <Reg8: 41, Reg8: 47, string_id: 33780>  # String: 'returnKeyType' (Identifier)
+000008d6: <PutNewOwnById>: <Reg8: 41, Reg8: 48, string_id: 38873>  # String: 'onSubmitEditing' (Identifier)
+000008db: <Call3>: <Reg8: 44, Reg8: 45, Reg8: 3, Reg8: 44, Reg8: 41>
+000008e1: <NewArray>: <Reg8: 41, UInt16: 2>
+000008e5: <PutOwnByIndex>: <Reg8: 41, Reg8: 44, UInt8: 0>
+000008e9: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 25>
+000008ed: <GetByIdShort>: <Reg8: 47, Reg8: 44, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000008f2: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 3>
+000008f6: <GetByIdShort>: <Reg8: 45, Reg8: 44, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+000008fb: <NewObject>: <Reg8: 44>
+000008fd: <GetById>: <Reg8: 49, Reg8: 16, UInt8: 53, string_id: 55296>  # String: 'manualBtn' (Identifier)
+00000903: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 49, string_id: 238>  # String: 'style' (Identifier)
+00000907: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 48, string_id: 191>  # String: 'onPress' (Identifier)
+0000090b: <LoadFromEnvironment>: <Reg8: 48, Reg8: 13, UInt8: 25>
+0000090f: <GetByIdShort>: <Reg8: 50, Reg8: 48, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000914: <LoadFromEnvironment>: <Reg8: 48, Reg8: 13, UInt8: 8>
+00000918: <GetByIdShort>: <Reg8: 49, Reg8: 48, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+0000091d: <NewObjectWithBufferLong>: <Reg8: 48, UInt16: 3, UInt16: 3, UInt32: 44640, UInt32: 106869>  # Object: {'name': 'search', 'size': 18, 'color': '#fff'}
+0000092b: <Call3>: <Reg8: 48, Reg8: 50, Reg8: 3, Reg8: 49, Reg8: 48>
+00000931: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 48, string_id: 74>  # String: 'children' (Identifier)
+00000935: <Call3>: <Reg8: 44, Reg8: 47, Reg8: 3, Reg8: 45, Reg8: 44>
+0000093b: <PutOwnByIndex>: <Reg8: 41, Reg8: 44, UInt8: 1>
+0000093f: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 41, string_id: 74>  # String: 'children' (Identifier)
+00000943: <Call3>: <Reg8: 30, Reg8: 40, Reg8: 3, Reg8: 35, Reg8: 30>
+00000949: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 1>
+0000094d: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000951: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000957: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 1>
+0000095b: <LoadConstString>: <Reg8: 23, string_id: 111>  # String: 'error' (Identifier)
+0000095f: <StrictEq>: <Reg8: 23, Reg8: 15, Reg8: 23>
+00000963: <JmpFalseLong>: <Addr32: 146, Reg8: 23>  # Address: 000009f5
+00000969: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 25>
+0000096d: <GetByIdShort>: <Reg8: 27, Reg8: 24, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000972: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 3>
+00000976: <GetByIdShort>: <Reg8: 26, Reg8: 24, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+0000097b: <NewObject>: <Reg8: 24>
+0000097d: <GetById>: <Reg8: 30, Reg8: 16, UInt8: 54, string_id: 36429>  # String: 'errBox' (Identifier)
+00000983: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 30, string_id: 238>  # String: 'style' (Identifier)
+00000987: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+0000098b: <GetByIdShort>: <Reg8: 40, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000990: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 8>
+00000994: <GetByIdShort>: <Reg8: 35, Reg8: 30, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000999: <NewObjectWithBufferLong>: <Reg8: 30, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 186572>  # Object: {'name': 'alert-circle-outline', 'size': 18}
+000009a7: <GetById>: <Reg8: 41, Reg8: 29, UInt8: 55, string_id: 34633>  # String: 'redInk' (Identifier)
+000009ad: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 41, string_id: 78>  # String: 'color' (Identifier)
+000009b1: <Call3>: <Reg8: 35, Reg8: 40, Reg8: 3, Reg8: 35, Reg8: 30>
+000009b7: <NewArray>: <Reg8: 30, UInt16: 2>
+000009bb: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 0>
+000009bf: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+000009c3: <GetByIdShort>: <Reg8: 41, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000009c8: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+000009cc: <GetByIdShort>: <Reg8: 40, Reg8: 35, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000009d1: <NewObject>: <Reg8: 35>
+000009d3: <GetById>: <Reg8: 44, Reg8: 16, UInt8: 56, string_id: 37426>  # String: 'errTxt' (Identifier)
+000009d9: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 44, string_id: 238>  # String: 'style' (Identifier)
+000009dd: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+000009e1: <Call3>: <Reg8: 35, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 35>
+000009e7: <PutOwnByIndex>: <Reg8: 30, Reg8: 35, UInt8: 1>
+000009eb: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 30, string_id: 74>  # String: 'children' (Identifier)
+000009ef: <Call3>: <Reg8: 23, Reg8: 27, Reg8: 3, Reg8: 26, Reg8: 24>
+000009f5: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 2>
+000009f9: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+000009fd: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000a02: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+00000a06: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000a0b: <NewObject>: <Reg8: 23>
+00000a0d: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 57, string_id: 46658>  # String: 'howBox' (Identifier)
+00000a13: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000a17: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00000a1b: <GetByIdShort>: <Reg8: 35, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000a20: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 3>
+00000a24: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000a29: <NewObject>: <Reg8: 27>
+00000a2b: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 58, string_id: 41577>  # String: 'howH' (Identifier)
+00000a31: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+00000a35: <LoadConstString>: <Reg8: 40, string_id: 21843>  # String: 'foto.comeFunziona' (String)
+00000a39: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+00000a3e: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00000a42: <Call3>: <Reg8: 30, Reg8: 35, Reg8: 3, Reg8: 30, Reg8: 27>
+00000a48: <NewArray>: <Reg8: 27, UInt16: 2>
+00000a4c: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 0>
+00000a50: <NewObject>: <Reg8: 30>
+00000a52: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 31833>  # String: 'i' (Identifier)
+00000a57: <LoadConstString>: <Reg8: 33, string_id: 3417>  # String: 'scan.step1' (String)
+00000a5b: <Call2>: <Reg8: 33, Reg8: 17, Reg8: 3, Reg8: 33>
+00000a60: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 4>  # String: 't' (Identifier)
+00000a64: <NewArray>: <Reg8: 35, UInt16: 3>
+00000a68: <PutOwnByIndex>: <Reg8: 35, Reg8: 30, UInt8: 0>
+00000a6c: <NewObject>: <Reg8: 30>
+00000a6e: <LoadConstString>: <Reg8: 33, string_id: 42965>  # String: 'reader-outline' (Identifier)
+00000a72: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 31833>  # String: 'i' (Identifier)
+00000a77: <LoadConstString>: <Reg8: 33, string_id: 3437>  # String: 'scan.step2' (String)
+00000a7b: <Call2>: <Reg8: 33, Reg8: 17, Reg8: 3, Reg8: 33>
+00000a80: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 4>  # String: 't' (Identifier)
+00000a84: <PutOwnByIndex>: <Reg8: 35, Reg8: 30, UInt8: 1>
+00000a88: <NewObject>: <Reg8: 30>
+00000a8a: <LoadConstString>: <Reg8: 33, string_id: 33700>  # String: 'stats-chart-outline' (Identifier)
+00000a8e: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 31833>  # String: 'i' (Identifier)
+00000a93: <LoadConstString>: <Reg8: 33, string_id: 3448>  # String: 'scan.step3' (String)
+00000a97: <Call2>: <Reg8: 33, Reg8: 17, Reg8: 3, Reg8: 33>
+00000a9c: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 4>  # String: 't' (Identifier)
+00000aa0: <PutOwnByIndex>: <Reg8: 35, Reg8: 30, UInt8: 2>
+00000aa4: <GetByIdShort>: <Reg8: 33, Reg8: 35, UInt8: 59, string_id: 177>  # String: 'map' (Identifier)
+00000aa9: <CreateClosure>: <Reg8: 30, Reg8: 7, function_id: 19131>  # Function: [#19131  of 265 bytes]: 3 params @ offset 0x004e456e
+00000aae: <Call2>: <Reg8: 30, Reg8: 33, Reg8: 35, Reg8: 30>
+00000ab3: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 1>
+00000ab7: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000abb: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000ac1: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 3>
+00000ac5: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000ac9: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000ace: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+00000ad2: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000ad7: <NewObject>: <Reg8: 23>
+00000ad9: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 60, string_id: 33829>  # String: 'seeBox' (Identifier)
+00000adf: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000ae3: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00000ae7: <GetByIdShort>: <Reg8: 33, Reg8: 27, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000aec: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 3>
+00000af0: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000af5: <NewObject>: <Reg8: 27>
+00000af7: <GetById>: <Reg8: 35, Reg8: 16, UInt8: 61, string_id: 35521>  # String: 'seeHead' (Identifier)
+00000afd: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+00000b01: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+00000b05: <GetByIdShort>: <Reg8: 41, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000b0a: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 8>
+00000b0e: <GetByIdShort>: <Reg8: 40, Reg8: 35, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000b13: <NewObjectWithBufferLong>: <Reg8: 35, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188128>  # Object: {'name': 'information-circle-outline', 'size': 15}
+00000b21: <GetByIdShort>: <Reg8: 43, Reg8: 29, UInt8: 52, string_id: 163>  # String: 'inkSoft' (Identifier)
+00000b26: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 43, string_id: 78>  # String: 'color' (Identifier)
+00000b2a: <Call3>: <Reg8: 40, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 35>
+00000b30: <NewArray>: <Reg8: 35, UInt16: 2>
+00000b34: <PutOwnByIndex>: <Reg8: 35, Reg8: 40, UInt8: 0>
+00000b38: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 25>
+00000b3c: <GetByIdShort>: <Reg8: 43, Reg8: 40, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000b41: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 3>
+00000b45: <GetByIdShort>: <Reg8: 41, Reg8: 40, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000b4a: <NewObject>: <Reg8: 40>
+00000b4c: <GetById>: <Reg8: 44, Reg8: 16, UInt8: 62, string_id: 35520>  # String: 'seeH' (Identifier)
+00000b52: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 44, string_id: 238>  # String: 'style' (Identifier)
+00000b56: <LoadConstString>: <Reg8: 44, string_id: 3471>  # String: 'scan.stimaH' (String)
+00000b5a: <Call2>: <Reg8: 44, Reg8: 17, Reg8: 3, Reg8: 44>
+00000b5f: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 44, string_id: 74>  # String: 'children' (Identifier)
+00000b63: <Call3>: <Reg8: 40, Reg8: 43, Reg8: 3, Reg8: 41, Reg8: 40>
+00000b69: <PutOwnByIndex>: <Reg8: 35, Reg8: 40, UInt8: 1>
+00000b6d: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 35, string_id: 74>  # String: 'children' (Identifier)
+00000b71: <Call3>: <Reg8: 30, Reg8: 33, Reg8: 3, Reg8: 30, Reg8: 27>
+00000b77: <NewArray>: <Reg8: 27, UInt16: 2>
+00000b7b: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 0>
+00000b7f: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00000b83: <GetByIdShort>: <Reg8: 35, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000b88: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+00000b8c: <GetByIdShort>: <Reg8: 33, Reg8: 30, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000b91: <NewObject>: <Reg8: 30>
+00000b93: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 63, string_id: 43279>  # String: 'seeP' (Identifier)
+00000b99: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+00000b9d: <LoadConstString>: <Reg8: 40, string_id: 3531>  # String: 'scan.stimaP' (String)
+00000ba1: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+00000ba6: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00000baa: <Call3>: <Reg8: 30, Reg8: 35, Reg8: 3, Reg8: 33, Reg8: 30>
+00000bb0: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 1>
+00000bb4: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000bb8: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000bbe: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 4>
+00000bc2: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+00000bc6: <Call3>: <Reg8: 14, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+00000bcc: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 6>
+00000bd0: <LoadConstString>: <Reg8: 14, string_id: 34543>  # String: 'loading' (Identifier)
+00000bd4: <StrictEq>: <Reg8: 14, Reg8: 15, Reg8: 14>
+00000bd8: <JmpFalseLong>: <Addr32: 143, Reg8: 14>  # Address: 00000c67
+00000bde: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+00000be2: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000be7: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 3>
+00000beb: <GetByIdShort>: <Reg8: 20, Reg8: 19, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000bf0: <NewObject>: <Reg8: 19>
+00000bf2: <GetById>: <Reg8: 22, Reg8: 16, UInt8: 64, string_id: 33683>  # String: 'loadingBox' (Identifier)
+00000bf8: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+00000bfc: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+00000c00: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000c05: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 3>
+00000c09: <GetById>: <Reg8: 23, Reg8: 22, UInt8: 65, string_id: 35244>  # String: 'ActivityIndicator' (Identifier)
+00000c0f: <NewObject>: <Reg8: 22>
+00000c11: <GetByIdShort>: <Reg8: 26, Reg8: 29, UInt8: 66, string_id: 139>  # String: 'green' (Identifier)
+00000c16: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 78>  # String: 'color' (Identifier)
+00000c1a: <Call3>: <Reg8: 23, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00000c20: <NewArray>: <Reg8: 22, UInt16: 2>
+00000c24: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 0>
+00000c28: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000c2c: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000c31: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+00000c35: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000c3a: <NewObject>: <Reg8: 23>
+00000c3c: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 67, string_id: 35397>  # String: 'loadingTxt' (Identifier)
+00000c42: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000c46: <LoadConstString>: <Reg8: 27, string_id: 21763>  # String: 'scan.cerco' (String)
+00000c4a: <Call2>: <Reg8: 27, Reg8: 17, Reg8: 3, Reg8: 27>
+00000c4f: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000c53: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000c59: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 1>
+00000c5d: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+00000c61: <Call3>: <Reg8: 14, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+00000c67: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 7>
+00000c6b: <LoadConstString>: <Reg8: 14, string_id: 16693>  # String: 'notfound' (String)
+00000c6f: <StrictEq>: <Reg8: 14, Reg8: 15, Reg8: 14>
+00000c73: <JmpFalseLong>: <Addr32: 517, Reg8: 14>  # Address: 00000e78
+00000c79: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 25>
+00000c7d: <GetByIdShort>: <Reg8: 21, Reg8: 19, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000c82: <LoadFromEnvironment>: <Reg8: 19, Reg8: 13, UInt8: 10>
+00000c86: <GetById>: <Reg8: 20, Reg8: 19, UInt8: 68, string_id: 49512>  # String: 'FadeInView' (Identifier)
+00000c8c: <NewObject>: <Reg8: 19>
+00000c8e: <GetById>: <Reg8: 22, Reg8: 16, UInt8: 69, string_id: 35274>  # String: 'notFoundBox' (Identifier)
+00000c94: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+00000c98: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+00000c9c: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000ca1: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 8>
+00000ca5: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000caa: <NewObjectWithBufferLong>: <Reg8: 22, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188136>  # Object: {'name': 'help-circle-outline', 'size': 30}
+00000cb8: <GetByIdShort>: <Reg8: 26, Reg8: 29, UInt8: 52, string_id: 163>  # String: 'inkSoft' (Identifier)
+00000cbd: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 78>  # String: 'color' (Identifier)
+00000cc1: <Call3>: <Reg8: 23, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00000cc7: <NewArray>: <Reg8: 22, UInt16: 5>
+00000ccb: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 0>
+00000ccf: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000cd3: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000cd8: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+00000cdc: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000ce1: <NewObject>: <Reg8: 23>
+00000ce3: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 70, string_id: 42023>  # String: 'notFoundH' (Identifier)
+00000ce9: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000ced: <LoadConstString>: <Reg8: 27, string_id: 1103>  # String: 'scan.nonTrovatoH' (String)
+00000cf1: <Call2>: <Reg8: 27, Reg8: 17, Reg8: 3, Reg8: 27>
+00000cf6: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000cfa: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000d00: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 1>
+00000d04: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000d08: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000d0d: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+00000d11: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000d16: <NewObject>: <Reg8: 23>
+00000d18: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 71, string_id: 43278>  # String: 'notFoundP' (Identifier)
+00000d1e: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000d22: <LoadConstString>: <Reg8: 27, string_id: 370>  # String: 'scan.nonTrovatoP' (String)
+00000d26: <Call2>: <Reg8: 27, Reg8: 17, Reg8: 3, Reg8: 27>
+00000d2b: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000d2f: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000d35: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 2>
+00000d39: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000d3d: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000d42: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 10>
+00000d46: <GetById>: <Reg8: 24, Reg8: 23, UInt8: 44, string_id: 46604>  # String: 'PressableScale' (Identifier)
+00000d4c: <NewObject>: <Reg8: 23>
+00000d4e: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 72, string_id: 39885>  # String: 'notFoundCerca' (Identifier)
+00000d54: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000d58: <CreateClosure>: <Reg8: 27, Reg8: 7, function_id: 19132>  # Function: [#19132 onPress of 24 bytes]: 1 params @ offset 0x004e4677
+00000d5d: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 191>  # String: 'onPress' (Identifier)
+00000d61: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00000d65: <GetByIdShort>: <Reg8: 33, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000d6a: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 8>
+00000d6e: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000d73: <NewObjectWithBufferLong>: <Reg8: 27, UInt16: 3, UInt16: 3, UInt32: 44640, UInt32: 188144>  # Object: {'name': 'search', 'size': 19, 'color': '#fff'}
+00000d81: <Call3>: <Reg8: 30, Reg8: 33, Reg8: 3, Reg8: 30, Reg8: 27>
+00000d87: <NewArray>: <Reg8: 27, UInt16: 2>
+00000d8b: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 0>
+00000d8f: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00000d93: <GetByIdShort>: <Reg8: 35, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000d98: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+00000d9c: <GetByIdShort>: <Reg8: 33, Reg8: 30, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000da1: <NewObject>: <Reg8: 30>
+00000da3: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 73, string_id: 39886>  # String: 'notFoundCercaTxt' (Identifier)
+00000da9: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+00000dad: <LoadConstString>: <Reg8: 40, string_id: 18383>  # String: 'scan.cercaMano' (String)
+00000db1: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+00000db6: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00000dba: <Call3>: <Reg8: 30, Reg8: 35, Reg8: 3, Reg8: 33, Reg8: 30>
+00000dc0: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 1>
+00000dc4: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000dc8: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000dce: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 3>
+00000dd2: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+00000dd6: <GetByIdShort>: <Reg8: 26, Reg8: 23, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000ddb: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 3>
+00000ddf: <GetByIdShort>: <Reg8: 24, Reg8: 23, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+00000de4: <NewObject>: <Reg8: 23>
+00000de6: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 74, string_id: 32942>  # String: 'again' (Identifier)
+00000dec: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 238>  # String: 'style' (Identifier)
+00000df0: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 12, string_id: 191>  # String: 'onPress' (Identifier)
+00000df4: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00000df8: <GetByIdShort>: <Reg8: 33, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000dfd: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 8>
+00000e01: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000e06: <NewObjectWithBufferLong>: <Reg8: 27, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188155>  # Object: {'name': 'barcode-outline', 'size': 17}
+00000e14: <GetByIdShort>: <Reg8: 35, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+00000e19: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 35, string_id: 78>  # String: 'color' (Identifier)
+00000e1d: <Call3>: <Reg8: 30, Reg8: 33, Reg8: 3, Reg8: 30, Reg8: 27>
+00000e23: <NewArray>: <Reg8: 27, UInt16: 2>
+00000e27: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 0>
+00000e2b: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00000e2f: <GetByIdShort>: <Reg8: 35, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000e34: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+00000e38: <GetByIdShort>: <Reg8: 33, Reg8: 30, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000e3d: <NewObject>: <Reg8: 30>
+00000e3f: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 75, string_id: 42660>  # String: 'againTxt' (Identifier)
+00000e45: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+00000e49: <LoadConstString>: <Reg8: 40, string_id: 20986>  # String: 'scan.altro' (String)
+00000e4d: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+00000e52: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00000e56: <Call3>: <Reg8: 30, Reg8: 35, Reg8: 3, Reg8: 33, Reg8: 30>
+00000e5c: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 1>
+00000e60: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+00000e64: <Call3>: <Reg8: 23, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+00000e6a: <PutOwnByIndex>: <Reg8: 22, Reg8: 23, UInt8: 4>
+00000e6e: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+00000e72: <Call3>: <Reg8: 14, Reg8: 21, Reg8: 3, Reg8: 20, Reg8: 19>
+00000e78: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 8>
+00000e7c: <LoadConstString>: <Reg8: 14, string_id: 32842>  # String: 'result' (Identifier)
+00000e80: <StrictEq>: <Reg8: 14, Reg8: 15, Reg8: 14>
+00000e84: <JmpFalse>: <Addr8: 6, Reg8: 14>  # Address: 00000e8a
+00000e87: <Mov>: <Reg8: 14, Reg8: 25>
+00000e8a: <JmpFalseLong>: <Addr32: 3165, Reg8: 14>  # Address: 00001ae7
+00000e90: <LoadFromEnvironment>: <Reg8: 15, Reg8: 13, UInt8: 25>
+00000e94: <GetByIdShort>: <Reg8: 20, Reg8: 15, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000e99: <LoadFromEnvironment>: <Reg8: 15, Reg8: 13, UInt8: 10>
+00000e9d: <GetById>: <Reg8: 19, Reg8: 15, UInt8: 68, string_id: 49512>  # String: 'FadeInView' (Identifier)
+00000ea3: <NewObject>: <Reg8: 15>
+00000ea5: <NewObject>: <Reg8: 21>
+00000ea7: <LoadConstUInt8>: <Reg8: 22, UInt8: 18>
+00000eaa: <PutNewOwnByIdShort>: <Reg8: 21, Reg8: 22, string_id: 179>  # String: 'marginTop' (Identifier)
+00000eae: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 21, string_id: 238>  # String: 'style' (Identifier)
+00000eb2: <LoadFromEnvironment>: <Reg8: 21, Reg8: 13, UInt8: 25>
+00000eb6: <GetByIdShort>: <Reg8: 23, Reg8: 21, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000ebb: <LoadFromEnvironment>: <Reg8: 21, Reg8: 13, UInt8: 3>
+00000ebf: <GetByIdShort>: <Reg8: 22, Reg8: 21, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000ec4: <NewObject>: <Reg8: 21>
+00000ec6: <GetById>: <Reg8: 24, Reg8: 16, UInt8: 76, string_id: 50593>  # String: 'prodHead' (Identifier)
+00000ecc: <PutNewOwnByIdShort>: <Reg8: 21, Reg8: 24, string_id: 238>  # String: 'style' (Identifier)
+00000ed0: <GetById>: <Reg8: 26, Reg8: 25, UInt8: 77, string_id: 52104>  # String: 'immagine' (Identifier)
+00000ed6: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 25>
+00000eda: <GetByIdShort>: <Reg8: 30, Reg8: 24, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000edf: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 3>
+00000ee3: <JmpTrue>: <Addr8: 97, Reg8: 26>  # Address: 00000f44
+00000ee6: <GetByIdShort>: <Reg8: 27, Reg8: 24, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000eeb: <NewObject>: <Reg8: 26>
+00000eed: <GetById>: <Reg8: 35, Reg8: 16, UInt8: 78, string_id: 55869>  # String: 'prodImg' (Identifier)
+00000ef3: <NewArray>: <Reg8: 33, UInt16: 2>
+00000ef7: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 0>
+00000efb: <GetById>: <Reg8: 35, Reg8: 16, UInt8: 79, string_id: 55870>  # String: 'prodImgEmpty' (Identifier)
+00000f01: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 1>
+00000f05: <PutNewOwnByIdShort>: <Reg8: 26, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+00000f09: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 25>
+00000f0d: <GetByIdShort>: <Reg8: 40, Reg8: 33, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000f12: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 8>
+00000f16: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000f1b: <NewObjectWithBufferLong>: <Reg8: 33, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188168>  # Object: {'name': 'cube-outline', 'size': 24}
+00000f29: <GetByIdShort>: <Reg8: 41, Reg8: 29, UInt8: 52, string_id: 163>  # String: 'inkSoft' (Identifier)
+00000f2e: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 41, string_id: 78>  # String: 'color' (Identifier)
+00000f32: <Call3>: <Reg8: 33, Reg8: 40, Reg8: 3, Reg8: 35, Reg8: 33>
+00000f38: <PutNewOwnByIdShort>: <Reg8: 26, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+00000f3c: <Call3>: <Reg8: 26, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 26>
+00000f42: <Jmp>: <Addr8: 49>  # Address: 00000f73
+00000f44: <GetById>: <Reg8: 27, Reg8: 24, UInt8: 31, string_id: 33641>  # String: 'Image' (Identifier)
+00000f4a: <NewObject>: <Reg8: 24>
+00000f4c: <NewObject>: <Reg8: 33>
+00000f4e: <GetById>: <Reg8: 35, Reg8: 25, UInt8: 77, string_id: 52104>  # String: 'immagine' (Identifier)
+00000f54: <PutNewOwnById>: <Reg8: 33, Reg8: 35, string_id: 32088>  # String: 'uri' (Identifier)
+00000f59: <PutNewOwnById>: <Reg8: 24, Reg8: 33, string_id: 34997>  # String: 'source' (Identifier)
+00000f5e: <GetById>: <Reg8: 33, Reg8: 16, UInt8: 78, string_id: 55869>  # String: 'prodImg' (Identifier)
+00000f64: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+00000f68: <PutNewOwnById>: <Reg8: 24, Reg8: 31, string_id: 46651>  # String: 'resizeMode' (Identifier)
+00000f6d: <Call3>: <Reg8: 26, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 24>
+00000f73: <NewArray>: <Reg8: 24, UInt16: 2>
+00000f77: <PutOwnByIndex>: <Reg8: 24, Reg8: 26, UInt8: 0>
+00000f7b: <LoadFromEnvironment>: <Reg8: 26, Reg8: 13, UInt8: 25>
+00000f7f: <GetByIdShort>: <Reg8: 30, Reg8: 26, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00000f84: <LoadFromEnvironment>: <Reg8: 26, Reg8: 13, UInt8: 3>
+00000f88: <GetByIdShort>: <Reg8: 27, Reg8: 26, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00000f8d: <NewObject>: <Reg8: 26>
+00000f8f: <NewObject>: <Reg8: 31>
+00000f91: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 32, string_id: 121>  # String: 'flex' (Identifier)
+00000f95: <PutNewOwnByIdShort>: <Reg8: 26, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+00000f99: <GetById>: <Reg8: 31, Reg8: 25, UInt8: 80, string_id: 40341>  # String: 'marca' (Identifier)
+00000f9f: <LoadConstNull>: <Reg8: 32>
+00000fa1: <JmpFalse>: <Addr8: 49, Reg8: 31>  # Address: 00000fd2
+00000fa4: <LoadFromEnvironment>: <Reg8: 31, Reg8: 13, UInt8: 25>
+00000fa8: <GetByIdShort>: <Reg8: 35, Reg8: 31, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000fad: <LoadFromEnvironment>: <Reg8: 31, Reg8: 13, UInt8: 3>
+00000fb1: <GetByIdShort>: <Reg8: 33, Reg8: 31, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000fb6: <NewObject>: <Reg8: 31>
+00000fb8: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 81, string_id: 51964>  # String: 'prodMarca' (Identifier)
+00000fbe: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+00000fc2: <GetById>: <Reg8: 40, Reg8: 25, UInt8: 80, string_id: 40341>  # String: 'marca' (Identifier)
+00000fc8: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00000fcc: <Call3>: <Reg8: 32, Reg8: 35, Reg8: 3, Reg8: 33, Reg8: 31>
+00000fd2: <NewArray>: <Reg8: 31, UInt16: 2>
+00000fd6: <PutOwnByIndex>: <Reg8: 31, Reg8: 32, UInt8: 0>
+00000fda: <LoadFromEnvironment>: <Reg8: 32, Reg8: 13, UInt8: 25>
+00000fde: <GetByIdShort>: <Reg8: 35, Reg8: 32, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00000fe3: <LoadFromEnvironment>: <Reg8: 32, Reg8: 13, UInt8: 3>
+00000fe7: <GetByIdShort>: <Reg8: 33, Reg8: 32, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00000fec: <NewObject>: <Reg8: 32>
+00000fee: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 82, string_id: 53301>  # String: 'prodNome' (Identifier)
+00000ff4: <PutNewOwnByIdShort>: <Reg8: 32, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+00000ff8: <GetByIdShort>: <Reg8: 40, Reg8: 25, UInt8: 83, string_id: 185>  # String: 'nome' (Identifier)
+00000ffd: <PutNewOwnByIdShort>: <Reg8: 32, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+00001001: <Call3>: <Reg8: 32, Reg8: 35, Reg8: 3, Reg8: 33, Reg8: 32>
+00001007: <PutOwnByIndex>: <Reg8: 31, Reg8: 32, UInt8: 1>
+0000100b: <PutNewOwnByIdShort>: <Reg8: 26, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+0000100f: <Call3>: <Reg8: 26, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 26>
+00001015: <PutOwnByIndex>: <Reg8: 24, Reg8: 26, UInt8: 1>
+00001019: <PutNewOwnByIdShort>: <Reg8: 21, Reg8: 24, string_id: 74>  # String: 'children' (Identifier)
+0000101d: <Call3>: <Reg8: 22, Reg8: 23, Reg8: 3, Reg8: 22, Reg8: 21>
+00001023: <NewArray>: <Reg8: 21, UInt16: 5>
+00001027: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 0>
+0000102b: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+0000102f: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001034: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 18>
+00001038: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+0000103d: <NewObject>: <Reg8: 22>
+0000103f: <GetByIdShort>: <Reg8: 26, Reg8: 25, UInt8: 83, string_id: 185>  # String: 'nome' (Identifier)
+00001044: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 185>  # String: 'nome' (Identifier)
+00001048: <Call3>: <Reg8: 22, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+0000104e: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 1>
+00001052: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+00001056: <GetByIdShort>: <Reg8: 26, Reg8: 22, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000105b: <JmpTrueLong>: <Addr32: 151, Reg8: 38>  # Address: 000010f2
+00001061: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 3>
+00001065: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+0000106a: <NewObject>: <Reg8: 22>
+0000106c: <GetByIdShort>: <Reg8: 24, Reg8: 16, UInt8: 84, string_id: 57>  # String: 'card' (Identifier)
+00001071: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 24, string_id: 238>  # String: 'style' (Identifier)
+00001075: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 25>
+00001079: <GetByIdShort>: <Reg8: 30, Reg8: 24, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000107e: <LoadFromEnvironment>: <Reg8: 24, Reg8: 13, UInt8: 3>
+00001082: <GetByIdShort>: <Reg8: 27, Reg8: 24, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001087: <NewObject>: <Reg8: 24>
+00001089: <GetById>: <Reg8: 31, Reg8: 16, UInt8: 85, string_id: 40917>  # String: 'livello' (Identifier)
+0000108f: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+00001093: <LoadConstString>: <Reg8: 31, string_id: 920>  # String: 'scan.incompletaH' (String)
+00001097: <Call2>: <Reg8: 31, Reg8: 17, Reg8: 3, Reg8: 31>
+0000109c: <PutNewOwnByIdShort>: <Reg8: 24, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+000010a0: <Call3>: <Reg8: 27, Reg8: 30, Reg8: 3, Reg8: 27, Reg8: 24>
+000010a6: <NewArray>: <Reg8: 24, UInt16: 2>
+000010aa: <PutOwnByIndex>: <Reg8: 24, Reg8: 27, UInt8: 0>
+000010ae: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+000010b2: <GetByIdShort>: <Reg8: 31, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000010b7: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 3>
+000010bb: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000010c0: <NewObject>: <Reg8: 27>
+000010c2: <GetById>: <Reg8: 32, Reg8: 16, UInt8: 86, string_id: 52290>  # String: 'cgLine' (Identifier)
+000010c8: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 32, string_id: 238>  # String: 'style' (Identifier)
+000010cc: <LoadConstString>: <Reg8: 32, string_id: 953>  # String: 'scan.incompletaP' (String)
+000010d0: <Call2>: <Reg8: 32, Reg8: 17, Reg8: 3, Reg8: 32>
+000010d5: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 32, string_id: 74>  # String: 'children' (Identifier)
+000010d9: <Call3>: <Reg8: 27, Reg8: 31, Reg8: 3, Reg8: 30, Reg8: 27>
+000010df: <PutOwnByIndex>: <Reg8: 24, Reg8: 27, UInt8: 1>
+000010e3: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 24, string_id: 74>  # String: 'children' (Identifier)
+000010e7: <Call3>: <Reg8: 22, Reg8: 26, Reg8: 3, Reg8: 23, Reg8: 22>
+000010ed: <JmpLong>: <Addr32: 2318>  # Address: 000019fb
+000010f2: <LoadFromEnvironment>: <Reg8: 23, Reg8: 13, UInt8: 25>
+000010f6: <GetById>: <Reg8: 24, Reg8: 23, UInt8: 87, string_id: 33164>  # String: 'Fragment' (Identifier)
+000010fc: <NewObject>: <Reg8: 23>
+000010fe: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00001102: <GetByIdShort>: <Reg8: 31, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001107: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 20>
+0000110b: <GetByIdShort>: <Reg8: 30, Reg8: 27, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00001110: <NewObject>: <Reg8: 27>
+00001112: <GetGlobalObject>: <Reg8: 45>
+00001114: <TryGetById>: <Reg8: 35, Reg8: 45, UInt8: 88, string_id: 12>  # String: 'Math' (Identifier)
+0000111a: <GetByIdShort>: <Reg8: 33, Reg8: 35, UInt8: 89, string_id: 37>  # String: 'round' (Identifier)
+0000111f: <GetById>: <Reg8: 32, Reg8: 25, UInt8: 13, string_id: 43588>  # String: 'carbo100' (Identifier)
+00001125: <JNotEqual>: <Addr8: 6, Reg8: 32, Reg8: 39>  # Address: 0000112b
+00001129: <LoadConstZero>: <Reg8: 32>
+0000112b: <Mul>: <Reg8: 32, Reg8: 32, Reg8: 46>
+0000112f: <Div>: <Reg8: 32, Reg8: 32, Reg8: 36>
+00001133: <Call2>: <Reg8: 32, Reg8: 33, Reg8: 35, Reg8: 32>
+00001138: <PutNewOwnById>: <Reg8: 27, Reg8: 32, string_id: 32041>  # String: 'carbo' (Identifier)
+0000113d: <GetById>: <Reg8: 32, Reg8: 38, UInt8: 90, string_id: 48993>  # String: 'cgStima' (Identifier)
+00001143: <PutNewOwnById>: <Reg8: 27, Reg8: 32, string_id: 32303>  # String: 'cg' (Identifier)
+00001148: <GetByIdShort>: <Reg8: 32, Reg8: 38, UInt8: 91, string_id: 114>  # String: 'fascia' (Identifier)
+0000114d: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 32, string_id: 114>  # String: 'fascia' (Identifier)
+00001151: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 46, string_id: 135>  # String: 'grammi' (Identifier)
+00001155: <LoadConstTrue>: <Reg8: 32>
+00001157: <PutNewOwnById>: <Reg8: 27, Reg8: 32, string_id: 35097>  # String: 'stima' (Identifier)
+0000115c: <Call3>: <Reg8: 30, Reg8: 31, Reg8: 3, Reg8: 30, Reg8: 27>
+00001162: <NewArray>: <Reg8: 27, UInt16: 10>
+00001166: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 0>
+0000116a: <GetById>: <Reg8: 30, Reg8: 25, UInt8: 92, string_id: 52102>  # String: 'carboCorretto' (Identifier)
+00001170: <JmpFalseLong>: <Addr32: 155, Reg8: 30>  # Address: 0000120b
+00001176: <LoadFromEnvironment>: <Reg8: 31, Reg8: 13, UInt8: 25>
+0000117a: <GetByIdShort>: <Reg8: 33, Reg8: 31, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000117f: <LoadFromEnvironment>: <Reg8: 31, Reg8: 13, UInt8: 3>
+00001183: <GetByIdShort>: <Reg8: 32, Reg8: 31, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001188: <NewObject>: <Reg8: 31>
+0000118a: <GetById>: <Reg8: 35, Reg8: 16, UInt8: 93, string_id: 48998>  # String: 'correttoNote' (Identifier)
+00001190: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+00001194: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+00001198: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000119d: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 8>
+000011a1: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+000011a6: <NewObjectWithBufferLong>: <Reg8: 35, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 185287>  # Object: {'name': 'information-circle-outline', 'size': 16}
+000011b4: <GetById>: <Reg8: 39, Reg8: 29, UInt8: 94, string_id: 42249>  # String: 'yellowInk' (Identifier)
+000011ba: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 78>  # String: 'color' (Identifier)
+000011be: <Call3>: <Reg8: 36, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+000011c4: <NewArray>: <Reg8: 35, UInt16: 2>
+000011c8: <PutOwnByIndex>: <Reg8: 35, Reg8: 36, UInt8: 0>
+000011cc: <LoadFromEnvironment>: <Reg8: 36, Reg8: 13, UInt8: 25>
+000011d0: <GetByIdShort>: <Reg8: 39, Reg8: 36, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000011d5: <LoadFromEnvironment>: <Reg8: 36, Reg8: 13, UInt8: 3>
+000011d9: <GetByIdShort>: <Reg8: 37, Reg8: 36, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000011de: <NewObject>: <Reg8: 36>
+000011e0: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 95, string_id: 48999>  # String: 'correttoNoteTxt' (Identifier)
+000011e6: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 40, string_id: 238>  # String: 'style' (Identifier)
+000011ea: <LoadConstString>: <Reg8: 40, string_id: 22264>  # String: 'scan.correttoNote' (String)
+000011ee: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 40>
+000011f3: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 40, string_id: 74>  # String: 'children' (Identifier)
+000011f7: <Call3>: <Reg8: 36, Reg8: 39, Reg8: 3, Reg8: 37, Reg8: 36>
+000011fd: <PutOwnByIndex>: <Reg8: 35, Reg8: 36, UInt8: 1>
+00001201: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 35, string_id: 74>  # String: 'children' (Identifier)
+00001205: <Call3>: <Reg8: 30, Reg8: 33, Reg8: 3, Reg8: 32, Reg8: 31>
+0000120b: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 1>
+0000120f: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00001213: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001218: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+0000121c: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001221: <NewObject>: <Reg8: 30>
+00001223: <NewObject>: <Reg8: 33>
+00001225: <LoadConstUInt8>: <Reg8: 35, UInt8: 12>
+00001228: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 35, string_id: 179>  # String: 'marginTop' (Identifier)
+0000122c: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+00001230: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 25>
+00001234: <GetByIdShort>: <Reg8: 36, Reg8: 33, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001239: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 15>
+0000123d: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00001242: <NewObject>: <Reg8: 33>
+00001244: <GetByIdShort>: <Reg8: 37, Reg8: 38, UInt8: 91, string_id: 114>  # String: 'fascia' (Identifier)
+00001249: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 114>  # String: 'fascia' (Identifier)
+0000124d: <Call3>: <Reg8: 33, Reg8: 36, Reg8: 3, Reg8: 35, Reg8: 33>
+00001253: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+00001257: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+0000125d: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 2>
+00001261: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00001265: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000126a: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+0000126e: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001273: <NewObject>: <Reg8: 30>
+00001275: <GetById>: <Reg8: 33, Reg8: 16, UInt8: 96, string_id: 35040>  # String: 'porzBox' (Identifier)
+0000127b: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+0000127f: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 25>
+00001283: <GetByIdShort>: <Reg8: 36, Reg8: 33, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001288: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 3>
+0000128c: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001291: <NewObject>: <Reg8: 33>
+00001293: <GetById>: <Reg8: 37, Reg8: 16, UInt8: 97, string_id: 48067>  # String: 'porzLabel' (Identifier)
+00001299: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 238>  # String: 'style' (Identifier)
+0000129d: <LoadConstString>: <Reg8: 37, string_id: 3408>  # String: 'scan.porzione' (String)
+000012a1: <Call2>: <Reg8: 37, Reg8: 17, Reg8: 3, Reg8: 37>
+000012a6: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 74>  # String: 'children' (Identifier)
+000012aa: <Call3>: <Reg8: 35, Reg8: 36, Reg8: 3, Reg8: 35, Reg8: 33>
+000012b0: <NewArray>: <Reg8: 33, UInt16: 2>
+000012b4: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 0>
+000012b8: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+000012bc: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+000012c1: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+000012c5: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+000012ca: <NewObject>: <Reg8: 35>
+000012cc: <GetById>: <Reg8: 39, Reg8: 16, UInt8: 98, string_id: 45125>  # String: 'gramCtrl' (Identifier)
+000012d2: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 238>  # String: 'style' (Identifier)
+000012d6: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+000012da: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000012df: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 3>
+000012e3: <GetByIdShort>: <Reg8: 40, Reg8: 39, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+000012e8: <NewObject>: <Reg8: 39>
+000012ea: <GetById>: <Reg8: 43, Reg8: 16, UInt8: 99, string_id: 39558>  # String: 'gramBtn' (Identifier)
+000012f0: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 238>  # String: 'style' (Identifier)
+000012f4: <CreateClosure>: <Reg8: 43, Reg8: 7, function_id: 19133>  # Function: [#19133 onPress of 27 bytes]: 1 params @ offset 0x004e468f
+000012f9: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 191>  # String: 'onPress' (Identifier)
+000012fd: <LoadConstUInt8>: <Reg8: 44, UInt8: 6>
+00001300: <PutNewOwnById>: <Reg8: 39, Reg8: 44, string_id: 39898>  # String: 'hitSlop' (Identifier)
+00001305: <LoadFromEnvironment>: <Reg8: 43, Reg8: 13, UInt8: 25>
+00001309: <GetByIdShort>: <Reg8: 48, Reg8: 43, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000130e: <LoadFromEnvironment>: <Reg8: 43, Reg8: 13, UInt8: 8>
+00001312: <GetByIdShort>: <Reg8: 47, Reg8: 43, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00001317: <NewObjectWithBufferLong>: <Reg8: 43, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188176>  # Object: {'name': 'remove', 'size': 16}
+00001325: <GetByIdShort>: <Reg8: 49, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+0000132a: <PutNewOwnByIdShort>: <Reg8: 43, Reg8: 49, string_id: 78>  # String: 'color' (Identifier)
+0000132e: <Call3>: <Reg8: 43, Reg8: 48, Reg8: 3, Reg8: 47, Reg8: 43>
+00001334: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+00001338: <Call3>: <Reg8: 40, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+0000133e: <NewArray>: <Reg8: 39, UInt16: 4>
+00001342: <PutOwnByIndex>: <Reg8: 39, Reg8: 40, UInt8: 0>
+00001346: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 25>
+0000134a: <GetByIdShort>: <Reg8: 43, Reg8: 40, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000134f: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 3>
+00001353: <GetById>: <Reg8: 41, Reg8: 40, UInt8: 50, string_id: 35702>  # String: 'TextInput' (Identifier)
+00001359: <NewObjectWithBufferLong>: <Reg8: 40, UInt16: 6, UInt16: 6, UInt32: 48731, UInt32: 84316>  # Object: {'style': null, 'value': null, 'onChangeText': null, 'keyboardType': 'number-pad', 'maxLength': 4, 'selectTextOnFocus': true}
+00001367: <GetById>: <Reg8: 47, Reg8: 16, UInt8: 100, string_id: 45732>  # String: 'gramInput' (Identifier)
+0000136d: <PutById>: <Reg8: 40, Reg8: 47, UInt8: 2, string_id: 238>  # String: 'style' (Identifier)
+00001373: <TryGetById>: <Reg8: 45, Reg8: 45, UInt8: 101, string_id: 20>  # String: 'String' (Identifier)
+00001379: <Call2>: <Reg8: 45, Reg8: 45, Reg8: 3, Reg8: 46>
+0000137e: <PutById>: <Reg8: 40, Reg8: 45, UInt8: 3, string_id: 251>  # String: 'value' (Identifier)
+00001384: <CreateClosure>: <Reg8: 45, Reg8: 7, function_id: 19134>  # Function: [#19134 onChangeText of 72 bytes]: 2 params @ offset 0x004e46aa
+00001389: <PutById>: <Reg8: 40, Reg8: 45, UInt8: 4, string_id: 46532>  # String: 'onChangeText' (Identifier)
+0000138f: <Call3>: <Reg8: 40, Reg8: 43, Reg8: 3, Reg8: 41, Reg8: 40>
+00001395: <PutOwnByIndex>: <Reg8: 39, Reg8: 40, UInt8: 1>
+00001399: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 25>
+0000139d: <GetByIdShort>: <Reg8: 43, Reg8: 40, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000013a2: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 3>
+000013a6: <GetByIdShort>: <Reg8: 41, Reg8: 40, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000013ab: <NewObject>: <Reg8: 40>
+000013ad: <GetById>: <Reg8: 45, Reg8: 16, UInt8: 102, string_id: 54146>  # String: 'gramUnit' (Identifier)
+000013b3: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 45, string_id: 238>  # String: 'style' (Identifier)
+000013b7: <LoadConstString>: <Reg8: 45, string_id: 31891>  # String: 'g' (Identifier)
+000013bb: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 45, string_id: 74>  # String: 'children' (Identifier)
+000013bf: <Call3>: <Reg8: 40, Reg8: 43, Reg8: 3, Reg8: 41, Reg8: 40>
+000013c5: <PutOwnByIndex>: <Reg8: 39, Reg8: 40, UInt8: 2>
+000013c9: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 25>
+000013cd: <GetByIdShort>: <Reg8: 43, Reg8: 40, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000013d2: <LoadFromEnvironment>: <Reg8: 40, Reg8: 13, UInt8: 3>
+000013d6: <GetByIdShort>: <Reg8: 41, Reg8: 40, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+000013db: <NewObject>: <Reg8: 40>
+000013dd: <GetById>: <Reg8: 45, Reg8: 16, UInt8: 99, string_id: 39558>  # String: 'gramBtn' (Identifier)
+000013e3: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 45, string_id: 238>  # String: 'style' (Identifier)
+000013e7: <CreateClosure>: <Reg8: 45, Reg8: 7, function_id: 19135>  # Function: [#19135 onPress of 27 bytes]: 1 params @ offset 0x004e46f2
+000013ec: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 45, string_id: 191>  # String: 'onPress' (Identifier)
+000013f0: <PutNewOwnById>: <Reg8: 40, Reg8: 44, string_id: 39898>  # String: 'hitSlop' (Identifier)
+000013f5: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 25>
+000013f9: <GetByIdShort>: <Reg8: 46, Reg8: 44, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000013fe: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 8>
+00001402: <GetByIdShort>: <Reg8: 45, Reg8: 44, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00001407: <NewObjectWithBufferLong>: <Reg8: 44, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188184>  # Object: {'name': 'add', 'size': 16}
+00001415: <GetByIdShort>: <Reg8: 47, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+0000141a: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 47, string_id: 78>  # String: 'color' (Identifier)
+0000141e: <Call3>: <Reg8: 44, Reg8: 46, Reg8: 3, Reg8: 45, Reg8: 44>
+00001424: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 44, string_id: 74>  # String: 'children' (Identifier)
+00001428: <Call3>: <Reg8: 40, Reg8: 43, Reg8: 3, Reg8: 41, Reg8: 40>
+0000142e: <PutOwnByIndex>: <Reg8: 39, Reg8: 40, UInt8: 3>
+00001432: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 74>  # String: 'children' (Identifier)
+00001436: <Call3>: <Reg8: 35, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+0000143c: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 1>
+00001440: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+00001444: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+0000144a: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 3>
+0000144e: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00001452: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001457: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+0000145b: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001460: <NewObject>: <Reg8: 30>
+00001462: <GetById>: <Reg8: 33, Reg8: 16, UInt8: 103, string_id: 34007>  # String: 'porzNote' (Identifier)
+00001468: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+0000146c: <LoadConstString>: <Reg8: 33, string_id: 3332>  # String: 'scan.porzNote' (String)
+00001470: <Call2>: <Reg8: 33, Reg8: 17, Reg8: 3, Reg8: 33>
+00001475: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+00001479: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+0000147f: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 4>
+00001483: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 9>
+00001487: <GetById>: <Reg8: 31, Reg8: 30, UInt8: 104, string_id: 32248>  # String: 'impatto' (Identifier)
+0000148d: <GetByIdShort>: <Reg8: 30, Reg8: 38, UInt8: 91, string_id: 114>  # String: 'fascia' (Identifier)
+00001492: <Call3>: <Reg8: 48, Reg8: 31, Reg8: 3, Reg8: 30, Reg8: 29>
+00001498: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+0000149c: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+000014a1: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+000014a5: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+000014aa: <NewObject>: <Reg8: 30>
+000014ac: <GetByIdShort>: <Reg8: 33, Reg8: 16, UInt8: 84, string_id: 57>  # String: 'card' (Identifier)
+000014b1: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+000014b5: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 25>
+000014b9: <GetByIdShort>: <Reg8: 36, Reg8: 33, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000014be: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 3>
+000014c2: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000014c7: <NewObject>: <Reg8: 33>
+000014c9: <GetById>: <Reg8: 39, Reg8: 16, UInt8: 85, string_id: 40917>  # String: 'livello' (Identifier)
+000014cf: <NewArray>: <Reg8: 37, UInt16: 2>
+000014d3: <PutOwnByIndex>: <Reg8: 37, Reg8: 39, UInt8: 0>
+000014d7: <NewObject>: <Reg8: 39>
+000014d9: <GetByIdShort>: <Reg8: 40, Reg8: 48, UInt8: 105, string_id: 78>  # String: 'color' (Identifier)
+000014de: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 40, string_id: 78>  # String: 'color' (Identifier)
+000014e2: <PutOwnByIndex>: <Reg8: 37, Reg8: 39, UInt8: 1>
+000014e6: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 238>  # String: 'style' (Identifier)
+000014ea: <NewObject>: <Reg8: 39>
+000014ec: <GetByIdShort>: <Reg8: 40, Reg8: 38, UInt8: 91, string_id: 114>  # String: 'fascia' (Identifier)
+000014f1: <LoadConstString>: <Reg8: 37, string_id: 4682>  # String: 'fascia.' (String)
+000014f5: <Add>: <Reg8: 37, Reg8: 37, Reg8: 40>
+000014f9: <Call2>: <Reg8: 40, Reg8: 17, Reg8: 3, Reg8: 37>
+000014fe: <GetById>: <Reg8: 37, Reg8: 40, UInt8: 106, string_id: 38312>  # String: 'toLowerCase' (Identifier)
+00001504: <Call1>: <Reg8: 37, Reg8: 37, Reg8: 40>
+00001508: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 37, string_id: 41>  # String: 'label' (Identifier)
+0000150c: <LoadConstString>: <Reg8: 37, string_id: 12439>  # String: 'pasto.impattoLabel' (String)
+00001510: <Call3>: <Reg8: 37, Reg8: 17, Reg8: 3, Reg8: 37, Reg8: 39>
+00001516: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 74>  # String: 'children' (Identifier)
+0000151a: <Call3>: <Reg8: 35, Reg8: 36, Reg8: 3, Reg8: 35, Reg8: 33>
+00001520: <NewArray>: <Reg8: 33, UInt16: 3>
+00001524: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 0>
+00001528: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+0000152c: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001531: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+00001535: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+0000153a: <NewObject>: <Reg8: 35>
+0000153c: <GetById>: <Reg8: 39, Reg8: 16, UInt8: 86, string_id: 52290>  # String: 'cgLine' (Identifier)
+00001542: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 238>  # String: 'style' (Identifier)
+00001546: <GetByIdShort>: <Reg8: 40, Reg8: 38, UInt8: 91, string_id: 114>  # String: 'fascia' (Identifier)
+0000154b: <LoadConstString>: <Reg8: 39, string_id: 35781>  # String: 'trascurabile' (Identifier)
+0000154f: <JStrictEqualLong>: <Addr32: 157, Reg8: 40, Reg8: 39>  # Address: 000015ec
+00001556: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+0000155a: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000155f: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+00001563: <GetById>: <Reg8: 40, Reg8: 39, UInt8: 87, string_id: 33164>  # String: 'Fragment' (Identifier)
+00001569: <NewObject>: <Reg8: 39>
+0000156b: <LoadConstString>: <Reg8: 43, string_id: 22262>  # String: 'scan.cgStimato' (String)
+0000156f: <Call2>: <Reg8: 44, Reg8: 17, Reg8: 3, Reg8: 43>
+00001574: <NewArray>: <Reg8: 43, UInt16: 3>
+00001578: <PutOwnByIndex>: <Reg8: 43, Reg8: 44, UInt8: 0>
+0000157c: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 25>
+00001580: <GetByIdShort>: <Reg8: 46, Reg8: 44, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001585: <LoadFromEnvironment>: <Reg8: 44, Reg8: 13, UInt8: 3>
+00001589: <GetByIdShort>: <Reg8: 45, Reg8: 44, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+0000158e: <NewObject>: <Reg8: 44>
+00001590: <NewObject>: <Reg8: 47>
+00001592: <LoadFromEnvironment>: <Reg8: 49, Reg8: 13, UInt8: 9>
+00001596: <GetByIdShort>: <Reg8: 49, Reg8: 49, UInt8: 37, string_id: 129>  # String: 'fonts' (Identifier)
+0000159b: <GetByIdShort>: <Reg8: 49, Reg8: 49, UInt8: 38, string_id: 48>  # String: 'bold' (Identifier)
+000015a0: <PutNewOwnByIdShort>: <Reg8: 47, Reg8: 49, string_id: 45>  # String: 'fontFamily' (Identifier)
+000015a4: <GetByIdShort>: <Reg8: 48, Reg8: 48, UInt8: 105, string_id: 78>  # String: 'color' (Identifier)
+000015a9: <PutNewOwnByIdShort>: <Reg8: 47, Reg8: 48, string_id: 78>  # String: 'color' (Identifier)
+000015ad: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 47, string_id: 238>  # String: 'style' (Identifier)
+000015b1: <GetById>: <Reg8: 47, Reg8: 38, UInt8: 90, string_id: 48993>  # String: 'cgStima' (Identifier)
+000015b7: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 47, string_id: 74>  # String: 'children' (Identifier)
+000015bb: <Call3>: <Reg8: 44, Reg8: 46, Reg8: 3, Reg8: 45, Reg8: 44>
+000015c1: <PutOwnByIndex>: <Reg8: 43, Reg8: 44, UInt8: 1>
+000015c5: <NewObject>: <Reg8: 45>
+000015c7: <GetById>: <Reg8: 44, Reg8: 38, UInt8: 107, string_id: 34093>  # String: 'porzioneG' (Identifier)
+000015cd: <PutNewOwnById>: <Reg8: 45, Reg8: 44, string_id: 31891>  # String: 'g' (Identifier)
+000015d2: <LoadConstString>: <Reg8: 44, string_id: 3601>  # String: 'scan.suGrammi' (String)
+000015d6: <Call3>: <Reg8: 44, Reg8: 17, Reg8: 3, Reg8: 44, Reg8: 45>
+000015dc: <PutOwnByIndex>: <Reg8: 43, Reg8: 44, UInt8: 2>
+000015e0: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+000015e4: <Call3>: <Reg8: 39, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+000015ea: <Jmp>: <Addr8: 11>  # Address: 000015f5
+000015ec: <LoadConstString>: <Reg8: 40, string_id: 3065>  # String: 'scan.pochiPorzione' (String)
+000015f0: <Call2>: <Reg8: 39, Reg8: 17, Reg8: 3, Reg8: 40>
+000015f5: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 74>  # String: 'children' (Identifier)
+000015f9: <Call3>: <Reg8: 35, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+000015ff: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 1>
+00001603: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+00001607: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000160c: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+00001610: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001615: <NewObject>: <Reg8: 35>
+00001617: <GetById>: <Reg8: 40, Reg8: 16, UInt8: 108, string_id: 35464>  # String: 'affPill' (Identifier)
+0000161d: <NewArray>: <Reg8: 39, UInt16: 2>
+00001621: <PutOwnByIndex>: <Reg8: 39, Reg8: 40, UInt8: 0>
+00001625: <NewObject>: <Reg8: 40>
+00001627: <GetById>: <Reg8: 41, Reg8: 29, UInt8: 109, string_id: 37075>  # String: 'yellowSoft' (Identifier)
+0000162d: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 41, string_id: 36>  # String: 'backgroundColor' (Identifier)
+00001631: <PutOwnByIndex>: <Reg8: 39, Reg8: 40, UInt8: 1>
+00001635: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 238>  # String: 'style' (Identifier)
+00001639: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+0000163d: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001642: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 3>
+00001646: <GetByIdShort>: <Reg8: 40, Reg8: 39, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+0000164b: <NewObject>: <Reg8: 39>
+0000164d: <GetById>: <Reg8: 44, Reg8: 16, UInt8: 110, string_id: 39725>  # String: 'affTxt' (Identifier)
+00001653: <NewArray>: <Reg8: 43, UInt16: 2>
+00001657: <PutOwnByIndex>: <Reg8: 43, Reg8: 44, UInt8: 0>
+0000165b: <NewObject>: <Reg8: 44>
+0000165d: <GetById>: <Reg8: 45, Reg8: 29, UInt8: 94, string_id: 42249>  # String: 'yellowInk' (Identifier)
+00001663: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 45, string_id: 78>  # String: 'color' (Identifier)
+00001667: <PutOwnByIndex>: <Reg8: 43, Reg8: 44, UInt8: 1>
+0000166b: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 238>  # String: 'style' (Identifier)
+0000166f: <LoadConstString>: <Reg8: 43, string_id: 3463>  # String: 'scan.stimaEtichetta' (String)
+00001673: <Call2>: <Reg8: 43, Reg8: 17, Reg8: 3, Reg8: 43>
+00001678: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+0000167c: <Call3>: <Reg8: 39, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+00001682: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 74>  # String: 'children' (Identifier)
+00001686: <Call3>: <Reg8: 35, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+0000168c: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 2>
+00001690: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+00001694: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+0000169a: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 5>
+0000169e: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+000016a2: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000016a7: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 14>
+000016ab: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+000016b0: <NewObject>: <Reg8: 30>
+000016b2: <GetById>: <Reg8: 33, Reg8: 38, UInt8: 111, string_id: 32759>  # String: 'dims' (Identifier)
+000016b8: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 32759>  # String: 'dims' (Identifier)
+000016bd: <GetById>: <Reg8: 33, Reg8: 38, UInt8: 112, string_id: 40526>  # String: 'sintesi' (Identifier)
+000016c3: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 40526>  # String: 'sintesi' (Identifier)
+000016c8: <NewObject>: <Reg8: 35>
+000016ca: <GetById>: <Reg8: 33, Reg8: 38, UInt8: 107, string_id: 34093>  # String: 'porzioneG' (Identifier)
+000016d0: <PutNewOwnById>: <Reg8: 35, Reg8: 33, string_id: 31891>  # String: 'g' (Identifier)
+000016d5: <LoadConstString>: <Reg8: 33, string_id: 3409>  # String: 'scan.porzioneG' (String)
+000016d9: <Call3>: <Reg8: 33, Reg8: 17, Reg8: 3, Reg8: 33, Reg8: 35>
+000016df: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 206>  # String: 'porzioni' (Identifier)
+000016e3: <CreateClosure>: <Reg8: 33, Reg8: 7, function_id: 19136>  # Function: [#19136 onInfo of 61 bytes]: 1 params @ offset 0x004cecf6
+000016e8: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 47355>  # String: 'onInfo' (Identifier)
+000016ed: <CreateClosure>: <Reg8: 33, Reg8: 7, function_id: 19137>  # Function: [#19137 onFonti of 61 bytes]: 1 params @ offset 0x004ced33
+000016f2: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 39580>  # String: 'onFonti' (Identifier)
+000016f7: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+000016fd: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 6>
+00001701: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00001705: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000170a: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+0000170e: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001713: <NewObject>: <Reg8: 30>
+00001715: <GetById>: <Reg8: 33, Reg8: 16, UInt8: 113, string_id: 41544>  # String: 'lezBox' (Identifier)
+0000171b: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+0000171f: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 25>
+00001723: <GetByIdShort>: <Reg8: 36, Reg8: 33, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00001728: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 3>
+0000172c: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001731: <NewObject>: <Reg8: 33>
+00001733: <GetById>: <Reg8: 37, Reg8: 16, UInt8: 114, string_id: 41556>  # String: 'lezHead' (Identifier)
+00001739: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 238>  # String: 'style' (Identifier)
+0000173d: <LoadFromEnvironment>: <Reg8: 37, Reg8: 13, UInt8: 25>
+00001741: <GetByIdShort>: <Reg8: 40, Reg8: 37, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001746: <LoadFromEnvironment>: <Reg8: 37, Reg8: 13, UInt8: 8>
+0000174a: <GetByIdShort>: <Reg8: 39, Reg8: 37, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+0000174f: <NewObjectWithBufferLong>: <Reg8: 37, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 186655>  # Object: {'name': 'bulb-outline', 'size': 16}
+0000175d: <GetById>: <Reg8: 41, Reg8: 29, UInt8: 39, string_id: 52886>  # String: 'goldInk' (Identifier)
+00001763: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 41, string_id: 78>  # String: 'color' (Identifier)
+00001767: <Call3>: <Reg8: 39, Reg8: 40, Reg8: 3, Reg8: 39, Reg8: 37>
+0000176d: <NewArray>: <Reg8: 37, UInt16: 2>
+00001771: <PutOwnByIndex>: <Reg8: 37, Reg8: 39, UInt8: 0>
+00001775: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+00001779: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000177e: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 3>
+00001782: <GetByIdShort>: <Reg8: 40, Reg8: 39, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001787: <NewObject>: <Reg8: 39>
+00001789: <GetById>: <Reg8: 43, Reg8: 16, UInt8: 115, string_id: 41555>  # String: 'lezH' (Identifier)
+0000178f: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 238>  # String: 'style' (Identifier)
+00001793: <LoadConstString>: <Reg8: 43, string_id: 21777>  # String: 'scan.comeGestirlo' (String)
+00001797: <Call2>: <Reg8: 43, Reg8: 17, Reg8: 3, Reg8: 43>
+0000179c: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+000017a0: <Call3>: <Reg8: 39, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+000017a6: <PutOwnByIndex>: <Reg8: 37, Reg8: 39, UInt8: 1>
+000017aa: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 74>  # String: 'children' (Identifier)
+000017ae: <Call3>: <Reg8: 35, Reg8: 36, Reg8: 3, Reg8: 35, Reg8: 33>
+000017b4: <NewArray>: <Reg8: 33, UInt16: 2>
+000017b8: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 0>
+000017bc: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+000017c0: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000017c5: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+000017c9: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000017ce: <NewObject>: <Reg8: 35>
+000017d0: <GetById>: <Reg8: 39, Reg8: 16, UInt8: 116, string_id: 41829>  # String: 'lezP' (Identifier)
+000017d6: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 238>  # String: 'style' (Identifier)
+000017da: <GetById>: <Reg8: 38, Reg8: 38, UInt8: 117, string_id: 40375>  # String: 'consiglio' (Identifier)
+000017e0: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 38, string_id: 74>  # String: 'children' (Identifier)
+000017e4: <Call3>: <Reg8: 35, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+000017ea: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 1>
+000017ee: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+000017f2: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+000017f8: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 7>
+000017fc: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00001800: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001805: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 23>
+00001809: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+0000180e: <NewObject>: <Reg8: 30>
+00001810: <CreateClosure>: <Reg8: 33, Reg8: 7, function_id: 19138>  # Function: [#19138 snapshot of 98 bytes]: 1 params @ offset 0x004e470d
+00001815: <PutNewOwnById>: <Reg8: 30, Reg8: 33, string_id: 39779>  # String: 'snapshot' (Identifier)
+0000181a: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+00001820: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 8>
+00001824: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 25>
+00001828: <GetByIdShort>: <Reg8: 32, Reg8: 30, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+0000182d: <LoadFromEnvironment>: <Reg8: 30, Reg8: 13, UInt8: 3>
+00001831: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001836: <NewObject>: <Reg8: 30>
+00001838: <GetById>: <Reg8: 33, Reg8: 16, UInt8: 118, string_id: 51467>  # String: 'bivioBox' (Identifier)
+0000183e: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 238>  # String: 'style' (Identifier)
+00001842: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 25>
+00001846: <GetByIdShort>: <Reg8: 36, Reg8: 33, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000184b: <LoadFromEnvironment>: <Reg8: 33, Reg8: 13, UInt8: 3>
+0000184f: <GetByIdShort>: <Reg8: 35, Reg8: 33, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001854: <NewObject>: <Reg8: 33>
+00001856: <GetById>: <Reg8: 37, Reg8: 16, UInt8: 119, string_id: 38743>  # String: 'bivioQ' (Identifier)
+0000185c: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 238>  # String: 'style' (Identifier)
+00001860: <LoadConstString>: <Reg8: 37, string_id: 15898>  # String: 'foto.mangiAltro' (String)
+00001864: <Call2>: <Reg8: 37, Reg8: 17, Reg8: 3, Reg8: 37>
+00001869: <PutNewOwnByIdShort>: <Reg8: 33, Reg8: 37, string_id: 74>  # String: 'children' (Identifier)
+0000186d: <Call3>: <Reg8: 35, Reg8: 36, Reg8: 3, Reg8: 35, Reg8: 33>
+00001873: <NewArray>: <Reg8: 33, UInt16: 2>
+00001877: <PutOwnByIndex>: <Reg8: 33, Reg8: 35, UInt8: 0>
+0000187b: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 25>
+0000187f: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00001884: <LoadFromEnvironment>: <Reg8: 35, Reg8: 13, UInt8: 3>
+00001888: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+0000188d: <NewObject>: <Reg8: 35>
+0000188f: <JmpTrueLong>: <Addr32: 139, Reg8: 34>  # Address: 0000191a
+00001895: <GetById>: <Reg8: 34, Reg8: 16, UInt8: 120, string_id: 51465>  # String: 'bivioAdd' (Identifier)
+0000189b: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 34, string_id: 238>  # String: 'style' (Identifier)
+0000189f: <CreateClosure>: <Reg8: 34, Reg8: 7, function_id: 19113>  # Function: [#19113 aggiungiPasto of 91 bytes]: 1 params @ offset 0x004e413f
+000018a4: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 34, string_id: 191>  # String: 'onPress' (Identifier)
+000018a8: <LoadFromEnvironment>: <Reg8: 34, Reg8: 13, UInt8: 25>
+000018ac: <GetByIdShort>: <Reg8: 39, Reg8: 34, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000018b1: <LoadFromEnvironment>: <Reg8: 34, Reg8: 13, UInt8: 8>
+000018b5: <GetByIdShort>: <Reg8: 38, Reg8: 34, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+000018ba: <NewObjectWithBufferLong>: <Reg8: 34, UInt16: 3, UInt16: 3, UInt32: 44640, UInt32: 181857>  # Object: {'name': 'add-circle', 'size': 19, 'color': '#fff'}
+000018c8: <Call3>: <Reg8: 38, Reg8: 39, Reg8: 3, Reg8: 38, Reg8: 34>
+000018ce: <NewArray>: <Reg8: 34, UInt16: 2>
+000018d2: <PutOwnByIndex>: <Reg8: 34, Reg8: 38, UInt8: 0>
+000018d6: <LoadFromEnvironment>: <Reg8: 38, Reg8: 13, UInt8: 25>
+000018da: <GetByIdShort>: <Reg8: 40, Reg8: 38, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000018df: <LoadFromEnvironment>: <Reg8: 38, Reg8: 13, UInt8: 3>
+000018e3: <GetByIdShort>: <Reg8: 39, Reg8: 38, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+000018e8: <NewObject>: <Reg8: 38>
+000018ea: <GetById>: <Reg8: 41, Reg8: 16, UInt8: 121, string_id: 51466>  # String: 'bivioAddTxt' (Identifier)
+000018f0: <PutNewOwnByIdShort>: <Reg8: 38, Reg8: 41, string_id: 238>  # String: 'style' (Identifier)
+000018f4: <LoadConstString>: <Reg8: 41, string_id: 14118>  # String: 'foto.aggiungiPasto' (String)
+000018f8: <Call2>: <Reg8: 41, Reg8: 17, Reg8: 3, Reg8: 41>
+000018fd: <PutNewOwnByIdShort>: <Reg8: 38, Reg8: 41, string_id: 74>  # String: 'children' (Identifier)
+00001901: <Call3>: <Reg8: 38, Reg8: 40, Reg8: 3, Reg8: 39, Reg8: 38>
+00001907: <PutOwnByIndex>: <Reg8: 34, Reg8: 38, UInt8: 1>
+0000190b: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 34, string_id: 74>  # String: 'children' (Identifier)
+0000190f: <Call3>: <Reg8: 34, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+00001915: <JmpLong>: <Addr32: 202>  # Address: 000019df
+0000191a: <GetById>: <Reg8: 38, Reg8: 16, UInt8: 122, string_id: 51468>  # String: 'bivioGo' (Identifier)
+00001920: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 38, string_id: 238>  # String: 'style' (Identifier)
+00001924: <CreateClosure>: <Reg8: 38, Reg8: 7, function_id: 19139>  # Function: [#19139 onPress of 24 bytes]: 1 params @ offset 0x004dbcbb
+00001929: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 38, string_id: 191>  # String: 'onPress' (Identifier)
+0000192d: <LoadFromEnvironment>: <Reg8: 38, Reg8: 13, UInt8: 25>
+00001931: <GetByIdShort>: <Reg8: 40, Reg8: 38, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001936: <LoadFromEnvironment>: <Reg8: 38, Reg8: 13, UInt8: 8>
+0000193a: <GetByIdShort>: <Reg8: 39, Reg8: 38, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+0000193f: <NewObjectWithBufferLong>: <Reg8: 38, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 177799>  # Object: {'name': 'checkmark-circle', 'size': 18}
+0000194d: <GetByIdShort>: <Reg8: 41, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+00001952: <PutNewOwnByIdShort>: <Reg8: 38, Reg8: 41, string_id: 78>  # String: 'color' (Identifier)
+00001956: <Call3>: <Reg8: 39, Reg8: 40, Reg8: 3, Reg8: 39, Reg8: 38>
+0000195c: <NewArray>: <Reg8: 38, UInt16: 3>
+00001960: <PutOwnByIndex>: <Reg8: 38, Reg8: 39, UInt8: 0>
+00001964: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+00001968: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+0000196d: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 3>
+00001971: <GetByIdShort>: <Reg8: 40, Reg8: 39, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001976: <NewObject>: <Reg8: 39>
+00001978: <GetById>: <Reg8: 43, Reg8: 16, UInt8: 123, string_id: 51469>  # String: 'bivioGoTxt' (Identifier)
+0000197e: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 43, string_id: 238>  # String: 'style' (Identifier)
+00001982: <NewObject>: <Reg8: 43>
+00001984: <GetByIdShort>: <Reg8: 42, Reg8: 42, UInt8: 40, string_id: 171>  # String: 'length' (Identifier)
+00001989: <PutNewOwnById>: <Reg8: 43, Reg8: 42, string_id: 31836>  # String: 'n' (Identifier)
+0000198e: <LoadConstString>: <Reg8: 42, string_id: 21842>  # String: 'foto.aggiuntoVai' (String)
+00001992: <Call3>: <Reg8: 42, Reg8: 17, Reg8: 3, Reg8: 42, Reg8: 43>
+00001998: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 42, string_id: 74>  # String: 'children' (Identifier)
+0000199c: <Call3>: <Reg8: 39, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+000019a2: <PutOwnByIndex>: <Reg8: 38, Reg8: 39, UInt8: 1>
+000019a6: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 25>
+000019aa: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+000019af: <LoadFromEnvironment>: <Reg8: 39, Reg8: 13, UInt8: 8>
+000019b3: <GetByIdShort>: <Reg8: 40, Reg8: 39, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+000019b8: <NewObjectWithBuffer>: <Reg8: 39, UInt16: 3, UInt16: 2, UInt16: 44637, UInt16: 45957>  # Object: {'name': 'chevron-forward', 'size': 16}
+000019c2: <GetByIdShort>: <Reg8: 42, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+000019c7: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 42, string_id: 78>  # String: 'color' (Identifier)
+000019cb: <Call3>: <Reg8: 39, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+000019d1: <PutOwnByIndex>: <Reg8: 38, Reg8: 39, UInt8: 2>
+000019d5: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 38, string_id: 74>  # String: 'children' (Identifier)
+000019d9: <Call3>: <Reg8: 34, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+000019df: <PutOwnByIndex>: <Reg8: 33, Reg8: 34, UInt8: 1>
+000019e3: <PutNewOwnByIdShort>: <Reg8: 30, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+000019e7: <Call3>: <Reg8: 30, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 30>
+000019ed: <PutOwnByIndex>: <Reg8: 27, Reg8: 30, UInt8: 9>
+000019f1: <PutNewOwnByIdShort>: <Reg8: 23, Reg8: 27, string_id: 74>  # String: 'children' (Identifier)
+000019f5: <Call3>: <Reg8: 22, Reg8: 26, Reg8: 3, Reg8: 24, Reg8: 23>
+000019fb: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 2>
+000019ff: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+00001a03: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00001a08: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 3>
+00001a0c: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+00001a11: <NewObject>: <Reg8: 22>
+00001a13: <GetById>: <Reg8: 27, Reg8: 16, UInt8: 74, string_id: 32942>  # String: 'again' (Identifier)
+00001a19: <NewArray>: <Reg8: 26, UInt16: 2>
+00001a1d: <PutOwnByIndex>: <Reg8: 26, Reg8: 27, UInt8: 0>
+00001a21: <NewObject>: <Reg8: 27>
+00001a23: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 28, string_id: 179>  # String: 'marginTop' (Identifier)
+00001a27: <PutOwnByIndex>: <Reg8: 26, Reg8: 27, UInt8: 1>
+00001a2b: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 238>  # String: 'style' (Identifier)
+00001a2f: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 12, string_id: 191>  # String: 'onPress' (Identifier)
+00001a33: <LoadFromEnvironment>: <Reg8: 26, Reg8: 13, UInt8: 25>
+00001a37: <GetByIdShort>: <Reg8: 28, Reg8: 26, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001a3c: <LoadFromEnvironment>: <Reg8: 26, Reg8: 13, UInt8: 8>
+00001a40: <GetByIdShort>: <Reg8: 27, Reg8: 26, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00001a45: <NewObjectWithBufferLong>: <Reg8: 26, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 188155>  # Object: {'name': 'barcode-outline', 'size': 17}
+00001a53: <GetByIdShort>: <Reg8: 29, Reg8: 29, UInt8: 35, string_id: 140>  # String: 'greenDeep' (Identifier)
+00001a58: <PutNewOwnByIdShort>: <Reg8: 26, Reg8: 29, string_id: 78>  # String: 'color' (Identifier)
+00001a5c: <Call3>: <Reg8: 27, Reg8: 28, Reg8: 3, Reg8: 27, Reg8: 26>
+00001a62: <NewArray>: <Reg8: 26, UInt16: 2>
+00001a66: <PutOwnByIndex>: <Reg8: 26, Reg8: 27, UInt8: 0>
+00001a6a: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 25>
+00001a6e: <GetByIdShort>: <Reg8: 29, Reg8: 27, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001a73: <LoadFromEnvironment>: <Reg8: 27, Reg8: 13, UInt8: 3>
+00001a77: <GetByIdShort>: <Reg8: 28, Reg8: 27, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001a7c: <NewObject>: <Reg8: 27>
+00001a7e: <GetById>: <Reg8: 30, Reg8: 16, UInt8: 75, string_id: 42660>  # String: 'againTxt' (Identifier)
+00001a84: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 30, string_id: 238>  # String: 'style' (Identifier)
+00001a88: <LoadConstString>: <Reg8: 30, string_id: 20986>  # String: 'scan.altro' (String)
+00001a8c: <Call2>: <Reg8: 30, Reg8: 17, Reg8: 3, Reg8: 30>
+00001a91: <PutNewOwnByIdShort>: <Reg8: 27, Reg8: 30, string_id: 74>  # String: 'children' (Identifier)
+00001a95: <Call3>: <Reg8: 27, Reg8: 29, Reg8: 3, Reg8: 28, Reg8: 27>
+00001a9b: <PutOwnByIndex>: <Reg8: 26, Reg8: 27, UInt8: 1>
+00001a9f: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 26, string_id: 74>  # String: 'children' (Identifier)
+00001aa3: <Call3>: <Reg8: 22, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00001aa9: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 3>
+00001aad: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 25>
+00001ab1: <GetByIdShort>: <Reg8: 24, Reg8: 22, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001ab6: <LoadFromEnvironment>: <Reg8: 22, Reg8: 13, UInt8: 19>
+00001aba: <GetByIdShort>: <Reg8: 23, Reg8: 22, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00001abf: <NewObject>: <Reg8: 22>
+00001ac1: <GetByIdShort>: <Reg8: 25, Reg8: 25, UInt8: 83, string_id: 185>  # String: 'nome' (Identifier)
+00001ac6: <PutNewOwnByIdShort>: <Reg8: 22, Reg8: 25, string_id: 75>  # String: 'cibo' (Identifier)
+00001aca: <LoadConstString>: <Reg8: 25, string_id: 34712>  # String: 'barcode' (Identifier)
+00001ace: <PutNewOwnById>: <Reg8: 22, Reg8: 25, string_id: 32276>  # String: 'fonte' (Identifier)
+00001ad3: <Call3>: <Reg8: 22, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00001ad9: <PutOwnByIndex>: <Reg8: 21, Reg8: 22, UInt8: 4>
+00001add: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 21, string_id: 74>  # String: 'children' (Identifier)
+00001ae1: <Call3>: <Reg8: 14, Reg8: 20, Reg8: 3, Reg8: 19, Reg8: 15>
+00001ae7: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 9>
+00001aeb: <LoadFromEnvironment>: <Reg8: 14, Reg8: 13, UInt8: 25>
+00001aef: <GetByIdShort>: <Reg8: 19, Reg8: 14, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001af4: <LoadFromEnvironment>: <Reg8: 14, Reg8: 13, UInt8: 3>
+00001af8: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001afd: <NewObject>: <Reg8: 14>
+00001aff: <GetById>: <Reg8: 20, Reg8: 16, UInt8: 124, string_id: 34280>  # String: 'disc' (Identifier)
+00001b05: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 20, string_id: 238>  # String: 'style' (Identifier)
+00001b09: <LoadConstString>: <Reg8: 20, string_id: 19108>  # String: 'scan.disc' (String)
+00001b0d: <Call2>: <Reg8: 20, Reg8: 17, Reg8: 3, Reg8: 20>
+00001b12: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 20, string_id: 74>  # String: 'children' (Identifier)
+00001b16: <Call3>: <Reg8: 14, Reg8: 19, Reg8: 3, Reg8: 15, Reg8: 14>
+00001b1c: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 10>
+00001b20: <PutNewOwnByIdShort>: <Reg8: 5, Reg8: 11, string_id: 74>  # String: 'children' (Identifier)
+00001b24: <Call3>: <Reg8: 5, Reg8: 8, Reg8: 3, Reg8: 6, Reg8: 5>
+00001b2a: <PutOwnByIndex>: <Reg8: 4, Reg8: 5, UInt8: 1>
+00001b2e: <LoadFromEnvironment>: <Reg8: 5, Reg8: 13, UInt8: 25>
+00001b32: <GetByIdShort>: <Reg8: 8, Reg8: 5, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001b37: <LoadFromEnvironment>: <Reg8: 5, Reg8: 13, UInt8: 16>
+00001b3b: <GetByIdShort>: <Reg8: 6, Reg8: 5, UInt8: 9, string_id: 40>  # String: 'default' (Identifier)
+00001b40: <NewObjectWithBufferLong>: <Reg8: 5, UInt16: 4, UInt16: 3, UInt32: 49009, UInt32: 188163>  # Object: {'hideTrigger': true, 'openSignal': null, 'motivo': 'scanLimite'}
+00001b4e: <PutById>: <Reg8: 5, Reg8: 10, UInt8: 5, string_id: 38453>  # String: 'openSignal' (Identifier)
+00001b54: <PutNewOwnById>: <Reg8: 5, Reg8: 9, string_id: 32811>  # String: 'navigation' (Identifier)
+00001b59: <Call3>: <Reg8: 5, Reg8: 8, Reg8: 3, Reg8: 6, Reg8: 5>
+00001b5f: <PutOwnByIndex>: <Reg8: 4, Reg8: 5, UInt8: 2>
+00001b63: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 74>  # String: 'children' (Identifier)
+00001b67: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+00001b6d: <Ret>: <Reg8: 0>
+00001b6f: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 25>
+00001b73: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00001b78: <LoadFromEnvironment>: <Reg8: 0, Reg8: 13, UInt8: 3>
+00001b7c: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001b81: <NewObject>: <Reg8: 0>
+00001b83: <GetById>: <Reg8: 4, Reg8: 16, UInt8: 125, string_id: 35249>  # String: 'camWrap' (Identifier)
+00001b89: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 238>  # String: 'style' (Identifier)
+00001b8d: <LoadFromEnvironment>: <Reg8: 4, Reg8: 13, UInt8: 25>
+00001b91: <GetByIdShort>: <Reg8: 6, Reg8: 4, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001b96: <LoadFromEnvironment>: <Reg8: 4, Reg8: 13, UInt8: 5>
+00001b9a: <GetById>: <Reg8: 5, Reg8: 4, UInt8: 126, string_id: 45925>  # String: 'CameraView' (Identifier)
+00001ba0: <NewObject>: <Reg8: 4>
+00001ba2: <LoadFromEnvironment>: <Reg8: 8, Reg8: 13, UInt8: 3>
+00001ba6: <GetByIdShort>: <Reg8: 8, Reg8: 8, UInt8: 127, string_id: 21>  # String: 'StyleSheet' (Identifier)
+00001bab: <GetById>: <Reg8: 8, Reg8: 8, UInt8: 128, string_id: 33134>  # String: 'absoluteFill' (Identifier)
+00001bb1: <PutNewOwnByIdShort>: <Reg8: 4, Reg8: 8, string_id: 238>  # String: 'style' (Identifier)
+00001bb5: <LoadConstString>: <Reg8: 8, string_id: 31945>  # String: 'back' (Identifier)
+00001bb9: <PutNewOwnById>: <Reg8: 4, Reg8: 8, string_id: 53540>  # String: 'facing' (Identifier)
+00001bbe: <NewObject>: <Reg8: 8>
+00001bc0: <NewArrayWithBuffer>: <Reg8: 9, UInt16: 4, UInt16: 4, UInt16: 51338>  # Array: ['ean13', 'ean8', 'upc_a', 'upc_e']
+00001bc8: <PutNewOwnById>: <Reg8: 8, Reg8: 9, string_id: 41265>  # String: 'barcodeTypes' (Identifier)
+00001bcd: <PutNewOwnById>: <Reg8: 4, Reg8: 8, string_id: 40322>  # String: 'barcodeScannerSettings' (Identifier)
+00001bd2: <CreateClosure>: <Reg8: 7, Reg8: 7, function_id: 19123>  # Function: [#19123 onScanned of 68 bytes]: 2 params @ offset 0x004e43f2
+00001bd7: <PutNewOwnById>: <Reg8: 4, Reg8: 7, string_id: 37685>  # String: 'onBarcodeScanned' (Identifier)
+00001bdc: <Call3>: <Reg8: 5, Reg8: 6, Reg8: 3, Reg8: 5, Reg8: 4>
+00001be2: <NewArray>: <Reg8: 4, UInt16: 2>
+00001be6: <PutOwnByIndex>: <Reg8: 4, Reg8: 5, UInt8: 0>
+00001bea: <LoadFromEnvironment>: <Reg8: 5, Reg8: 13, UInt8: 25>
+00001bee: <GetByIdShort>: <Reg8: 7, Reg8: 5, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00001bf3: <LoadFromEnvironment>: <Reg8: 5, Reg8: 13, UInt8: 3>
+00001bf7: <GetByIdShort>: <Reg8: 6, Reg8: 5, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001bfc: <NewObject>: <Reg8: 5>
+00001bfe: <GetById>: <Reg8: 8, Reg8: 16, UInt8: 129, string_id: 35877>  # String: 'camOverlay' (Identifier)
+00001c04: <PutNewOwnByIdShort>: <Reg8: 5, Reg8: 8, string_id: 238>  # String: 'style' (Identifier)
+00001c08: <LoadConstString>: <Reg8: 8, string_id: 20091>  # String: 'box-none' (String)
+00001c0c: <PutNewOwnById>: <Reg8: 5, Reg8: 8, string_id: 39992>  # String: 'pointerEvents' (Identifier)
+00001c11: <LoadFromEnvironment>: <Reg8: 8, Reg8: 13, UInt8: 25>
+00001c15: <GetByIdShort>: <Reg8: 10, Reg8: 8, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001c1a: <LoadFromEnvironment>: <Reg8: 8, Reg8: 13, UInt8: 3>
+00001c1e: <GetByIdShort>: <Reg8: 9, Reg8: 8, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001c23: <NewObject>: <Reg8: 8>
+00001c25: <GetById>: <Reg8: 14, Reg8: 16, UInt8: 130, string_id: 32706>  # String: 'camTop' (Identifier)
+00001c2b: <NewArray>: <Reg8: 11, UInt16: 2>
+00001c2f: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 0>
+00001c33: <NewObject>: <Reg8: 14>
+00001c35: <GetByIdShort>: <Reg8: 19, Reg8: 18, UInt8: 23, string_id: 44>  # String: 'top' (Identifier)
+00001c3a: <LoadConstUInt8>: <Reg8: 15, UInt8: 10>
+00001c3d: <Add>: <Reg8: 15, Reg8: 19, Reg8: 15>
+00001c41: <PutNewOwnById>: <Reg8: 14, Reg8: 15, string_id: 43688>  # String: 'paddingTop' (Identifier)
+00001c46: <PutOwnByIndex>: <Reg8: 11, Reg8: 14, UInt8: 1>
+00001c4a: <PutNewOwnByIdShort>: <Reg8: 8, Reg8: 11, string_id: 238>  # String: 'style' (Identifier)
+00001c4e: <LoadFromEnvironment>: <Reg8: 11, Reg8: 13, UInt8: 25>
+00001c52: <GetByIdShort>: <Reg8: 15, Reg8: 11, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001c57: <LoadFromEnvironment>: <Reg8: 11, Reg8: 13, UInt8: 3>
+00001c5b: <GetByIdShort>: <Reg8: 14, Reg8: 11, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001c60: <NewObject>: <Reg8: 11>
+00001c62: <GetById>: <Reg8: 19, Reg8: 16, UInt8: 131, string_id: 36272>  # String: 'camHint' (Identifier)
+00001c68: <PutNewOwnByIdShort>: <Reg8: 11, Reg8: 19, string_id: 238>  # String: 'style' (Identifier)
+00001c6c: <LoadConstString>: <Reg8: 19, string_id: 738>  # String: 'scan.inquadra' (String)
+00001c70: <Call2>: <Reg8: 19, Reg8: 17, Reg8: 3, Reg8: 19>
+00001c75: <PutNewOwnByIdShort>: <Reg8: 11, Reg8: 19, string_id: 74>  # String: 'children' (Identifier)
+00001c79: <Call3>: <Reg8: 11, Reg8: 15, Reg8: 3, Reg8: 14, Reg8: 11>
+00001c7f: <PutNewOwnByIdShort>: <Reg8: 8, Reg8: 11, string_id: 74>  # String: 'children' (Identifier)
+00001c83: <Call3>: <Reg8: 9, Reg8: 10, Reg8: 3, Reg8: 9, Reg8: 8>
+00001c89: <NewArray>: <Reg8: 8, UInt16: 3>
+00001c8d: <PutOwnByIndex>: <Reg8: 8, Reg8: 9, UInt8: 0>
+00001c91: <LoadFromEnvironment>: <Reg8: 9, Reg8: 13, UInt8: 25>
+00001c95: <GetByIdShort>: <Reg8: 11, Reg8: 9, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001c9a: <LoadFromEnvironment>: <Reg8: 9, Reg8: 13, UInt8: 3>
+00001c9e: <GetByIdShort>: <Reg8: 10, Reg8: 9, UInt8: 19, string_id: 25>  # String: 'View' (Identifier)
+00001ca3: <NewObject>: <Reg8: 9>
+00001ca5: <GetById>: <Reg8: 14, Reg8: 16, UInt8: 132, string_id: 37421>  # String: 'reticolo' (Identifier)
+00001cab: <PutNewOwnByIdShort>: <Reg8: 9, Reg8: 14, string_id: 238>  # String: 'style' (Identifier)
+00001caf: <Call3>: <Reg8: 9, Reg8: 11, Reg8: 3, Reg8: 10, Reg8: 9>
+00001cb5: <PutOwnByIndex>: <Reg8: 8, Reg8: 9, UInt8: 1>
+00001cb9: <LoadFromEnvironment>: <Reg8: 9, Reg8: 13, UInt8: 25>
+00001cbd: <GetByIdShort>: <Reg8: 11, Reg8: 9, UInt8: 18, string_id: 166>  # String: 'jsxs' (Identifier)
+00001cc2: <LoadFromEnvironment>: <Reg8: 9, Reg8: 13, UInt8: 3>
+00001cc6: <GetByIdShort>: <Reg8: 10, Reg8: 9, UInt8: 41, string_id: 15>  # String: 'Pressable' (Identifier)
+00001ccb: <NewObject>: <Reg8: 9>
+00001ccd: <GetById>: <Reg8: 15, Reg8: 16, UInt8: 133, string_id: 39444>  # String: 'camCancel' (Identifier)
+00001cd3: <NewArray>: <Reg8: 14, UInt16: 2>
+00001cd7: <PutOwnByIndex>: <Reg8: 14, Reg8: 15, UInt8: 0>
+00001cdb: <NewObject>: <Reg8: 15>
+00001cdd: <GetById>: <Reg8: 19, Reg8: 18, UInt8: 134, string_id: 32112>  # String: 'bottom' (Identifier)
+00001ce3: <LoadConstUInt8>: <Reg8: 18, UInt8: 20>
+00001ce6: <Add>: <Reg8: 18, Reg8: 19, Reg8: 18>
+00001cea: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 18, string_id: 178>  # String: 'marginBottom' (Identifier)
+00001cee: <PutOwnByIndex>: <Reg8: 14, Reg8: 15, UInt8: 1>
+00001cf2: <PutNewOwnByIdShort>: <Reg8: 9, Reg8: 14, string_id: 238>  # String: 'style' (Identifier)
+00001cf6: <PutNewOwnByIdShort>: <Reg8: 9, Reg8: 12, string_id: 191>  # String: 'onPress' (Identifier)
+00001cfa: <LoadFromEnvironment>: <Reg8: 12, Reg8: 13, UInt8: 25>
+00001cfe: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001d03: <LoadFromEnvironment>: <Reg8: 12, Reg8: 13, UInt8: 8>
+00001d07: <GetByIdShort>: <Reg8: 14, Reg8: 12, UInt8: 34, string_id: 8>  # String: 'Ionicons' (Identifier)
+00001d0c: <NewObjectWithBufferLong>: <Reg8: 12, UInt16: 3, UInt16: 3, UInt32: 44640, UInt32: 185303>  # Object: {'name': 'close', 'size': 18, 'color': '#fff'}
+00001d1a: <Call3>: <Reg8: 14, Reg8: 15, Reg8: 3, Reg8: 14, Reg8: 12>
+00001d20: <NewArray>: <Reg8: 12, UInt16: 2>
+00001d24: <PutOwnByIndex>: <Reg8: 12, Reg8: 14, UInt8: 0>
+00001d28: <LoadFromEnvironment>: <Reg8: 14, Reg8: 13, UInt8: 25>
+00001d2c: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 20, string_id: 165>  # String: 'jsx' (Identifier)
+00001d31: <LoadFromEnvironment>: <Reg8: 13, Reg8: 13, UInt8: 3>
+00001d35: <GetByIdShort>: <Reg8: 14, Reg8: 13, UInt8: 26, string_id: 23>  # String: 'Text' (Identifier)
+00001d3a: <NewObject>: <Reg8: 13>
+00001d3c: <GetById>: <Reg8: 16, Reg8: 16, UInt8: 135, string_id: 39445>  # String: 'camCancelTxt' (Identifier)
+00001d42: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 16, string_id: 238>  # String: 'style' (Identifier)
+00001d46: <LoadConstString>: <Reg8: 16, string_id: 13026>  # String: 'comune.annulla' (String)
+00001d4a: <Call2>: <Reg8: 16, Reg8: 17, Reg8: 3, Reg8: 16>
+00001d4f: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+00001d53: <Call3>: <Reg8: 13, Reg8: 15, Reg8: 3, Reg8: 14, Reg8: 13>
+00001d59: <PutOwnByIndex>: <Reg8: 12, Reg8: 13, UInt8: 1>
+00001d5d: <PutNewOwnByIdShort>: <Reg8: 9, Reg8: 12, string_id: 74>  # String: 'children' (Identifier)
+00001d61: <Call3>: <Reg8: 9, Reg8: 11, Reg8: 3, Reg8: 10, Reg8: 9>
+00001d67: <PutOwnByIndex>: <Reg8: 8, Reg8: 9, UInt8: 2>
+00001d6b: <PutNewOwnByIdShort>: <Reg8: 5, Reg8: 8, string_id: 74>  # String: 'children' (Identifier)
+00001d6f: <Call3>: <Reg8: 5, Reg8: 7, Reg8: 3, Reg8: 6, Reg8: 5>
+00001d75: <PutOwnByIndex>: <Reg8: 4, Reg8: 5, UInt8: 1>
+00001d79: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 74>  # String: 'children' (Identifier)
+00001d7d: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+00001d83: <Ret>: <Reg8: 0>

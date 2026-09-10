@@ -1,0 +1,12 @@
+# Function #19712 'capitoloById'
+# offset=5241273 bytes=34
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+00000009: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000000c: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 5>
+00000010: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 35610>  # String: 'find' (Identifier)
+00000016: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 19713>  # Function: [#19713  of 21 bytes]: 2 params @ offset 0x00416669
+0000001b: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+00000020: <Ret>: <Reg8: 0>

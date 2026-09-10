@@ -1,0 +1,58 @@
+# Function #18420 'pesoCibo'
+# offset=4972194 bytes=200
+
+00000000: <LoadConstUndefined>: <Reg8: 6>
+00000002: <LoadConstUndefined>: <Reg8: 7>
+00000004: <LoadConstUndefined>: <Reg8: 8>
+00000006: <LoadConstZero>: <Reg8: 5>
+00000008: <LoadConstZero>: <Reg8: 0>
+0000000a: <LoadParam>: <Reg8: 4, UInt8: 1>
+0000000d: <IteratorBegin>: <Reg8: 2, Reg8: 4>
+00000010: <GetEnvironment>: <Reg8: 3, UInt8: 0>
+00000013: <LoadConstNull>: <Reg8: 1>
+00000015: <IteratorNext>: <Reg8: 9, Reg8: 2, Reg8: 4>
+00000019: <Mov>: <Reg8: 10, Reg8: 2>
+0000001c: <JStrictEqualLong>: <Addr32: 170, Reg8: 10, Reg8: 6>  # Address: 000000c6
+00000023: <Mov>: <Reg8: 7, Reg8: 9>
+00000026: <GetById>: <Reg8: 9, Reg8: 9, UInt8: 1, string_id: 36961>  # String: 'catalogo_id' (Identifier)
+0000002c: <LoadConstUndefined>: <Reg8: 12>
+0000002e: <JmpFalse>: <Addr8: 27, Reg8: 9>  # Address: 00000049
+00000031: <LoadFromEnvironment>: <Reg8: 9, Reg8: 3, UInt8: 0>
+00000035: <GetById>: <Reg8: 10, Reg8: 9, UInt8: 2, string_id: 37466>  # String: 'alimentoById' (Identifier)
+0000003b: <Mov>: <Reg8: 9, Reg8: 7>
+0000003e: <GetById>: <Reg8: 9, Reg8: 9, UInt8: 1, string_id: 36961>  # String: 'catalogo_id' (Identifier)
+00000044: <Call2>: <Reg8: 12, Reg8: 10, Reg8: 6, Reg8: 9>
+00000049: <Mov>: <Reg8: 8, Reg8: 12>
+0000004c: <LoadFromEnvironment>: <Reg8: 11, Reg8: 3, UInt8: 8>
+00000050: <Mov>: <Reg8: 9, Reg8: 7>
+00000053: <GetByIdShort>: <Reg8: 10, Reg8: 9, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000058: <Eq>: <Reg8: 13, Reg8: 12, Reg8: 1>
+0000005c: <LoadConstUndefined>: <Reg8: 9>
+0000005e: <JmpTrue>: <Addr8: 8, Reg8: 13>  # Address: 00000066
+00000061: <GetByIdShort>: <Reg8: 9, Reg8: 12, UInt8: 4, string_id: 63>  # String: 'categoria' (Identifier)
+00000066: <Call3>: <Reg8: 9, Reg8: 11, Reg8: 6, Reg8: 10, Reg8: 9>
+0000006c: <JmpTrue>: <Addr8: 78, Reg8: 9>  # Address: 000000ba
+0000006f: <Mov>: <Reg8: 9, Reg8: 8>
+00000072: <JmpFalse>: <Addr8: 29, Reg8: 9>  # Address: 0000008f
+00000075: <LoadFromEnvironment>: <Reg8: 11, Reg8: 3, UInt8: 8>
+00000079: <Mov>: <Reg8: 9, Reg8: 8>
+0000007c: <GetByIdShort>: <Reg8: 10, Reg8: 9, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000081: <GetByIdShort>: <Reg8: 9, Reg8: 9, UInt8: 4, string_id: 63>  # String: 'categoria' (Identifier)
+00000086: <Call3>: <Reg8: 9, Reg8: 11, Reg8: 6, Reg8: 10, Reg8: 9>
+0000008c: <JmpTrue>: <Addr8: 46, Reg8: 9>  # Address: 000000ba
+0000008f: <Mov>: <Reg8: 9, Reg8: 7>
+00000092: <GetByIdShort>: <Reg8: 9, Reg8: 9, UInt8: 5, string_id: 135>  # String: 'grammi' (Identifier)
+00000097: <JmpFalse>: <Addr8: 30, Reg8: 9>  # Address: 000000b5
+0000009a: <Mov>: <Reg8: 9, Reg8: 7>
+0000009d: <GetByIdShort>: <Reg8: 9, Reg8: 9, UInt8: 5, string_id: 135>  # String: 'grammi' (Identifier)
+000000a2: <JNotGreater>: <Addr8: 19, Reg8: 9, Reg8: 5>  # Address: 000000b5
+000000a6: <Mov>: <Reg8: 10, Reg8: 0>
+000000a9: <Mov>: <Reg8: 9, Reg8: 7>
+000000ac: <GetByIdShort>: <Reg8: 9, Reg8: 9, UInt8: 5, string_id: 135>  # String: 'grammi' (Identifier)
+000000b1: <Add>: <Reg8: 0, Reg8: 10, Reg8: 9>
+000000b5: <JmpLong>: <Addr32: -160>  # Address: 00000015
+000000ba: <JmpLong>: <Addr32: -165>  # Address: 00000015
+000000bf: <Catch>: <Reg8: 1>
+000000c1: <IteratorClose>: <Reg8: 2, UInt8: 1>
+000000c4: <Throw>: <Reg8: 1>
+000000c6: <Ret>: <Reg8: 0>

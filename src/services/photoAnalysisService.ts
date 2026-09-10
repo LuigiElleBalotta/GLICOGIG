@@ -40,7 +40,12 @@ function parseIngredient(value: unknown): AnalizzaIngredient {
   if (typeof value.nome !== 'string' || !value.nome.trim()) {
     throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
-  if (typeof value.grammi !== 'number' || !Number.isFinite(value.grammi)) {
+  if (
+    typeof value.grammi !== 'number'
+    || !Number.isFinite(value.grammi)
+    || value.grammi < 0
+    || value.grammi > 2000
+  ) {
     throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
   if (value.catalogo_id != null && typeof value.catalogo_id !== 'string') {

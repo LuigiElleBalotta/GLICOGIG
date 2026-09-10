@@ -1,0 +1,6 @@
+# Function #18648 ''
+# offset=5024719 bytes=9
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <CreateGenerator>: <Reg8: 0, Reg8: 0, function_id: 18649>  # Function: [#18649 ?anon_0_ of 192 bytes]: 2 params @ offset 0x004cabd8
+00000007: <Ret>: <Reg8: 0>

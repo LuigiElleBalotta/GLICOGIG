@@ -1,0 +1,25 @@
+# Function #18372 'useDiario'
+# offset=4962045 bytes=86
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <GetEnvironment>: <Reg8: 2, UInt8: 0>
+00000005: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 2>
+00000009: <GetByIdShort>: <Reg8: 3, Reg8: 0, UInt8: 1, string_id: 250>  # String: 'useState' (Identifier)
+0000000e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 7>
+00000012: <LoadConstUndefined>: <Reg8: 4>
+00000014: <Call2>: <Reg8: 5, Reg8: 3, Reg8: 4, Reg8: 0>
+00000019: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 0>
+0000001d: <GetByIdShort>: <Reg8: 3, Reg8: 0, UInt8: 2, string_id: 40>  # String: 'default' (Identifier)
+00000022: <LoadConstUInt8>: <Reg8: 0, UInt8: 2>
+00000025: <Call3>: <Reg8: 5, Reg8: 3, Reg8: 4, Reg8: 5, Reg8: 0>
+0000002b: <LoadConstZero>: <Reg8: 0>
+0000002d: <GetByVal>: <Reg8: 0, Reg8: 5, Reg8: 0>
+00000031: <LoadConstUInt8>: <Reg8: 3, UInt8: 1>
+00000034: <GetByVal>: <Reg8: 3, Reg8: 5, Reg8: 3>
+00000038: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 3>
+0000003c: <LoadFromEnvironment>: <Reg8: 2, Reg8: 2, UInt8: 2>
+00000040: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 3, string_id: 249>  # String: 'useEffect' (Identifier)
+00000045: <CreateClosure>: <Reg8: 2, Reg8: 1, function_id: 18373>  # Function: [#18373  of 66 bytes]: 1 params @ offset 0x004bb753
+0000004a: <NewArray>: <Reg8: 1, UInt16: 0>
+0000004e: <Call3>: <Reg8: 1, Reg8: 3, Reg8: 4, Reg8: 2, Reg8: 1>
+00000054: <Ret>: <Reg8: 0>

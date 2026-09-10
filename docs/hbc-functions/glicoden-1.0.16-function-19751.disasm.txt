@@ -1,0 +1,55 @@
+# Function #19751 'quizDelGiorno'
+# offset=5260489 bytes=203
+
+00000000: <LoadConstUndefined>: <Reg8: 8>
+00000002: <LoadConstUndefined>: <Reg8: 0>
+00000004: <GetArgumentsLength>: <Reg8: 1, Reg8: 0>
+00000007: <LoadConstZero>: <Reg8: 7>
+00000009: <JNotGreater>: <Addr8: 12, Reg8: 1, Reg8: 7>  # Address: 00000015
+0000000d: <GetArgumentsPropByVal>: <Reg8: 1, Reg8: 7, Reg8: 0>
+00000011: <JStrictNotEqual>: <Addr8: 34, Reg8: 1, Reg8: 8>  # Address: 00000033
+00000015: <GetGlobalObject>: <Reg8: 1>
+00000017: <TryGetById>: <Reg8: 1, Reg8: 1, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+0000001d: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 2, string_id: 157>  # String: 'prototype' (Identifier)
+00000022: <CreateThis>: <Reg8: 2, Reg8: 2, Reg8: 1>
+00000026: <Mov>: <Reg8: 16, Reg8: 2>
+00000029: <Construct>: <Reg8: 1, Reg8: 1, UInt8: 1>
+0000002d: <SelectObject>: <Reg8: 1, Reg8: 2, Reg8: 1>
+00000031: <Jmp>: <Addr8: 6>  # Address: 00000037
+00000033: <GetArgumentsPropByVal>: <Reg8: 1, Reg8: 7, Reg8: 0>
+00000037: <GetEnvironment>: <Reg8: 6, UInt8: 0>
+0000003a: <LoadFromEnvironment>: <Reg8: 0, Reg8: 6, UInt8: 7>
+0000003e: <Call2>: <Reg8: 5, Reg8: 0, Reg8: 8, Reg8: 1>
+00000043: <LoadFromEnvironment>: <Reg8: 0, Reg8: 6, UInt8: 4>
+00000047: <Mul>: <Reg8: 1, Reg8: 5, Reg8: 0>
+0000004b: <LoadFromEnvironment>: <Reg8: 0, Reg8: 6, UInt8: 5>
+0000004f: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 3, string_id: 171>  # String: 'length' (Identifier)
+00000054: <Mod>: <Reg8: 4, Reg8: 1, Reg8: 0>
+00000058: <NewArray>: <Reg8: 0, UInt16: 0>
+0000005c: <LoadFromEnvironment>: <Reg8: 1, Reg8: 6, UInt8: 4>
+00000060: <Less>: <Reg8: 1, Reg8: 7, Reg8: 1>
+00000064: <LoadConstInt>: <Reg8: 3, Imm32: 100003>
+0000006a: <LoadConstZero>: <Reg8: 2>
+0000006c: <JmpFalse>: <Addr8: 93, Reg8: 1>  # Address: 000000c9
+0000006f: <LoadFromEnvironment>: <Reg8: 9, Reg8: 6, UInt8: 3>
+00000073: <LoadFromEnvironment>: <Reg8: 10, Reg8: 6, UInt8: 5>
+00000077: <Add>: <Reg8: 11, Reg8: 4, Reg8: 2>
+0000007b: <LoadFromEnvironment>: <Reg8: 1, Reg8: 6, UInt8: 5>
+0000007f: <GetByIdShort>: <Reg8: 1, Reg8: 1, UInt8: 3, string_id: 171>  # String: 'length' (Identifier)
+00000084: <Mod>: <Reg8: 1, Reg8: 11, Reg8: 1>
+00000088: <GetByVal>: <Reg8: 1, Reg8: 10, Reg8: 1>
+0000008c: <GetByVal>: <Reg8: 11, Reg8: 9, Reg8: 1>
+00000090: <GetByIdShort>: <Reg8: 9, Reg8: 0, UInt8: 4, string_id: 214>  # String: 'push' (Identifier)
+00000095: <LoadFromEnvironment>: <Reg8: 10, Reg8: 6, UInt8: 9>
+00000099: <Mul>: <Reg8: 12, Reg8: 5, Reg8: 3>
+0000009d: <LoadFromEnvironment>: <Reg8: 13, Reg8: 6, UInt8: 8>
+000000a1: <GetByIdShort>: <Reg8: 1, Reg8: 11, UInt8: 5, string_id: 147>  # String: 'id' (Identifier)
+000000a6: <Call2>: <Reg8: 1, Reg8: 13, Reg8: 8, Reg8: 1>
+000000ab: <Add>: <Reg8: 1, Reg8: 12, Reg8: 1>
+000000af: <URshift>: <Reg8: 1, Reg8: 1, Reg8: 7>
+000000b3: <Call3>: <Reg8: 1, Reg8: 10, Reg8: 8, Reg8: 11, Reg8: 1>
+000000b9: <Call2>: <Reg8: 1, Reg8: 9, Reg8: 0, Reg8: 1>
+000000be: <Inc>: <Reg8: 2, Reg8: 2>
+000000c1: <LoadFromEnvironment>: <Reg8: 1, Reg8: 6, UInt8: 4>
+000000c5: <JLess>: <Addr8: -86, Reg8: 2, Reg8: 1>  # Address: 0000006f
+000000c9: <Ret>: <Reg8: 0>

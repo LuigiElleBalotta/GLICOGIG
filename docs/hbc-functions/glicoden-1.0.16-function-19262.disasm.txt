@@ -1,0 +1,20 @@
+# Function #19262 'num'
+# offset=5140899 bytes=61
+
+00000000: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000003: <TypeOf>: <Reg8: 2, Reg8: 3>
+00000006: <LoadConstString>: <Reg8: 0, string_id: 33121>  # String: 'number' (Identifier)
+0000000a: <Mov>: <Reg8: 1, Reg8: 3>
+0000000d: <JStrictEqual>: <Addr8: 19, Reg8: 2, Reg8: 0>  # Address: 00000020
+00000011: <GetGlobalObject>: <Reg8: 0>
+00000013: <TryGetById>: <Reg8: 2, Reg8: 0, UInt8: 1, string_id: 34002>  # String: 'parseFloat' (Identifier)
+00000019: <LoadConstUndefined>: <Reg8: 0>
+0000001b: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 3>
+00000020: <GetGlobalObject>: <Reg8: 0>
+00000022: <TryGetById>: <Reg8: 2, Reg8: 0, UInt8: 2, string_id: 13>  # String: 'Number' (Identifier)
+00000028: <GetById>: <Reg8: 0, Reg8: 2, UInt8: 3, string_id: 49276>  # String: 'isFinite' (Identifier)
+0000002e: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 2, Reg8: 1>
+00000033: <LoadConstNull>: <Reg8: 0>
+00000035: <JmpFalse>: <Addr8: 6, Reg8: 2>  # Address: 0000003b
+00000038: <Mov>: <Reg8: 0, Reg8: 1>
+0000003b: <Ret>: <Reg8: 0>

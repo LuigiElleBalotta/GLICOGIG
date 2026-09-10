@@ -1,0 +1,35 @@
+# Function #19253 'correggiSecco'
+# offset=5139720 bytes=122
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 2, UInt8: 2>
+00000005: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000008: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+0000000c: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000000f: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 6>
+00000013: <GetById>: <Reg8: 1, Reg8: 3, UInt8: 1, string_id: 35610>  # String: 'find' (Identifier)
+00000019: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 19254>  # Function: [#19254  of 35 bytes]: 2 params @ offset 0x004e6d82
+0000001e: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 3, Reg8: 0>
+00000023: <JmpTrue>: <Addr8: 19, Reg8: 1>  # Address: 00000036
+00000026: <NewObject>: <Reg8: 0>
+00000028: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 32041>  # String: 'carbo' (Identifier)
+0000002d: <LoadConstFalse>: <Reg8: 3>
+0000002f: <PutNewOwnById>: <Reg8: 0, Reg8: 3, string_id: 40332>  # String: 'corretto' (Identifier)
+00000034: <Ret>: <Reg8: 0>
+00000036: <LoadConstNull>: <Reg8: 0>
+00000038: <JEqual>: <Addr8: 44, Reg8: 2, Reg8: 0>  # Address: 00000064
+0000003c: <GetById>: <Reg8: 3, Reg8: 1, UInt8: 2, string_id: 32041>  # String: 'carbo' (Identifier)
+00000042: <LoadConstDouble>: <Reg8: 0, Double: 0.85>
+0000004c: <Mul>: <Reg8: 0, Reg8: 3, Reg8: 0>
+00000050: <JLess>: <Addr8: 20, Reg8: 2, Reg8: 0>  # Address: 00000064
+00000054: <NewObject>: <Reg8: 0>
+00000056: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 32041>  # String: 'carbo' (Identifier)
+0000005b: <LoadConstFalse>: <Reg8: 2>
+0000005d: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 40332>  # String: 'corretto' (Identifier)
+00000062: <Ret>: <Reg8: 0>
+00000064: <NewObject>: <Reg8: 0>
+00000066: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 2, string_id: 32041>  # String: 'carbo' (Identifier)
+0000006c: <PutNewOwnById>: <Reg8: 0, Reg8: 1, string_id: 32041>  # String: 'carbo' (Identifier)
+00000071: <LoadConstTrue>: <Reg8: 1>
+00000073: <PutNewOwnById>: <Reg8: 0, Reg8: 1, string_id: 40332>  # String: 'corretto' (Identifier)
+00000078: <Ret>: <Reg8: 0>

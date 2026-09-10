@@ -1,0 +1,18 @@
+# Function #18363 'spostaSlot'
+# offset=4961536 bytes=54
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 0>
+00000009: <LoadParam>: <Reg8: 0, UInt8: 2>
+0000000c: <StoreToEnvironment>: <Reg8: 1, UInt8: 1, Reg8: 0>
+00000010: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000013: <LoadFromEnvironment>: <Reg8: 3, Reg8: 0, UInt8: 7>
+00000017: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 1, string_id: 177>  # String: 'map' (Identifier)
+0000001c: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 18364>  # Function: [#18364  of 57 bytes]: 2 params @ offset 0x004bb536
+00000021: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1>
+00000026: <StoreToEnvironment>: <Reg8: 0, UInt8: 7, Reg8: 1>
+0000002a: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 15>
+0000002e: <LoadConstUndefined>: <Reg8: 0>
+00000030: <Call1>: <Reg8: 1, Reg8: 1, Reg8: 0>
+00000034: <Ret>: <Reg8: 0>

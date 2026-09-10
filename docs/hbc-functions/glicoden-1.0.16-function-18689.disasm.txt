@@ -1,0 +1,49 @@
+# Function #18689 '?anon_0_'
+# offset=5028125 bytes=156
+
+00000000: <StartGenerator>: <>
+00000001: <ResumeGenerator>: <Reg8: 0, Reg8: 1>
+00000004: <JmpTrueLong>: <Addr32: 149, Reg8: 1>  # Address: 00000099
+0000000a: <LoadConstUndefined>: <Reg8: 4>
+0000000c: <LoadConstUndefined>: <Reg8: 2>
+0000000e: <GetArgumentsLength>: <Reg8: 3, Reg8: 2>
+00000011: <LoadConstUInt8>: <Reg8: 1, UInt8: 1>
+00000014: <JNotGreater>: <Addr8: 12, Reg8: 3, Reg8: 1>  # Address: 00000020
+00000018: <GetArgumentsPropByVal>: <Reg8: 3, Reg8: 1, Reg8: 2>
+0000001c: <JStrictNotEqual>: <Addr8: 8, Reg8: 3, Reg8: 4>  # Address: 00000024
+00000020: <NewObject>: <Reg8: 4>
+00000022: <Jmp>: <Addr8: 6>  # Address: 00000028
+00000024: <GetArgumentsPropByVal>: <Reg8: 4, Reg8: 1, Reg8: 2>
+00000028: <GetEnvironment>: <Reg8: 1, UInt8: 2>
+0000002b: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 2>
+0000002f: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 1, string_id: 40>  # String: 'default' (Identifier)
+00000034: <JmpFalse>: <Addr8: 21, Reg8: 2>  # Address: 00000049
+00000037: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 2>
+0000003b: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 1, string_id: 40>  # String: 'default' (Identifier)
+00000040: <GetById>: <Reg8: 2, Reg8: 2, UInt8: 2, string_id: 47519>  # String: 'shareAsync' (Identifier)
+00000046: <JmpTrue>: <Addr8: 43, Reg8: 2>  # Address: 00000071
+00000049: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 1>
+0000004d: <GetById>: <Reg8: 6, Reg8: 2, UInt8: 3, string_id: 49862>  # String: 'UnavailabilityError' (Identifier)
+00000053: <GetByIdShort>: <Reg8: 2, Reg8: 6, UInt8: 4, string_id: 157>  # String: 'prototype' (Identifier)
+00000058: <CreateThis>: <Reg8: 3, Reg8: 2, Reg8: 6>
+0000005c: <LoadConstString>: <Reg8: 8, string_id: 2993>  # String: 'Sharing' (String)
+00000060: <LoadConstString>: <Reg8: 7, string_id: 47519>  # String: 'shareAsync' (Identifier)
+00000064: <Mov>: <Reg8: 9, Reg8: 3>
+00000067: <Construct>: <Reg8: 2, Reg8: 6, UInt8: 3>
+0000006b: <SelectObject>: <Reg8: 2, Reg8: 3, Reg8: 2>
+0000006f: <Throw>: <Reg8: 2>
+00000071: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 2>
+00000075: <GetByIdShort>: <Reg8: 3, Reg8: 1, UInt8: 1, string_id: 40>  # String: 'default' (Identifier)
+0000007a: <GetById>: <Reg8: 2, Reg8: 3, UInt8: 2, string_id: 47519>  # String: 'shareAsync' (Identifier)
+00000080: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000083: <Call3>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 4>
+00000089: <SaveGenerator>: <Addr8: 4>  # Address: 0000008d
+0000008b: <Ret>: <Reg8: 1>
+0000008d: <ResumeGenerator>: <Reg8: 1, Reg8: 2>
+00000090: <JmpTrue>: <Addr8: 6, Reg8: 2>  # Address: 00000096
+00000093: <CompleteGenerator>: <>
+00000094: <Ret>: <Reg8: 1>
+00000096: <CompleteGenerator>: <>
+00000097: <Ret>: <Reg8: 1>
+00000099: <CompleteGenerator>: <>
+0000009a: <Ret>: <Reg8: 0>

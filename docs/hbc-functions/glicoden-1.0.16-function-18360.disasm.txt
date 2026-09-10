@@ -1,0 +1,9 @@
+# Function #18360 ''
+# offset=4945633 bytes=21
+
+00000000: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000003: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 1, string_id: 147>  # String: 'id' (Identifier)
+00000008: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+0000000b: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 0>
+0000000f: <StrictNeq>: <Reg8: 0, Reg8: 1, Reg8: 0>
+00000013: <Ret>: <Reg8: 0>

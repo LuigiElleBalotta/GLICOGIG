@@ -1,0 +1,6 @@
+# Function #19708 'get'
+# offset=3194239 bytes=9
+
+00000000: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 3>
+00000007: <Ret>: <Reg8: 0>

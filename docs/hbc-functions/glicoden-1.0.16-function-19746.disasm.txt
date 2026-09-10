@@ -1,0 +1,25 @@
+# Function #19746 'hashStr'
+# offset=5260139 bytes=94
+
+00000000: <LoadParam>: <Reg8: 7, UInt8: 1>
+00000003: <GetByIdShort>: <Reg8: 0, Reg8: 7, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000008: <LoadConstZero>: <Reg8: 1>
+0000000a: <Less>: <Reg8: 2, Reg8: 1, Reg8: 0>
+0000000e: <LoadConstDouble>: <Reg8: 4, Double: 2166136261.0>
+00000018: <GetGlobalObject>: <Reg8: 6>
+0000001a: <LoadConstInt>: <Reg8: 5, Imm32: 16777619>
+00000020: <LoadConstZero>: <Reg8: 3>
+00000022: <Mov>: <Reg8: 0, Reg8: 4>
+00000025: <JmpFalse>: <Addr8: 51, Reg8: 2>  # Address: 00000058
+00000028: <GetById>: <Reg8: 2, Reg8: 7, UInt8: 2, string_id: 32638>  # String: 'charCodeAt' (Identifier)
+0000002e: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 7, Reg8: 3>
+00000033: <BitXor>: <Reg8: 9, Reg8: 4, Reg8: 2>
+00000037: <TryGetById>: <Reg8: 8, Reg8: 6, UInt8: 3, string_id: 12>  # String: 'Math' (Identifier)
+0000003d: <GetById>: <Reg8: 2, Reg8: 8, UInt8: 4, string_id: 33131>  # String: 'imul' (Identifier)
+00000043: <Call3>: <Reg8: 4, Reg8: 2, Reg8: 8, Reg8: 9, Reg8: 5>
+00000049: <Inc>: <Reg8: 3, Reg8: 3>
+0000004c: <GetByIdShort>: <Reg8: 2, Reg8: 7, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000051: <Mov>: <Reg8: 0, Reg8: 4>
+00000054: <JLess>: <Addr8: -44, Reg8: 3, Reg8: 2>  # Address: 00000028
+00000058: <URshift>: <Reg8: 0, Reg8: 0, Reg8: 1>
+0000005c: <Ret>: <Reg8: 0>

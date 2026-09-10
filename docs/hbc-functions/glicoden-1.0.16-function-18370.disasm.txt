@@ -1,0 +1,10 @@
+# Function #18370 'totali'
+# offset=4961877 bytes=38
+
+00000000: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000003: <GetById>: <Reg8: 2, Reg8: 3, UInt8: 1, string_id: 34456>  # String: 'reduce' (Identifier)
+00000009: <CreateEnvironment>: <Reg8: 0>
+0000000b: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18371>  # Function: [#18371  of 130 bytes]: 3 params @ offset 0x004bb67b
+00000010: <NewObjectWithBufferLong>: <Reg8: 0, UInt16: 6, UInt16: 6, UInt32: 47471, UInt32: 95505>  # Object: {'kcal': 0, 'carbo': 0, 'prot': 0, 'grassi': 0, 'fibre': 0, 'n': 0}
+0000001e: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+00000024: <Ret>: <Reg8: 0>

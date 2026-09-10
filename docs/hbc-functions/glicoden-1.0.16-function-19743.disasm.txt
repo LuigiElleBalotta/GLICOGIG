@@ -1,0 +1,10 @@
+# Function #19743 'mulberry32'
+# offset=5259878 bytes=22
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000005: <LoadConstZero>: <Reg8: 1>
+00000007: <URshift>: <Reg8: 1, Reg8: 2, Reg8: 1>
+0000000b: <StoreNPToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+0000000f: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 19744>  # Function: [#19744  of 143 bytes]: 1 params @ offset 0x0050427c
+00000014: <Ret>: <Reg8: 0>

@@ -1,0 +1,27 @@
+# Function #18416 'riconosciDalNome'
+# offset=4971952 bytes=87
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <JmpTrue>: <Addr8: 7, Reg8: 1>  # Address: 0000000a
+00000006: <LoadConstString>: <Reg8: 1, string_id: 31798>  # String: '' (Identifier)
+0000000a: <GetById>: <Reg8: 0, Reg8: 1, UInt8: 1, string_id: 36261>  # String: 'trim' (Identifier)
+00000010: <Call1>: <Reg8: 4, Reg8: 0, Reg8: 1>
+00000014: <GetByIdShort>: <Reg8: 1, Reg8: 4, UInt8: 2, string_id: 171>  # String: 'length' (Identifier)
+00000019: <LoadConstUInt8>: <Reg8: 0, UInt8: 3>
+0000001c: <JLess>: <Addr8: 55, Reg8: 1, Reg8: 0>  # Address: 00000053
+00000020: <GetEnvironment>: <Reg8: 2, UInt8: 0>
+00000023: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 1>
+00000027: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 3, string_id: 44438>  # String: 'cercaAlimenti' (Identifier)
+0000002d: <LoadConstUndefined>: <Reg8: 1>
+0000002f: <Call2>: <Reg8: 3, Reg8: 0, Reg8: 1, Reg8: 4>
+00000034: <LoadConstZero>: <Reg8: 0>
+00000036: <GetByVal>: <Reg8: 0, Reg8: 3, Reg8: 0>
+0000003a: <JmpFalse>: <Addr8: 21, Reg8: 0>  # Address: 0000004f
+0000003d: <LoadFromEnvironment>: <Reg8: 3, Reg8: 2, UInt8: 6>
+00000041: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 4, string_id: 185>  # String: 'nome' (Identifier)
+00000046: <Call3>: <Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 4, Reg8: 2>
+0000004c: <JmpTrue>: <Addr8: 5, Reg8: 2>  # Address: 00000051
+0000004f: <Ret>: <Reg8: 1>
+00000051: <Ret>: <Reg8: 0>
+00000053: <LoadConstUndefined>: <Reg8: 0>
+00000055: <Ret>: <Reg8: 0>

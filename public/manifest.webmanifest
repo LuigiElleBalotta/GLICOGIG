@@ -1,9 +1,9 @@
 {
-  "name": "GLICOGIG · Analisi del piatto",
+  "name": "GLICOGIG · Food intelligence locale",
   "short_name": "GLICOGIG",
-  "description": "Analizza una foto del piatto e calcola nutrienti e carico glicemico dal catalogo locale.",
+  "description": "Analizza piatti, consulta alimenti e ricette, usa il diario locale e approfondisci con capitoli e quiz educativi.",
   "id": "/",
-  "start_url": "/",
+  "start_url": "/#home",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",

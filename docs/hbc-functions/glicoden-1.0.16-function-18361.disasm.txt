@@ -1,0 +1,27 @@
+# Function #18361 'rinominaVoce'
+# offset=4961361 bytes=87
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <LoadParam>: <Reg8: 2, UInt8: 2>
+00000005: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000008: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 0>
+0000000c: <GetById>: <Reg8: 0, Reg8: 2, UInt8: 1, string_id: 36261>  # String: 'trim' (Identifier)
+00000012: <Call1>: <Reg8: 4, Reg8: 0, Reg8: 2>
+00000016: <GetByIdShort>: <Reg8: 3, Reg8: 4, UInt8: 2, string_id: 228>  # String: 'slice' (Identifier)
+0000001b: <LoadConstZero>: <Reg8: 2>
+0000001d: <LoadConstUInt8>: <Reg8: 0, UInt8: 60>
+00000020: <Call3>: <Reg8: 0, Reg8: 3, Reg8: 4, Reg8: 2, Reg8: 0>
+00000026: <StoreToEnvironment>: <Reg8: 1, UInt8: 1, Reg8: 0>
+0000002a: <JmpTrue>: <Addr8: 7, Reg8: 0>  # Address: 00000031
+0000002d: <LoadConstUndefined>: <Reg8: 0>
+0000002f: <Ret>: <Reg8: 0>
+00000031: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000034: <LoadFromEnvironment>: <Reg8: 3, Reg8: 0, UInt8: 7>
+00000038: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 3, string_id: 177>  # String: 'map' (Identifier)
+0000003d: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 18362>  # Function: [#18362  of 88 bytes]: 2 params @ offset 0x004bb4a8
+00000042: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1>
+00000047: <StoreToEnvironment>: <Reg8: 0, UInt8: 7, Reg8: 1>
+0000004b: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 15>
+0000004f: <LoadConstUndefined>: <Reg8: 0>
+00000051: <Call1>: <Reg8: 1, Reg8: 1, Reg8: 0>
+00000055: <Ret>: <Reg8: 0>

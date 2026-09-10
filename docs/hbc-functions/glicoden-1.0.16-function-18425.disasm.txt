@@ -1,0 +1,15 @@
+# Function #18425 'per100'
+# offset=4973773 bytes=38
+
+00000000: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 0>
+00000007: <LoadConstZero>: <Reg8: 0>
+00000009: <Greater>: <Reg8: 2, Reg8: 2, Reg8: 0>
+0000000d: <LoadConstNull>: <Reg8: 0>
+0000000f: <JmpFalse>: <Addr8: 21, Reg8: 2>  # Address: 00000024
+00000012: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000015: <LoadConstUInt8>: <Reg8: 2, UInt8: 100>
+00000018: <Mul>: <Reg8: 2, Reg8: 3, Reg8: 2>
+0000001c: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 0>
+00000020: <Div>: <Reg8: 0, Reg8: 2, Reg8: 1>
+00000024: <Ret>: <Reg8: 0>

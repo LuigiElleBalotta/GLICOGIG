@@ -1,0 +1,18 @@
+# Function #18357 'impostaProssimoSlot'
+# offset=4961005 bytes=52
+
+00000000: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000003: <LoadConstNull>: <Reg8: 1>
+00000005: <JmpFalse>: <Addr8: 36, Reg8: 2>  # Address: 00000029
+00000008: <NewObject>: <Reg8: 0>
+0000000a: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 32910>  # String: 'slot' (Identifier)
+0000000f: <GetGlobalObject>: <Reg8: 2>
+00000011: <TryGetById>: <Reg8: 3, Reg8: 2, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000017: <GetById>: <Reg8: 2, Reg8: 3, UInt8: 2, string_id: 34390>  # String: 'now' (Identifier)
+0000001d: <Call1>: <Reg8: 2, Reg8: 2, Reg8: 3>
+00000021: <PutNewOwnById>: <Reg8: 0, Reg8: 2, string_id: 31940>  # String: 'at' (Identifier)
+00000026: <Mov>: <Reg8: 1, Reg8: 0>
+00000029: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+0000002c: <StoreToEnvironment>: <Reg8: 0, UInt8: 12, Reg8: 1>
+00000030: <LoadConstUndefined>: <Reg8: 0>
+00000032: <Ret>: <Reg8: 0>

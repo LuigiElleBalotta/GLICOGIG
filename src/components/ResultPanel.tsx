@@ -1,4 +1,5 @@
-import { getFoodByCatalogId } from '../catalog/foodCatalog'
+import { useEffect, useState } from 'react'
+import { getFoodByCatalogId, resolveFoodByName } from '../catalog/foodCatalog'
 import { calculateGlycemicImpact } from '../domain/impactCalculator'
 import { formatConfidence, formatNumber } from '../domain/nutrition'
 import {
@@ -6,9 +7,20 @@ import {
   calculateMealNutrition,
   effectiveIngredientGrams,
 } from '../domain/nutritionCalculator'
-import type { AnalizzaResponse } from '../types/analysis'
-import type { GlycemicImpactBand, NutritionValues } from '../types/nutrition'
-import { RefreshIcon, SparklesIcon, UtensilsIcon } from './Icons'
+import { condividiCard } from '../services/shareCard'
+import { DIARY_STORAGE_KEY, registraMangiato } from '../storage/diaryStore'
+import type { AnalizzaIngredient, AnalizzaResponse } from '../types/analysis'
+import type { FoodCatalogEntry } from '../types/catalog'
+import type { GlycemicImpact, GlycemicImpactBand, MealNutrition, NutritionValues } from '../types/nutrition'
+import {
+  CheckIcon,
+  PlusIcon,
+  RefreshIcon,
+  SaveIcon,
+  ShareIcon,
+  SparklesIcon,
+  UtensilsIcon,
+} from './Icons'
 
 export type ViewStatus = 'idle' | 'preparing' | 'analyzing' | 'success' | 'error'
 
@@ -19,12 +31,16 @@ interface ResultPanelProps {
   hasImage: boolean
   onRetry(): void
   onIngredientGramsChange(index: number, grams: number): void
+  onAddToSession(): void
 }
 
 interface ResultStateProps {
   result: AnalizzaResponse
   onIngredientGramsChange(index: number, grams: number): void
+  onAddToSession(): void
 }
+
+type ActionState = 'idle' | 'working' | 'success' | 'error'
 
 const TOTAL_NUTRIENTS: Array<{ key: keyof NutritionValues; label: string; unit: string }> = [
   { key: 'energia_kcal', label: 'Energia', unit: 'kcal' },
@@ -35,9 +51,29 @@ const TOTAL_NUTRIENTS: Array<{ key: keyof NutritionValues; label: string; unit: 
 ]
 
 function impactClasses(band: GlycemicImpactBand): string {
+  if (band === 'trascurabile') return 'bg-brand-soft text-brand'
   if (band === 'basso') return 'bg-mint-soft text-mint'
   if (band === 'medio') return 'bg-amber-soft text-amber-strong'
   return 'bg-coral-soft text-coral'
+}
+
+function diaryEntryPersisted(id: string): boolean {
+  try {
+    const raw = window.localStorage.getItem(DIARY_STORAGE_KEY)
+    const stored: unknown = raw ? JSON.parse(raw) : null
+    return Array.isArray(stored) && stored.some((entry) => (
+      typeof entry === 'object' && entry !== null && 'id' in entry && entry.id === id
+    ))
+  } catch {
+    return false
+  }
+}
+
+function resolveRowFood(ingredient: AnalizzaIngredient): FoodCatalogEntry | undefined {
+  const byId = getFoodByCatalogId(ingredient.catalogo_id)
+  if (byId) return byId
+  const byName = resolveFoodByName(ingredient.nome)
+  return byName.kind === 'resolved' ? byName.food : undefined
 }
 
 function LoadingState() {
@@ -73,7 +109,7 @@ function ErrorState({ message, canRetry, onRetry }: { message: string; canRetry:
       <p className="mt-6 text-xs font-bold tracking-[0.18em] text-coral uppercase">Qualcosa non ha funzionato</p>
       <h2 className="mt-2 text-3xl font-semibold text-brand">Analisi non completata</h2>
       <p className="mt-3 max-w-sm leading-7 text-muted">{message}</p>
-      {canRetry && <button className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-2xl bg-brand px-6 font-bold text-on-brand transition hover:brightness-110" type="button" onClick={onRetry}><RefreshIcon className="size-5" /> Riprova</button>}
+      {canRetry && <button className="primary-button mt-7" type="button" onClick={onRetry}><RefreshIcon className="size-5" /> Riprova</button>}
     </div>
   )
 }
@@ -82,7 +118,7 @@ function NutrientGrid({ values, totalGrams }: { values: NutritionValues; totalGr
   return (
     <section className="mt-6">
       <div className="flex items-end justify-between gap-3">
-        <div><p className="text-xs font-bold tracking-[0.16em] text-muted uppercase">Totale piatto</p><h3 className="mt-1 text-lg font-extrabold text-brand">Valori nutrizionali</h3></div>
+        <div><p className="section-label">Totale piatto</p><h3 className="mt-1 text-lg font-extrabold text-brand">Valori nutrizionali</h3></div>
         <span className="rounded-full bg-brand-soft px-3 py-1 text-xs font-extrabold text-brand">{formatNumber(totalGrams)} g</span>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
@@ -97,7 +133,80 @@ function NutrientGrid({ values, totalGrams }: { values: NutritionValues; totalGr
   )
 }
 
-function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
+function ResultActions({ result, meal, impact, onAddToSession }: {
+  result: AnalizzaResponse
+  meal: MealNutrition
+  impact: GlycemicImpact
+  onAddToSession(): void
+}) {
+  const [saveState, setSaveState] = useState<ActionState>('idle')
+  const [shareState, setShareState] = useState<ActionState>('idle')
+
+  useEffect(() => {
+    setSaveState('idle')
+  }, [result])
+
+  function saveToDiary(): void {
+    setSaveState('working')
+    try {
+      const entry = registraMangiato({
+        nome: result.piatto || 'Piatto senza nome',
+        fonte: 'foto',
+        fascia: impact.fascia,
+        cg: impact.cg,
+        kcal: meal.nutrition.energia_kcal,
+        carbo: impact.carbo,
+        prot: meal.nutrition.proteine_g,
+        grassi: meal.nutrition.grassi_totali_g,
+        fibre: meal.nutrition.fibre_g,
+        grammi: meal.totalGrams,
+      })
+      setSaveState(diaryEntryPersisted(entry.id) ? 'success' : 'error')
+    } catch {
+      setSaveState('error')
+    }
+  }
+
+  async function shareResult(): Promise<void> {
+    setShareState('working')
+    const shared = await condividiCard({
+      title: result.piatto || 'Piatto senza nome',
+      subtitle: 'Riepilogo calcolato da GLICOGIG',
+      items: [
+        { label: 'Carboidrati', value: `${formatNumber(impact.carbo)} g` },
+        { label: 'Carico glicemico', value: `${formatNumber(impact.cg)} · ${impact.fascia}` },
+        { label: 'Energia', value: `${formatNumber(meal.nutrition.energia_kcal)} kcal` },
+        { label: 'Proteine', value: `${formatNumber(meal.nutrition.proteine_g)} g` },
+        { label: 'Grassi', value: `${formatNumber(meal.nutrition.grassi_totali_g)} g` },
+      ],
+      note: 'Stima informativa basata sul catalogo locale. Controlla ingredienti e quantità.',
+    }, { fileName: 'glicogig-piatto.png' })
+    setShareState(shared ? 'success' : 'error')
+  }
+
+  return (
+    <section className="mt-7 rounded-3xl border border-line bg-surface p-4 sm:p-5">
+      <p className="section-label">Azioni</p>
+      <div className="mt-3 grid gap-2 sm:grid-cols-3">
+        <button className="primary-button" type="button" onClick={saveToDiary} disabled={saveState === 'working' || saveState === 'success'}>
+          {saveState === 'success' ? <CheckIcon className="size-5" /> : <SaveIcon className="size-5" />}
+          {saveState === 'working' ? 'Salvataggio…' : saveState === 'success' ? 'Salvato' : 'Salva nel diario'}
+        </button>
+        <button className="secondary-button" type="button" onClick={() => void shareResult()} disabled={shareState === 'working'}>
+          <ShareIcon className="size-5" /> {shareState === 'working' ? 'Preparazione…' : 'Condividi PNG'}
+        </button>
+        <button className="secondary-button" type="button" onClick={onAddToSession}><PlusIcon className="size-5" /> Aggiungi altro piatto</button>
+      </div>
+      <div className="mt-3 text-xs" aria-live="polite">
+        {saveState === 'error' && <p className="text-coral">Voce disponibile nella sessione, ma il browser non ne ha confermato la persistenza locale.</p>}
+        {shareState === 'success' && <p className="text-mint">Card condivisa o scaricata.</p>}
+        {shareState === 'error' && <p className="text-coral">Condivisione annullata o non disponibile.</p>}
+      </div>
+    </section>
+  )
+}
+
+function ResultState({ result, onIngredientGramsChange, onAddToSession }: ResultStateProps) {
   if (!result.e_cibo) {
     return (
       <div className="flex min-h-[34rem] flex-col items-center justify-center p-7 text-center">
@@ -110,7 +219,7 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
 
   const confidence = formatConfidence(result.confidenza)
   const meal = calculateMealNutrition(result.ingredienti)
-  const impact = calculateGlycemicImpact(result.ingredienti)
+  const impact = calculateGlycemicImpact(result.ingredienti, result.piatto)
 
   return (
     <div className="p-5 sm:p-7">
@@ -120,7 +229,11 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
           <h2 className="mt-2 text-3xl font-semibold text-brand sm:text-4xl">{result.piatto || 'Piatto senza nome'}</h2>
           {result.descrizione && <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">{result.descrizione}</p>}
         </div>
-        {confidence && <span className="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-bold text-brand">Riconoscimento {confidence}</span>}
+        <div className="flex flex-wrap justify-end gap-2">
+          {confidence && <span className="status-badge">Riconoscimento {confidence}</span>}
+          {impact.cotto && <span className="status-badge">Peso cotto</span>}
+          {impact.pianoIntero && <span className="status-badge border-amber/30 bg-amber-soft text-amber">Override piatto intero</span>}
+        </div>
       </div>
 
       <section className="relative mt-6 overflow-hidden rounded-3xl border border-brand/45 bg-gradient-to-br from-brand-soft via-surface to-amber-soft/40 p-5 shadow-[0_0_42px_rgb(41_182_255_/_0.12)] sm:p-6">
@@ -128,16 +241,16 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
         <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-[11px] font-extrabold tracking-[0.18em] text-amber uppercase">Controller microinfusore</p>
-            <h3 className="mt-1 font-display text-2xl font-extrabold text-ink">Carboidrati da inserire</h3>
-            <p className="mt-2 text-sm leading-6 text-muted">Nel campo <strong className="text-ink">“Carboidrati”</strong> del controller inserisci questo totale:</p>
+            <h3 className="mt-1 text-2xl font-extrabold text-ink">Carboidrati da inserire</h3>
+            <p className="mt-2 text-sm leading-6 text-muted">Valore calcolato dall’impatto completo, incluso l’eventuale override del piatto intero.</p>
           </div>
-          <output className="shrink-0 text-6xl font-black leading-none tracking-[-0.06em] text-brand sm:text-7xl" aria-label={`Carboidrati da inserire: ${formatNumber(meal.nutrition.carboidrati_disponibili_g)} grammi`}>
-            {formatNumber(meal.nutrition.carboidrati_disponibili_g)}<span className="ml-2 text-2xl font-extrabold tracking-normal text-amber">g</span>
+          <output className="shrink-0 text-6xl font-black leading-none tracking-[-0.06em] text-brand sm:text-7xl" aria-label={`Carboidrati da inserire: ${formatNumber(impact.carbo)} grammi`}>
+            {formatNumber(impact.carbo)}<span className="ml-2 text-2xl font-extrabold tracking-normal text-amber">g</span>
           </output>
         </div>
         <div className={`relative mt-5 rounded-2xl border px-4 py-3 text-xs leading-5 ${meal.unresolved.length ? 'border-coral/35 bg-coral-soft text-coral' : 'border-brand/20 bg-brand-deep/55 text-muted'}`}>
           {meal.unresolved.length ? (
-            <p><strong>Stima parziale:</strong> {meal.unresolved.length} {meal.unresolved.length === 1 ? 'ingrediente è escluso' : 'ingredienti sono esclusi'} dal calcolo. Correggi ingredienti e quantità prima di usare il valore.</p>
+            <p><strong>Stima parziale:</strong> {meal.unresolved.length} {meal.unresolved.length === 1 ? 'ingrediente è escluso' : 'ingredienti sono esclusi'} dal calcolo nutrizionale. Correggi ingredienti e quantità prima di usare il valore.</p>
           ) : (
             <p><strong className="text-brand">Calcolo completo:</strong> tutti gli ingredienti riconosciuti sono inclusi. Controlla comunque ingredienti e grammi prima di confermare sul dispositivo.</p>
           )}
@@ -151,10 +264,10 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
           <p className="mt-3 text-xs leading-5 opacity-80">{impact.trovati === impact.totali ? 'Tutti gli ingredienti inclusi' : `${impact.trovati} di ${impact.totali} ingredienti inclusi`}</p>
         </div>
         <div className="rounded-3xl border border-line bg-surface p-5">
-          <p className="text-xs font-extrabold tracking-[0.16em] text-muted uppercase">Incidenza degli ingredienti</p>
+          <p className="section-label">Incidenza degli ingredienti</p>
           {impact.contributi.length ? (
             <div className="mt-3 space-y-2">
-              {impact.contributi.map((item) => <div className="flex items-center justify-between gap-4 text-sm" key={item.nome}><span className="truncate font-semibold text-ink">{item.nome}</span><strong className="text-brand">+ {formatNumber(item.cg)}</strong></div>)}
+              {impact.contributi.map((item, index) => <div className="flex items-center justify-between gap-4 text-sm" key={`${item.nome}-${index}`}><span className="truncate font-semibold text-ink">{item.nome}</span><strong className="text-brand">+ {formatNumber(item.cg)}</strong></div>)}
             </div>
           ) : <p className="mt-3 text-sm leading-6 text-muted">Nessun ingrediente incide in modo rilevante sul carico.</p>}
         </div>
@@ -164,12 +277,12 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
 
       <section className="mt-7">
         <div className="flex flex-wrap items-end justify-between gap-2">
-          <div><p className="text-xs font-bold tracking-[0.16em] text-muted uppercase">Ingredienti</p><h3 className="mt-1 text-lg font-extrabold text-brand">Correggi le quantità</h3></div>
+          <div><p className="section-label">Ingredienti</p><h3 className="mt-1 text-lg font-extrabold text-brand">Correggi le quantità</h3></div>
           <p className="text-xs text-muted">Le modifiche aggiornano subito tutti i valori</p>
         </div>
         <div className="mt-3 divide-y divide-line overflow-hidden rounded-2xl border border-line">
           {result.ingredienti.map((ingredient, index) => {
-            const food = getFoodByCatalogId(ingredient.catalogo_id)
+            const food = resolveRowFood(ingredient)
             const grams = food ? effectiveIngredientGrams(food, ingredient.grammi) : ingredient.grammi
             const nutrition = food ? calculateIngredientNutrition(food, grams) : null
             return (
@@ -183,17 +296,7 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
                 </div>
                 <label className="flex items-center justify-end gap-2 text-xs font-bold text-muted">
                   <span>Grammi</span>
-                  <input
-                    aria-label={`Grammi di ${ingredient.nome}`}
-                    className="h-10 w-24 rounded-xl border border-line bg-surface px-3 text-right text-sm font-extrabold text-brand outline-none focus:border-brand focus:ring-3 focus:ring-brand/10"
-                    inputMode="numeric"
-                    max={2000}
-                    min={0}
-                    step={1}
-                    type="number"
-                    value={grams}
-                    onChange={(event) => onIngredientGramsChange(index, Number(event.target.value))}
-                  />
+                  <input aria-label={`Grammi di ${ingredient.nome}`} className="number-field" inputMode="numeric" max={2000} min={0} step={1} type="number" value={grams} onChange={(event) => onIngredientGramsChange(index, Number(event.target.value))} />
                 </label>
               </div>
             )
@@ -210,16 +313,18 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
 
       {result.lezione && <p className="mt-5 rounded-2xl bg-mint-soft p-4 text-sm leading-6 text-brand"><strong>Lezione:</strong> {result.lezione}</p>}
       {result.quando_ha_senso && <p className="mt-3 rounded-2xl bg-amber-soft p-4 text-sm leading-6 text-ink"><strong>Quando ha senso:</strong> {result.quando_ha_senso}</p>}
+
+      <ResultActions result={result} meal={meal} impact={impact} onAddToSession={onAddToSession} />
     </div>
   )
 }
 
-export default function ResultPanel({ status, result, error, hasImage, onRetry, onIngredientGramsChange }: ResultPanelProps) {
+export default function ResultPanel({ status, result, error, hasImage, onRetry, onIngredientGramsChange, onAddToSession }: ResultPanelProps) {
   return (
     <section className="app-card overflow-hidden rounded-[1.75rem] border border-line bg-paper/95 shadow-card backdrop-blur" aria-live="polite">
       {status === 'analyzing' && <LoadingState />}
       {status === 'error' && <ErrorState message={error} canRetry={hasImage} onRetry={onRetry} />}
-      {status === 'success' && result && <ResultState result={result} onIngredientGramsChange={onIngredientGramsChange} />}
+      {status === 'success' && result && <ResultState result={result} onIngredientGramsChange={onIngredientGramsChange} onAddToSession={onAddToSession} />}
       {(status === 'idle' || status === 'preparing') && <EmptyState />}
     </section>
   )

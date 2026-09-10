@@ -1,0 +1,65 @@
+# Function #18649 '?anon_0_'
+# offset=5024728 bytes=192
+
+00000000: <StartGenerator>: <>
+00000001: <ResumeGenerator>: <Reg8: 0, Reg8: 2>
+00000004: <JmpTrueLong>: <Addr32: 185, Reg8: 2>  # Address: 000000bd
+0000000a: <LoadParam>: <Reg8: 1, UInt8: 1>
+0000000d: <LoadConstUndefined>: <Reg8: 6>
+0000000f: <LoadConstUndefined>: <Reg8: 3>
+00000011: <Mov>: <Reg8: 4, Reg8: 1>
+00000014: <LoadConstNull>: <Reg8: 2>
+00000016: <Eq>: <Reg8: 5, Reg8: 4, Reg8: 2>
+0000001a: <LoadConstUndefined>: <Reg8: 2>
+0000001c: <JmpTrue>: <Addr8: 8, Reg8: 5>  # Address: 00000024
+0000001f: <GetByIdShort>: <Reg8: 2, Reg8: 4, UInt8: 1, string_id: 88>  # String: 'current' (Identifier)
+00000024: <JmpTrue>: <Addr8: 8, Reg8: 2>  # Address: 0000002c
+00000027: <LoadConstFalse>: <Reg8: 2>
+00000029: <CompleteGenerator>: <>
+0000002a: <Ret>: <Reg8: 2>
+0000002c: <GetEnvironment>: <Reg8: 4, UInt8: 2>
+0000002f: <LoadFromEnvironment>: <Reg8: 2, Reg8: 4, UInt8: 1>
+00000033: <GetById>: <Reg8: 5, Reg8: 2, UInt8: 2, string_id: 40486>  # String: 'captureRef' (Identifier)
+00000039: <Mov>: <Reg8: 2, Reg8: 1>
+0000003c: <NewObjectWithBufferLong>: <Reg8: 1, UInt16: 3, UInt16: 3, UInt32: 48142, UInt32: 184259>  # Object: {'format': 'png', 'quality': 1, 'result': 'tmpfile'}
+0000004a: <Call3>: <Reg8: 1, Reg8: 5, Reg8: 6, Reg8: 2, Reg8: 1>
+00000050: <SaveGenerator>: <Addr8: 4>  # Address: 00000054
+00000052: <Ret>: <Reg8: 1>
+00000054: <ResumeGenerator>: <Reg8: 1, Reg8: 2>
+00000057: <JmpTrue>: <Addr8: 92, Reg8: 2>  # Address: 000000b3
+0000005a: <Mov>: <Reg8: 3, Reg8: 1>
+0000005d: <LoadFromEnvironment>: <Reg8: 5, Reg8: 4, UInt8: 2>
+00000061: <GetById>: <Reg8: 2, Reg8: 5, UInt8: 3, string_id: 47382>  # String: 'isAvailableAsync' (Identifier)
+00000067: <Call1>: <Reg8: 2, Reg8: 2, Reg8: 5>
+0000006b: <SaveGenerator>: <Addr8: 4>  # Address: 0000006f
+0000006d: <Ret>: <Reg8: 2>
+0000006f: <ResumeGenerator>: <Reg8: 2, Reg8: 5>
+00000072: <JmpTrue>: <Addr8: 62, Reg8: 5>  # Address: 000000b0
+00000075: <JmpTrue>: <Addr8: 8, Reg8: 2>  # Address: 0000007d
+00000078: <LoadConstFalse>: <Reg8: 5>
+0000007a: <CompleteGenerator>: <>
+0000007b: <Ret>: <Reg8: 5>
+0000007d: <LoadFromEnvironment>: <Reg8: 6, Reg8: 4, UInt8: 2>
+00000081: <GetById>: <Reg8: 5, Reg8: 6, UInt8: 4, string_id: 47519>  # String: 'shareAsync' (Identifier)
+00000087: <Mov>: <Reg8: 4, Reg8: 3>
+0000008a: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 3, UInt16: 3, UInt32: 48149, UInt32: 184271>  # Object: {'mimeType': 'image/png', 'dialogTitle': 'Condividi', 'UTI': 'public.png'}
+00000098: <Call3>: <Reg8: 3, Reg8: 5, Reg8: 6, Reg8: 4, Reg8: 3>
+0000009e: <SaveGenerator>: <Addr8: 4>  # Address: 000000a2
+000000a0: <Ret>: <Reg8: 3>
+000000a2: <ResumeGenerator>: <Reg8: 3, Reg8: 4>
+000000a5: <JmpTrue>: <Addr8: 8, Reg8: 4>  # Address: 000000ad
+000000a8: <LoadConstTrue>: <Reg8: 4>
+000000aa: <CompleteGenerator>: <>
+000000ab: <Ret>: <Reg8: 4>
+000000ad: <CompleteGenerator>: <>
+000000ae: <Ret>: <Reg8: 3>
+000000b0: <CompleteGenerator>: <>
+000000b1: <Ret>: <Reg8: 2>
+000000b3: <CompleteGenerator>: <>
+000000b4: <Ret>: <Reg8: 1>
+000000b6: <Catch>: <Reg8: 1>
+000000b8: <LoadConstFalse>: <Reg8: 1>
+000000ba: <CompleteGenerator>: <>
+000000bb: <Ret>: <Reg8: 1>
+000000bd: <CompleteGenerator>: <>
+000000be: <Ret>: <Reg8: 0>

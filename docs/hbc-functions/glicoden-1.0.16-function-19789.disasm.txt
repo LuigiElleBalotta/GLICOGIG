@@ -1,0 +1,5 @@
+# Function #19789 ''
+# offset=3049388 bytes=4
+
+00000000: <LoadConstUndefined>: <Reg8: 0>
+00000002: <Ret>: <Reg8: 0>

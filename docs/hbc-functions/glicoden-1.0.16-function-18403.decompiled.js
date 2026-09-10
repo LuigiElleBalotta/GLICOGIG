@@ -1,0 +1,43 @@
+
+==== Falling back to Disassembly ====
+=> [Function #18403 "" of 165 bytes]: 8 params, frame size=18, strict=1, exc handler=0, debug info=0  @ offset 0x004bd5b9
+
+Bytecode listing:
+
+==> 00000000: <CreateEnvironment>: <Reg8: 1>
+==> 00000002: <LoadParam>: <Reg8: 2, UInt8: 6>
+==> 00000005: <GetGlobalObject>: <Reg8: 3>
+==> 00000007: <TryGetById>: <Reg8: 7, Reg8: 3, UInt8: 1, string_id: 14>  # String: 'Object' (Identifier)
+==> 0000000d: <GetByIdShort>: <Reg8: 6, Reg8: 7, UInt8: 2, string_id: 96>  # String: 'defineProperty' (Identifier)
+==> 00000012: <NewObject>: <Reg8: 5>
+==> 00000014: <LoadConstTrue>: <Reg8: 0>
+==> 00000016: <PutNewOwnByIdShort>: <Reg8: 5, Reg8: 0, string_id: 251>  # String: 'value' (Identifier)
+==> 0000001a: <LoadConstString>: <Reg8: 4, string_id: 27>  # String: '__esModule' (Identifier)
+==> 0000001e: <Call4>: <Reg8: 4, Reg8: 6, Reg8: 7, Reg8: 2, Reg8: 4, Reg8: 5>
+==> 00000025: <TryGetById>: <Reg8: 5, Reg8: 3, UInt8: 1, string_id: 14>  # String: 'Object' (Identifier)
+==> 0000002b: <GetByIdShort>: <Reg8: 4, Reg8: 5, UInt8: 2, string_id: 96>  # String: 'defineProperty' (Identifier)
+==> 00000030: <NewObject>: <Reg8: 3>
+==> 00000032: <PutNewOwnByIdShort>: <Reg8: 3, Reg8: 0, string_id: 110>  # String: 'enumerable' (Identifier)
+==> 00000036: <CreateClosure>: <Reg8: 0, Reg8: 1, function_id: 18410>  # Function: [#18410 get of 9 bytes]: 1 params @ offset 0x002e8262
+==> 0000003b: <PutNewOwnByIdShort>: <Reg8: 3, Reg8: 0, string_id: 133>  # String: 'get' (Identifier)
+==> 0000003f: <LoadConstString>: <Reg8: 0, string_id: 31842>  # String: 'REGEX_LIQUIDO' (Identifier)
+==> 00000043: <Call4>: <Reg8: 0, Reg8: 4, Reg8: 5, Reg8: 2, Reg8: 0, Reg8: 3>
+==> 0000004a: <CreateClosure>: <Reg8: 0, Reg8: 1, function_id: 18404>  # Function: [#18404 piuPrudente of 34 bytes]: 3 params @ offset 0x004bd65e
+==> 0000004f: <PutById>: <Reg8: 2, Reg8: 0, UInt8: 1, string_id: 55664>  # String: 'piuPrudente' (Identifier)
+==> 00000055: <CreateClosure>: <Reg8: 0, Reg8: 1, function_id: 18405>  # Function: [#18405 pavimentoZucchero of 59 bytes]: 4 params @ offset 0x004bd680
+==> 0000005a: <PutById>: <Reg8: 2, Reg8: 0, UInt8: 2, string_id: 44642>  # String: 'pavimentoZucchero' (Identifier)
+==> 00000060: <CreateClosure>: <Reg8: 0, Reg8: 1, function_id: 18406>  # Function: [#18406 aggiustaIGperPreparazione of 334 bytes]: 4 params @ offset 0x004bd6bb
+==> 00000065: <PutById>: <Reg8: 2, Reg8: 0, UInt8: 3, string_id: 42348>  # String: 'aggiustaIGperPreparazione' (Identifier)
+==> 0000006b: <CreateClosure>: <Reg8: 0, Reg8: 1, function_id: 18407>  # Function: [#18407 pesatoCotto of 46 bytes]: 2 params @ offset 0x004bd809
+==> 00000070: <PutById>: <Reg8: 2, Reg8: 0, UInt8: 4, string_id: 37550>  # String: 'pesatoCotto' (Identifier)
+==> 00000076: <CreateClosure>: <Reg8: 0, Reg8: 1, function_id: 18408>  # Function: [#18408 classificaFascia of 475 bytes]: 2 params @ offset 0x004bd837
+==> 0000007b: <PutById>: <Reg8: 2, Reg8: 0, UInt8: 5, string_id: 47715>  # String: 'classificaFascia' (Identifier)
+==> 00000081: <CreateRegExp>: <Reg8: 0, string_id: 8113, string_id: 31833, UInt32: 282>  # String: 'succ|spremut|bibita|bevanda|drink|cola|aranciat|gassos|energy|isoton|nettare|smoothie|frapp' (String)  # String: 'i' (Identifier)
+==> 0000008f: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 0>
+==> 00000093: <NewObjectWithBuffer>: <Reg8: 0, UInt16: 4, UInt16: 4, UInt16: 43125, UInt16: 41>  # Object: {'trascurabile': 0, 'basso': 1, 'medio': 2, 'alto': 3}
+==> 0000009d: <StoreToEnvironment>: <Reg8: 1, UInt8: 1, Reg8: 0>
+==> 000000a1: <LoadConstUndefined>: <Reg8: 0>
+==> 000000a3: <Ret>: <Reg8: 0>
+
+
+===============

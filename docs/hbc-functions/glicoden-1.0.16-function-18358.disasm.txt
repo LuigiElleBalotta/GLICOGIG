@@ -1,0 +1,68 @@
+# Function #18358 'registraMangiato'
+# offset=4961057 bytes=257
+
+00000000: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000003: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000006: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 12>
+0000000a: <LoadConstUndefined>: <Reg8: 3>
+0000000c: <LoadConstUndefined>: <Reg8: 5>
+0000000e: <JmpFalse>: <Addr8: 58, Reg8: 0>  # Address: 00000048
+00000011: <GetGlobalObject>: <Reg8: 0>
+00000013: <TryGetById>: <Reg8: 4, Reg8: 0, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000019: <GetById>: <Reg8: 0, Reg8: 4, UInt8: 2, string_id: 34390>  # String: 'now' (Identifier)
+0000001f: <Call1>: <Reg8: 4, Reg8: 0, Reg8: 4>
+00000023: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 12>
+00000027: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 3, string_id: 31940>  # String: 'at' (Identifier)
+0000002d: <Sub>: <Reg8: 4, Reg8: 4, Reg8: 0>
+00000031: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 13>
+00000035: <Less>: <Reg8: 0, Reg8: 4, Reg8: 0>
+00000039: <LoadConstUndefined>: <Reg8: 5>
+0000003b: <JmpFalse>: <Addr8: 13, Reg8: 0>  # Address: 00000048
+0000003e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 12>
+00000042: <GetById>: <Reg8: 5, Reg8: 0, UInt8: 4, string_id: 32910>  # String: 'slot' (Identifier)
+00000048: <LoadConstNull>: <Reg8: 0>
+0000004a: <StoreNPToEnvironment>: <Reg8: 1, UInt8: 12, Reg8: 0>
+0000004e: <GetById>: <Reg8: 4, Reg8: 2, UInt8: 4, string_id: 32910>  # String: 'slot' (Identifier)
+00000054: <JNotEqual>: <Addr8: 7, Reg8: 4, Reg8: 0>  # Address: 0000005b
+00000058: <Mov>: <Reg8: 4, Reg8: 5>
+0000005b: <JNotEqual>: <Addr8: 6, Reg8: 4, Reg8: 0>  # Address: 00000061
+0000005f: <LoadConstUndefined>: <Reg8: 4>
+00000061: <NewObject>: <Reg8: 0>
+00000063: <Mov>: <Reg8: 9, Reg8: 0>
+00000066: <Mov>: <Reg8: 8, Reg8: 2>
+00000069: <CallBuiltin>: <Reg8: 2, UInt8: 44, UInt8: 3>  # Built-in function: [#44 copyDataProperties]
+0000006d: <LoadConstString>: <Reg8: 2, string_id: 32910>  # String: 'slot' (Identifier)
+00000071: <PutOwnByVal>: <Reg8: 0, Reg8: 4, Reg8: 2, UInt8: 1>
+00000076: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 11>
+0000007a: <Call1>: <Reg8: 4, Reg8: 2, Reg8: 3>
+0000007e: <LoadConstString>: <Reg8: 2, string_id: 147>  # String: 'id' (Identifier)
+00000082: <PutOwnByVal>: <Reg8: 0, Reg8: 4, Reg8: 2, UInt8: 1>
+00000087: <GetGlobalObject>: <Reg8: 2>
+00000089: <TryGetById>: <Reg8: 4, Reg8: 2, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+0000008f: <GetById>: <Reg8: 2, Reg8: 4, UInt8: 2, string_id: 34390>  # String: 'now' (Identifier)
+00000095: <Call1>: <Reg8: 4, Reg8: 2, Reg8: 4>
+00000099: <LoadConstString>: <Reg8: 2, string_id: 32242>  # String: 'ts' (Identifier)
+0000009d: <PutOwnByVal>: <Reg8: 0, Reg8: 4, Reg8: 2, UInt8: 1>
+000000a2: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 14>
+000000a6: <Call1>: <Reg8: 4, Reg8: 2, Reg8: 3>
+000000aa: <LoadConstString>: <Reg8: 2, string_id: 34108>  # String: 'giorno' (Identifier)
+000000ae: <PutOwnByVal>: <Reg8: 0, Reg8: 4, Reg8: 2, UInt8: 1>
+000000b3: <LoadFromEnvironment>: <Reg8: 8, Reg8: 1, UInt8: 7>
+000000b7: <NewArray>: <Reg8: 5, UInt16: 1>
+000000bb: <LoadConstZero>: <Reg8: 7>
+000000bd: <Mov>: <Reg8: 9, Reg8: 5>
+000000c0: <CallBuiltin>: <Reg8: 4, UInt8: 46, UInt8: 4>  # Built-in function: [#46 arraySpread]
+000000c4: <PutOwnByVal>: <Reg8: 5, Reg8: 0, Reg8: 4, UInt8: 1>
+000000c9: <LoadConstUInt8>: <Reg8: 2, UInt8: 1>
+000000cc: <Add>: <Reg8: 2, Reg8: 4, Reg8: 2>
+000000d0: <GetByIdShort>: <Reg8: 4, Reg8: 5, UInt8: 5, string_id: 228>  # String: 'slice' (Identifier)
+000000d5: <LoadConstInt>: <Reg8: 2, Imm32: -800>
+000000db: <Call2>: <Reg8: 2, Reg8: 4, Reg8: 5, Reg8: 2>
+000000e0: <StoreToEnvironment>: <Reg8: 1, UInt8: 7, Reg8: 2>
+000000e4: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 15>
+000000e8: <Call1>: <Reg8: 2, Reg8: 2, Reg8: 3>
+000000ec: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 5>
+000000f0: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 6, string_id: 36521>  # String: 'logEvento' (Identifier)
+000000f6: <LoadConstString>: <Reg8: 1, string_id: 10954>  # String: 'pasto_mangiato' (String)
+000000fa: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1>
+000000ff: <Ret>: <Reg8: 0>

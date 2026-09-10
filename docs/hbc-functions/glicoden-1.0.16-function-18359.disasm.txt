@@ -1,0 +1,16 @@
+# Function #18359 'rimuoviDalDiario'
+# offset=4961314 bytes=47
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 0>
+00000009: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+0000000c: <LoadFromEnvironment>: <Reg8: 3, Reg8: 0, UInt8: 7>
+00000010: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 1, string_id: 119>  # String: 'filter' (Identifier)
+00000015: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 18360>  # Function: [#18360  of 21 bytes]: 2 params @ offset 0x004b76e1
+0000001a: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 3, Reg8: 1>
+0000001f: <StoreToEnvironment>: <Reg8: 0, UInt8: 7, Reg8: 1>
+00000023: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 15>
+00000027: <LoadConstUndefined>: <Reg8: 0>
+00000029: <Call1>: <Reg8: 1, Reg8: 1, Reg8: 0>
+0000002d: <Ret>: <Reg8: 0>

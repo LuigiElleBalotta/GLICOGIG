@@ -1,0 +1,10 @@
+# Function #18369 'vociTutte'
+# offset=4961855 bytes=22
+
+00000000: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 4, Reg8: 0, UInt8: 7>
+00000007: <NewArray>: <Reg8: 0, UInt16: 0>
+0000000b: <LoadConstZero>: <Reg8: 3>
+0000000d: <Mov>: <Reg8: 5, Reg8: 0>
+00000010: <CallBuiltin>: <Reg8: 1, UInt8: 46, UInt8: 4>  # Built-in function: [#46 arraySpread]
+00000014: <Ret>: <Reg8: 0>

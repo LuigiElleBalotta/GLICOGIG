@@ -1,0 +1,17 @@
+# Function #18365 'vociDelGiorno'
+# offset=4961647 bytes=49
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000005: <JmpTrue>: <Addr8: 16, Reg8: 1>  # Address: 00000015
+00000008: <GetEnvironment>: <Reg8: 2, UInt8: 0>
+0000000b: <LoadFromEnvironment>: <Reg8: 3, Reg8: 2, UInt8: 14>
+0000000f: <LoadConstUndefined>: <Reg8: 2>
+00000011: <Call1>: <Reg8: 1, Reg8: 3, Reg8: 2>
+00000015: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+00000019: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000001c: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 7>
+00000020: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 119>  # String: 'filter' (Identifier)
+00000025: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18366>  # Function: [#18366  of 22 bytes]: 2 params @ offset 0x004bb5a0
+0000002a: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+0000002f: <Ret>: <Reg8: 0>

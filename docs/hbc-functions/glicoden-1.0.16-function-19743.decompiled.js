@@ -1,0 +1,42 @@
+function mulberry32(a0) {
+    r2 = a0;
+    r1 = 0;
+    r1 = r2 >>> r1;
+    var _closure0_slot0 = r1;
+    r0 = function() { // Environment: r0
+        r2 = _closure0_slot0;
+        r0 = 1831565813;
+        r0 = r2 + r0;
+        r0 = r0 | 0;
+        _closure0_slot0 = r0;
+        r0 = global;
+        r4 = r0.Math;
+        r3 = r4.imul;
+        r5 = _closure0_slot0;
+        r1 = 15;
+        r1 = r5 >>> r1;
+        r2 = r5 ^ r1;
+        r1 = 1;
+        r1 = r1 | r5;
+        r1 = r3.bind(r4)(r2, r1);
+        r4 = r0.Math;
+        r3 = r4.imul;
+        r0 = 7;
+        r0 = r1 >>> r0;
+        r2 = r1 ^ r0;
+        r0 = 61;
+        r0 = r0 | r1;
+        r0 = r3.bind(r4)(r2, r0);
+        r0 = r1 + r0;
+        r1 = r0 ^ r1;
+        r0 = 14;
+        r0 = r1 >>> r0;
+        r1 = r1 ^ r0;
+        r0 = 0;
+        r1 = r1 >>> r0;
+        r0 = 4294967296.0;
+        r0 = r1 / r0;
+        return r0;
+    };
+    return r0;
+}

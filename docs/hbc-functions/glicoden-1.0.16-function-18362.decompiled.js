@@ -1,0 +1,32 @@
+
+==== Falling back to Disassembly ====
+=> [Function #18362 "" of 88 bytes]: 2 params, frame size=14, strict=1, exc handler=0, debug info=0  @ offset 0x004bb4a8
+
+Bytecode listing:
+
+==> 00000000: <LoadParam>: <Reg8: 3, UInt8: 1>
+==> 00000003: <GetByIdShort>: <Reg8: 4, Reg8: 3, UInt8: 1, string_id: 147>  # String: 'id' (Identifier)
+==> 00000008: <GetEnvironment>: <Reg8: 2, UInt8: 0>
+==> 0000000b: <LoadFromEnvironment>: <Reg8: 1, Reg8: 2, UInt8: 0>
+==> 0000000f: <Mov>: <Reg8: 0, Reg8: 3>
+==> 00000012: <JStrictNotEqual>: <Addr8: 68, Reg8: 4, Reg8: 1>  # Address: 00000056
+==> 00000016: <NewObject>: <Reg8: 1>
+==> 00000018: <Mov>: <Reg8: 6, Reg8: 1>
+==> 0000001b: <Mov>: <Reg8: 5, Reg8: 3>
+==> 0000001e: <CallBuiltin>: <Reg8: 3, UInt8: 44, UInt8: 3>  # Built-in function: [#44 copyDataProperties]
+==> 00000022: <LoadFromEnvironment>: <Reg8: 3, Reg8: 2, UInt8: 1>
+==> 00000026: <LoadConstString>: <Reg8: 2, string_id: 185>  # String: 'nome' (Identifier)
+==> 0000002a: <PutOwnByVal>: <Reg8: 1, Reg8: 3, Reg8: 2, UInt8: 1>
+==> 0000002f: <LoadConstString>: <Reg8: 2, string_id: 187>  # String: 'nome_en' (Identifier)
+==> 00000033: <PutOwnByVal>: <Reg8: 1, Reg8: 3, Reg8: 2, UInt8: 1>
+==> 00000038: <LoadConstString>: <Reg8: 2, string_id: 188>  # String: 'nome_es' (Identifier)
+==> 0000003c: <PutOwnByVal>: <Reg8: 1, Reg8: 3, Reg8: 2, UInt8: 1>
+==> 00000041: <LoadConstString>: <Reg8: 2, string_id: 186>  # String: 'nome_de' (Identifier)
+==> 00000045: <PutOwnByVal>: <Reg8: 1, Reg8: 3, Reg8: 2, UInt8: 1>
+==> 0000004a: <LoadConstString>: <Reg8: 2, string_id: 189>  # String: 'nome_fr' (Identifier)
+==> 0000004e: <PutOwnByVal>: <Reg8: 1, Reg8: 3, Reg8: 2, UInt8: 1>
+==> 00000053: <Mov>: <Reg8: 0, Reg8: 1>
+==> 00000056: <Ret>: <Reg8: 0>
+
+
+===============

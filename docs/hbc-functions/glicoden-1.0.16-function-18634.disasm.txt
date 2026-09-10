@@ -1,0 +1,34 @@
+# Function #18634 '?anon_0_'
+# offset=5022019 bytes=100
+
+00000000: <StartGenerator>: <>
+00000001: <ResumeGenerator>: <Reg8: 0, Reg8: 1>
+00000004: <JmpTrue>: <Addr8: 93, Reg8: 1>  # Address: 00000061
+00000007: <GetEnvironment>: <Reg8: 1, UInt8: 2>
+0000000a: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 12>
+0000000e: <GetByIdShort>: <Reg8: 3, Reg8: 2, UInt8: 1, string_id: 88>  # String: 'current' (Identifier)
+00000013: <LoadConstNull>: <Reg8: 2>
+00000015: <JEqual>: <Addr8: 14, Reg8: 3, Reg8: 2>  # Address: 00000023
+00000019: <GetById>: <Reg8: 2, Reg8: 3, UInt8: 2, string_id: 34978>  # String: 'stop' (Identifier)
+0000001f: <Call1>: <Reg8: 2, Reg8: 2, Reg8: 3>
+00000023: <GetEnvironment>: <Reg8: 3, UInt8: 3>
+00000026: <LoadFromEnvironment>: <Reg8: 2, Reg8: 3, UInt8: 9>
+0000002a: <GetById>: <Reg8: 4, Reg8: 2, UInt8: 3, string_id: 47280>  # String: 'condividiCard' (Identifier)
+00000030: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 13>
+00000034: <LoadConstUndefined>: <Reg8: 2>
+00000036: <Call2>: <Reg8: 1, Reg8: 4, Reg8: 2, Reg8: 1>
+0000003b: <SaveGenerator>: <Addr8: 4>  # Address: 0000003f
+0000003d: <Ret>: <Reg8: 1>
+0000003f: <ResumeGenerator>: <Reg8: 1, Reg8: 4>
+00000042: <JmpTrue>: <Addr8: 28, Reg8: 4>  # Address: 0000005e
+00000045: <JmpFalse>: <Addr8: 22, Reg8: 1>  # Address: 0000005b
+00000048: <LoadFromEnvironment>: <Reg8: 3, Reg8: 3, UInt8: 7>
+0000004c: <GetById>: <Reg8: 4, Reg8: 3, UInt8: 4, string_id: 36521>  # String: 'logEvento' (Identifier)
+00000052: <LoadConstString>: <Reg8: 3, string_id: 9330>  # String: 'card_condivisa' (String)
+00000056: <Call2>: <Reg8: 3, Reg8: 4, Reg8: 2, Reg8: 3>
+0000005b: <CompleteGenerator>: <>
+0000005c: <Ret>: <Reg8: 2>
+0000005e: <CompleteGenerator>: <>
+0000005f: <Ret>: <Reg8: 1>
+00000061: <CompleteGenerator>: <>
+00000062: <Ret>: <Reg8: 0>
