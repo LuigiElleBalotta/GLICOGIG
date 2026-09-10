@@ -2,7 +2,7 @@
 
 Web app personale per analizzare la foto di un piatto e trasformare la risposta del backend GLICOGIG in ingredienti, quantità, valori nutrizionali e carico glicemico consultabili.
 
-È una riscrittura web in React e TypeScript della pipeline fotografica osservata nell'APK GLICODEN. Il catalogo è estratto direttamente dal bundle Hermes dell'APK: il progetto non usa fonti nutrizionali esterne e non completa i dati mancanti con valori inventati.
+È una riscrittura web in React e TypeScript della pipeline fotografica osservata nell'app Expo di riferimento. Il catalogo è estratto direttamente dal bundle Hermes dell'APK originale: il progetto non usa fonti nutrizionali esterne e non completa i dati mancanti con valori inventati.
 
 ## Stato del progetto
 
@@ -23,8 +23,25 @@ Funzionalità disponibili:
 - nutrienti totali e normalizzati per 100 g;
 - carico glicemico totale, fascia, affidabilità e contributi principali;
 - grammi modificabili con ricalcolo immediato e interamente locale;
+- interfaccia mobile-first dark con azzurro elettrico e accenti oro;
+- scansione animata sulla foto durante l'analisi e scroll al risultato completato;
+- installabilità PWA e modalità standalone;
 - interfaccia responsive in React 19, Tailwind CSS 4 e font Inter;
-- wordmark testuale, senza asset usati come logo.
+- wordmark testuale nell'interfaccia e icone dedicate alla PWA.
+
+## Esperienza mobile e PWA
+
+La web app include manifest, metadati mobile, icone e service worker. Nei browser compatibili compare il pulsante **Installa app** tramite `beforeinstallprompt`; sugli altri browser l'installazione resta disponibile, quando supportata, dal menu del browser. In modalità standalone vengono rispettate le safe area del dispositivo.
+
+Il service worker viene registrato soltanto in produzione. Gestisce la shell e gli asset same-origin visitati, usa una strategia network-first per le navigazioni e può mostrare la shell già memorizzata quando la rete non è disponibile. Ogni modifica agli asset stabili del service worker richiede l'incremento di `CACHE_NAME`.
+
+L'endpoint `/api/` è escluso esplicitamente dalla cache: foto, password e risposte di analisi non vengono conservate dal service worker. Di conseguenza l'interfaccia può essere riaperta in condizioni limitate senza rete, ma una nuova analisi fotografica richiede sempre la connessione. Non viene dichiarato un funzionamento offline completo.
+
+## Parità con l'app Expo
+
+La web app **non è ancora in parità funzionale completa** con l'app Expo di riferimento. Sono disponibili il flusso foto, il catalogo locale usato dai calcoli, i nutrienti/CG e la correzione dei grammi. Restano assenti, tra le altre, navigazione e confronto del catalogo, preferiti, diario e streak, piatti salvati, barcode/Open Food Facts, compositore multi-alimento completo, ricette, piano e lista della spesa, contenuti/onboarding completi, promemoria e acquisti premium.
+
+La matrice verificata delle funzioni e l'inventario degli URL sono in [`docs/expo-parity.md`](docs/expo-parity.md). Nessuna funzione assente viene simulata o presentata come disponibile.
 
 ## Catalogo APK completo
 
@@ -129,7 +146,7 @@ Variabili server da configurare su Vercel:
 
 ### A cosa serve la “Password del sito”
 
-La password richiesta nell'interfaccia è il valore di `APP_ACCESS_KEY` configurato nel progetto Vercel. Non appartiene al backend GLICODEN: protegge la Function pubblica `/api/analyze` dall'uso da parte di terzi.
+La password richiesta nell'interfaccia è il valore di `APP_ACCESS_KEY` configurato nel progetto Vercel. Non appartiene al backend di analisi: protegge la Function pubblica `/api/analyze` dall'uso da parte di terzi.
 
 Il browser la invia nell'header `X-App-Access-Key`; `api/analyze.ts` la confronta prima di inoltrare la foto. Il valore resta nel solo `sessionStorage` della scheda e viene eliminato alla chiusura della sessione. Non inserire segreti nelle variabili `VITE_*`, perché vengono incluse nel bundle pubblico.
 
@@ -161,7 +178,10 @@ In precedenza il repository era collegato anche a un secondo progetto Vercel chi
 
 ```text
 api/analyze.ts                         Function Vercel e proxy protetto
+public/manifest.webmanifest            Metadati installazione PWA
+public/sw.js                           Cache shell/asset; esclusione esplicita /api/
 scripts/extract_apk_catalog.py         Estrazione riproducibile da Hermes
+src/main.tsx                           Bootstrap React e registrazione SW production
 src/services/imagePreparation.ts       Preparazione JPEG/Base64
 src/services/requestDeviceId.ts        ID effimero per richiesta
 src/services/photoAnalysisService.ts   Client e parsing della risposta
@@ -169,6 +189,8 @@ src/catalog/apkCatalogData.json        Dataset APK completo
 src/catalog/foodCatalog.ts             Lookup esatto per catalogo_id
 src/domain/nutritionCalculator.ts      Scaling e aggregazione nutrizionale
 src/domain/impactCalculator.ts         CG, fascia, copertura e contributi
+src/components/InstallPrompt.tsx       Prompt installazione sui browser compatibili
+src/components/PhotoCard.tsx           Acquisizione e animazione della foto
 src/components/ResultPanel.tsx         Report e modifica locale dei grammi
 ```
 

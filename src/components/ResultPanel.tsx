@@ -73,7 +73,7 @@ function ErrorState({ message, canRetry, onRetry }: { message: string; canRetry:
       <p className="mt-6 text-xs font-bold tracking-[0.18em] text-coral uppercase">Qualcosa non ha funzionato</p>
       <h2 className="mt-2 text-3xl font-semibold text-brand">Analisi non completata</h2>
       <p className="mt-3 max-w-sm leading-7 text-muted">{message}</p>
-      {canRetry && <button className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-2xl bg-brand px-6 font-bold text-white hover:bg-brand-deep" type="button" onClick={onRetry}><RefreshIcon className="size-5" /> Riprova</button>}
+      {canRetry && <button className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-2xl bg-brand px-6 font-bold text-on-brand transition hover:brightness-110" type="button" onClick={onRetry}><RefreshIcon className="size-5" /> Riprova</button>}
     </div>
   )
 }
@@ -164,7 +164,7 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
             const grams = food ? effectiveIngredientGrams(food, ingredient.grammi) : ingredient.grammi
             const nutrition = food ? calculateIngredientNutrition(food, grams) : null
             return (
-              <div className="grid gap-3 bg-white px-4 py-4 sm:grid-cols-[1fr_auto] sm:items-center" key={`${ingredient.catalogo_id || ingredient.nome}-${index}`}>
+              <div className="grid gap-3 bg-surface px-4 py-4 sm:grid-cols-[1fr_auto] sm:items-center" key={`${ingredient.catalogo_id || ingredient.nome}-${index}`}>
                 <div className="min-w-0">
                   <p className="truncate text-sm font-bold text-ink">{ingredient.nome}</p>
                   <p className="mt-1 truncate text-xs text-muted">{ingredient.catalogo_id || 'catalogo_id assente'}{ingredient.cottura ? ` · ${ingredient.cottura}` : ''}</p>
@@ -197,7 +197,7 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
           {TOTAL_NUTRIENTS.map(({ key, label, unit }) => <div className="rounded-xl bg-surface p-2" key={key}><span>{label}</span><strong className="mt-1 block text-brand">{formatNumber(meal.per100[key])} {unit}</strong></div>)}
         </div>
-        <pre className="mt-3 max-h-56 overflow-auto whitespace-pre-wrap break-all rounded-xl bg-brand-deep p-3 text-[11px] leading-5 text-white/80">{JSON.stringify(result, null, 2)}</pre>
+        <pre className="mt-3 max-h-56 overflow-auto whitespace-pre-wrap break-all rounded-xl bg-brand-deep p-3 text-[11px] leading-5 text-ink/80">{JSON.stringify(result, null, 2)}</pre>
       </details>
 
       {result.lezione && <p className="mt-5 rounded-2xl bg-mint-soft p-4 text-sm leading-6 text-brand"><strong>Lezione:</strong> {result.lezione}</p>}
@@ -208,7 +208,7 @@ function ResultState({ result, onIngredientGramsChange }: ResultStateProps) {
 
 export default function ResultPanel({ status, result, error, hasImage, onRetry, onIngredientGramsChange }: ResultPanelProps) {
   return (
-    <section className="overflow-hidden rounded-[2rem] border border-white/80 bg-white/90 shadow-card backdrop-blur" aria-live="polite">
+    <section className="app-card overflow-hidden rounded-[1.75rem] border border-line bg-paper/95 shadow-card backdrop-blur" aria-live="polite">
       {status === 'analyzing' && <LoadingState />}
       {status === 'error' && <ErrorState message={error} canRetry={hasImage} onRetry={onRetry} />}
       {status === 'success' && result && <ResultState result={result} onIngredientGramsChange={onIngredientGramsChange} />}

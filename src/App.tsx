@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import InstallPrompt from './components/InstallPrompt'
 import PhotoCard from './components/PhotoCard'
 import ResultPanel, { type ViewStatus } from './components/ResultPanel'
 import { EyeIcon, EyeOffIcon, LockIcon, ShieldIcon } from './components/Icons'
@@ -29,6 +30,7 @@ function App() {
   const [accessKey, setAccessKey] = useState(initialAccessKey)
   const [showAccessKey, setShowAccessKey] = useState(false)
   const requestController = useRef<AbortController | null>(null)
+  const resultSection = useRef<HTMLDivElement>(null)
   const busy = status === 'preparing' || status === 'analyzing'
 
   useEffect(() => {
@@ -45,6 +47,18 @@ function App() {
   }, [image])
 
   useEffect(() => () => requestController.current?.abort(), [])
+
+  useEffect(() => {
+    if (status !== 'success') return
+    const frame = window.requestAnimationFrame(() => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      resultSection.current?.scrollIntoView({
+        behavior: reducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [status])
 
   async function handleFile(file: File): Promise<void> {
     requestController.current?.abort()
@@ -63,7 +77,7 @@ function App() {
   async function handleAnalyze(): Promise<void> {
     if (!image || busy) return
     if (import.meta.env.PROD && !accessKey.trim()) {
-      setError('Inserisci la chiave personale configurata su Vercel prima di avviare l’analisi.')
+      setError('Inserisci la password del sito configurata su Vercel prima di avviare l’analisi.')
       setStatus('error')
       return
     }
@@ -95,7 +109,6 @@ function App() {
   function handleIngredientGramsChange(index: number, grams: number): void {
     setResult((current) => {
       if (!current || index < 0 || index >= current.ingredienti.length) return current
-
       return {
         ...current,
         ingredienti: current.ingredienti.map((ingredient, ingredientIndex) => (
@@ -116,27 +129,73 @@ function App() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-ivory text-ink">
-      <div className="pointer-events-none absolute -top-32 -left-32 size-96 rounded-full bg-mint/10 blur-3xl" />
-      <div className="pointer-events-none absolute top-40 -right-52 size-[32rem] rounded-full bg-amber/10 blur-3xl" />
-      <header className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8 lg:px-10">
-        <a className="rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand" href="#top" aria-label="GLICOGIG, torna all’inizio">
-          <p className="text-xl font-extrabold tracking-[-0.04em] text-brand">GLICOGIG</p>
-          <p className="text-[10px] font-bold tracking-[0.18em] text-muted uppercase">Food signal</p>
-        </a>
-        <div className="inline-flex items-center gap-2 rounded-full border border-brand/10 bg-white/75 px-3 py-2 text-xs font-bold text-brand shadow-sm backdrop-blur"><ShieldIcon className="size-4 text-mint" /><span className="hidden sm:inline">Accesso protetto</span><span className="sm:hidden">Privato</span></div>
+    <main id="top" className="relative min-h-dvh overflow-x-clip bg-ivory text-ink">
+      <div className="pointer-events-none fixed -top-40 -left-48 size-[30rem] rounded-full bg-brand/15 blur-3xl" />
+      <div className="pointer-events-none fixed top-1/3 -right-56 size-[30rem] rounded-full bg-amber/10 blur-3xl" />
+
+      <header className="app-safe-top sticky top-0 z-50 border-b border-line/70 bg-ivory/85 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+          <a className="rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand" href="#top" aria-label="GLICOGIG, torna all’inizio">
+            <p className="text-xl font-black tracking-[-0.05em] text-brand">GLICOGIG</p>
+            <p className="text-[9px] font-extrabold tracking-[0.22em] text-amber uppercase">Food intelligence</p>
+          </a>
+          <div className="flex items-center gap-2">
+            <InstallPrompt />
+            <div className="inline-flex min-h-10 items-center gap-2 rounded-full border border-brand/25 bg-brand-soft/80 px-3 text-xs font-bold text-brand">
+              <ShieldIcon className="size-4" />
+              <span className="hidden sm:inline">Accesso protetto</span>
+              <span className="sm:hidden">Privato</span>
+            </div>
+          </div>
+        </div>
       </header>
-      <div id="top" className="relative mx-auto max-w-7xl px-5 pb-12 sm:px-8 lg:px-10 lg:pb-20">
-        <section className="grid items-end gap-7 py-9 lg:grid-cols-[1fr_0.62fr] lg:py-14">
-          <div><p className="inline-flex items-center gap-2 rounded-full bg-mint-soft px-3 py-1.5 text-xs font-extrabold tracking-wide text-mint uppercase"><span className="size-1.5 rounded-full bg-mint" /> Foto → ingredienti → impatto</p><h1 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-brand sm:text-6xl lg:text-7xl">Il tuo piatto,<br /><span className="text-mint">più facile da capire.</span></h1></div>
-          <p className="max-w-xl text-base leading-7 text-muted lg:pb-2 lg:text-lg">Scatta una foto: GLICOGIG riconosce il cibo e organizza la risposta del tuo servizio in un report chiaro e leggibile.</p>
+
+      <div className="app-safe-bottom relative mx-auto max-w-6xl px-3 pb-10 sm:px-6 lg:pb-16">
+        <section className="grid items-end gap-5 px-1 py-7 sm:py-10 lg:grid-cols-[1fr_0.7fr] lg:py-12">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-amber/25 bg-amber-soft px-3 py-1.5 text-[11px] font-extrabold tracking-[0.14em] text-amber uppercase">
+              <span className="size-1.5 rounded-full bg-amber shadow-[0_0_12px_var(--color-amber)]" /> Foto → ingredienti → impatto
+            </p>
+            <h1 className="mt-5 max-w-3xl font-display text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-ink sm:text-6xl lg:text-7xl">
+              Il tuo piatto,<br /><span className="text-brand">letto in un lampo.</span>
+            </h1>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-muted sm:text-base lg:pb-1 lg:text-lg">Scatta, analizza e correggi le quantità. Nutrienti e carico glicemico si aggiornano direttamente sul dispositivo.</p>
         </section>
-        <section className="mb-5 rounded-3xl border border-brand/10 bg-white/75 p-4 shadow-sm backdrop-blur sm:flex sm:items-center sm:gap-4 sm:p-5">
-          <div className="flex min-w-0 flex-1 items-center gap-3"><span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand"><LockIcon className="size-5" /></span><div className="min-w-0 flex-1"><label className="text-xs font-extrabold tracking-wide text-brand uppercase" htmlFor="access-key">Password del sito</label><div className="relative mt-1.5"><input id="access-key" className="h-11 w-full rounded-xl border border-line bg-white px-3 pr-11 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-brand focus:ring-3 focus:ring-brand/10" type={showAccessKey ? 'text' : 'password'} value={accessKey} onChange={(event) => setAccessKey(event.target.value)} placeholder="La APP_ACCESS_KEY configurata su Vercel" autoComplete="current-password" /><button className="absolute inset-y-0 right-0 grid w-11 place-items-center text-muted transition hover:text-brand" type="button" onClick={() => setShowAccessKey((visible) => !visible)} aria-label={showAccessKey ? 'Nascondi password' : 'Mostra password'}>{showAccessKey ? <EyeOffIcon className="size-4" /> : <EyeIcon className="size-4" />}</button></div></div></div>
-          <p className="mt-3 max-w-md text-xs leading-5 text-muted sm:mt-0">È la stessa <code>APP_ACCESS_KEY</code> impostata su Vercel: impedisce ad altri di usare il tuo endpoint e resta soltanto in questa sessione del browser.</p>
+
+        <section className="mb-4 rounded-3xl border border-line bg-paper/90 p-4 shadow-card backdrop-blur sm:flex sm:items-center sm:gap-4 sm:p-5">
+          <div className="flex min-w-0 flex-1 items-center gap-3">
+            <span className="grid size-11 shrink-0 place-items-center rounded-2xl border border-brand/20 bg-brand-soft text-brand"><LockIcon className="size-5" /></span>
+            <div className="min-w-0 flex-1">
+              <label className="text-[11px] font-extrabold tracking-[0.14em] text-amber uppercase" htmlFor="access-key">Password del sito</label>
+              <div className="relative mt-1.5">
+                <input id="access-key" className="h-11 w-full rounded-xl border border-line bg-surface px-3 pr-11 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-brand focus:ring-3 focus:ring-brand/15" type={showAccessKey ? 'text' : 'password'} value={accessKey} onChange={(event) => setAccessKey(event.target.value)} placeholder="APP_ACCESS_KEY configurata su Vercel" autoComplete="current-password" />
+                <button className="absolute inset-y-0 right-0 grid w-11 place-items-center text-muted transition hover:text-brand" type="button" onClick={() => setShowAccessKey((visible) => !visible)} aria-label={showAccessKey ? 'Nascondi password' : 'Mostra password'}>{showAccessKey ? <EyeOffIcon className="size-4" /> : <EyeIcon className="size-4" />}</button>
+              </div>
+            </div>
+          </div>
+          <p className="mt-3 max-w-md text-xs leading-5 text-muted sm:mt-0">Protegge il proxy pubblico e resta soltanto nella sessione corrente del browser.</p>
         </section>
-        <div className="grid items-start gap-5 lg:grid-cols-[0.88fr_1.12fr]"><PhotoCard image={image} busy={busy} onFile={handleFile} onAnalyze={() => void handleAnalyze()} onClear={clearImage} /><ResultPanel status={status} result={result} error={error} hasImage={Boolean(image)} onRetry={() => void handleAnalyze()} onIngredientGramsChange={handleIngredientGramsChange} /></div>
-        <footer className="mt-8 flex flex-col gap-3 border-t border-brand/10 pt-6 text-xs leading-5 text-muted sm:flex-row sm:items-center sm:justify-between"><p>Le stime sono informative e non sostituiscono indicazioni mediche o nutrizionali professionali.</p><p className="font-semibold text-brand">GLICOGIG · React + TypeScript + Tailwind CSS 4</p></footer>
+
+        <div className="grid items-start gap-4 lg:grid-cols-[0.88fr_1.12fr]">
+          <PhotoCard
+            image={image}
+            busy={busy}
+            preparing={status === 'preparing'}
+            analyzing={status === 'analyzing'}
+            onFile={handleFile}
+            onAnalyze={() => void handleAnalyze()}
+            onClear={clearImage}
+          />
+          <div ref={resultSection} className="scroll-mt-24">
+            <ResultPanel status={status} result={result} error={error} hasImage={Boolean(image)} onRetry={() => void handleAnalyze()} onIngredientGramsChange={handleIngredientGramsChange} />
+          </div>
+        </div>
+
+        <footer className="mt-7 flex flex-col gap-2 border-t border-line pt-5 text-xs leading-5 text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>Le stime sono informative e non sostituiscono indicazioni mediche o nutrizionali professionali.</p>
+          <p className="font-semibold text-brand">GLICOGIG · PWA</p>
+        </footer>
       </div>
     </main>
   )

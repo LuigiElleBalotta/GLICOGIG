@@ -1,0 +1,27 @@
+{
+  "name": "GLICOGIG · Analisi del piatto",
+  "short_name": "GLICOGIG",
+  "description": "Analizza una foto del piatto e calcola nutrienti e carico glicemico dal catalogo locale.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020611",
+  "theme_color": "#020611",
+  "categories": ["health", "food", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/glicogig-icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/glicogig-icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
