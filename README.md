@@ -155,7 +155,7 @@ Con l'integrazione Git del progetto attiva, Vercel crea un deployment di produzi
 
 L'automazione è stata verificata sul progetto Vercel **`glicogig-diabete`**: il push su `main` del commit applicativo ha creato e completato il relativo deployment Production. Non va aggiunta una GitHub Action con `vercel deploy`, perché duplicherebbe i deployment già generati dall'integrazione nativa.
 
-Il repository risulta collegato anche a un secondo progetto Vercel chiamato **`glicogig`**, il cui deployment dello stesso commit è fallito. Per mantenere un solo deployment e uno stato GitHub complessivo pulito, scollega il repository dal progetto duplicato `glicogig` nel pannello Vercel, conservando `glicogig-diabete`.
+In precedenza il repository era collegato anche a un secondo progetto Vercel chiamato **`glicogig`**, configurato con la cartella di output errata `build`. La connessione Git del duplicato è stata rimossa senza eliminare il progetto; `glicogig-diabete` resta l'unico progetto collegato e riceve i push su `main`.
 
 ## Architettura essenziale
 
