@@ -151,7 +151,11 @@ npm run preview    # anteprima locale della build
 4. Configura opzionalmente `ANALYSIS_ENDPOINT` e `ANALYSIS_PREMIUM`.
 5. Imposta `main` come Production Branch.
 
-Con l'integrazione Git del progetto attiva, Vercel crea un deployment di produzione per ogni push su `main` e deployment di anteprima per gli altri branch. La configurazione di automazione effettiva deve essere verificata sul progetto Vercel associato al repository.
+Con l'integrazione Git del progetto attiva, Vercel crea un deployment di produzione per ogni push su `main` e deployment di anteprima per gli altri branch.
+
+L'automazione è stata verificata sul progetto Vercel **`glicogig-diabete`**: il push su `main` del commit applicativo ha creato e completato il relativo deployment Production. Non va aggiunta una GitHub Action con `vercel deploy`, perché duplicherebbe i deployment già generati dall'integrazione nativa.
+
+Il repository risulta collegato anche a un secondo progetto Vercel chiamato **`glicogig`**, il cui deployment dello stesso commit è fallito. Per mantenere un solo deployment e uno stato GitHub complessivo pulito, scollega il repository dal progetto duplicato `glicogig` nel pannello Vercel, conservando `glicogig-diabete`.
 
 ## Architettura essenziale
 

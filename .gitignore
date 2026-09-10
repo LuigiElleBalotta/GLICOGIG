@@ -338,6 +338,11 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+.env.local
+.env.*.local
+
+# Local Vercel project metadata
+.vercel/
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
