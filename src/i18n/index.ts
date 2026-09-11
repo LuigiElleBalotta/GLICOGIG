@@ -16,7 +16,7 @@ void i18n
     load: 'languageOnly',
     interpolation: { escapeValue: false },
     returnNull: false,
-    initImmediate: false,
+    initAsync: false,
   })
 
 function synchronizeLanguage(language: string): void {
