@@ -153,6 +153,37 @@ Documenti principali:
 - Vercel Functions
 - PWA senza plugin runtime aggiuntivi
 
+## Qualità locale
+
+La toolchain di test usa versioni exact: `vitest@3.2.4`, `@vitest/coverage-v8@3.2.4`, `jsdom@26.1.0`, Testing Library e `@playwright/test@1.55.0`. La coverage misura il codice eseguibile in `src/**/*.{ts,tsx}`, `api/**/*.ts` e `vite.config.ts`; esclude suite, setup e dichiarazioni, non codice applicativo difficile da raggiungere.
+
+Ultima validazione completa registrata il 10 settembre 2026:
+
+| Controllo | Risultato |
+| --- | --- |
+| ESLint | exit `0`; 7 warning non bloccanti, nessun errore |
+| TypeScript | exit `0` |
+| Unit/integration | 15 suite e 517 test superati |
+| Coverage statements | 97,61% (`8963/9182`) |
+| Coverage branches | 87,21% (`1998/2291`) |
+| Coverage functions | 92,61% (`439/474`) |
+| Coverage lines | 97,61% (`8963/9182`) |
+| Build Vite | exit `0`; 355 moduli trasformati |
+| E2E Chromium | 4/4 superati sul solo server Vite locale |
+
+Gli E2E coprono routing e persistenza lingua, catalogo VERIFIED con Pasto effimero e Diario persistente, analisi testuale non-food e barcode not-found. Le API sono intercettate deterministicamente e ogni richiesta HTTP(S) esterna a `http://127.0.0.1:4173` viene bloccata e fa fallire il test: la validazione non interroga Vercel né upstream reali.
+
+```powershell
+npm run lint
+npm run typecheck
+npm run test:coverage
+npm run build
+npx playwright install chromium
+npm run e2e
+```
+
+La pipeline aggregata è disponibile con `npm run quality`; Chromium va installato una sola volta per la versione Playwright pinned.
+
 ## Avvio locale
 
 Requisiti: Node.js compatibile con Vite 7 e npm.
@@ -181,9 +212,12 @@ Copy-Item .env.example .env.local
 ## Deploy Vercel
 
 1. Importare il repository con preset **Vite**.
-2. Configurare `APP_ACCESS_KEY` e `ANALYSIS_ENDPOINT`.
-3. Configurare facoltativamente `ANALYSIS_TEXT_ENDPOINT` e `ANALYSIS_PREMIUM`.
-4. Usare `main` come Production Branch se si desidera il deploy automatico.
+2. Usare Node.js `24.x`, fissato anche in `package.json` per mantenere build e Functions sullo stesso runtime.
+3. Configurare `APP_ACCESS_KEY` e `ANALYSIS_ENDPOINT`.
+4. Configurare facoltativamente `ANALYSIS_TEXT_ENDPOINT` e `ANALYSIS_PREMIUM`.
+5. Usare `main` come Production Branch se si desidera il deploy automatico.
+
+`/api/barcode` non richiede variabili d’ambiente: la Function è autosufficiente a cold start e interroga l’upstream barcode solo server-side, con timeout, allowlist e risposte d’errore controllate. Le variabili sopra riguardano esclusivamente analisi foto/testo.
 
 Il progetto collegato è `glicogig-diabete`; il vecchio duplicato `glicogig` non deve essere ricollegato.
 

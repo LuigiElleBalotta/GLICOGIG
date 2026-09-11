@@ -5,7 +5,17 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist', '.vercel'] },
+  {
+    ignores: [
+      'dist/**',
+      '.vercel/**',
+      'coverage/**',
+      'playwright-report/**',
+      'test-results/**',
+      'docs/hbc-functions/**',
+      'semantic-review/**',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -16,6 +26,10 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
+  },
+  {
+    files: ['public/sw.js'],
+    languageOptions: { globals: globals.serviceworker },
   },
   {
     files: ['api/**/*.ts', 'vite.config.ts', 'eslint.config.js'],

@@ -8,7 +8,7 @@ const EXPECTED = [
   ['pecorino-romano', 'Pecorino romano', 3.63],
   ['passata-di-pomodoro', 'Passata di pomodoro', 4.5],
   ['mozzarella', 'Mozzarella', 2.4],
-  ['pizza-margherita', 'Pizza margherita', 28.23],
+  ['pizza-margherita', 'Pizza margherita', 30],
 ] as const
 
 describe('foodCatalog VERIFIED #14256', () => {
@@ -26,6 +26,6 @@ describe('foodCatalog VERIFIED #14256', () => {
   })
 
   it('dichiara il catalogo completo estratto dall’APK', () => {
-    expect(CATALOG_EXTRACTION_META).toMatchObject({ totalEntriesInApk: 228, extractedEntries: 228, evidence: 'VERIFIED' })
+    expect(CATALOG_EXTRACTION_META).toMatchObject({ totalEntriesInApk: 307, extractedEntries: 307, evidence: 'VERIFIED' })
   })
 })

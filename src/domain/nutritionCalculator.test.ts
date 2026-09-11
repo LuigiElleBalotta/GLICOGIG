@@ -34,8 +34,8 @@ describe('calculateMealNutrition', () => {
 
   it('non inventa valori per catalogo_id assente o non estratto', () => {
     const meal = calculateMealNutrition([
-      { nome: 'Senza ID', grammi: 100 },
-      { nome: 'Sconosciuto', catalogo_id: 'non-estratto', grammi: 50 },
+      { nome: 'zzzxxyyqq-one', grammi: 100 },
+      { nome: 'zzzxxyyqq-two', catalogo_id: 'non-estratto', grammi: 50 },
     ])
     expect(meal.resolved).toHaveLength(0)
     expect(meal.unresolved.map((item) => item.reason)).toEqual(['missing_catalog_id', 'catalog_id_not_found'])

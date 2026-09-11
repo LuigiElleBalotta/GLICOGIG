@@ -1,4 +1,3 @@
-import { normalizzaBarcode } from '../src/domain/barcodeProduct'
 import type {
   BarcodeApiResponse,
   BarcodeNutrimentsBoundary,
@@ -8,18 +7,24 @@ import type {
 const OFF_ENDPOINT = 'https://world.openfoodfacts.org/api/v2/product'
 const OFF_FIELDS = 'product_name,product_name_it,brands,nutriments,serving_size,image_front_small_url'
 const UPSTREAM_TIMEOUT_MS = 9_000
+const BARCODE_PATTERN = /^\d{6,14}$/
 
 type QueryValue = string | string[] | undefined
 
 interface ApiRequest {
   method?: string
-  query: Record<string, QueryValue>
+  query?: Record<string, QueryValue>
 }
 
 interface ApiResponse {
   statusCode: number
   setHeader(name: string, value: string): void
   end(body: string): void
+}
+
+function normalizzaBarcode(value: string): string | null {
+  const normalized = value.trim()
+  return BARCODE_PATTERN.test(normalized) ? normalized : null
 }
 
 function sendJson(response: ApiResponse, status: number, payload: unknown): void {
@@ -68,16 +73,17 @@ export default async function handler(request: ApiRequest, response: ApiResponse
     return
   }
 
-  const queryCode = request.query.code
+  const queryCode = request.query?.code
   const codice = typeof queryCode === 'string' ? normalizzaBarcode(queryCode) : null
   if (!codice) {
     sendJson(response, 400, { error: 'Codice non valido.', code: 'INVALID_BARCODE' })
     return
   }
 
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS)
+  let timeout: ReturnType<typeof setTimeout> | undefined
   try {
+    const controller = new AbortController()
+    timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS)
     const url = `${OFF_ENDPOINT}/${encodeURIComponent(codice)}.json?fields=${OFF_FIELDS}`
     const upstream = await fetch(url, {
       method: 'GET',
@@ -131,6 +137,6 @@ export default async function handler(request: ApiRequest, response: ApiResponse
       code: timedOut ? 'UPSTREAM_TIMEOUT' : 'UPSTREAM_UNAVAILABLE',
     })
   } finally {
-    clearTimeout(timeout)
+    if (timeout !== undefined) clearTimeout(timeout)
   }
 }

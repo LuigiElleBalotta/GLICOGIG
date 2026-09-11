@@ -573,3 +573,10 @@ fabric.properties
 ### AndroidStudio Patch ###
 
 !/gradle/wrapper/gradle-wrapper.jar
+
+# Vitest and Playwright artifacts
+.vitest/
+playwright-report/
+test-results/
+blob-report/
+junit*.xml

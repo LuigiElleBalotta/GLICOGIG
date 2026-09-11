@@ -16,7 +16,7 @@ import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { condividiCard } from '../services/shareCard'
 import { useMealSession } from '../state/mealSession'
 import { DIARY_STORAGE_KEY, registraMangiato } from '../storage/diaryStore'
-import type { MealItem, MealItemSource } from '../types/meal'
+import type { MealItemSource } from '../types/meal'
 import type { GlycemicImpactBand } from '../types/nutrition'
 
 const IMPACT_KEYS: Record<GlycemicImpactBand, string> = {
