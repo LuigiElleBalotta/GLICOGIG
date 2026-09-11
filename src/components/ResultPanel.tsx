@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getFoodByCatalogId, resolveFoodByName } from '../catalog/foodCatalog'
 import { calculateGlycemicImpact } from '../domain/impactCalculator'
 import { formatConfidence, formatNumber } from '../domain/nutrition'
+import { fattoreCrudo, grammiCrudi } from '../domain/rawWeight'
 import {
   calculateIngredientNutrition,
   calculateMealNutrition,
@@ -9,7 +10,13 @@ import {
 } from '../domain/nutritionCalculator'
 import { condividiCard } from '../services/shareCard'
 import { DIARY_STORAGE_KEY, registraMangiato } from '../storage/diaryStore'
-import type { AnalizzaIngredient, AnalizzaResponse } from '../types/analysis'
+import type {
+  AnalizzaIngredient,
+  AnalizzaResponse,
+  AnalysisOrigin,
+  PortionPreset,
+  RawWeightMode,
+} from '../types/analysis'
 import type { FoodCatalogEntry } from '../types/catalog'
 import type { GlycemicImpact, GlycemicImpactBand, MealNutrition, NutritionValues } from '../types/nutrition'
 import {
@@ -27,17 +34,33 @@ export type ViewStatus = 'idle' | 'preparing' | 'analyzing' | 'success' | 'error
 interface ResultPanelProps {
   status: ViewStatus
   result: AnalizzaResponse | null
+  resultOrigin: AnalysisOrigin
   error: string
-  hasImage: boolean
+  hasInput: boolean
+  portionPreset: PortionPreset | null
+  rawWeightMode: RawWeightMode
+  addedToMeal: boolean
+  mealItemCount: number
   onRetry(): void
   onIngredientGramsChange(index: number, grams: number): void
+  onPortionPresetChange(value: PortionPreset): void
+  onRawWeightModeChange(value: RawWeightMode): void
   onAddToSession(): void
+  onAnalyzeAnother(): void
 }
 
 interface ResultStateProps {
   result: AnalizzaResponse
+  resultOrigin: AnalysisOrigin
+  portionPreset: PortionPreset | null
+  rawWeightMode: RawWeightMode
+  addedToMeal: boolean
+  mealItemCount: number
   onIngredientGramsChange(index: number, grams: number): void
+  onPortionPresetChange(value: PortionPreset): void
+  onRawWeightModeChange(value: RawWeightMode): void
   onAddToSession(): void
+  onAnalyzeAnother(): void
 }
 
 type ActionState = 'idle' | 'working' | 'success' | 'error'
@@ -133,11 +156,24 @@ function NutrientGrid({ values, totalGrams }: { values: NutritionValues; totalGr
   )
 }
 
-function ResultActions({ result, meal, impact, onAddToSession }: {
+function ResultActions({
+  result,
+  resultOrigin,
+  meal,
+  impact,
+  addedToMeal,
+  mealItemCount,
+  onAddToSession,
+  onAnalyzeAnother,
+}: {
   result: AnalizzaResponse
+  resultOrigin: AnalysisOrigin
   meal: MealNutrition
   impact: GlycemicImpact
+  addedToMeal: boolean
+  mealItemCount: number
   onAddToSession(): void
+  onAnalyzeAnother(): void
 }) {
   const [saveState, setSaveState] = useState<ActionState>('idle')
   const [shareState, setShareState] = useState<ActionState>('idle')
@@ -151,7 +187,7 @@ function ResultActions({ result, meal, impact, onAddToSession }: {
     try {
       const entry = registraMangiato({
         nome: result.piatto || 'Piatto senza nome',
-        fonte: 'foto',
+        fonte: resultOrigin,
         fascia: impact.fascia,
         cg: impact.cg,
         kcal: meal.nutrition.energia_kcal,
@@ -187,16 +223,26 @@ function ResultActions({ result, meal, impact, onAddToSession }: {
   return (
     <section className="mt-7 rounded-3xl border border-line bg-surface p-4 sm:p-5">
       <p className="section-label">Azioni</p>
-      <div className="mt-3 grid gap-2 sm:grid-cols-3">
-        <button className="primary-button" type="button" onClick={saveToDiary} disabled={saveState === 'working' || saveState === 'success'}>
-          {saveState === 'success' ? <CheckIcon className="size-5" /> : <SaveIcon className="size-5" />}
-          {saveState === 'working' ? 'Salvataggio…' : saveState === 'success' ? 'Salvato' : 'Salva nel diario'}
-        </button>
-        <button className="secondary-button" type="button" onClick={() => void shareResult()} disabled={shareState === 'working'}>
-          <ShareIcon className="size-5" /> {shareState === 'working' ? 'Preparazione…' : 'Condividi PNG'}
-        </button>
-        <button className="secondary-button" type="button" onClick={onAddToSession}><PlusIcon className="size-5" /> Aggiungi altro piatto</button>
-      </div>
+      {addedToMeal ? (
+        <div className="mt-3 rounded-2xl border border-mint/30 bg-mint-soft p-4" role="status">
+          <p className="font-extrabold text-mint"><CheckIcon className="mr-2 inline size-5" />Piatto aggiunto. Vuoi aggiungere un altro piatto?</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            <a className="primary-button" href="#meal"><UtensilsIcon className="size-5" /> Apri Pasto ({mealItemCount})</a>
+            <button className="secondary-button" type="button" onClick={onAnalyzeAnother}><PlusIcon className="size-5" /> Analizza altro piatto</button>
+          </div>
+        </div>
+      ) : (
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <button className="primary-button" type="button" onClick={saveToDiary} disabled={saveState === 'working' || saveState === 'success'}>
+            {saveState === 'success' ? <CheckIcon className="size-5" /> : <SaveIcon className="size-5" />}
+            {saveState === 'working' ? 'Salvataggio…' : saveState === 'success' ? 'Registrato' : 'L’ho mangiato'}
+          </button>
+          <button className="secondary-button" type="button" onClick={() => void shareResult()} disabled={shareState === 'working'}>
+            <ShareIcon className="size-5" /> {shareState === 'working' ? 'Preparazione…' : 'Condividi PNG'}
+          </button>
+          <button className="secondary-button" type="button" onClick={onAddToSession}><PlusIcon className="size-5" /> Aggiungi al pasto</button>
+        </div>
+      )}
       <div className="mt-3 text-xs" aria-live="polite">
         {saveState === 'error' && <p className="text-coral">Voce disponibile nella sessione, ma il browser non ne ha confermato la persistenza locale.</p>}
         {shareState === 'success' && <p className="text-mint">Card condivisa o scaricata.</p>}
@@ -206,7 +252,19 @@ function ResultActions({ result, meal, impact, onAddToSession }: {
   )
 }
 
-function ResultState({ result, onIngredientGramsChange, onAddToSession }: ResultStateProps) {
+function ResultState({
+  result,
+  resultOrigin,
+  portionPreset,
+  rawWeightMode,
+  addedToMeal,
+  mealItemCount,
+  onIngredientGramsChange,
+  onPortionPresetChange,
+  onRawWeightModeChange,
+  onAddToSession,
+  onAnalyzeAnother,
+}: ResultStateProps) {
   if (!result.e_cibo) {
     return (
       <div className="flex min-h-[34rem] flex-col items-center justify-center p-7 text-center">
@@ -217,9 +275,10 @@ function ResultState({ result, onIngredientGramsChange, onAddToSession }: Result
     )
   }
 
-  const confidence = formatConfidence(result.confidenza)
+  const reliability = formatConfidence(result.confidenza)
   const meal = calculateMealNutrition(result.ingredienti)
   const impact = calculateGlycemicImpact(result.ingredienti, result.piatto)
+  const convertibleIngredients = result.ingredienti.filter(({ nome }) => fattoreCrudo(nome)).length
 
   return (
     <div className="p-5 sm:p-7">
@@ -230,8 +289,11 @@ function ResultState({ result, onIngredientGramsChange, onAddToSession }: Result
           {result.descrizione && <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">{result.descrizione}</p>}
         </div>
         <div className="flex flex-wrap justify-end gap-2">
-          {confidence && <span className="status-badge">Riconoscimento {confidence}</span>}
-          {impact.cotto && <span className="status-badge">Peso cotto</span>}
+          {reliability && <span className="status-badge">Affidabilità {reliability}</span>}
+          <span className="status-badge">Da {resultOrigin === 'text' ? 'testo' : 'foto'}</span>
+          {rawWeightMode === 'dry'
+            ? <span className="status-badge">Peso secco</span>
+            : impact.cotto && <span className="status-badge">Peso cotto</span>}
           {impact.pianoIntero && <span className="status-badge border-amber/30 bg-amber-soft text-amber">Override piatto intero</span>}
         </div>
       </div>
@@ -275,6 +337,36 @@ function ResultState({ result, onIngredientGramsChange, onAddToSession }: Result
 
       <NutrientGrid values={meal.nutrition} totalGrams={meal.totalGrams} />
 
+      <section className="mt-7 rounded-3xl border border-line bg-surface p-4 sm:p-5">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <p className="section-label">Porzione</p>
+            <div className="mt-2 grid grid-cols-3 gap-2" role="group" aria-label="Preset porzione">
+              {([
+                [0.7, 'Piccola'],
+                [1, 'Media'],
+                [1.4, 'Grande'],
+              ] as const).map(([preset, label]) => (
+                <button className={portionPreset === preset ? 'primary-button' : 'secondary-button'} type="button" key={preset} onClick={() => onPortionPresetChange(preset)} disabled={addedToMeal}>{label}<span className="text-[10px] opacity-75">×{preset}</span></button>
+              ))}
+            </div>
+            <p className="mt-2 text-xs leading-5 text-muted">Ogni preset riparte dalla snapshot originale dell’analisi; una modifica manuale ai grammi deseleziona il preset.</p>
+          </div>
+          <div>
+            <p className="section-label">Base del peso</p>
+            {convertibleIngredients ? (
+              <>
+                <div className="mt-2 grid grid-cols-2 gap-2" role="group" aria-label="Peso cotto o secco">
+                  <button className={rawWeightMode === 'cooked' ? 'primary-button' : 'secondary-button'} type="button" onClick={() => onRawWeightModeChange('cooked')} disabled={addedToMeal}>Cotto</button>
+                  <button className={rawWeightMode === 'dry' ? 'primary-button' : 'secondary-button'} type="button" onClick={() => onRawWeightModeChange('dry')} disabled={addedToMeal}>Secco</button>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-muted">Conversione disponibile per {convertibleIngredients} {convertibleIngredients === 1 ? 'ingrediente riconosciuto' : 'ingredienti riconosciuti'} con il relativo fattore cotto/crudo.</p>
+              </>
+            ) : <p className="mt-2 text-xs leading-5 text-muted">Nessun ingrediente contiene una preparazione cotta convertibile con le regole disponibili.</p>}
+          </div>
+        </div>
+      </section>
+
       <section className="mt-7">
         <div className="flex flex-wrap items-end justify-between gap-2">
           <div><p className="section-label">Ingredienti</p><h3 className="mt-1 text-lg font-extrabold text-brand">Correggi le quantità</h3></div>
@@ -283,20 +375,25 @@ function ResultState({ result, onIngredientGramsChange, onAddToSession }: Result
         <div className="mt-3 divide-y divide-line overflow-hidden rounded-2xl border border-line">
           {result.ingredienti.map((ingredient, index) => {
             const food = resolveRowFood(ingredient)
-            const grams = food ? effectiveIngredientGrams(food, ingredient.grammi) : ingredient.grammi
-            const nutrition = food ? calculateIngredientNutrition(food, grams) : null
+            const cookedGrams = food ? effectiveIngredientGrams(food, ingredient.grammi) : ingredient.grammi
+            const nutrition = food ? calculateIngredientNutrition(food, cookedGrams) : null
+            const rawFactor = fattoreCrudo(ingredient.nome)
+            const displayedGrams = rawWeightMode === 'dry'
+              ? grammiCrudi(ingredient.nome, cookedGrams) ?? cookedGrams
+              : cookedGrams
             return (
               <div className="grid gap-3 bg-surface px-4 py-4 sm:grid-cols-[1fr_auto] sm:items-center" key={`${ingredient.catalogo_id || ingredient.nome}-${index}`}>
                 <div className="min-w-0">
                   <p className="truncate text-sm font-bold text-ink">{ingredient.nome}</p>
                   {ingredient.cottura && <p className="mt-1 truncate text-xs text-muted">{ingredient.cottura}</p>}
+                  {rawFactor && <p className="mt-1 text-xs text-muted">Fattore cotto/crudo ×{rawFactor}</p>}
                   {food && nutrition ? (
                     <p className="mt-2 text-xs leading-5 text-muted">{food.categoria} · {formatNumber(nutrition.carboidrati_disponibili_g)} g di carboidrati</p>
                   ) : <p className="mt-2 text-xs font-semibold text-coral">Dati insufficienti per includere questo ingrediente</p>}
                 </div>
                 <label className="flex items-center justify-end gap-2 text-xs font-bold text-muted">
-                  <span>Grammi</span>
-                  <input aria-label={`Grammi di ${ingredient.nome}`} className="number-field" inputMode="numeric" max={2000} min={0} step={1} type="number" value={grams} onChange={(event) => onIngredientGramsChange(index, Number(event.target.value))} />
+                  <span>{rawWeightMode === 'dry' && rawFactor ? 'Grammi secchi' : 'Grammi'}</span>
+                  <input aria-label={`Grammi di ${ingredient.nome}`} className="number-field" inputMode="numeric" max={2000} min={0} step={1} type="number" value={displayedGrams} disabled={addedToMeal} onChange={(event) => onIngredientGramsChange(index, Number(event.target.value))} />
                 </label>
               </div>
             )
@@ -314,17 +411,56 @@ function ResultState({ result, onIngredientGramsChange, onAddToSession }: Result
       {result.lezione && <p className="mt-5 rounded-2xl bg-mint-soft p-4 text-sm leading-6 text-brand"><strong>Lezione:</strong> {result.lezione}</p>}
       {result.quando_ha_senso && <p className="mt-3 rounded-2xl bg-amber-soft p-4 text-sm leading-6 text-ink"><strong>Quando ha senso:</strong> {result.quando_ha_senso}</p>}
 
-      <ResultActions result={result} meal={meal} impact={impact} onAddToSession={onAddToSession} />
+      <ResultActions
+        result={result}
+        resultOrigin={resultOrigin}
+        meal={meal}
+        impact={impact}
+        addedToMeal={addedToMeal}
+        mealItemCount={mealItemCount}
+        onAddToSession={onAddToSession}
+        onAnalyzeAnother={onAnalyzeAnother}
+      />
     </div>
   )
 }
 
-export default function ResultPanel({ status, result, error, hasImage, onRetry, onIngredientGramsChange, onAddToSession }: ResultPanelProps) {
+export default function ResultPanel({
+  status,
+  result,
+  resultOrigin,
+  error,
+  hasInput,
+  portionPreset,
+  rawWeightMode,
+  addedToMeal,
+  mealItemCount,
+  onRetry,
+  onIngredientGramsChange,
+  onPortionPresetChange,
+  onRawWeightModeChange,
+  onAddToSession,
+  onAnalyzeAnother,
+}: ResultPanelProps) {
   return (
     <section className="app-card overflow-hidden rounded-[1.75rem] border border-line bg-paper/95 shadow-card backdrop-blur" aria-live="polite">
       {status === 'analyzing' && <LoadingState />}
-      {status === 'error' && <ErrorState message={error} canRetry={hasImage} onRetry={onRetry} />}
-      {status === 'success' && result && <ResultState result={result} onIngredientGramsChange={onIngredientGramsChange} onAddToSession={onAddToSession} />}
+      {status === 'error' && <ErrorState message={error} canRetry={hasInput} onRetry={onRetry} />}
+      {status === 'success' && result && (
+        <ResultState
+          result={result}
+          resultOrigin={resultOrigin}
+          portionPreset={portionPreset}
+          rawWeightMode={rawWeightMode}
+          addedToMeal={addedToMeal}
+          mealItemCount={mealItemCount}
+          onIngredientGramsChange={onIngredientGramsChange}
+          onPortionPresetChange={onPortionPresetChange}
+          onRawWeightModeChange={onRawWeightModeChange}
+          onAddToSession={onAddToSession}
+          onAnalyzeAnother={onAnalyzeAnother}
+        />
+      )}
       {(status === 'idle' || status === 'preparing') && <EmptyState />}
     </section>
   )

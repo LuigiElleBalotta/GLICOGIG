@@ -1,28 +1,30 @@
-# GLICODEN 1.0.16 — delta verificato rispetto a 1.0.0
+# Versione sorgente 1.0.16 — delta verificato rispetto a 1.0.0
 
 Data analisi: 10 settembre 2026.
 
 ## Scopo e livelli di evidenza
 
-Questo documento confronta integralmente gli artefatti locali di GLICODEN 1.0.0 e 1.0.16 per stabilire cosa sia realmente nuovo o corretto e cosa possa essere portato in GLICOGIG. Non sono stati usati dati nutrizionali recuperati da Internet e non sono stati inventati contenuti o algoritmi.
+Questo documento confronta integralmente gli artefatti locali delle versioni sorgente 1.0.0 e 1.0.16 per stabilire cosa sia realmente nuovo o corretto e cosa possa essere portato in GLICOGIG. Non sono stati usati dati nutrizionali recuperati da Internet e non sono stati inventati contenuti o algoritmi.
 
 - **VERIFIED**: dimostrato da manifest, bytecode/disassembly Hermes, dataset estratti o screenshot locali.
 - **INFERRED**: collegamento plausibile tra evidenze, ma non dimostrato end-to-end nel runtime.
 - **SDK-only**: libreria/configurazione inclusa senza prova sufficiente di una funzione applicativa.
 - **EXCLUDED**: funzione verificata ma non portabile per anonimato, telemetria, branding personale o natura commerciale.
 
+I dump e i report raw versionati nel repository redigono deterministicamente il marchio storico come `[SOURCE_BRAND]`; versioni, ID e contenuto sostanziale restano invariati.
+
 Fonti principali:
 
 - `docs/version-1.0.16-audit.json`
 - `docs/version-1.0.16-datasets.json`
 - `docs/version-1.0.16-dataset-delta.json`
-- `docs/extracted/glicoden-1.0.16-catalog-17813.json`
-- `docs/extracted/glicoden-1.0.16-recipes-17814.json`
-- `docs/extracted/glicoden-1.0.16-learning-19701.json`
-- `docs/extracted/glicoden-1.0.16-quiz-19765.json`
-- `docs/hbc-functions/glicoden-1.0.16-function-*.disasm.txt`
+- `docs/extracted/source-1.0.16-catalog-17813.json`
+- `docs/extracted/source-1.0.16-recipes-17814.json`
+- `docs/extracted/source-1.0.16-learning-19701.json`
+- `docs/extracted/source-1.0.16-quiz-19765.json`
+- `docs/hbc-functions/source-1.0.16-function-*.disasm.txt`
 - `docs/hbc-stability-search/search-results.json`
-- `GLICODEN_1.0.16/resources/AndroidManifest.xml`
+- manifest Android della candidate sorgente
 - `screenshots_app/*.png`
 
 ## 1. Inventario binario — VERIFIED
@@ -354,8 +356,8 @@ I payload raw restano conservati per non perdere asimmetrie o chiavi. In UI ogni
 
 1.0.0 espone solo `MAIN/LAUNCHER`. 1.0.16 aggiunge:
 
-- schema browsable `glicoden://`;
-- app-link `https://glico-foto.business-fabiodenuzzo.workers.dev/i/` con `autoVerify=true`.
+- schema browsable custom dell’app sorgente, redatto nei dump come `[SOURCE_BRAND]://`;
+- app-link `[SOURCE_APP_HOST]/i/` con `autoVerify=true`.
 
 È VERIFIED la dichiarazione manifest. Non è verificato localmente l’`assetlinks.json` remoto né il dispatcher JS completo delle route: la riuscita end-to-end è **INFERRED**.
 
@@ -401,7 +403,7 @@ Non è emersa una funzione applicativa GPS: match AndroidX come `TwilightManager
 | Quiz 157 / 10 al giorno | VERIFIED | Portare algoritmo esatto e stato locale; indicare bozza educativa |
 | Foto multi-piatto/cotto-secco | VERIFIED | Portare UX; rete solo via proxy anonimo |
 | Card social | VERIFIED | Portare Web Share/download senza referral né analytics |
-| `glicoden://` e app-link `/i/` | VERIFIED manifest, INFERRED runtime | Non portare referral/domain sorgente |
+| Schema custom sorgente e app-link `/i/` | VERIFIED manifest, INFERRED runtime | Non portare referral/domain sorgente |
 | Paywall, Plus, quote | VERIFIED | EXCLUDED |
 | Libro, autore, social personali | VERIFIED | EXCLUDED |
 | Firebase Analytics/Messaging | VERIFIED | EXCLUDED |

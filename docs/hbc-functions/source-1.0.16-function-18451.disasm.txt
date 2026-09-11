@@ -1,0 +1,36 @@
+# Function #18451 'risolviScelta'
+# offset=4976196 bytes=120
+
+00000000: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000003: <LoadConstUndefined>: <Reg8: 4>
+00000005: <LoadConstUndefined>: <Reg8: 2>
+00000007: <GetArgumentsLength>: <Reg8: 3, Reg8: 2>
+0000000a: <LoadConstUInt8>: <Reg8: 1, UInt8: 1>
+0000000d: <JNotGreater>: <Addr8: 12, Reg8: 3, Reg8: 1>  # Address: 00000019
+00000011: <GetArgumentsPropByVal>: <Reg8: 3, Reg8: 1, Reg8: 2>
+00000015: <JStrictNotEqual>: <Addr8: 24, Reg8: 3, Reg8: 4>  # Address: 0000002d
+00000019: <GetGlobalObject>: <Reg8: 3>
+0000001b: <TryGetById>: <Reg8: 4, Reg8: 3, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000021: <GetById>: <Reg8: 3, Reg8: 4, UInt8: 2, string_id: 34390>  # String: 'now' (Identifier)
+00000027: <Call1>: <Reg8: 3, Reg8: 3, Reg8: 4>
+0000002b: <Jmp>: <Addr8: 6>  # Address: 00000031
+0000002d: <GetArgumentsPropByVal>: <Reg8: 3, Reg8: 1, Reg8: 2>
+00000031: <LoadConstString>: <Reg8: 1, string_id: 41698>  # String: 'spuntino' (Identifier)
+00000035: <JStrictNotEqual>: <Addr8: 65, Reg8: 0, Reg8: 1>  # Address: 00000076
+00000039: <GetGlobalObject>: <Reg8: 1>
+0000003b: <TryGetById>: <Reg8: 1, Reg8: 1, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+00000041: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 3, string_id: 157>  # String: 'prototype' (Identifier)
+00000046: <CreateThis>: <Reg8: 2, Reg8: 2, Reg8: 1>
+0000004a: <Mov>: <Reg8: 6, Reg8: 2>
+0000004d: <Mov>: <Reg8: 5, Reg8: 3>
+00000050: <Construct>: <Reg8: 1, Reg8: 1, UInt8: 2>
+00000054: <SelectObject>: <Reg8: 2, Reg8: 2, Reg8: 1>
+00000058: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 4, string_id: 40197>  # String: 'getHours' (Identifier)
+0000005e: <Call1>: <Reg8: 2, Reg8: 1, Reg8: 2>
+00000062: <LoadConstUInt8>: <Reg8: 1, UInt8: 15>
+00000065: <Less>: <Reg8: 2, Reg8: 2, Reg8: 1>
+00000069: <LoadConstString>: <Reg8: 1, string_id: 7621>  # String: 'spuntino_p' (String)
+0000006d: <JmpFalse>: <Addr8: 7, Reg8: 2>  # Address: 00000074
+00000070: <LoadConstString>: <Reg8: 1, string_id: 14699>  # String: 'spuntino_m' (String)
+00000074: <Ret>: <Reg8: 1>
+00000076: <Ret>: <Reg8: 0>

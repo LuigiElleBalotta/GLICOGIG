@@ -1,7 +1,6 @@
 import { timingSafeEqual } from 'node:crypto'
 import type { AnalizzaRequest } from '../src/types/analysis'
 
-const DEFAULT_ANALYSIS_ENDPOINT = 'https://glico-foto.business-fabiodenuzzo.workers.dev/analizza'
 const MAX_BASE64_LENGTH = 3_900_000
 const UPSTREAM_TIMEOUT_MS = 25_000
 
@@ -72,6 +71,12 @@ export function createAnalyzeHandler(config: AnalyzeHandlerConfig = {}) {
       return
     }
 
+    const endpoint = config.endpoint || process.env.ANALYSIS_ENDPOINT
+    if (!endpoint) {
+      sendJson(response, 503, { error: 'ANALYSIS_ENDPOINT non configurato sul server.', code: 'MISSING_SERVER_CONFIG' })
+      return
+    }
+
     const providedAccessKey = request.headers['x-app-access-key']
     if (typeof providedAccessKey !== 'string' || !safeEqual(providedAccessKey, expectedAccessKey)) {
       sendJson(response, 401, { error: 'Chiave personale non valida.', code: 'INVALID_ACCESS_KEY' })
@@ -96,7 +101,7 @@ export function createAnalyzeHandler(config: AnalyzeHandlerConfig = {}) {
     const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS)
     try {
       const premium = (config.premium ?? process.env.ANALYSIS_PREMIUM)?.toLowerCase() !== 'false'
-      const upstream = await fetch(config.endpoint || process.env.ANALYSIS_ENDPOINT || DEFAULT_ANALYSIS_ENDPOINT, {
+      const upstream = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...payload, premium }),

@@ -5,11 +5,26 @@ export interface AnalizzaRequest {
   premium: boolean
 }
 
+export const ANALYSIS_LANGUAGES = ['it', 'en', 'es', 'de', 'fr'] as const
+
+export type AnalysisLanguage = typeof ANALYSIS_LANGUAGES[number]
+export type AnalysisOrigin = 'photo' | 'text'
+export type PortionPreset = 0.7 | 1 | 1.4
+export type RawWeightMode = 'cooked' | 'dry'
+
+export interface AnalizzaTestoRequest {
+  text: string
+  device_id: string
+  premium: boolean
+  lang: AnalysisLanguage
+}
+
 export interface AnalizzaIngredient {
   nome: string
   catalogo_id?: string | null
   grammi: number
   cottura?: string | null
+  maturazione?: string | null
   [key: string]: unknown
 }
 
@@ -31,11 +46,27 @@ export interface AnalyzePhotoInput {
   signal?: AbortSignal
 }
 
+export interface AnalyzeTextInput {
+  text: string
+  lang: AnalysisLanguage
+  accessKey?: string
+  signal?: AbortSignal
+}
+
 export interface PhotoAnalyzer {
   analyze(input: AnalyzePhotoInput): Promise<AnalizzaResponse>
 }
 
+export interface TextAnalyzer {
+  analyze(input: AnalyzeTextInput): Promise<AnalizzaResponse>
+}
+
 export interface PhotoAnalysisServiceConfig {
+  endpoint: string
+  premium: boolean
+}
+
+export interface TextAnalysisServiceConfig {
   endpoint: string
   premium: boolean
 }

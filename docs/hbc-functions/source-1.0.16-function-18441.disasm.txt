@@ -1,0 +1,26 @@
+# Function #18441 'settimanaPerGiorni'
+# offset=4975474 bytes=85
+
+00000000: <CreateEnvironment>: <Reg8: 5>
+00000002: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000005: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 1>
+00000009: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 1, string_id: 39480>  # String: 'giornoLocale' (Identifier)
+0000000f: <LoadConstUndefined>: <Reg8: 4>
+00000011: <Call1>: <Reg8: 1, Reg8: 1, Reg8: 4>
+00000015: <StoreToEnvironment>: <Reg8: 5, UInt8: 0, Reg8: 1>
+00000019: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 1>
+0000001d: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 2, string_id: 37401>  # String: 'vociTutte' (Identifier)
+00000023: <Call1>: <Reg8: 0, Reg8: 0, Reg8: 4>
+00000027: <StoreToEnvironment>: <Reg8: 5, UInt8: 1, Reg8: 0>
+0000002b: <NewArray>: <Reg8: 0, UInt16: 0>
+0000002f: <StoreToEnvironment>: <Reg8: 5, UInt8: 2, Reg8: 0>
+00000033: <CreateClosure>: <Reg8: 3, Reg8: 5, function_id: 18442>  # Function: [#18442 _loop of 249 bytes]: 1 params @ offset 0x004bebc7
+00000038: <LoadConstZero>: <Reg8: 2>
+0000003a: <StoreNPToEnvironment>: <Reg8: 5, UInt8: 3, Reg8: 2>
+0000003e: <LoadConstUInt8>: <Reg8: 1, UInt8: 7>
+00000041: <Call1>: <Reg8: 6, Reg8: 3, Reg8: 4>
+00000045: <Inc>: <Reg8: 6, Reg8: 2>
+00000048: <StoreToEnvironment>: <Reg8: 5, UInt8: 3, Reg8: 6>
+0000004c: <Mov>: <Reg8: 2, Reg8: 6>
+0000004f: <JLess>: <Addr8: -14, Reg8: 2, Reg8: 1>  # Address: 00000041
+00000053: <Ret>: <Reg8: 0>

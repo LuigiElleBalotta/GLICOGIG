@@ -1,0 +1,25 @@
+# Function #18937 ''
+# offset=5093671 bytes=88
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000005: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 14>
+00000009: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 1, string_id: 36261>  # String: 'trim' (Identifier)
+0000000f: <Call1>: <Reg8: 2, Reg8: 1, Reg8: 2>
+00000013: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 2, string_id: 38312>  # String: 'toLowerCase' (Identifier)
+00000019: <Call1>: <Reg8: 1, Reg8: 1, Reg8: 2>
+0000001d: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+00000021: <JmpTrue>: <Addr8: 9, Reg8: 1>  # Address: 0000002a
+00000024: <NewArray>: <Reg8: 1, UInt16: 0>
+00000028: <Ret>: <Reg8: 1>
+0000002a: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+0000002d: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 14>
+00000031: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 3, string_id: 38712>  # String: 'ALIMENTI' (Identifier)
+00000037: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 4, string_id: 119>  # String: 'filter' (Identifier)
+0000003c: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18938>  # Function: [#18938  of 54 bytes]: 2 params @ offset 0x004db97f
+00000041: <Call2>: <Reg8: 3, Reg8: 1, Reg8: 2, Reg8: 0>
+00000046: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 5, string_id: 228>  # String: 'slice' (Identifier)
+0000004b: <LoadConstZero>: <Reg8: 1>
+0000004d: <LoadConstUInt8>: <Reg8: 0, UInt8: 8>
+00000050: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+00000056: <Ret>: <Reg8: 0>

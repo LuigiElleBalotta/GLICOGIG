@@ -1,0 +1,143 @@
+# Function #18427 ''
+# offset=4973941 bytes=719
+
+00000000: <CreateEnvironment>: <Reg8: 2>
+00000002: <LoadParam>: <Reg8: 3, UInt8: 2>
+00000005: <LoadParam>: <Reg8: 1, UInt8: 6>
+00000008: <LoadParam>: <Reg8: 4, UInt8: 7>
+0000000b: <CreateClosure>: <Reg8: 12, Reg8: 2, function_id: 18428>  # Function: [#18428 pastoPiuDifficile of 50 bytes]: 2 params @ offset 0x004be844
+00000010: <StoreToEnvironment>: <Reg8: 2, UInt8: 13, Reg8: 12>
+00000014: <CreateClosure>: <Reg8: 11, Reg8: 2, function_id: 18432>  # Function: [#18432 piattiPiuFacili of 305 bytes]: 3 params @ offset 0x004be8e7
+00000019: <StoreToEnvironment>: <Reg8: 2, UInt8: 14, Reg8: 11>
+0000001d: <CreateClosure>: <Reg8: 10, Reg8: 2, function_id: 18441>  # Function: [#18441 settimanaPerGiorni of 85 bytes]: 1 params @ offset 0x004beb72
+00000022: <StoreToEnvironment>: <Reg8: 2, UInt8: 15, Reg8: 10>
+00000026: <CreateClosure>: <Reg8: 9, Reg8: 2, function_id: 18446>  # Function: [#18446 impattoLista of 92 bytes]: 2 params @ offset 0x004bece9
+0000002b: <StoreToEnvironment>: <Reg8: 2, UInt8: 16, Reg8: 9>
+0000002f: <CreateClosure>: <Reg8: 8, Reg8: 2, function_id: 18449>  # Function: [#18449 slotDiPasto of 169 bytes]: 2 params @ offset 0x004bed79
+00000034: <StoreToEnvironment>: <Reg8: 2, UInt8: 17, Reg8: 8>
+00000038: <CreateClosure>: <Reg8: 7, Reg8: 2, function_id: 18450>  # Function: [#18450 slotDiVoce of 34 bytes]: 2 params @ offset 0x004bee22
+0000003d: <StoreToEnvironment>: <Reg8: 2, UInt8: 18, Reg8: 7>
+00000041: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18453>  # Function: [#18453 qualitaPasto of 138 bytes]: 3 params @ offset 0x004beede
+00000046: <StoreToEnvironment>: <Reg8: 2, UInt8: 19, Reg8: 0>
+0000004a: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18454>  # Function: [#18454 indiceStabilita of 175 bytes]: 2 params @ offset 0x004bef68
+0000004f: <StoreToEnvironment>: <Reg8: 2, UInt8: 20, Reg8: 0>
+00000053: <CreateClosure>: <Reg8: 5, Reg8: 2, function_id: 18464>  # Function: [#18464 ratioBilancio of 167 bytes]: 2 params @ offset 0x004bf43f
+00000058: <StoreToEnvironment>: <Reg8: 2, UInt8: 21, Reg8: 5>
+0000005c: <CreateClosure>: <Reg8: 5, Reg8: 2, function_id: 18477>  # Function: [#18477 verdettoSettimana of 94 bytes]: 2 params @ offset 0x004bf9ac
+00000061: <StoreToEnvironment>: <Reg8: 2, UInt8: 22, Reg8: 5>
+00000065: <GetGlobalObject>: <Reg8: 6>
+00000067: <TryGetById>: <Reg8: 16, Reg8: 6, UInt8: 1, string_id: 14>  # String: 'Object' (Identifier)
+0000006d: <GetByIdShort>: <Reg8: 15, Reg8: 16, UInt8: 2, string_id: 96>  # String: 'defineProperty' (Identifier)
+00000072: <NewObject>: <Reg8: 14>
+00000074: <LoadConstTrue>: <Reg8: 5>
+00000076: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 5, string_id: 251>  # String: 'value' (Identifier)
+0000007a: <LoadConstString>: <Reg8: 13, string_id: 27>  # String: '__esModule' (Identifier)
+0000007e: <Call4>: <Reg8: 13, Reg8: 15, Reg8: 16, Reg8: 1, Reg8: 13, Reg8: 14>
+00000085: <PutById>: <Reg8: 1, Reg8: 12, UInt8: 1, string_id: 47020>  # String: 'pastoPiuDifficile' (Identifier)
+0000008b: <CreateClosure>: <Reg8: 12, Reg8: 2, function_id: 18431>  # Function: [#18431 comeGestirlo of 49 bytes]: 2 params @ offset 0x004be8b6
+00000090: <PutById>: <Reg8: 1, Reg8: 12, UInt8: 2, string_id: 47919>  # String: 'comeGestirlo' (Identifier)
+00000096: <PutById>: <Reg8: 1, Reg8: 11, UInt8: 3, string_id: 34135>  # String: 'piattiPiuFacili' (Identifier)
+0000009c: <PutById>: <Reg8: 1, Reg8: 10, UInt8: 4, string_id: 36721>  # String: 'settimanaPerGiorni' (Identifier)
+000000a2: <PutById>: <Reg8: 1, Reg8: 9, UInt8: 5, string_id: 41664>  # String: 'impattoLista' (Identifier)
+000000a8: <TryGetById>: <Reg8: 12, Reg8: 6, UInt8: 1, string_id: 14>  # String: 'Object' (Identifier)
+000000ae: <GetByIdShort>: <Reg8: 11, Reg8: 12, UInt8: 2, string_id: 96>  # String: 'defineProperty' (Identifier)
+000000b3: <NewObject>: <Reg8: 10>
+000000b5: <PutNewOwnByIdShort>: <Reg8: 10, Reg8: 5, string_id: 110>  # String: 'enumerable' (Identifier)
+000000b9: <CreateClosure>: <Reg8: 9, Reg8: 2, function_id: 18485>  # Function: [#18485 get of 9 bytes]: 1 params @ offset 0x003060d8
+000000be: <PutNewOwnByIdShort>: <Reg8: 10, Reg8: 9, string_id: 133>  # String: 'get' (Identifier)
+000000c2: <LoadConstString>: <Reg8: 9, string_id: 40292>  # String: 'SLOT_PASTI' (Identifier)
+000000c6: <Call4>: <Reg8: 9, Reg8: 11, Reg8: 12, Reg8: 1, Reg8: 9, Reg8: 10>
+000000cd: <PutById>: <Reg8: 1, Reg8: 8, UInt8: 6, string_id: 48215>  # String: 'slotDiPasto' (Identifier)
+000000d3: <PutById>: <Reg8: 1, Reg8: 7, UInt8: 7, string_id: 42783>  # String: 'slotDiVoce' (Identifier)
+000000d9: <TryGetById>: <Reg8: 8, Reg8: 6, UInt8: 1, string_id: 14>  # String: 'Object' (Identifier)
+000000df: <GetByIdShort>: <Reg8: 7, Reg8: 8, UInt8: 2, string_id: 96>  # String: 'defineProperty' (Identifier)
+000000e4: <NewObject>: <Reg8: 6>
+000000e6: <PutNewOwnByIdShort>: <Reg8: 6, Reg8: 5, string_id: 110>  # String: 'enumerable' (Identifier)
+000000ea: <CreateClosure>: <Reg8: 5, Reg8: 2, function_id: 18486>  # Function: [#18486 get of 9 bytes]: 1 params @ offset 0x0030bd88
+000000ef: <PutNewOwnByIdShort>: <Reg8: 6, Reg8: 5, string_id: 133>  # String: 'get' (Identifier)
+000000f3: <LoadConstString>: <Reg8: 5, string_id: 35050>  # String: 'SLOT_SCELTA' (Identifier)
+000000f7: <Call4>: <Reg8: 5, Reg8: 7, Reg8: 8, Reg8: 1, Reg8: 5, Reg8: 6>
+000000fe: <CreateClosure>: <Reg8: 5, Reg8: 2, function_id: 18451>  # Function: [#18451 risolviScelta of 120 bytes]: 2 params @ offset 0x004bee44
+00000103: <PutById>: <Reg8: 1, Reg8: 5, UInt8: 8, string_id: 36311>  # String: 'risolviScelta' (Identifier)
+00000109: <CreateClosure>: <Reg8: 5, Reg8: 2, function_id: 18452>  # Function: [#18452 sceltaDaSlot of 34 bytes]: 2 params @ offset 0x004beebc
+0000010e: <PutById>: <Reg8: 1, Reg8: 5, UInt8: 9, string_id: 37558>  # String: 'sceltaDaSlot' (Identifier)
+00000114: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 10, string_id: 45318>  # String: 'indiceStabilita' (Identifier)
+0000011a: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18455>  # Function: [#18455 datiCardOggi of 298 bytes]: 1 params @ offset 0x004bf017
+0000011f: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 11, string_id: 43550>  # String: 'datiCardOggi' (Identifier)
+00000125: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18458>  # Function: [#18458 livelloStabilita of 57 bytes]: 2 params @ offset 0x004bf17e
+0000012a: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 12, string_id: 40918>  # String: 'livelloStabilita' (Identifier)
+00000130: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18459>  # Function: [#18459 datiAnelliOggi of 465 bytes]: 1 params @ offset 0x004bf1b7
+00000135: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 13, string_id: 43547>  # String: 'datiAnelliOggi' (Identifier)
+0000013b: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18463>  # Function: [#18463 giorniConsecutivi of 93 bytes]: 1 params @ offset 0x004bf3e2
+00000140: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 14, string_id: 46745>  # String: 'giorniConsecutivi' (Identifier)
+00000146: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18465>  # Function: [#18465 bilancioOggi of 81 bytes]: 1 params @ offset 0x004bf4e6
+0000014b: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 15, string_id: 51440>  # String: 'bilancioOggi' (Identifier)
+00000151: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18466>  # Function: [#18466 andamentoSettimana of 187 bytes]: 1 params @ offset 0x004bf537
+00000156: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 16, string_id: 48104>  # String: 'andamentoSettimana' (Identifier)
+0000015c: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18469>  # Function: [#18469 datiCardProgressi of 587 bytes]: 1 params @ offset 0x004bf69c
+00000161: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 17, string_id: 34782>  # String: 'datiCardProgressi' (Identifier)
+00000167: <CreateClosure>: <Reg8: 0, Reg8: 2, function_id: 18479>  # Function: [#18479 reportSettimana of 686 bytes]: 2 params @ offset 0x004bfa0a
+0000016c: <PutById>: <Reg8: 1, Reg8: 0, UInt8: 18, string_id: 45231>  # String: 'reportSettimana' (Identifier)
+00000172: <LoadConstZero>: <Reg8: 0>
+00000174: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 0>
+00000178: <LoadConstUndefined>: <Reg8: 0>
+0000017a: <Call2>: <Reg8: 6, Reg8: 3, Reg8: 0, Reg8: 1>
+0000017f: <JmpFalse>: <Addr8: 14, Reg8: 6>  # Address: 0000018d
+00000182: <GetByIdShort>: <Reg8: 5, Reg8: 6, UInt8: 3, string_id: 27>  # String: '__esModule' (Identifier)
+00000187: <Mov>: <Reg8: 1, Reg8: 6>
+0000018a: <JmpTrue>: <Addr8: 12, Reg8: 5>  # Address: 00000196
+0000018d: <NewObject>: <Reg8: 5>
+0000018f: <PutNewOwnByIdShort>: <Reg8: 5, Reg8: 6, string_id: 40>  # String: 'default' (Identifier)
+00000193: <Mov>: <Reg8: 1, Reg8: 5>
+00000196: <StoreToEnvironment>: <Reg8: 2, UInt8: 0, Reg8: 1>
+0000019a: <LoadConstUInt8>: <Reg8: 1, UInt8: 1>
+0000019d: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 1>
+000001a1: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+000001a6: <StoreToEnvironment>: <Reg8: 2, UInt8: 1, Reg8: 1>
+000001aa: <LoadConstUInt8>: <Reg8: 1, UInt8: 2>
+000001ad: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 1>
+000001b1: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+000001b6: <StoreToEnvironment>: <Reg8: 2, UInt8: 2, Reg8: 1>
+000001ba: <LoadConstUInt8>: <Reg8: 1, UInt8: 3>
+000001bd: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 1>
+000001c1: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+000001c6: <StoreToEnvironment>: <Reg8: 2, UInt8: 3, Reg8: 1>
+000001ca: <LoadConstUInt8>: <Reg8: 1, UInt8: 4>
+000001cd: <GetByVal>: <Reg8: 1, Reg8: 4, Reg8: 1>
+000001d1: <Call2>: <Reg8: 1, Reg8: 3, Reg8: 0, Reg8: 1>
+000001d6: <StoreToEnvironment>: <Reg8: 2, UInt8: 4, Reg8: 1>
+000001da: <NewObjectWithBuffer>: <Reg8: 1, UInt16: 4, UInt16: 4, UInt16: 43125, UInt16: 41>  # Object: {'trascurabile': 0, 'basso': 1, 'medio': 2, 'alto': 3}
+000001e4: <StoreToEnvironment>: <Reg8: 2, UInt8: 5, Reg8: 1>
+000001e8: <CreateClosure>: <Reg8: 1, Reg8: 2, function_id: 18487>  # Function: [#18487 r0 of 28 bytes]: 2 params @ offset 0x004bb7b2
+000001ed: <StoreToEnvironment>: <Reg8: 2, UInt8: 6, Reg8: 1>
+000001f1: <NewArray>: <Reg8: 1, UInt16: 5>
+000001f5: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 4, UInt16: 4, UInt32: 47498, UInt32: 178038>  # Object: {'key': 'colazione', 'label': 'Colazione', 'from': 4, 'to': 10.5}
+00000203: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 0>
+00000207: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 4, UInt16: 4, UInt32: 47498, UInt32: 179579>  # Object: {'key': 'spuntino_m', 'label': 'Spuntino', 'from': 10.5, 'to': 12}
+00000215: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 1>
+00000219: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 4, UInt16: 4, UInt32: 47498, UInt32: 178057>  # Object: {'key': 'pranzo', 'label': 'Pranzo', 'from': 12, 'to': 15}
+00000227: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 2>
+0000022b: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 4, UInt16: 4, UInt32: 47498, UInt32: 179598>  # Object: {'key': 'spuntino_p', 'label': 'Spuntino', 'from': 15, 'to': 18.5}
+00000239: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 3>
+0000023d: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 4, UInt16: 4, UInt32: 47498, UInt32: 178071>  # Object: {'key': 'cena', 'label': 'Cena', 'from': 18.5, 'to': 28}
+0000024b: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 4>
+0000024f: <StoreToEnvironment>: <Reg8: 2, UInt8: 7, Reg8: 1>
+00000253: <NewArray>: <Reg8: 1, UInt16: 4>
+00000257: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 3, UInt16: 3, UInt32: 47506, UInt32: 179617>  # Object: {'key': 'colazione', 'label': 'Colazione', 'icona': 'cafe-outline'}
+00000265: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 0>
+00000269: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 3, UInt16: 3, UInt32: 47506, UInt32: 179624>  # Object: {'key': 'spuntino', 'label': 'Spuntino', 'icona': 'nutrition-outline'}
+00000277: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 1>
+0000027b: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 3, UInt16: 3, UInt32: 47506, UInt32: 179631>  # Object: {'key': 'pranzo', 'label': 'Pranzo', 'icona': 'restaurant-outline'}
+00000289: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 2>
+0000028d: <NewObjectWithBufferLong>: <Reg8: 3, UInt16: 3, UInt16: 3, UInt32: 47506, UInt32: 179638>  # Object: {'key': 'cena', 'label': 'Cena', 'icona': 'moon-outline'}
+0000029b: <PutOwnByIndex>: <Reg8: 1, Reg8: 3, UInt8: 3>
+0000029f: <StoreToEnvironment>: <Reg8: 2, UInt8: 8, Reg8: 1>
+000002a3: <NewArrayWithBuffer>: <Reg8: 1, UInt16: 12, UInt16: 12, UInt16: 42673>  # Array: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+000002ab: <StoreToEnvironment>: <Reg8: 2, UInt8: 9, Reg8: 1>
+000002af: <NewArrayWithBuffer>: <Reg8: 1, UInt16: 7, UInt16: 7, UInt16: 51028>  # Array: ['L', 'M', 'M', 'G', 'V', 'S', 'D']
+000002b7: <StoreToEnvironment>: <Reg8: 2, UInt8: 10, Reg8: 1>
+000002bb: <CreateClosure>: <Reg8: 1, Reg8: 2, function_id: 18488>  # Function: [#18488 buona of 24 bytes]: 2 params @ offset 0x004bfd71
+000002c0: <StoreToEnvironment>: <Reg8: 2, UInt8: 11, Reg8: 1>
+000002c4: <CreateClosure>: <Reg8: 1, Reg8: 2, function_id: 18489>  # Function: [#18489 cgMedio of 45 bytes]: 2 params @ offset 0x004bfd89
+000002c9: <StoreToEnvironment>: <Reg8: 2, UInt8: 12, Reg8: 1>
+000002cd: <Ret>: <Reg8: 0>

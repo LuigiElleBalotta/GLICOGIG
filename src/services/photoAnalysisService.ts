@@ -9,7 +9,7 @@ import type {
 } from '../types/analysis'
 import { createEphemeralRequestDeviceId } from './requestDeviceId'
 
-const INVALID_ANALYSIS_MESSAGE = 'Non sono riuscito a interpretare il risultato. Riprova con una foto più nitida.'
+export const INVALID_ANALYSIS_MESSAGE = 'Non sono riuscito a interpretare il risultato. Riprova con dati più precisi.'
 
 const STATUS_MESSAGES: Partial<Record<number, string>> = {
   400: 'Non riesco ad analizzare questa foto. Provane una più nitida.',
@@ -31,12 +31,29 @@ export class AnalysisError extends Error {
   }
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
+export function isAnalysisRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
+function optionalString(value: Record<string, unknown>, key: string): string | undefined {
+  const candidate = value[key]
+  if (candidate === undefined) return undefined
+  if (typeof candidate !== 'string') throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
+  return candidate
+}
+
+function optionalNullableString(
+  value: Record<string, unknown>,
+  key: string,
+): string | null | undefined {
+  const candidate = value[key]
+  if (candidate === undefined || candidate === null) return candidate
+  if (typeof candidate !== 'string') throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
+  return candidate
+}
+
 function parseIngredient(value: unknown): AnalizzaIngredient {
-  if (!isRecord(value)) throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
+  if (!isAnalysisRecord(value)) throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   if (typeof value.nome !== 'string' || !value.nome.trim()) {
     throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
@@ -48,46 +65,56 @@ function parseIngredient(value: unknown): AnalizzaIngredient {
   ) {
     throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
-  if (value.catalogo_id != null && typeof value.catalogo_id !== 'string') {
-    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
-  }
-  if (value.cottura != null && typeof value.cottura !== 'string') {
-    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
-  }
 
+  const catalogId = optionalNullableString(value, 'catalogo_id')
+  const cooking = optionalNullableString(value, 'cottura')
+  const ripening = optionalNullableString(value, 'maturazione')
   return {
-    ...value,
-    nome: value.nome,
-    catalogo_id: value.catalogo_id as string | null | undefined,
+    nome: value.nome.trim(),
+    ...(catalogId !== undefined ? { catalogo_id: catalogId } : {}),
     grammi: value.grammi,
-    cottura: value.cottura as string | null | undefined,
+    ...(cooking !== undefined ? { cottura: cooking } : {}),
+    ...(ripening !== undefined ? { maturazione: ripening } : {}),
   }
 }
 
-function parseAnalizzaResponse(value: unknown): AnalizzaResponse {
-  if (!isRecord(value) || typeof value.e_cibo !== 'boolean') {
+export function parseAnalizzaResponse(value: unknown): AnalizzaResponse {
+  if (!isAnalysisRecord(value) || typeof value.e_cibo !== 'boolean') {
     throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
 
   const rawIngredients = value.ingredienti
+  if (rawIngredients !== undefined && !Array.isArray(rawIngredients)) {
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
+  }
   if (value.e_cibo && !Array.isArray(rawIngredients)) {
     throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
   }
+  if (value.confidenza !== undefined && (
+    typeof value.confidenza !== 'number' || !Number.isFinite(value.confidenza)
+  )) {
+    throw new AnalysisError(INVALID_ANALYSIS_MESSAGE)
+  }
+
+  const piatto = optionalString(value, 'piatto')
+  const impatto = optionalString(value, 'impatto')
+  const descrizione = optionalString(value, 'descrizione')
+  const lezione = optionalString(value, 'lezione')
+  const quandoHaSenso = optionalString(value, 'quando_ha_senso')
 
   return {
-    ...value,
     e_cibo: value.e_cibo,
     ingredienti: Array.isArray(rawIngredients) ? rawIngredients.map(parseIngredient) : [],
-    piatto: typeof value.piatto === 'string' ? value.piatto : undefined,
-    impatto: typeof value.impatto === 'string' ? value.impatto : undefined,
-    descrizione: typeof value.descrizione === 'string' ? value.descrizione : undefined,
-    lezione: typeof value.lezione === 'string' ? value.lezione : undefined,
-    confidenza: typeof value.confidenza === 'number' ? value.confidenza : undefined,
-    quando_ha_senso: typeof value.quando_ha_senso === 'string' ? value.quando_ha_senso : undefined,
+    ...(piatto !== undefined ? { piatto } : {}),
+    ...(impatto !== undefined ? { impatto } : {}),
+    ...(descrizione !== undefined ? { descrizione } : {}),
+    ...(lezione !== undefined ? { lezione } : {}),
+    ...(value.confidenza !== undefined ? { confidenza: value.confidenza } : {}),
+    ...(quandoHaSenso !== undefined ? { quando_ha_senso: quandoHaSenso } : {}),
   }
 }
 
-async function readResponse(response: Response): Promise<unknown> {
+export async function readAnalysisResponse(response: Response): Promise<unknown> {
   const text = await response.text()
   if (!text) return null
 
@@ -99,15 +126,22 @@ async function readResponse(response: Response): Promise<unknown> {
   }
 }
 
-function errorPayload(value: unknown): AnalysisErrorPayload {
-  return isRecord(value) ? value as AnalysisErrorPayload : {}
+export function analysisErrorPayload(value: unknown): AnalysisErrorPayload {
+  return isAnalysisRecord(value) ? value as AnalysisErrorPayload : {}
 }
 
-function isAbortError(error: unknown): boolean {
+export function isAnalysisAbortError(error: unknown): boolean {
   return error instanceof Error && error.name === 'AbortError'
 }
 
+function assertSameOriginPath(endpoint: string): void {
+  if (!endpoint.startsWith('/') || endpoint.startsWith('//')) {
+    throw new Error('L’endpoint di analisi fotografica deve essere same-origin.')
+  }
+}
+
 export function createPhotoAnalysisService(config: PhotoAnalysisServiceConfig): PhotoAnalyzer {
+  assertSameOriginPath(config.endpoint)
   return {
     async analyze({ imageBase64, accessKey, signal }: AnalyzePhotoInput): Promise<AnalizzaResponse> {
       const payload: AnalizzaRequest = {
@@ -129,13 +163,13 @@ export function createPhotoAnalysisService(config: PhotoAnalysisServiceConfig): 
           signal,
         })
       } catch (error) {
-        if (isAbortError(error)) throw error
+        if (isAnalysisAbortError(error)) throw error
         throw new AnalysisError('Connessione non riuscita. Controlla la rete e riprova.', 0, 'NETWORK_ERROR')
       }
 
-      const data = await readResponse(response)
+      const data = await readAnalysisResponse(response)
       if (!response.ok) {
-        const serverError = errorPayload(data)
+        const serverError = analysisErrorPayload(data)
         throw new AnalysisError(
           STATUS_MESSAGES[response.status] || 'Analisi non riuscita. Riprova tra poco.',
           response.status,

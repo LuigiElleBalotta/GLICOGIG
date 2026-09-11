@@ -6,69 +6,46 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { calculateGlycemicImpact } from '../domain/impactCalculator'
-import { calculateMealNutrition } from '../domain/nutritionCalculator'
-import type { AnalizzaIngredient, AnalizzaResponse } from '../types/analysis'
-import type { GlycemicImpact, NutritionValues } from '../types/nutrition'
+import { classificaFascia } from '../domain/impactCalculator'
+import type { MealItem } from '../types/meal'
+import type { GlycemicImpactBand } from '../types/nutrition'
 
 export interface MealSessionEntry {
   id: string
-  result: AnalizzaResponse
+  item: MealItem
+  addedAt: number
 }
 
 export interface MealSessionSummary {
   plates: number
   totalGrams: number
-  nutrition: NutritionValues
-  carbo: number
-  cg: number
+  kcal: number | null
+  carbs: number
+  protein: number | null
+  fat: number | null
+  fibre: number | null
+  glycemicLoad: number
+  band: GlycemicImpactBand
   unresolved: number
 }
 
 interface MealSessionValue {
+  name: string
+  startedAt: number | null
   entries: readonly MealSessionEntry[]
   summary: MealSessionSummary
-  addMeal(result: AnalizzaResponse): MealSessionEntry
-  removeMeal(id: string): void
-  clearMeals(): void
+  setName(value: string): void
+  startCompleteMeal(): void
+  addItem(item: MealItem): MealSessionEntry
+  updateItem(id: string, item: MealItem): void
+  removeItem(id: string): void
+  clearMeal(): void
 }
 
-const EMPTY_NUTRITION: NutritionValues = {
-  energia_kcal: 0,
-  carboidrati_totali_g: 0,
-  zuccheri_g: 0,
-  fibre_g: 0,
-  carboidrati_disponibili_g: 0,
-  proteine_g: 0,
-  grassi_totali_g: 0,
-  grassi_saturi_g: 0,
-  sodio_mg: 0,
-}
-
+const DEFAULT_MEAL_NAME = 'Il mio pasto'
+const COMPLETE_MEAL_TTL_MS = 14_400_000
 const MealSessionContext = createContext<MealSessionValue | null>(null)
 let sessionCounter = 0
-
-function cloneIngredient(ingredient: AnalizzaIngredient): AnalizzaIngredient {
-  return {
-    nome: ingredient.nome,
-    grammi: ingredient.grammi,
-    ...(ingredient.catalogo_id === undefined ? {} : { catalogo_id: ingredient.catalogo_id }),
-    ...(ingredient.cottura === undefined ? {} : { cottura: ingredient.cottura }),
-  }
-}
-
-/** Mantiene in memoria solo i campi di risultato noti: nessuna foto, URL o stringa Base64. */
-function sessionResult(result: AnalizzaResponse): AnalizzaResponse {
-  return {
-    e_cibo: result.e_cibo,
-    ingredienti: result.ingredienti.map(cloneIngredient),
-    ...(result.piatto === undefined ? {} : { piatto: result.piatto }),
-    ...(result.descrizione === undefined ? {} : { descrizione: result.descrizione }),
-    ...(result.confidenza === undefined ? {} : { confidenza: result.confidenza }),
-    ...(result.lezione === undefined ? {} : { lezione: result.lezione }),
-    ...(result.quando_ha_senso === undefined ? {} : { quando_ha_senso: result.quando_ha_senso }),
-  }
-}
 
 function sumNullable(values: readonly (number | null)[]): number | null {
   return values.some((value) => value === null)
@@ -77,61 +54,119 @@ function sumNullable(values: readonly (number | null)[]): number | null {
 }
 
 function summarize(entries: readonly MealSessionEntry[]): MealSessionSummary {
-  if (!entries.length) {
-    return { plates: 0, totalGrams: 0, nutrition: EMPTY_NUTRITION, carbo: 0, cg: 0, unresolved: 0 }
-  }
-
-  const meals = entries.map(({ result }) => calculateMealNutrition(result.ingredienti))
-  const impacts: GlycemicImpact[] = entries.map(({ result }) => (
-    calculateGlycemicImpact(result.ingredienti, result.piatto)
-  ))
-  const field = (key: keyof NutritionValues) => meals.map(({ nutrition }) => nutrition[key])
+  const items = entries.map(({ item }) => item)
+  const carbs = items.reduce((total, item) => total + item.carbs, 0)
+  const glycemicLoad = items.reduce((total, item) => total + item.glycemicLoad, 0)
+  const protein = sumNullable(items.map(({ protein: value }) => value))
+  const fat = sumNullable(items.map(({ fat: value }) => value))
+  const fibre = sumNullable(items.map(({ fibre: value }) => value))
+  const { fascia } = classificaFascia({
+    cg: glycemicLoad,
+    carbo: carbs,
+    ig: null,
+    fibre,
+    proteine: protein,
+    grassi: fat,
+    fibre100: null,
+    proteine100: null,
+    grassi100: null,
+    zuccheri100: null,
+    carbo100: null,
+    liquido: false,
+  })
 
   return {
-    plates: entries.length,
-    totalGrams: meals.reduce((total, meal) => total + meal.totalGrams, 0),
-    nutrition: {
-      energia_kcal: sumNullable(field('energia_kcal')),
-      carboidrati_totali_g: sumNullable(field('carboidrati_totali_g')) ?? 0,
-      zuccheri_g: sumNullable(field('zuccheri_g')),
-      fibre_g: sumNullable(field('fibre_g')),
-      carboidrati_disponibili_g: sumNullable(field('carboidrati_disponibili_g')) ?? 0,
-      proteine_g: sumNullable(field('proteine_g')) ?? 0,
-      grassi_totali_g: sumNullable(field('grassi_totali_g')) ?? 0,
-      grassi_saturi_g: sumNullable(field('grassi_saturi_g')),
-      sodio_mg: sumNullable(field('sodio_mg')) ?? 0,
-    },
-    carbo: impacts.reduce((total, impact) => total + impact.carbo, 0),
-    cg: impacts.reduce((total, impact) => total + impact.cg, 0),
-    unresolved: meals.reduce((total, meal) => total + meal.unresolved.length, 0),
+    plates: items.length,
+    totalGrams: items.reduce((total, item) => total + item.grams, 0),
+    kcal: sumNullable(items.map(({ kcal }) => kcal)),
+    carbs,
+    protein,
+    fat,
+    fibre,
+    glycemicLoad,
+    band: fascia,
+    unresolved: items.reduce((total, item) => total + item.unresolved, 0),
   }
 }
 
 export function MealSessionProvider({ children }: { children: ReactNode }) {
+  const [name, setMealName] = useState(DEFAULT_MEAL_NAME)
+  const [startedAt, setStartedAt] = useState<number | null>(null)
   const [entries, setEntries] = useState<MealSessionEntry[]>([])
 
-  const addMeal = useCallback((result: AnalizzaResponse): MealSessionEntry => {
-    const entry = {
-      id: `m${Date.now().toString(36)}${sessionCounter++}`,
-      result: sessionResult(result),
+  const setName = useCallback((value: string) => {
+    const normalized = value.slice(0, 60)
+    setMealName(normalized)
+  }, [])
+
+  const clearMeal = useCallback(() => {
+    setEntries([])
+    setStartedAt(null)
+    setMealName(DEFAULT_MEAL_NAME)
+  }, [])
+
+  const startCompleteMeal = useCallback(() => {
+    if (startedAt !== null && Date.now() - startedAt > COMPLETE_MEAL_TTL_MS) {
+      clearMeal()
     }
-    setEntries((current) => [...current, entry])
+  }, [clearMeal, startedAt])
+
+  const addItem = useCallback((item: MealItem): MealSessionEntry => {
+    const now = Date.now()
+    const expired = startedAt !== null && now - startedAt > COMPLETE_MEAL_TTL_MS
+    const entry = {
+      id: `m${now.toString(36)}${sessionCounter++}`,
+      item: { ...item, source: { ...item.source } } as MealItem,
+      addedAt: now,
+    }
+    if (expired) setMealName(DEFAULT_MEAL_NAME)
+    setStartedAt((current) => (
+      current === null || now - current > COMPLETE_MEAL_TTL_MS ? now : current
+    ))
+    setEntries((current) => expired ? [entry] : [...current, entry])
     return entry
+  }, [startedAt])
+
+  const updateItem = useCallback((id: string, item: MealItem) => {
+    setEntries((current) => current.map((entry) => (
+      entry.id === id
+        ? { ...entry, item: { ...item, source: { ...item.source } } as MealItem }
+        : entry
+    )))
   }, [])
 
-  const removeMeal = useCallback((id: string) => {
-    setEntries((current) => current.filter((entry) => entry.id !== id))
+  const removeItem = useCallback((id: string) => {
+    setEntries((current) => {
+      const next = current.filter((entry) => entry.id !== id)
+      if (!next.length) setStartedAt(null)
+      return next
+    })
   }, [])
 
-  const clearMeals = useCallback(() => setEntries([]), [])
   const summary = useMemo(() => summarize(entries), [entries])
   const value = useMemo<MealSessionValue>(() => ({
+    name,
+    startedAt,
     entries,
     summary,
-    addMeal,
-    removeMeal,
-    clearMeals,
-  }), [addMeal, clearMeals, entries, removeMeal, summary])
+    setName,
+    startCompleteMeal,
+    addItem,
+    updateItem,
+    removeItem,
+    clearMeal,
+  }), [
+    addItem,
+    clearMeal,
+    entries,
+    name,
+    removeItem,
+    setName,
+    startedAt,
+    startCompleteMeal,
+    summary,
+    updateItem,
+  ])
 
   return <MealSessionContext.Provider value={value}>{children}</MealSessionContext.Provider>
 }

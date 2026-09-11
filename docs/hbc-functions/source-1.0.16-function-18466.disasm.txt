@@ -1,0 +1,47 @@
+# Function #18466 'andamentoSettimana'
+# offset=4977975 bytes=187
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <CreateClosure>: <Reg8: 5, Reg8: 0, function_id: 18467>  # Function: [#18467 media of 158 bytes]: 3 params @ offset 0x004bf5f2
+00000007: <LoadConstUndefined>: <Reg8: 4>
+00000009: <LoadConstZero>: <Reg8: 2>
+0000000b: <LoadConstUInt8>: <Reg8: 0, UInt8: 6>
+0000000e: <Call3>: <Reg8: 1, Reg8: 5, Reg8: 4, Reg8: 2, Reg8: 0>
+00000014: <LoadConstUInt8>: <Reg8: 3, UInt8: 7>
+00000017: <LoadConstUInt8>: <Reg8: 0, UInt8: 13>
+0000001a: <Call3>: <Reg8: 5, Reg8: 5, Reg8: 4, Reg8: 3, Reg8: 0>
+00000020: <LoadConstNull>: <Reg8: 0>
+00000022: <JEqualLong>: <Addr32: 151, Reg8: 1, Reg8: 0>  # Address: 000000b9
+00000029: <JEqualLong>: <Addr32: 144, Reg8: 5, Reg8: 0>  # Address: 000000b9
+00000030: <JStrictEqualLong>: <Addr32: 137, Reg8: 5, Reg8: 2>  # Address: 000000b9
+00000037: <GetGlobalObject>: <Reg8: 2>
+00000039: <TryGetById>: <Reg8: 4, Reg8: 2, UInt8: 1, string_id: 12>  # String: 'Math' (Identifier)
+0000003f: <GetByIdShort>: <Reg8: 3, Reg8: 4, UInt8: 2, string_id: 37>  # String: 'round' (Identifier)
+00000044: <Sub>: <Reg8: 1, Reg8: 1, Reg8: 5>
+00000048: <Div>: <Reg8: 5, Reg8: 1, Reg8: 5>
+0000004c: <LoadConstUInt8>: <Reg8: 1, UInt8: 100>
+0000004f: <Mul>: <Reg8: 1, Reg8: 5, Reg8: 1>
+00000053: <Call2>: <Reg8: 4, Reg8: 3, Reg8: 4, Reg8: 1>
+00000058: <LoadConstUInt8>: <Reg8: 1, UInt8: 8>
+0000005b: <JGreaterEqual>: <Addr8: 60, Reg8: 4, Reg8: 1>  # Address: 00000097
+0000005f: <LoadConstInt>: <Reg8: 1, Imm32: -8>
+00000065: <JLessEqual>: <Addr8: 16, Reg8: 4, Reg8: 1>  # Address: 00000075
+00000069: <NewObjectWithBuffer>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt16: 47514, UInt16: 35094>  # Object: {'key': 'linea', 'pct': 0}
+00000073: <Ret>: <Reg8: 1>
+00000075: <NewObject>: <Reg8: 1>
+00000077: <LoadConstString>: <Reg8: 3, string_id: 11423>  # String: 'margine' (String)
+0000007b: <PutNewOwnByIdShort>: <Reg8: 1, Reg8: 3, string_id: 168>  # String: 'key' (Identifier)
+0000007f: <TryGetById>: <Reg8: 5, Reg8: 2, UInt8: 1, string_id: 12>  # String: 'Math' (Identifier)
+00000085: <GetById>: <Reg8: 3, Reg8: 5, UInt8: 3, string_id: 32090>  # String: 'abs' (Identifier)
+0000008b: <Call2>: <Reg8: 3, Reg8: 3, Reg8: 5, Reg8: 4>
+00000090: <PutNewOwnById>: <Reg8: 1, Reg8: 3, string_id: 42240>  # String: 'pct' (Identifier)
+00000095: <Ret>: <Reg8: 1>
+00000097: <NewObject>: <Reg8: 1>
+00000099: <LoadConstString>: <Reg8: 3, string_id: 6120>  # String: 'meglio' (String)
+0000009d: <PutNewOwnByIdShort>: <Reg8: 1, Reg8: 3, string_id: 168>  # String: 'key' (Identifier)
+000000a1: <TryGetById>: <Reg8: 3, Reg8: 2, UInt8: 1, string_id: 12>  # String: 'Math' (Identifier)
+000000a7: <GetById>: <Reg8: 2, Reg8: 3, UInt8: 3, string_id: 32090>  # String: 'abs' (Identifier)
+000000ad: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 3, Reg8: 4>
+000000b2: <PutNewOwnById>: <Reg8: 1, Reg8: 2, string_id: 42240>  # String: 'pct' (Identifier)
+000000b7: <Ret>: <Reg8: 1>
+000000b9: <Ret>: <Reg8: 0>

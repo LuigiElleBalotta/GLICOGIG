@@ -1,0 +1,25 @@
+# Function #18939 'riprova'
+# offset=5093813 bytes=86
+
+00000000: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 6>
+00000007: <LoadConstUndefined>: <Reg8: 0>
+00000009: <LoadConstString>: <Reg8: 2, string_id: 6386>  # String: 'idle' (String)
+0000000d: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000012: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 9>
+00000016: <LoadConstNull>: <Reg8: 3>
+00000018: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 0, Reg8: 3>
+0000001d: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 11>
+00000021: <NewArray>: <Reg8: 2, UInt16: 0>
+00000025: <Call2>: <Reg8: 2, Reg8: 4, Reg8: 0, Reg8: 2>
+0000002a: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 7>
+0000002e: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 0, Reg8: 3>
+00000033: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 12>
+00000037: <LoadConstString>: <Reg8: 2, string_id: 31798>  # String: '' (Identifier)
+0000003b: <Call2>: <Reg8: 3, Reg8: 3, Reg8: 0, Reg8: 2>
+00000040: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 13>
+00000044: <LoadConstFalse>: <Reg8: 3>
+00000046: <Call2>: <Reg8: 3, Reg8: 4, Reg8: 0, Reg8: 3>
+0000004b: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 15>
+0000004f: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 0, Reg8: 2>
+00000054: <Ret>: <Reg8: 0>

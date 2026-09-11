@@ -1,0 +1,26 @@
+# Function #18446 'impattoLista'
+# offset=4975849 bytes=92
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000005: <GetByIdShort>: <Reg8: 1, Reg8: 3, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+0000000a: <JmpTrue>: <Addr8: 9, Reg8: 1>  # Address: 00000013
+0000000d: <LoadConstString>: <Reg8: 1, string_id: 35781>  # String: 'trascurabile' (Identifier)
+00000011: <Ret>: <Reg8: 1>
+00000013: <GetById>: <Reg8: 4, Reg8: 3, UInt8: 2, string_id: 34456>  # String: 'reduce' (Identifier)
+00000019: <CreateClosure>: <Reg8: 2, Reg8: 0, function_id: 18447>  # Function: [#18447  of 52 bytes]: 3 params @ offset 0x004bed45
+0000001e: <LoadConstZero>: <Reg8: 1>
+00000020: <Call3>: <Reg8: 1, Reg8: 4, Reg8: 3, Reg8: 2, Reg8: 1>
+00000026: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 3, string_id: 119>  # String: 'filter' (Identifier)
+0000002b: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18448>  # Function: [#18448  of 37 bytes]: 2 params @ offset 0x004be876
+00000030: <Call2>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 0>
+00000035: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+0000003a: <LoadConstUInt8>: <Reg8: 0, UInt8: 3>
+0000003d: <JNotGreaterEqual>: <Addr8: 11, Reg8: 1, Reg8: 0>  # Address: 00000048
+00000041: <LoadConstUInt8>: <Reg8: 0, UInt8: 2>
+00000044: <JGreaterEqual>: <Addr8: 18, Reg8: 2, Reg8: 0>  # Address: 00000056
+00000048: <NewArrayWithBuffer>: <Reg8: 0, UInt16: 4, UInt16: 4, UInt16: 51019>  # Array: ['trascurabile', 'basso', 'medio', 'alto']
+00000050: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 1>
+00000054: <Ret>: <Reg8: 0>
+00000056: <LoadConstString>: <Reg8: 0, string_id: 34023>  # String: 'alto' (Identifier)
+0000005a: <Ret>: <Reg8: 0>

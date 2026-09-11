@@ -1,0 +1,29 @@
+# Function #18924 'applicaPorzione'
+# offset=5092683 bytes=95
+
+00000000: <CreateEnvironment>: <Reg8: 2>
+00000002: <LoadParam>: <Reg8: 0, UInt8: 2>
+00000005: <StoreToEnvironment>: <Reg8: 2, UInt8: 0, Reg8: 0>
+00000009: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000000c: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 19>
+00000010: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000015: <JmpTrue>: <Addr8: 9, Reg8: 0>  # Address: 0000001e
+00000018: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 10>
+0000001c: <Jmp>: <Addr8: 6>  # Address: 00000022
+0000001e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 19>
+00000022: <StoreToEnvironment>: <Reg8: 2, UInt8: 1, Reg8: 0>
+00000026: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 11>
+0000002a: <LoadConstUndefined>: <Reg8: 0>
+0000002c: <CreateClosure>: <Reg8: 2, Reg8: 2, function_id: 18925>  # Function: [#18925  of 22 bytes]: 2 params @ offset 0x004db5aa
+00000031: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000036: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 22>
+0000003a: <LoadParam>: <Reg8: 2, UInt8: 1>
+0000003d: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000042: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 18>
+00000046: <LoadConstTrue>: <Reg8: 1>
+00000048: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+0000004d: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+00000050: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 42>
+00000054: <LoadConstString>: <Reg8: 1, string_id: 33652>  # String: 'soft' (Identifier)
+00000058: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+0000005d: <Ret>: <Reg8: 0>

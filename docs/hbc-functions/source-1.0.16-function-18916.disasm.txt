@@ -1,0 +1,12 @@
+# Function #18916 'rimuovi'
+# offset=5092269 bytes=30
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+00000009: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000000c: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 11>
+00000010: <LoadConstUndefined>: <Reg8: 1>
+00000012: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18917>  # Function: [#18917  of 22 bytes]: 2 params @ offset 0x004db3cb
+00000017: <Call2>: <Reg8: 0, Reg8: 2, Reg8: 1, Reg8: 0>
+0000001c: <Ret>: <Reg8: 0>

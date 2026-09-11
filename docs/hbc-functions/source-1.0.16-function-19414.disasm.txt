@@ -1,0 +1,1316 @@
+# Function #19414 'RecipeDetailScreen'
+# offset=5166905 bytes=5805
+
+00000000: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000003: <CreateEnvironment>: <Reg8: 18>
+00000005: <GetById>: <Reg8: 1, Reg8: 0, UInt8: 1, string_id: 32645>  # String: 'route' (Identifier)
+0000000b: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 2, string_id: 32811>  # String: 'navigation' (Identifier)
+00000011: <StoreToEnvironment>: <Reg8: 18, UInt8: 0, Reg8: 0>
+00000015: <GetEnvironment>: <Reg8: 17, UInt8: 0>
+00000018: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 6>
+0000001c: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 3, string_id: 52338>  # String: 'useColors' (Identifier)
+00000022: <LoadConstUndefined>: <Reg8: 3>
+00000024: <Call1>: <Reg8: 30, Reg8: 0, Reg8: 3>
+00000028: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 6>
+0000002c: <GetById>: <Reg8: 2, Reg8: 0, UInt8: 4, string_id: 56130>  # String: 'useThemedStyles' (Identifier)
+00000032: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 33>
+00000036: <Call2>: <Reg8: 20, Reg8: 2, Reg8: 3, Reg8: 0>
+0000003b: <StoreToEnvironment>: <Reg8: 18, UInt8: 1, Reg8: 20>
+0000003f: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 29>
+00000043: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 5, string_id: 53632>  # String: 'useTf' (Identifier)
+00000049: <Call1>: <Reg8: 24, Reg8: 0, Reg8: 3>
+0000004d: <StoreToEnvironment>: <Reg8: 18, UInt8: 2, Reg8: 24>
+00000051: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 29>
+00000055: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 6, string_id: 49145>  # String: 'useT' (Identifier)
+0000005b: <Call1>: <Reg8: 21, Reg8: 0, Reg8: 3>
+0000005f: <StoreToEnvironment>: <Reg8: 18, UInt8: 3, Reg8: 21>
+00000063: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 5>
+00000067: <GetById>: <Reg8: 2, Reg8: 0, UInt8: 7, string_id: 35835>  # String: 'ricettaById' (Identifier)
+0000006d: <GetByIdShort>: <Reg8: 0, Reg8: 1, UInt8: 8, string_id: 201>  # String: 'params' (Identifier)
+00000072: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 9, string_id: 147>  # String: 'id' (Identifier)
+00000077: <Call2>: <Reg8: 23, Reg8: 2, Reg8: 3, Reg8: 0>
+0000007c: <StoreToEnvironment>: <Reg8: 18, UInt8: 4, Reg8: 23>
+00000080: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 2>
+00000084: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+00000089: <LoadConstFalse>: <Reg8: 4>
+0000008b: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 4>
+00000090: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 1>
+00000094: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00000099: <LoadConstUInt8>: <Reg8: 6, UInt8: 2>
+0000009c: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 6>
+000000a2: <LoadConstZero>: <Reg8: 14>
+000000a4: <GetByVal>: <Reg8: 33, Reg8: 0, Reg8: 14>
+000000a8: <LoadConstUInt8>: <Reg8: 25, UInt8: 1>
+000000ab: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 25>
+000000af: <StoreToEnvironment>: <Reg8: 18, UInt8: 5, Reg8: 0>
+000000b3: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 2>
+000000b7: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+000000bc: <Call2>: <Reg8: 2, Reg8: 0, Reg8: 3, Reg8: 4>
+000000c1: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 1>
+000000c5: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000000ca: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 6>
+000000d0: <GetByVal>: <Reg8: 5, Reg8: 0, Reg8: 14>
+000000d4: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 25>
+000000d8: <StoreToEnvironment>: <Reg8: 18, UInt8: 6, Reg8: 0>
+000000dc: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 2>
+000000e0: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+000000e5: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 32>
+000000e9: <Call1>: <Reg8: 0, Reg8: 0, Reg8: 3>
+000000ed: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 3, Reg8: 0>
+000000f2: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 1>
+000000f6: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000000fb: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 6>
+00000101: <GetByVal>: <Reg8: 27, Reg8: 0, Reg8: 14>
+00000105: <StoreToEnvironment>: <Reg8: 18, UInt8: 7, Reg8: 27>
+00000109: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 25>
+0000010d: <StoreToEnvironment>: <Reg8: 18, UInt8: 8, Reg8: 0>
+00000111: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 2>
+00000115: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+0000011a: <LoadConstString>: <Reg8: 0, string_id: 35099>  # String: 'pranzo' (Identifier)
+0000011e: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 3, Reg8: 0>
+00000123: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 1>
+00000127: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+0000012c: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 3, Reg8: 2, Reg8: 6>
+00000132: <GetByVal>: <Reg8: 26, Reg8: 0, Reg8: 14>
+00000136: <StoreToEnvironment>: <Reg8: 18, UInt8: 9, Reg8: 26>
+0000013a: <GetByVal>: <Reg8: 0, Reg8: 0, Reg8: 25>
+0000013e: <StoreToEnvironment>: <Reg8: 18, UInt8: 10, Reg8: 0>
+00000142: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 2>
+00000146: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+0000014b: <LoadConstNull>: <Reg8: 0>
+0000014d: <Call2>: <Reg8: 7, Reg8: 2, Reg8: 3, Reg8: 0>
+00000152: <LoadFromEnvironment>: <Reg8: 2, Reg8: 17, UInt8: 1>
+00000156: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+0000015b: <Call3>: <Reg8: 2, Reg8: 2, Reg8: 3, Reg8: 7, Reg8: 6>
+00000161: <GetByVal>: <Reg8: 34, Reg8: 2, Reg8: 14>
+00000165: <GetByVal>: <Reg8: 2, Reg8: 2, Reg8: 25>
+00000169: <StoreToEnvironment>: <Reg8: 18, UInt8: 11, Reg8: 2>
+0000016d: <LoadFromEnvironment>: <Reg8: 2, Reg8: 17, UInt8: 2>
+00000171: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+00000176: <Call2>: <Reg8: 4, Reg8: 2, Reg8: 3, Reg8: 4>
+0000017b: <LoadFromEnvironment>: <Reg8: 2, Reg8: 17, UInt8: 1>
+0000017f: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00000184: <Call3>: <Reg8: 2, Reg8: 2, Reg8: 3, Reg8: 4, Reg8: 6>
+0000018a: <GetByVal>: <Reg8: 40, Reg8: 2, Reg8: 14>
+0000018e: <GetByVal>: <Reg8: 2, Reg8: 2, Reg8: 25>
+00000192: <StoreToEnvironment>: <Reg8: 18, UInt8: 12, Reg8: 2>
+00000196: <LoadFromEnvironment>: <Reg8: 2, Reg8: 17, UInt8: 2>
+0000019a: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 10, string_id: 250>  # String: 'useState' (Identifier)
+0000019f: <Call2>: <Reg8: 4, Reg8: 2, Reg8: 3, Reg8: 25>
+000001a4: <LoadFromEnvironment>: <Reg8: 2, Reg8: 17, UInt8: 1>
+000001a8: <GetByIdShort>: <Reg8: 2, Reg8: 2, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000001ad: <Call3>: <Reg8: 2, Reg8: 2, Reg8: 3, Reg8: 4, Reg8: 6>
+000001b3: <GetByVal>: <Reg8: 31, Reg8: 2, Reg8: 14>
+000001b7: <StoreToEnvironment>: <Reg8: 18, UInt8: 13, Reg8: 31>
+000001bb: <GetByVal>: <Reg8: 2, Reg8: 2, Reg8: 25>
+000001bf: <StoreToEnvironment>: <Reg8: 18, UInt8: 14, Reg8: 2>
+000001c3: <LoadFromEnvironment>: <Reg8: 2, Reg8: 17, UInt8: 2>
+000001c7: <GetByIdShort>: <Reg8: 4, Reg8: 2, UInt8: 12, string_id: 249>  # String: 'useEffect' (Identifier)
+000001cc: <GetByIdShort>: <Reg8: 1, Reg8: 1, UInt8: 8, string_id: 201>  # String: 'params' (Identifier)
+000001d1: <GetByIdShort>: <Reg8: 1, Reg8: 1, UInt8: 9, string_id: 147>  # String: 'id' (Identifier)
+000001d6: <NewArray>: <Reg8: 2, UInt16: 1>
+000001da: <PutOwnByIndex>: <Reg8: 2, Reg8: 1, UInt8: 0>
+000001de: <CreateClosure>: <Reg8: 1, Reg8: 18, function_id: 19415>  # Function: [#19415  of 122 bytes]: 1 params @ offset 0x004eede6
+000001e3: <Call3>: <Reg8: 1, Reg8: 4, Reg8: 3, Reg8: 1, Reg8: 2>
+000001e9: <CreateClosure>: <Reg8: 1, Reg8: 18, function_id: 19419>  # Function: [#19419  of 37 bytes]: 1 params @ offset 0x004eeeb4
+000001ee: <Call1>: <Reg8: 16, Reg8: 1, Reg8: 3>
+000001f2: <CreateClosure>: <Reg8: 1, Reg8: 18, function_id: 19424>  # Function: [#19424  of 37 bytes]: 1 params @ offset 0x004eef5b
+000001f7: <Call1>: <Reg8: 19, Reg8: 1, Reg8: 3>
+000001fb: <JmpTrue>: <Addr8: 84, Reg8: 23>  # Address: 0000024f
+000001fe: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 31>
+00000202: <GetByIdShort>: <Reg8: 4, Reg8: 1, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000207: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 3>
+0000020b: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00000210: <NewObject>: <Reg8: 1>
+00000212: <GetById>: <Reg8: 6, Reg8: 20, UInt8: 15, string_id: 33002>  # String: 'wrap' (Identifier)
+00000218: <PutNewOwnByIdShort>: <Reg8: 1, Reg8: 6, string_id: 238>  # String: 'style' (Identifier)
+0000021c: <LoadFromEnvironment>: <Reg8: 6, Reg8: 17, UInt8: 31>
+00000220: <GetByIdShort>: <Reg8: 8, Reg8: 6, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000225: <LoadFromEnvironment>: <Reg8: 6, Reg8: 17, UInt8: 3>
+00000229: <GetByIdShort>: <Reg8: 7, Reg8: 6, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000022e: <NewObject>: <Reg8: 6>
+00000230: <LoadConstString>: <Reg8: 9, string_id: 14550>  # String: 'ricetta.nonTrovata' (String)
+00000234: <Call2>: <Reg8: 9, Reg8: 21, Reg8: 3, Reg8: 9>
+00000239: <PutNewOwnByIdShort>: <Reg8: 6, Reg8: 9, string_id: 74>  # String: 'children' (Identifier)
+0000023d: <Call3>: <Reg8: 6, Reg8: 8, Reg8: 3, Reg8: 7, Reg8: 6>
+00000243: <PutNewOwnByIdShort>: <Reg8: 1, Reg8: 6, string_id: 74>  # String: 'children' (Identifier)
+00000247: <Call3>: <Reg8: 1, Reg8: 4, Reg8: 3, Reg8: 2, Reg8: 1>
+0000024d: <Ret>: <Reg8: 1>
+0000024f: <GetByIdShort>: <Reg8: 29, Reg8: 23, UInt8: 17, string_id: 205>  # String: 'per_porzione' (Identifier)
+00000254: <StoreToEnvironment>: <Reg8: 18, UInt8: 15, Reg8: 29>
+00000258: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 26>
+0000025c: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 18, string_id: 41323>  # String: 'affidabilitaRicetta' (Identifier)
+00000262: <Call2>: <Reg8: 47, Reg8: 1, Reg8: 3, Reg8: 23>
+00000267: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 26>
+0000026b: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 19, string_id: 42143>  # String: 'ricettaRivista' (Identifier)
+00000271: <Call2>: <Reg8: 46, Reg8: 1, Reg8: 3, Reg8: 23>
+00000276: <GetByIdShort>: <Reg8: 1, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+0000027b: <LoadConstString>: <Reg8: 48, string_id: 4682>  # String: 'fascia.' (String)
+0000027f: <Add>: <Reg8: 1, Reg8: 48, Reg8: 1>
+00000283: <Call2>: <Reg8: 2, Reg8: 21, Reg8: 3, Reg8: 1>
+00000288: <GetById>: <Reg8: 1, Reg8: 2, UInt8: 21, string_id: 38312>  # String: 'toLowerCase' (Identifier)
+0000028e: <Call1>: <Reg8: 43, Reg8: 1, Reg8: 2>
+00000292: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 14>
+00000296: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 22, string_id: 44667>  # String: 'metodoRicetta' (Identifier)
+0000029c: <Call3>: <Reg8: 28, Reg8: 1, Reg8: 3, Reg8: 23, Reg8: 31>
+000002a2: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 13>
+000002a6: <GetById>: <Reg8: 2, Reg8: 1, UInt8: 23, string_id: 36278>  # String: 'quandoHaSenso' (Identifier)
+000002ac: <GetByIdShort>: <Reg8: 1, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+000002b1: <Call2>: <Reg8: 38, Reg8: 2, Reg8: 3, Reg8: 1>
+000002b6: <GetByIdShort>: <Reg8: 1, Reg8: 29, UInt8: 24, string_id: 58>  # String: 'carico_glicemico' (Identifier)
+000002bb: <Neq>: <Reg8: 12, Reg8: 1, Reg8: 0>
+000002bf: <NewArray>: <Reg8: 45, UInt16: 4>
+000002c3: <NewArrayWithBuffer>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt16: 27534>  # Array: [0.5, '½']
+000002cb: <PutOwnByIndex>: <Reg8: 45, Reg8: 1, UInt8: 0>
+000002cf: <NewArrayWithBuffer>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt16: 642>  # Array: [1, '1']
+000002d7: <PutOwnByIndex>: <Reg8: 45, Reg8: 1, UInt8: 1>
+000002db: <NewArrayWithBuffer>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt16: 37763>  # Array: [1.5, '1½']
+000002e3: <PutOwnByIndex>: <Reg8: 45, Reg8: 1, UInt8: 2>
+000002e7: <NewArrayWithBuffer>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt16: 51240>  # Array: [2, '2']
+000002ef: <PutOwnByIndex>: <Reg8: 45, Reg8: 1, UInt8: 3>
+000002f3: <LoadFromEnvironment>: <Reg8: 1, Reg8: 17, UInt8: 24>
+000002f7: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 25, string_id: 35946>  # String: 'kcalRicetta' (Identifier)
+000002fd: <Call2>: <Reg8: 7, Reg8: 1, Reg8: 3, Reg8: 23>
+00000302: <JNotEqual>: <Addr8: 6, Reg8: 7, Reg8: 0>  # Address: 00000308
+00000306: <LoadConstZero>: <Reg8: 7>
+00000308: <GetByIdShort>: <Reg8: 2, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+0000030d: <LoadConstString>: <Reg8: 1, string_id: 12350>  # String: 'Gustosa: occhio alla porzione e alla frequenza.' (String)
+00000311: <LoadConstString>: <Reg8: 37, string_id: 34023>  # String: 'alto' (Identifier)
+00000315: <JStrictEqual>: <Addr8: 28, Reg8: 2, Reg8: 37>  # Address: 00000331
+00000319: <GetByIdShort>: <Reg8: 6, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+0000031e: <LoadConstString>: <Reg8: 2, string_id: 20149>  # String: 'Un piatto a impatto leggero.' (String)
+00000322: <LoadConstString>: <Reg8: 4, string_id: 32385>  # String: 'medio' (Identifier)
+00000326: <JStrictNotEqual>: <Addr8: 8, Reg8: 6, Reg8: 4>  # Address: 0000032e
+0000032a: <LoadConstString>: <Reg8: 2, string_id: 20134>  # String: 'Un buon piatto, da gustare con equilibrio.' (String)
+0000032e: <Mov>: <Reg8: 1, Reg8: 2>
+00000331: <StoreToEnvironment>: <Reg8: 18, UInt8: 16, Reg8: 1>
+00000335: <GetByIdShort>: <Reg8: 1, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+0000033a: <LoadConstString>: <Reg8: 6, string_id: 14807>  # String: 'MEDIO' (String)
+0000033e: <LoadConstString>: <Reg8: 39, string_id: 32385>  # String: 'medio' (Identifier)
+00000342: <JStrictEqual>: <Addr8: 24, Reg8: 1, Reg8: 39>  # Address: 0000035a
+00000346: <GetByIdShort>: <Reg8: 2, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+0000034b: <LoadConstString>: <Reg8: 1, string_id: 868>  # String: 'BASSO' (String)
+0000034f: <JStrictNotEqual>: <Addr8: 8, Reg8: 2, Reg8: 37>  # Address: 00000357
+00000353: <LoadConstString>: <Reg8: 1, string_id: 5303>  # String: 'ALTO' (String)
+00000357: <Mov>: <Reg8: 6, Reg8: 1>
+0000035a: <GetByIdShort>: <Reg8: 2, Reg8: 29, UInt8: 26, string_id: 116>  # String: 'fibre_g' (Identifier)
+0000035f: <JNotEqual>: <Addr8: 6, Reg8: 2, Reg8: 0>  # Address: 00000365
+00000363: <LoadConstZero>: <Reg8: 2>
+00000365: <LoadConstUInt8>: <Reg8: 1, UInt8: 5>
+00000368: <JGreaterEqual>: <Addr8: 54, Reg8: 2, Reg8: 1>  # Address: 0000039e
+0000036c: <GetByIdShort>: <Reg8: 1, Reg8: 29, UInt8: 27, string_id: 213>  # String: 'proteine_g' (Identifier)
+00000371: <JNotEqual>: <Addr8: 6, Reg8: 1, Reg8: 0>  # Address: 00000377
+00000375: <LoadConstZero>: <Reg8: 1>
+00000377: <LoadConstUInt8>: <Reg8: 0, UInt8: 15>
+0000037a: <JGreaterEqual>: <Addr8: 20, Reg8: 1, Reg8: 0>  # Address: 0000038e
+0000037e: <NewObjectWithBufferLong>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt32: 47509, UInt32: 189332>  # Object: {'icona': 'restaurant-outline', 'testo': 'PIATTO BILANCIATO'}
+0000038c: <Jmp>: <Addr8: 16>  # Address: 0000039c
+0000038e: <NewObjectWithBufferLong>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt32: 47509, UInt32: 184614>  # Object: {'icona': 'barbell-outline', 'testo': 'FONTE DI PROTEINE'}
+0000039c: <Jmp>: <Addr8: 16>  # Address: 000003ac
+0000039e: <NewObjectWithBufferLong>: <Reg8: 1, UInt16: 2, UInt16: 2, UInt32: 47509, UInt32: 184609>  # Object: {'icona': 'leaf-outline', 'testo': 'RICCA DI FIBRE'}
+000003ac: <NewObject>: <Reg8: 2>
+000003ae: <LoadConstString>: <Reg8: 0, string_id: 33700>  # String: 'stats-chart-outline' (Identifier)
+000003b2: <PutNewOwnById>: <Reg8: 2, Reg8: 0, string_id: 41221>  # String: 'icona' (Identifier)
+000003b7: <GetGlobalObject>: <Reg8: 32>
+000003b9: <TryGetById>: <Reg8: 0, Reg8: 32, UInt8: 28, string_id: 7>  # String: 'HermesInternal' (Identifier)
+000003bf: <GetByIdShort>: <Reg8: 4, Reg8: 0, UInt8: 29, string_id: 79>  # String: 'concat' (Identifier)
+000003c4: <LoadConstString>: <Reg8: 0, string_id: 5137>  # String: 'CARICO GLICEMICO ' (String)
+000003c8: <Call2>: <Reg8: 0, Reg8: 4, Reg8: 0, Reg8: 6>
+000003cd: <PutNewOwnByIdShort>: <Reg8: 2, Reg8: 0, string_id: 243>  # String: 'testo' (Identifier)
+000003d1: <NewArray>: <Reg8: 0, UInt16: 3>
+000003d5: <PutOwnByIndex>: <Reg8: 0, Reg8: 2, UInt8: 0>
+000003d9: <NewObject>: <Reg8: 2>
+000003db: <LoadConstString>: <Reg8: 4, string_id: 53922>  # String: 'flame-outline' (Identifier)
+000003df: <PutNewOwnById>: <Reg8: 2, Reg8: 4, string_id: 41221>  # String: 'icona' (Identifier)
+000003e4: <TryGetById>: <Reg8: 4, Reg8: 32, UInt8: 28, string_id: 7>  # String: 'HermesInternal' (Identifier)
+000003ea: <GetByIdShort>: <Reg8: 6, Reg8: 4, UInt8: 29, string_id: 79>  # String: 'concat' (Identifier)
+000003ef: <LoadConstString>: <Reg8: 54, string_id: 31798>  # String: '' (Identifier)
+000003f3: <LoadConstString>: <Reg8: 4, string_id: 1568>  # String: ' KCAL A PORZIONE' (String)
+000003f7: <Call3>: <Reg8: 4, Reg8: 6, Reg8: 54, Reg8: 7, Reg8: 4>
+000003fd: <PutNewOwnByIdShort>: <Reg8: 2, Reg8: 4, string_id: 243>  # String: 'testo' (Identifier)
+00000401: <PutOwnByIndex>: <Reg8: 0, Reg8: 2, UInt8: 1>
+00000405: <PutOwnByIndex>: <Reg8: 0, Reg8: 1, UInt8: 2>
+00000409: <StoreToEnvironment>: <Reg8: 18, UInt8: 17, Reg8: 0>
+0000040d: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 31>
+00000411: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000416: <LoadFromEnvironment>: <Reg8: 0, Reg8: 17, UInt8: 3>
+0000041a: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+0000041f: <NewObject>: <Reg8: 0>
+00000421: <NewObject>: <Reg8: 4>
+00000423: <PutNewOwnByIdShort>: <Reg8: 4, Reg8: 25, string_id: 121>  # String: 'flex' (Identifier)
+00000427: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 238>  # String: 'style' (Identifier)
+0000042b: <LoadFromEnvironment>: <Reg8: 4, Reg8: 17, UInt8: 31>
+0000042f: <GetByIdShort>: <Reg8: 7, Reg8: 4, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000434: <LoadFromEnvironment>: <Reg8: 4, Reg8: 17, UInt8: 9>
+00000438: <GetById>: <Reg8: 6, Reg8: 4, UInt8: 31, string_id: 49512>  # String: 'FadeInView' (Identifier)
+0000043e: <NewObject>: <Reg8: 4>
+00000440: <GetById>: <Reg8: 8, Reg8: 20, UInt8: 15, string_id: 33002>  # String: 'wrap' (Identifier)
+00000446: <PutNewOwnByIdShort>: <Reg8: 4, Reg8: 8, string_id: 238>  # String: 'style' (Identifier)
+0000044a: <LoadFromEnvironment>: <Reg8: 8, Reg8: 17, UInt8: 31>
+0000044e: <GetByIdShort>: <Reg8: 10, Reg8: 8, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000453: <LoadFromEnvironment>: <Reg8: 8, Reg8: 17, UInt8: 3>
+00000457: <GetById>: <Reg8: 9, Reg8: 8, UInt8: 32, string_id: 35686>  # String: 'ScrollView' (Identifier)
+0000045d: <NewObject>: <Reg8: 8>
+0000045f: <GetById>: <Reg8: 11, Reg8: 20, UInt8: 15, string_id: 33002>  # String: 'wrap' (Identifier)
+00000465: <PutNewOwnByIdShort>: <Reg8: 8, Reg8: 11, string_id: 238>  # String: 'style' (Identifier)
+00000469: <NewObject>: <Reg8: 11>
+0000046b: <LoadConstUInt8>: <Reg8: 13, UInt8: 16>
+0000046e: <PutNewOwnByIdShort>: <Reg8: 11, Reg8: 13, string_id: 198>  # String: 'padding' (Identifier)
+00000472: <PutNewOwnById>: <Reg8: 8, Reg8: 11, string_id: 52918>  # String: 'contentContainerStyle' (Identifier)
+00000477: <LoadFromEnvironment>: <Reg8: 11, Reg8: 17, UInt8: 12>
+0000047b: <GetById>: <Reg8: 13, Reg8: 11, UInt8: 33, string_id: 37470>  # String: 'recipeImage' (Identifier)
+00000481: <GetByIdShort>: <Reg8: 11, Reg8: 23, UInt8: 9, string_id: 147>  # String: 'id' (Identifier)
+00000486: <Call2>: <Reg8: 13, Reg8: 13, Reg8: 3, Reg8: 11>
+0000048b: <JmpFalse>: <Addr8: 74, Reg8: 13>  # Address: 000004d5
+0000048e: <LoadFromEnvironment>: <Reg8: 11, Reg8: 17, UInt8: 31>
+00000492: <GetByIdShort>: <Reg8: 22, Reg8: 11, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000497: <LoadFromEnvironment>: <Reg8: 11, Reg8: 17, UInt8: 3>
+0000049b: <GetById>: <Reg8: 15, Reg8: 11, UInt8: 34, string_id: 33641>  # String: 'Image' (Identifier)
+000004a1: <NewObject>: <Reg8: 11>
+000004a3: <LoadFromEnvironment>: <Reg8: 35, Reg8: 17, UInt8: 12>
+000004a7: <GetById>: <Reg8: 36, Reg8: 35, UInt8: 33, string_id: 37470>  # String: 'recipeImage' (Identifier)
+000004ad: <GetByIdShort>: <Reg8: 35, Reg8: 23, UInt8: 9, string_id: 147>  # String: 'id' (Identifier)
+000004b2: <Call2>: <Reg8: 35, Reg8: 36, Reg8: 3, Reg8: 35>
+000004b7: <PutNewOwnById>: <Reg8: 11, Reg8: 35, string_id: 34997>  # String: 'source' (Identifier)
+000004bc: <GetById>: <Reg8: 35, Reg8: 20, UInt8: 35, string_id: 41266>  # String: 'heroImg' (Identifier)
+000004c2: <PutNewOwnByIdShort>: <Reg8: 11, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+000004c6: <LoadConstString>: <Reg8: 35, string_id: 34282>  # String: 'cover' (Identifier)
+000004ca: <PutNewOwnById>: <Reg8: 11, Reg8: 35, string_id: 46651>  # String: 'resizeMode' (Identifier)
+000004cf: <Call3>: <Reg8: 13, Reg8: 22, Reg8: 3, Reg8: 15, Reg8: 11>
+000004d5: <NewArray>: <Reg8: 11, UInt16: 25>
+000004d9: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 0>
+000004dd: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+000004e1: <GetByIdShort>: <Reg8: 22, Reg8: 13, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000004e6: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+000004ea: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000004ef: <NewObject>: <Reg8: 13>
+000004f1: <GetById>: <Reg8: 35, Reg8: 20, UInt8: 36, string_id: 32072>  # String: 'cat' (Identifier)
+000004f7: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+000004fb: <LoadConstString>: <Reg8: 35, string_id: 63>  # String: 'categoria' (Identifier)
+000004ff: <Call3>: <Reg8: 35, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 35>
+00000505: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 35, string_id: 74>  # String: 'children' (Identifier)
+00000509: <Call3>: <Reg8: 13, Reg8: 22, Reg8: 3, Reg8: 15, Reg8: 13>
+0000050f: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 1>
+00000513: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+00000517: <GetByIdShort>: <Reg8: 35, Reg8: 13, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000051c: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+00000520: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000525: <NewObject>: <Reg8: 13>
+00000527: <GetById>: <Reg8: 22, Reg8: 20, UInt8: 37, string_id: 31850>  # String: 'h' (Identifier)
+0000052d: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+00000531: <LoadConstString>: <Reg8: 22, string_id: 185>  # String: 'nome' (Identifier)
+00000535: <Call3>: <Reg8: 36, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+0000053b: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 74>  # String: 'children' (Identifier)
+0000053f: <Call3>: <Reg8: 13, Reg8: 35, Reg8: 3, Reg8: 15, Reg8: 13>
+00000545: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 2>
+00000549: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+0000054d: <GetByIdShort>: <Reg8: 35, Reg8: 13, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000552: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+00000556: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000055b: <NewObject>: <Reg8: 13>
+0000055d: <GetById>: <Reg8: 36, Reg8: 20, UInt8: 38, string_id: 32180>  # String: 'desc' (Identifier)
+00000563: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 238>  # String: 'style' (Identifier)
+00000567: <LoadConstString>: <Reg8: 36, string_id: 94>  # String: 'descrizione' (Identifier)
+0000056b: <Call3>: <Reg8: 36, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 36>
+00000571: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 74>  # String: 'children' (Identifier)
+00000575: <Call3>: <Reg8: 13, Reg8: 35, Reg8: 3, Reg8: 15, Reg8: 13>
+0000057b: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 3>
+0000057f: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+00000583: <GetByIdShort>: <Reg8: 35, Reg8: 13, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000588: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+0000058c: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00000591: <NewObject>: <Reg8: 13>
+00000593: <NewObjectWithBufferLong>: <Reg8: 36, UInt16: 2, UInt16: 2, UInt32: 17657, UInt32: 185224>  # Object: {'marginTop': 8, 'marginBottom': 4}
+000005a1: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 238>  # String: 'style' (Identifier)
+000005a5: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 31>
+000005a9: <GetByIdShort>: <Reg8: 42, Reg8: 36, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000005ae: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 17>
+000005b2: <GetByIdShort>: <Reg8: 41, Reg8: 36, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000005b7: <NewObject>: <Reg8: 36>
+000005b9: <GetByIdShort>: <Reg8: 44, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+000005be: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 44, string_id: 114>  # String: 'fascia' (Identifier)
+000005c2: <Call3>: <Reg8: 36, Reg8: 42, Reg8: 3, Reg8: 41, Reg8: 36>
+000005c8: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 74>  # String: 'children' (Identifier)
+000005cc: <Call3>: <Reg8: 13, Reg8: 35, Reg8: 3, Reg8: 15, Reg8: 13>
+000005d2: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 4>
+000005d6: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+000005da: <GetByIdShort>: <Reg8: 35, Reg8: 13, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+000005df: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+000005e3: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+000005e8: <NewObject>: <Reg8: 13>
+000005ea: <GetById>: <Reg8: 36, Reg8: 20, UInt8: 39, string_id: 47881>  # String: 'cgCard' (Identifier)
+000005f0: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 238>  # String: 'style' (Identifier)
+000005f4: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 31>
+000005f8: <GetByIdShort>: <Reg8: 42, Reg8: 36, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000005fd: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 8>
+00000601: <GetByIdShort>: <Reg8: 41, Reg8: 36, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00000606: <NewObject>: <Reg8: 36>
+00000608: <GetByIdShort>: <Reg8: 44, Reg8: 29, UInt8: 24, string_id: 58>  # String: 'carico_glicemico' (Identifier)
+0000060d: <PutNewOwnById>: <Reg8: 36, Reg8: 44, string_id: 32992>  # String: 'valore' (Identifier)
+00000612: <GetByIdShort>: <Reg8: 44, Reg8: 29, UInt8: 20, string_id: 114>  # String: 'fascia' (Identifier)
+00000617: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 44, string_id: 114>  # String: 'fascia' (Identifier)
+0000061b: <Call3>: <Reg8: 41, Reg8: 42, Reg8: 3, Reg8: 41, Reg8: 36>
+00000621: <NewArray>: <Reg8: 36, UInt16: 5>
+00000625: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 0>
+00000629: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 31>
+0000062d: <GetByIdShort>: <Reg8: 44, Reg8: 41, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000632: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 3>
+00000636: <GetByIdShort>: <Reg8: 42, Reg8: 41, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000063b: <NewObject>: <Reg8: 41>
+0000063d: <GetById>: <Reg8: 49, Reg8: 20, UInt8: 40, string_id: 45163>  # String: 'spiegaSemplice' (Identifier)
+00000643: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 238>  # String: 'style' (Identifier)
+00000647: <LoadConstString>: <Reg8: 49, string_id: 18588>  # String: 'ricetta.spiegaSemplice' (String)
+0000064b: <Call2>: <Reg8: 49, Reg8: 21, Reg8: 3, Reg8: 49>
+00000650: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 74>  # String: 'children' (Identifier)
+00000654: <Call3>: <Reg8: 41, Reg8: 44, Reg8: 3, Reg8: 42, Reg8: 41>
+0000065a: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 1>
+0000065e: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 31>
+00000662: <GetByIdShort>: <Reg8: 44, Reg8: 41, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000667: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 3>
+0000066b: <GetByIdShort>: <Reg8: 42, Reg8: 41, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000670: <NewObject>: <Reg8: 41>
+00000672: <GetById>: <Reg8: 49, Reg8: 20, UInt8: 41, string_id: 52289>  # String: 'cgL' (Identifier)
+00000678: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 238>  # String: 'style' (Identifier)
+0000067c: <LoadConstString>: <Reg8: 49, string_id: 9127>  # String: 'ricetta.perPorzione' (String)
+00000680: <Call2>: <Reg8: 49, Reg8: 21, Reg8: 3, Reg8: 49>
+00000685: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 74>  # String: 'children' (Identifier)
+00000689: <Call3>: <Reg8: 41, Reg8: 44, Reg8: 3, Reg8: 42, Reg8: 41>
+0000068f: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 2>
+00000693: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 31>
+00000697: <GetByIdShort>: <Reg8: 44, Reg8: 41, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000069c: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 19>
+000006a0: <GetByIdShort>: <Reg8: 42, Reg8: 41, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000006a5: <NewObject>: <Reg8: 41>
+000006a7: <LoadFromEnvironment>: <Reg8: 49, Reg8: 17, UInt8: 24>
+000006ab: <GetById>: <Reg8: 49, Reg8: 49, UInt8: 25, string_id: 35946>  # String: 'kcalRicetta' (Identifier)
+000006b1: <Call2>: <Reg8: 49, Reg8: 49, Reg8: 3, Reg8: 23>
+000006b6: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 109>  # String: 'kcal' (Identifier)
+000006ba: <LoadConstTrue>: <Reg8: 49>
+000006bc: <PutNewOwnById>: <Reg8: 41, Reg8: 49, string_id: 32034>  # String: 'full' (Identifier)
+000006c1: <NewObject>: <Reg8: 49>
+000006c3: <LoadConstUInt8>: <Reg8: 50, UInt8: 12>
+000006c6: <PutNewOwnByIdShort>: <Reg8: 49, Reg8: 50, string_id: 179>  # String: 'marginTop' (Identifier)
+000006ca: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 238>  # String: 'style' (Identifier)
+000006ce: <Call3>: <Reg8: 41, Reg8: 44, Reg8: 3, Reg8: 42, Reg8: 41>
+000006d4: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 3>
+000006d8: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 31>
+000006dc: <GetByIdShort>: <Reg8: 44, Reg8: 41, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000006e1: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 23>
+000006e5: <GetByIdShort>: <Reg8: 42, Reg8: 41, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000006ea: <NewObject>: <Reg8: 41>
+000006ec: <NewObject>: <Reg8: 49>
+000006ee: <PutNewOwnByIdShort>: <Reg8: 49, Reg8: 50, string_id: 179>  # String: 'marginTop' (Identifier)
+000006f2: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 49, string_id: 238>  # String: 'style' (Identifier)
+000006f6: <Call3>: <Reg8: 41, Reg8: 44, Reg8: 3, Reg8: 42, Reg8: 41>
+000006fc: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 4>
+00000700: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 74>  # String: 'children' (Identifier)
+00000704: <Call3>: <Reg8: 13, Reg8: 35, Reg8: 3, Reg8: 15, Reg8: 13>
+0000070a: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 5>
+0000070e: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+00000712: <GetByIdShort>: <Reg8: 35, Reg8: 13, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000717: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+0000071b: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00000720: <NewObject>: <Reg8: 13>
+00000722: <GetById>: <Reg8: 36, Reg8: 20, UInt8: 42, string_id: 46723>  # String: 'explain' (Identifier)
+00000728: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 238>  # String: 'style' (Identifier)
+0000072c: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 31>
+00000730: <GetByIdShort>: <Reg8: 42, Reg8: 36, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000735: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 3>
+00000739: <GetByIdShort>: <Reg8: 41, Reg8: 36, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000073e: <NewObject>: <Reg8: 36>
+00000740: <GetById>: <Reg8: 44, Reg8: 20, UInt8: 43, string_id: 42810>  # String: 'explainLine' (Identifier)
+00000746: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 44, string_id: 238>  # String: 'style' (Identifier)
+0000074a: <NewObject>: <Reg8: 44>
+0000074c: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 43, string_id: 71>  # String: 'f' (Identifier)
+00000750: <LoadFromEnvironment>: <Reg8: 43, Reg8: 17, UInt8: 26>
+00000754: <GetById>: <Reg8: 43, Reg8: 43, UInt8: 44, string_id: 36640>  # String: 'SCALA_CG' (Identifier)
+0000075a: <PutNewOwnById>: <Reg8: 44, Reg8: 43, string_id: 32867>  # String: 'scala' (Identifier)
+0000075f: <LoadConstString>: <Reg8: 43, string_id: 22251>  # String: 'ricetta.impattoPorzione' (String)
+00000763: <Call3>: <Reg8: 43, Reg8: 21, Reg8: 3, Reg8: 43, Reg8: 44>
+00000769: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+0000076d: <Call3>: <Reg8: 41, Reg8: 42, Reg8: 3, Reg8: 41, Reg8: 36>
+00000773: <NewArray>: <Reg8: 36, UInt16: 3>
+00000777: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 0>
+0000077b: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 31>
+0000077f: <GetByIdShort>: <Reg8: 43, Reg8: 41, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000784: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 3>
+00000788: <GetByIdShort>: <Reg8: 42, Reg8: 41, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+0000078d: <NewObject>: <Reg8: 41>
+0000078f: <GetById>: <Reg8: 44, Reg8: 20, UInt8: 45, string_id: 42823>  # String: 'explainRow' (Identifier)
+00000795: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 44, string_id: 238>  # String: 'style' (Identifier)
+00000799: <Mov>: <Reg8: 49, Reg8: 47>
+0000079c: <JmpFalse>: <Addr8: 34, Reg8: 49>  # Address: 000007be
+0000079f: <LoadFromEnvironment>: <Reg8: 44, Reg8: 17, UInt8: 31>
+000007a3: <GetByIdShort>: <Reg8: 51, Reg8: 44, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000007a8: <LoadFromEnvironment>: <Reg8: 44, Reg8: 17, UInt8: 10>
+000007ac: <GetByIdShort>: <Reg8: 50, Reg8: 44, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000007b1: <NewObject>: <Reg8: 44>
+000007b3: <PutNewOwnById>: <Reg8: 44, Reg8: 47, string_id: 40917>  # String: 'livello' (Identifier)
+000007b8: <Call3>: <Reg8: 49, Reg8: 51, Reg8: 3, Reg8: 50, Reg8: 44>
+000007be: <NewArray>: <Reg8: 44, UInt16: 3>
+000007c2: <PutOwnByIndex>: <Reg8: 44, Reg8: 49, UInt8: 0>
+000007c6: <JmpFalse>: <Addr8: 42, Reg8: 46>  # Address: 000007f0
+000007c9: <LoadFromEnvironment>: <Reg8: 49, Reg8: 17, UInt8: 31>
+000007cd: <GetByIdShort>: <Reg8: 51, Reg8: 49, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000007d2: <LoadFromEnvironment>: <Reg8: 49, Reg8: 17, UInt8: 11>
+000007d6: <GetByIdShort>: <Reg8: 50, Reg8: 49, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000007db: <NewObject>: <Reg8: 49>
+000007dd: <LoadConstString>: <Reg8: 52, string_id: 13255>  # String: 'ricetta.rivista' (String)
+000007e1: <Call2>: <Reg8: 52, Reg8: 21, Reg8: 3, Reg8: 52>
+000007e6: <PutNewOwnByIdShort>: <Reg8: 49, Reg8: 52, string_id: 41>  # String: 'label' (Identifier)
+000007ea: <Call3>: <Reg8: 46, Reg8: 51, Reg8: 3, Reg8: 50, Reg8: 49>
+000007f0: <PutOwnByIndex>: <Reg8: 44, Reg8: 46, UInt8: 1>
+000007f4: <LoadFromEnvironment>: <Reg8: 46, Reg8: 17, UInt8: 31>
+000007f8: <GetByIdShort>: <Reg8: 50, Reg8: 46, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000007fd: <LoadFromEnvironment>: <Reg8: 46, Reg8: 17, UInt8: 3>
+00000801: <GetByIdShort>: <Reg8: 49, Reg8: 46, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+00000806: <NewObject>: <Reg8: 46>
+00000808: <CreateClosure>: <Reg8: 51, Reg8: 18, function_id: 19430>  # Function: [#19430 onPress of 23 bytes]: 1 params @ offset 0x004ef07f
+0000080d: <PutNewOwnByIdShort>: <Reg8: 46, Reg8: 51, string_id: 191>  # String: 'onPress' (Identifier)
+00000811: <LoadConstUInt8>: <Reg8: 51, UInt8: 6>
+00000814: <PutNewOwnById>: <Reg8: 46, Reg8: 51, string_id: 39898>  # String: 'hitSlop' (Identifier)
+00000819: <LoadFromEnvironment>: <Reg8: 51, Reg8: 17, UInt8: 31>
+0000081d: <GetByIdShort>: <Reg8: 53, Reg8: 51, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000822: <LoadFromEnvironment>: <Reg8: 51, Reg8: 17, UInt8: 3>
+00000826: <GetByIdShort>: <Reg8: 52, Reg8: 51, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000082b: <NewObject>: <Reg8: 51>
+0000082d: <GetById>: <Reg8: 55, Reg8: 20, UInt8: 47, string_id: 51876>  # String: 'calcLink' (Identifier)
+00000833: <PutNewOwnByIdShort>: <Reg8: 51, Reg8: 55, string_id: 238>  # String: 'style' (Identifier)
+00000837: <JmpTrue>: <Addr8: 14, Reg8: 40>  # Address: 00000845
+0000083a: <LoadConstString>: <Reg8: 55, string_id: 10117>  # String: 'ricetta.comeCalcolato' (String)
+0000083e: <Call2>: <Reg8: 56, Reg8: 21, Reg8: 3, Reg8: 55>
+00000843: <Jmp>: <Addr8: 11>  # Address: 0000084e
+00000845: <LoadConstString>: <Reg8: 55, string_id: 21866>  # String: 'ricetta.nascondi' (String)
+00000849: <Call2>: <Reg8: 56, Reg8: 21, Reg8: 3, Reg8: 55>
+0000084e: <NewArray>: <Reg8: 55, UInt16: 2>
+00000852: <PutOwnByIndex>: <Reg8: 55, Reg8: 56, UInt8: 0>
+00000856: <LoadConstString>: <Reg8: 56, string_id: 22442>  # String: '  ›' (String)
+0000085a: <PutOwnByIndex>: <Reg8: 55, Reg8: 56, UInt8: 1>
+0000085e: <PutNewOwnByIdShort>: <Reg8: 51, Reg8: 55, string_id: 74>  # String: 'children' (Identifier)
+00000862: <Call3>: <Reg8: 51, Reg8: 53, Reg8: 3, Reg8: 52, Reg8: 51>
+00000868: <PutNewOwnByIdShort>: <Reg8: 46, Reg8: 51, string_id: 74>  # String: 'children' (Identifier)
+0000086c: <Call3>: <Reg8: 46, Reg8: 50, Reg8: 3, Reg8: 49, Reg8: 46>
+00000872: <PutOwnByIndex>: <Reg8: 44, Reg8: 46, UInt8: 2>
+00000876: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 44, string_id: 74>  # String: 'children' (Identifier)
+0000087a: <Call3>: <Reg8: 41, Reg8: 43, Reg8: 3, Reg8: 42, Reg8: 41>
+00000880: <PutOwnByIndex>: <Reg8: 36, Reg8: 41, UInt8: 1>
+00000884: <JmpFalseLong>: <Addr32: 250, Reg8: 40>  # Address: 0000097e
+0000088a: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 31>
+0000088e: <GetByIdShort>: <Reg8: 43, Reg8: 41, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000893: <LoadFromEnvironment>: <Reg8: 41, Reg8: 17, UInt8: 3>
+00000897: <GetByIdShort>: <Reg8: 42, Reg8: 41, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+0000089c: <NewObject>: <Reg8: 41>
+0000089e: <GetById>: <Reg8: 44, Reg8: 20, UInt8: 48, string_id: 51874>  # String: 'calcBox' (Identifier)
+000008a4: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 44, string_id: 238>  # String: 'style' (Identifier)
+000008a8: <LoadFromEnvironment>: <Reg8: 44, Reg8: 17, UInt8: 31>
+000008ac: <GetByIdShort>: <Reg8: 49, Reg8: 44, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000008b1: <LoadFromEnvironment>: <Reg8: 44, Reg8: 17, UInt8: 3>
+000008b5: <GetByIdShort>: <Reg8: 46, Reg8: 44, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000008ba: <NewObject>: <Reg8: 44>
+000008bc: <GetById>: <Reg8: 50, Reg8: 20, UInt8: 49, string_id: 45817>  # String: 'calcT' (Identifier)
+000008c2: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 50, string_id: 238>  # String: 'style' (Identifier)
+000008c6: <NewObject>: <Reg8: 51>
+000008c8: <NewObject>: <Reg8: 52>
+000008ca: <GetByIdShort>: <Reg8: 50, Reg8: 23, UInt8: 50, string_id: 206>  # String: 'porzioni' (Identifier)
+000008cf: <PutNewOwnById>: <Reg8: 52, Reg8: 50, string_id: 34034>  # String: 'count' (Identifier)
+000008d4: <LoadConstString>: <Reg8: 50, string_id: 22252>  # String: 'ricetta.porzioni' (String)
+000008d8: <Call3>: <Reg8: 50, Reg8: 21, Reg8: 3, Reg8: 50, Reg8: 52>
+000008de: <PutNewOwnById>: <Reg8: 51, Reg8: 50, string_id: 32046>  # String: 'porz' (Identifier)
+000008e3: <LoadConstString>: <Reg8: 50, string_id: 19409>  # String: 'ricetta.calcT' (String)
+000008e7: <Call3>: <Reg8: 50, Reg8: 21, Reg8: 3, Reg8: 50, Reg8: 51>
+000008ed: <PutNewOwnByIdShort>: <Reg8: 44, Reg8: 50, string_id: 74>  # String: 'children' (Identifier)
+000008f1: <Call3>: <Reg8: 46, Reg8: 49, Reg8: 3, Reg8: 46, Reg8: 44>
+000008f7: <NewArray>: <Reg8: 44, UInt16: 3>
+000008fb: <PutOwnByIndex>: <Reg8: 44, Reg8: 46, UInt8: 0>
+000008ff: <LoadFromEnvironment>: <Reg8: 46, Reg8: 17, UInt8: 31>
+00000903: <GetByIdShort>: <Reg8: 50, Reg8: 46, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000908: <LoadFromEnvironment>: <Reg8: 46, Reg8: 17, UInt8: 3>
+0000090c: <GetByIdShort>: <Reg8: 49, Reg8: 46, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000911: <NewObject>: <Reg8: 46>
+00000913: <GetById>: <Reg8: 51, Reg8: 20, UInt8: 51, string_id: 41612>  # String: 'calcSrc' (Identifier)
+00000919: <PutNewOwnByIdShort>: <Reg8: 46, Reg8: 51, string_id: 238>  # String: 'style' (Identifier)
+0000091d: <LoadConstString>: <Reg8: 51, string_id: 14594>  # String: 'ricetta.calcSrc' (String)
+00000921: <Call2>: <Reg8: 51, Reg8: 21, Reg8: 3, Reg8: 51>
+00000926: <PutNewOwnByIdShort>: <Reg8: 46, Reg8: 51, string_id: 74>  # String: 'children' (Identifier)
+0000092a: <Call3>: <Reg8: 46, Reg8: 50, Reg8: 3, Reg8: 49, Reg8: 46>
+00000930: <PutOwnByIndex>: <Reg8: 44, Reg8: 46, UInt8: 1>
+00000934: <LoadConstString>: <Reg8: 46, string_id: 35157>  # String: 'bassa' (Identifier)
+00000938: <StrictEq>: <Reg8: 46, Reg8: 47, Reg8: 46>
+0000093c: <JmpFalse>: <Addr8: 52, Reg8: 46>  # Address: 00000970
+0000093f: <LoadFromEnvironment>: <Reg8: 47, Reg8: 17, UInt8: 31>
+00000943: <GetByIdShort>: <Reg8: 50, Reg8: 47, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000948: <LoadFromEnvironment>: <Reg8: 47, Reg8: 17, UInt8: 3>
+0000094c: <GetByIdShort>: <Reg8: 49, Reg8: 47, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000951: <NewObject>: <Reg8: 47>
+00000953: <GetById>: <Reg8: 51, Reg8: 20, UInt8: 52, string_id: 35326>  # String: 'calcNote' (Identifier)
+00000959: <PutNewOwnByIdShort>: <Reg8: 47, Reg8: 51, string_id: 238>  # String: 'style' (Identifier)
+0000095d: <LoadConstString>: <Reg8: 51, string_id: 5614>  # String: 'ricetta.calcNoteAff' (String)
+00000961: <Call2>: <Reg8: 51, Reg8: 21, Reg8: 3, Reg8: 51>
+00000966: <PutNewOwnByIdShort>: <Reg8: 47, Reg8: 51, string_id: 74>  # String: 'children' (Identifier)
+0000096a: <Call3>: <Reg8: 46, Reg8: 50, Reg8: 3, Reg8: 49, Reg8: 47>
+00000970: <PutOwnByIndex>: <Reg8: 44, Reg8: 46, UInt8: 2>
+00000974: <PutNewOwnByIdShort>: <Reg8: 41, Reg8: 44, string_id: 74>  # String: 'children' (Identifier)
+00000978: <Call3>: <Reg8: 40, Reg8: 43, Reg8: 3, Reg8: 42, Reg8: 41>
+0000097e: <PutOwnByIndex>: <Reg8: 36, Reg8: 40, UInt8: 2>
+00000982: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 74>  # String: 'children' (Identifier)
+00000986: <Call3>: <Reg8: 13, Reg8: 35, Reg8: 3, Reg8: 15, Reg8: 13>
+0000098c: <PutOwnByIndex>: <Reg8: 11, Reg8: 13, UInt8: 6>
+00000990: <JmpFalseLong>: <Addr32: 595, Reg8: 12>  # Address: 00000be3
+00000996: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+0000099a: <GetByIdShort>: <Reg8: 35, Reg8: 13, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+0000099f: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+000009a3: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+000009a8: <NewObject>: <Reg8: 13>
+000009aa: <GetById>: <Reg8: 36, Reg8: 20, UInt8: 53, string_id: 43123>  # String: 'porzInt' (Identifier)
+000009b0: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 238>  # String: 'style' (Identifier)
+000009b4: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 31>
+000009b8: <GetByIdShort>: <Reg8: 41, Reg8: 36, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000009bd: <LoadFromEnvironment>: <Reg8: 36, Reg8: 17, UInt8: 3>
+000009c1: <GetByIdShort>: <Reg8: 40, Reg8: 36, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000009c6: <NewObject>: <Reg8: 36>
+000009c8: <GetById>: <Reg8: 42, Reg8: 20, UInt8: 54, string_id: 40041>  # String: 'porzIntH' (Identifier)
+000009ce: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 42, string_id: 238>  # String: 'style' (Identifier)
+000009d2: <LoadConstString>: <Reg8: 42, string_id: 22257>  # String: 'ricetta.seCambiPorzione' (String)
+000009d6: <Call2>: <Reg8: 42, Reg8: 21, Reg8: 3, Reg8: 42>
+000009db: <PutNewOwnByIdShort>: <Reg8: 36, Reg8: 42, string_id: 74>  # String: 'children' (Identifier)
+000009df: <Call3>: <Reg8: 40, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 36>
+000009e5: <NewArray>: <Reg8: 36, UInt16: 4>
+000009e9: <PutOwnByIndex>: <Reg8: 36, Reg8: 40, UInt8: 0>
+000009ed: <LoadFromEnvironment>: <Reg8: 40, Reg8: 17, UInt8: 31>
+000009f1: <GetByIdShort>: <Reg8: 42, Reg8: 40, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000009f6: <LoadFromEnvironment>: <Reg8: 40, Reg8: 17, UInt8: 3>
+000009fa: <GetByIdShort>: <Reg8: 41, Reg8: 40, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+000009ff: <NewObject>: <Reg8: 40>
+00000a01: <GetById>: <Reg8: 43, Reg8: 20, UInt8: 55, string_id: 53392>  # String: 'porzIntRow' (Identifier)
+00000a07: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 43, string_id: 238>  # String: 'style' (Identifier)
+00000a0b: <GetByIdShort>: <Reg8: 44, Reg8: 45, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+00000a10: <CreateClosure>: <Reg8: 43, Reg8: 18, function_id: 19432>  # Function: [#19432  of 214 bytes]: 2 params @ offset 0x004ef096
+00000a15: <Call2>: <Reg8: 43, Reg8: 44, Reg8: 45, Reg8: 43>
+00000a1a: <PutNewOwnByIdShort>: <Reg8: 40, Reg8: 43, string_id: 74>  # String: 'children' (Identifier)
+00000a1e: <Call3>: <Reg8: 40, Reg8: 42, Reg8: 3, Reg8: 41, Reg8: 40>
+00000a24: <PutOwnByIndex>: <Reg8: 36, Reg8: 40, UInt8: 1>
+00000a28: <TryGetById>: <Reg8: 43, Reg8: 32, UInt8: 57, string_id: 12>  # String: 'Math' (Identifier)
+00000a2e: <GetByIdShort>: <Reg8: 42, Reg8: 43, UInt8: 58, string_id: 37>  # String: 'round' (Identifier)
+00000a33: <GetByIdShort>: <Reg8: 40, Reg8: 29, UInt8: 24, string_id: 58>  # String: 'carico_glicemico' (Identifier)
+00000a38: <JmpTrue>: <Addr8: 5, Reg8: 40>  # Address: 00000a3d
+00000a3b: <LoadConstZero>: <Reg8: 40>
+00000a3d: <Mul>: <Reg8: 41, Reg8: 40, Reg8: 31>
+00000a41: <LoadConstUInt8>: <Reg8: 40, UInt8: 10>
+00000a44: <Mul>: <Reg8: 41, Reg8: 41, Reg8: 40>
+00000a48: <Call2>: <Reg8: 41, Reg8: 42, Reg8: 43, Reg8: 41>
+00000a4d: <Div>: <Reg8: 50, Reg8: 41, Reg8: 40>
+00000a51: <TryGetById>: <Reg8: 43, Reg8: 32, UInt8: 57, string_id: 12>  # String: 'Math' (Identifier)
+00000a57: <GetByIdShort>: <Reg8: 42, Reg8: 43, UInt8: 58, string_id: 37>  # String: 'round' (Identifier)
+00000a5c: <GetByIdShort>: <Reg8: 41, Reg8: 29, UInt8: 59, string_id: 54>  # String: 'carboidrati_disponibili_g' (Identifier)
+00000a61: <JmpTrue>: <Addr8: 5, Reg8: 41>  # Address: 00000a66
+00000a64: <LoadConstZero>: <Reg8: 41>
+00000a66: <Mul>: <Reg8: 41, Reg8: 41, Reg8: 31>
+00000a6a: <Call2>: <Reg8: 42, Reg8: 42, Reg8: 43, Reg8: 41>
+00000a6f: <LoadConstString>: <Reg8: 47, string_id: 34393>  # String: 'basso' (Identifier)
+00000a73: <JLessEqualN>: <Addr8: 17, Reg8: 50, Reg8: 40>  # Address: 00000a84
+00000a77: <LoadConstUInt8>: <Reg8: 40, UInt8: 19>
+00000a7a: <JNotLessEqualN>: <Addr8: 7, Reg8: 50, Reg8: 40>  # Address: 00000a81
+00000a7e: <Mov>: <Reg8: 37, Reg8: 39>
+00000a81: <Mov>: <Reg8: 47, Reg8: 37>
+00000a84: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 6>
+00000a88: <GetById>: <Reg8: 37, Reg8: 37, UInt8: 60, string_id: 32248>  # String: 'impatto' (Identifier)
+00000a8e: <Call3>: <Reg8: 37, Reg8: 37, Reg8: 3, Reg8: 47, Reg8: 30>
+00000a94: <GetByIdShort>: <Reg8: 51, Reg8: 37, UInt8: 61, string_id: 78>  # String: 'color' (Identifier)
+00000a99: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 31>
+00000a9d: <GetByIdShort>: <Reg8: 40, Reg8: 37, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000aa2: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 3>
+00000aa6: <GetByIdShort>: <Reg8: 39, Reg8: 37, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000aab: <NewObject>: <Reg8: 37>
+00000aad: <GetById>: <Reg8: 41, Reg8: 20, UInt8: 62, string_id: 55705>  # String: 'porzIntLive' (Identifier)
+00000ab3: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 41, string_id: 238>  # String: 'style' (Identifier)
+00000ab7: <NewObject>: <Reg8: 43>
+00000ab9: <PutNewOwnById>: <Reg8: 43, Reg8: 31, string_id: 34034>  # String: 'count' (Identifier)
+00000abe: <LoadConstString>: <Reg8: 41, string_id: 22252>  # String: 'ricetta.porzioni' (String)
+00000ac2: <Call3>: <Reg8: 43, Reg8: 21, Reg8: 3, Reg8: 41, Reg8: 43>
+00000ac8: <NewArray>: <Reg8: 41, UInt16: 4>
+00000acc: <PutOwnByIndex>: <Reg8: 41, Reg8: 43, UInt8: 0>
+00000ad0: <LoadConstString>: <Reg8: 44, string_id: 22408>  # String: '  ·  ' (String)
+00000ad4: <PutOwnByIndex>: <Reg8: 41, Reg8: 44, UInt8: 1>
+00000ad8: <LoadFromEnvironment>: <Reg8: 43, Reg8: 17, UInt8: 31>
+00000adc: <GetByIdShort>: <Reg8: 46, Reg8: 43, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000ae1: <LoadFromEnvironment>: <Reg8: 43, Reg8: 17, UInt8: 3>
+00000ae5: <GetByIdShort>: <Reg8: 45, Reg8: 43, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000aea: <NewObject>: <Reg8: 43>
+00000aec: <NewObject>: <Reg8: 49>
+00000aee: <LoadFromEnvironment>: <Reg8: 52, Reg8: 17, UInt8: 6>
+00000af2: <GetByIdShort>: <Reg8: 52, Reg8: 52, UInt8: 63, string_id: 129>  # String: 'fonts' (Identifier)
+00000af7: <GetByIdShort>: <Reg8: 52, Reg8: 52, UInt8: 64, string_id: 48>  # String: 'bold' (Identifier)
+00000afc: <PutNewOwnByIdShort>: <Reg8: 49, Reg8: 52, string_id: 45>  # String: 'fontFamily' (Identifier)
+00000b00: <PutNewOwnByIdShort>: <Reg8: 49, Reg8: 51, string_id: 78>  # String: 'color' (Identifier)
+00000b04: <PutNewOwnByIdShort>: <Reg8: 43, Reg8: 49, string_id: 238>  # String: 'style' (Identifier)
+00000b08: <LoadConstString>: <Reg8: 49, string_id: 21760>  # String: 'comune.cg' (String)
+00000b0c: <Call2>: <Reg8: 53, Reg8: 21, Reg8: 3, Reg8: 49>
+00000b11: <TryGetById>: <Reg8: 49, Reg8: 32, UInt8: 65, string_id: 20>  # String: 'String' (Identifier)
+00000b17: <Call2>: <Reg8: 52, Reg8: 49, Reg8: 3, Reg8: 50>
+00000b1c: <GetByIdShort>: <Reg8: 51, Reg8: 52, UInt8: 66, string_id: 218>  # String: 'replace' (Identifier)
+00000b21: <LoadConstString>: <Reg8: 50, string_id: 1245>  # String: '.' (String)
+00000b25: <LoadConstString>: <Reg8: 49, string_id: 1919>  # String: ',' (String)
+00000b29: <Call3>: <Reg8: 60, Reg8: 51, Reg8: 52, Reg8: 50, Reg8: 49>
+00000b2f: <Add>: <Reg8: 47, Reg8: 48, Reg8: 47>
+00000b33: <Call2>: <Reg8: 48, Reg8: 21, Reg8: 3, Reg8: 47>
+00000b38: <GetById>: <Reg8: 47, Reg8: 48, UInt8: 21, string_id: 38312>  # String: 'toLowerCase' (Identifier)
+00000b3e: <Call1>: <Reg8: 58, Reg8: 47, Reg8: 48>
+00000b42: <TryGetById>: <Reg8: 47, Reg8: 32, UInt8: 28, string_id: 7>  # String: 'HermesInternal' (Identifier)
+00000b48: <GetByIdShort>: <Reg8: 50, Reg8: 47, UInt8: 29, string_id: 79>  # String: 'concat' (Identifier)
+00000b4d: <LoadConstString>: <Reg8: 61, string_id: 1229>  # String: ' ' (String)
+00000b51: <LoadConstString>: <Reg8: 59, string_id: 434>  # String: ' (' (String)
+00000b55: <LoadConstString>: <Reg8: 57, string_id: 753>  # String: ')' (String)
+00000b59: <Mov>: <Reg8: 63, Reg8: 54>
+00000b5c: <Mov>: <Reg8: 62, Reg8: 53>
+00000b5f: <Call>: <Reg8: 47, Reg8: 50, UInt8: 7>
+00000b63: <PutNewOwnByIdShort>: <Reg8: 43, Reg8: 47, string_id: 74>  # String: 'children' (Identifier)
+00000b67: <Call3>: <Reg8: 43, Reg8: 46, Reg8: 3, Reg8: 45, Reg8: 43>
+00000b6d: <PutOwnByIndex>: <Reg8: 41, Reg8: 43, UInt8: 2>
+00000b71: <NewObject>: <Reg8: 43>
+00000b73: <PutNewOwnById>: <Reg8: 43, Reg8: 42, string_id: 31836>  # String: 'n' (Identifier)
+00000b78: <LoadConstString>: <Reg8: 42, string_id: 7930>  # String: 'cibo.gCarbo' (String)
+00000b7c: <Call3>: <Reg8: 43, Reg8: 21, Reg8: 3, Reg8: 42, Reg8: 43>
+00000b82: <TryGetById>: <Reg8: 42, Reg8: 32, UInt8: 28, string_id: 7>  # String: 'HermesInternal' (Identifier)
+00000b88: <GetByIdShort>: <Reg8: 42, Reg8: 42, UInt8: 29, string_id: 79>  # String: 'concat' (Identifier)
+00000b8d: <Call2>: <Reg8: 42, Reg8: 42, Reg8: 44, Reg8: 43>
+00000b92: <PutOwnByIndex>: <Reg8: 41, Reg8: 42, UInt8: 3>
+00000b96: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 41, string_id: 74>  # String: 'children' (Identifier)
+00000b9a: <Call3>: <Reg8: 37, Reg8: 40, Reg8: 3, Reg8: 39, Reg8: 37>
+00000ba0: <PutOwnByIndex>: <Reg8: 36, Reg8: 37, UInt8: 2>
+00000ba4: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 31>
+00000ba8: <GetByIdShort>: <Reg8: 40, Reg8: 37, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000bad: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 3>
+00000bb1: <GetByIdShort>: <Reg8: 39, Reg8: 37, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000bb6: <NewObject>: <Reg8: 37>
+00000bb8: <GetById>: <Reg8: 41, Reg8: 20, UInt8: 67, string_id: 50856>  # String: 'porzIntNota' (Identifier)
+00000bbe: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 41, string_id: 238>  # String: 'style' (Identifier)
+00000bc2: <LoadConstString>: <Reg8: 41, string_id: 7799>  # String: 'ricetta.porzioneCambia' (String)
+00000bc6: <Call2>: <Reg8: 41, Reg8: 21, Reg8: 3, Reg8: 41>
+00000bcb: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 41, string_id: 74>  # String: 'children' (Identifier)
+00000bcf: <Call3>: <Reg8: 37, Reg8: 40, Reg8: 3, Reg8: 39, Reg8: 37>
+00000bd5: <PutOwnByIndex>: <Reg8: 36, Reg8: 37, UInt8: 3>
+00000bd9: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 36, string_id: 74>  # String: 'children' (Identifier)
+00000bdd: <Call3>: <Reg8: 12, Reg8: 35, Reg8: 3, Reg8: 15, Reg8: 13>
+00000be3: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 7>
+00000be7: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000beb: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000bf0: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 15>
+00000bf4: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00000bf9: <NewObject>: <Reg8: 12>
+00000bfb: <GetById>: <Reg8: 35, Reg8: 28, UInt8: 68, string_id: 32759>  # String: 'dims' (Identifier)
+00000c01: <PutNewOwnById>: <Reg8: 12, Reg8: 35, string_id: 32759>  # String: 'dims' (Identifier)
+00000c06: <GetById>: <Reg8: 28, Reg8: 28, UInt8: 69, string_id: 40526>  # String: 'sintesi' (Identifier)
+00000c0c: <PutNewOwnById>: <Reg8: 12, Reg8: 28, string_id: 40526>  # String: 'sintesi' (Identifier)
+00000c11: <LoadConstUndefined>: <Reg8: 28>
+00000c13: <JStrictEqual>: <Addr8: 21, Reg8: 31, Reg8: 25>  # Address: 00000c28
+00000c17: <NewObject>: <Reg8: 35>
+00000c19: <PutNewOwnById>: <Reg8: 35, Reg8: 31, string_id: 34034>  # String: 'count' (Identifier)
+00000c1e: <LoadConstString>: <Reg8: 31, string_id: 22252>  # String: 'ricetta.porzioni' (String)
+00000c22: <Call3>: <Reg8: 28, Reg8: 21, Reg8: 3, Reg8: 31, Reg8: 35>
+00000c28: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 28, string_id: 206>  # String: 'porzioni' (Identifier)
+00000c2c: <CreateClosure>: <Reg8: 28, Reg8: 18, function_id: 19434>  # Function: [#19434 onInfo of 61 bytes]: 1 params @ offset 0x004cecf6
+00000c31: <PutNewOwnById>: <Reg8: 12, Reg8: 28, string_id: 47355>  # String: 'onInfo' (Identifier)
+00000c36: <CreateClosure>: <Reg8: 28, Reg8: 18, function_id: 19435>  # Function: [#19435 onFonti of 61 bytes]: 1 params @ offset 0x004ced33
+00000c3b: <PutNewOwnById>: <Reg8: 12, Reg8: 28, string_id: 39580>  # String: 'onFonti' (Identifier)
+00000c40: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00000c46: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 8>
+00000c4a: <Mov>: <Reg8: 12, Reg8: 38>
+00000c4d: <JmpFalseLong>: <Addr32: 246, Reg8: 12>  # Address: 00000d43
+00000c53: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+00000c57: <GetByIdShort>: <Reg8: 28, Reg8: 13, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000c5c: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+00000c60: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00000c65: <NewObject>: <Reg8: 13>
+00000c67: <GetById>: <Reg8: 31, Reg8: 20, UInt8: 70, string_id: 34975>  # String: 'contesto' (Identifier)
+00000c6d: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+00000c71: <LoadFromEnvironment>: <Reg8: 31, Reg8: 17, UInt8: 31>
+00000c75: <GetByIdShort>: <Reg8: 36, Reg8: 31, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000c7a: <LoadFromEnvironment>: <Reg8: 31, Reg8: 17, UInt8: 3>
+00000c7e: <GetByIdShort>: <Reg8: 35, Reg8: 31, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00000c83: <NewObject>: <Reg8: 31>
+00000c85: <GetById>: <Reg8: 37, Reg8: 20, UInt8: 71, string_id: 34977>  # String: 'contestoHead' (Identifier)
+00000c8b: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 37, string_id: 238>  # String: 'style' (Identifier)
+00000c8f: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 31>
+00000c93: <GetByIdShort>: <Reg8: 40, Reg8: 37, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000c98: <LoadFromEnvironment>: <Reg8: 37, Reg8: 17, UInt8: 7>
+00000c9c: <GetByIdShort>: <Reg8: 39, Reg8: 37, UInt8: 72, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000ca1: <NewObjectWithBufferLong>: <Reg8: 37, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 184593>  # Object: {'name': 'barbell-outline', 'size': 16}
+00000caf: <GetByIdShort>: <Reg8: 41, Reg8: 30, UInt8: 73, string_id: 140>  # String: 'greenDeep' (Identifier)
+00000cb4: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 41, string_id: 78>  # String: 'color' (Identifier)
+00000cb8: <Call3>: <Reg8: 39, Reg8: 40, Reg8: 3, Reg8: 39, Reg8: 37>
+00000cbe: <NewArray>: <Reg8: 37, UInt16: 2>
+00000cc2: <PutOwnByIndex>: <Reg8: 37, Reg8: 39, UInt8: 0>
+00000cc6: <LoadFromEnvironment>: <Reg8: 39, Reg8: 17, UInt8: 31>
+00000cca: <GetByIdShort>: <Reg8: 41, Reg8: 39, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000ccf: <LoadFromEnvironment>: <Reg8: 39, Reg8: 17, UInt8: 3>
+00000cd3: <GetByIdShort>: <Reg8: 40, Reg8: 39, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000cd8: <NewObject>: <Reg8: 39>
+00000cda: <GetById>: <Reg8: 42, Reg8: 20, UInt8: 74, string_id: 34976>  # String: 'contestoH' (Identifier)
+00000ce0: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 42, string_id: 238>  # String: 'style' (Identifier)
+00000ce4: <LoadConstString>: <Reg8: 42, string_id: 22254>  # String: 'ricetta.quandoHaSenso' (String)
+00000ce8: <Call2>: <Reg8: 42, Reg8: 21, Reg8: 3, Reg8: 42>
+00000ced: <PutNewOwnByIdShort>: <Reg8: 39, Reg8: 42, string_id: 74>  # String: 'children' (Identifier)
+00000cf1: <Call3>: <Reg8: 39, Reg8: 41, Reg8: 3, Reg8: 40, Reg8: 39>
+00000cf7: <PutOwnByIndex>: <Reg8: 37, Reg8: 39, UInt8: 1>
+00000cfb: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 37, string_id: 74>  # String: 'children' (Identifier)
+00000cff: <Call3>: <Reg8: 35, Reg8: 36, Reg8: 3, Reg8: 35, Reg8: 31>
+00000d05: <NewArray>: <Reg8: 31, UInt16: 2>
+00000d09: <PutOwnByIndex>: <Reg8: 31, Reg8: 35, UInt8: 0>
+00000d0d: <LoadFromEnvironment>: <Reg8: 35, Reg8: 17, UInt8: 31>
+00000d11: <GetByIdShort>: <Reg8: 37, Reg8: 35, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000d16: <LoadFromEnvironment>: <Reg8: 35, Reg8: 17, UInt8: 3>
+00000d1a: <GetByIdShort>: <Reg8: 36, Reg8: 35, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000d1f: <NewObject>: <Reg8: 35>
+00000d21: <GetById>: <Reg8: 39, Reg8: 20, UInt8: 75, string_id: 39276>  # String: 'contestoP' (Identifier)
+00000d27: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 39, string_id: 238>  # String: 'style' (Identifier)
+00000d2b: <PutNewOwnByIdShort>: <Reg8: 35, Reg8: 38, string_id: 74>  # String: 'children' (Identifier)
+00000d2f: <Call3>: <Reg8: 35, Reg8: 37, Reg8: 3, Reg8: 36, Reg8: 35>
+00000d35: <PutOwnByIndex>: <Reg8: 31, Reg8: 35, UInt8: 1>
+00000d39: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+00000d3d: <Call3>: <Reg8: 12, Reg8: 28, Reg8: 3, Reg8: 15, Reg8: 13>
+00000d43: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 9>
+00000d47: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000d4b: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000d50: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+00000d54: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00000d59: <NewObject>: <Reg8: 12>
+00000d5b: <GetById>: <Reg8: 28, Reg8: 20, UInt8: 76, string_id: 48684>  # String: 'macros' (Identifier)
+00000d61: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 28, string_id: 238>  # String: 'style' (Identifier)
+00000d65: <LoadConstString>: <Reg8: 28, string_id: 9831>  # String: 'ricetta.macro.kcal' (String)
+00000d69: <Call2>: <Reg8: 31, Reg8: 21, Reg8: 3, Reg8: 28>
+00000d6e: <NewArray>: <Reg8: 28, UInt16: 2>
+00000d72: <PutOwnByIndex>: <Reg8: 28, Reg8: 31, UInt8: 0>
+00000d76: <GetByIdShort>: <Reg8: 31, Reg8: 29, UInt8: 77, string_id: 109>  # String: 'kcal' (Identifier)
+00000d7b: <PutOwnByIndex>: <Reg8: 28, Reg8: 31, UInt8: 1>
+00000d7f: <NewArray>: <Reg8: 31, UInt16: 4>
+00000d83: <PutOwnByIndex>: <Reg8: 31, Reg8: 28, UInt8: 0>
+00000d87: <LoadConstString>: <Reg8: 28, string_id: 16808>  # String: 'ricetta.macro.carbo' (String)
+00000d8b: <Call2>: <Reg8: 35, Reg8: 21, Reg8: 3, Reg8: 28>
+00000d90: <NewArray>: <Reg8: 28, UInt16: 2>
+00000d94: <PutOwnByIndex>: <Reg8: 28, Reg8: 35, UInt8: 0>
+00000d98: <GetByIdShort>: <Reg8: 35, Reg8: 29, UInt8: 59, string_id: 54>  # String: 'carboidrati_disponibili_g' (Identifier)
+00000d9d: <PutOwnByIndex>: <Reg8: 28, Reg8: 35, UInt8: 1>
+00000da1: <PutOwnByIndex>: <Reg8: 31, Reg8: 28, UInt8: 1>
+00000da5: <LoadConstString>: <Reg8: 28, string_id: 1513>  # String: 'ricetta.macro.prot' (String)
+00000da9: <Call2>: <Reg8: 35, Reg8: 21, Reg8: 3, Reg8: 28>
+00000dae: <NewArray>: <Reg8: 28, UInt16: 2>
+00000db2: <PutOwnByIndex>: <Reg8: 28, Reg8: 35, UInt8: 0>
+00000db6: <GetByIdShort>: <Reg8: 35, Reg8: 29, UInt8: 27, string_id: 213>  # String: 'proteine_g' (Identifier)
+00000dbb: <PutOwnByIndex>: <Reg8: 28, Reg8: 35, UInt8: 1>
+00000dbf: <PutOwnByIndex>: <Reg8: 31, Reg8: 28, UInt8: 2>
+00000dc3: <LoadConstString>: <Reg8: 28, string_id: 20048>  # String: 'ricetta.macro.fibre' (String)
+00000dc7: <Call2>: <Reg8: 35, Reg8: 21, Reg8: 3, Reg8: 28>
+00000dcc: <NewArray>: <Reg8: 28, UInt16: 2>
+00000dd0: <PutOwnByIndex>: <Reg8: 28, Reg8: 35, UInt8: 0>
+00000dd4: <GetByIdShort>: <Reg8: 29, Reg8: 29, UInt8: 26, string_id: 116>  # String: 'fibre_g' (Identifier)
+00000dd9: <PutOwnByIndex>: <Reg8: 28, Reg8: 29, UInt8: 1>
+00000ddd: <PutOwnByIndex>: <Reg8: 31, Reg8: 28, UInt8: 3>
+00000de1: <GetByIdShort>: <Reg8: 29, Reg8: 31, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+00000de6: <CreateClosure>: <Reg8: 28, Reg8: 18, function_id: 19436>  # Function: [#19436  of 181 bytes]: 2 params @ offset 0x004ef16c
+00000deb: <Call2>: <Reg8: 28, Reg8: 29, Reg8: 31, Reg8: 28>
+00000df0: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 28, string_id: 74>  # String: 'children' (Identifier)
+00000df4: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00000dfa: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 10>
+00000dfe: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000e02: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00000e07: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+00000e0b: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+00000e10: <NewObject>: <Reg8: 12>
+00000e12: <GetById>: <Reg8: 29, Reg8: 20, UInt8: 78, string_id: 43083>  # String: 'favFull' (Identifier)
+00000e18: <NewArray>: <Reg8: 28, UInt16: 2>
+00000e1c: <PutOwnByIndex>: <Reg8: 28, Reg8: 29, UInt8: 0>
+00000e20: <Mov>: <Reg8: 29, Reg8: 33>
+00000e23: <JmpFalse>: <Addr8: 9, Reg8: 33>  # Address: 00000e2c
+00000e26: <GetById>: <Reg8: 29, Reg8: 20, UInt8: 79, string_id: 43084>  # String: 'favFullOn' (Identifier)
+00000e2c: <PutOwnByIndex>: <Reg8: 28, Reg8: 29, UInt8: 1>
+00000e30: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 28, string_id: 238>  # String: 'style' (Identifier)
+00000e34: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 191>  # String: 'onPress' (Identifier)
+00000e38: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 31>
+00000e3c: <GetByIdShort>: <Reg8: 29, Reg8: 16, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000e41: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 7>
+00000e45: <GetByIdShort>: <Reg8: 28, Reg8: 16, UInt8: 72, string_id: 8>  # String: 'Ionicons' (Identifier)
+00000e4a: <NewObject>: <Reg8: 16>
+00000e4c: <LoadConstString>: <Reg8: 31, string_id: 45005>  # String: 'heart-outline' (Identifier)
+00000e50: <JmpFalse>: <Addr8: 7, Reg8: 33>  # Address: 00000e57
+00000e53: <LoadConstString>: <Reg8: 31, string_id: 36494>  # String: 'heart' (Identifier)
+00000e57: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 92>  # String: 'name' (Identifier)
+00000e5b: <LoadConstUInt8>: <Reg8: 31, UInt8: 20>
+00000e5e: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 227>  # String: 'size' (Identifier)
+00000e62: <JmpTrue>: <Addr8: 10, Reg8: 33>  # Address: 00000e6c
+00000e65: <GetByIdShort>: <Reg8: 31, Reg8: 30, UInt8: 73, string_id: 140>  # String: 'greenDeep' (Identifier)
+00000e6a: <Jmp>: <Addr8: 8>  # Address: 00000e72
+00000e6c: <GetById>: <Reg8: 31, Reg8: 30, UInt8: 80, string_id: 32399>  # String: 'red' (Identifier)
+00000e72: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 78>  # String: 'color' (Identifier)
+00000e76: <Call3>: <Reg8: 28, Reg8: 29, Reg8: 3, Reg8: 28, Reg8: 16>
+00000e7c: <NewArray>: <Reg8: 16, UInt16: 2>
+00000e80: <PutOwnByIndex>: <Reg8: 16, Reg8: 28, UInt8: 0>
+00000e84: <LoadFromEnvironment>: <Reg8: 28, Reg8: 17, UInt8: 31>
+00000e88: <GetByIdShort>: <Reg8: 31, Reg8: 28, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000e8d: <LoadFromEnvironment>: <Reg8: 28, Reg8: 17, UInt8: 3>
+00000e91: <GetByIdShort>: <Reg8: 29, Reg8: 28, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000e96: <NewObject>: <Reg8: 28>
+00000e98: <GetById>: <Reg8: 36, Reg8: 20, UInt8: 81, string_id: 52953>  # String: 'favFullTxt' (Identifier)
+00000e9e: <NewArray>: <Reg8: 35, UInt16: 2>
+00000ea2: <PutOwnByIndex>: <Reg8: 35, Reg8: 36, UInt8: 0>
+00000ea6: <Mov>: <Reg8: 36, Reg8: 33>
+00000ea9: <JmpFalse>: <Addr8: 18, Reg8: 36>  # Address: 00000ebb
+00000eac: <NewObject>: <Reg8: 37>
+00000eae: <GetById>: <Reg8: 38, Reg8: 30, UInt8: 80, string_id: 32399>  # String: 'red' (Identifier)
+00000eb4: <PutNewOwnByIdShort>: <Reg8: 37, Reg8: 38, string_id: 78>  # String: 'color' (Identifier)
+00000eb8: <Mov>: <Reg8: 36, Reg8: 37>
+00000ebb: <PutOwnByIndex>: <Reg8: 35, Reg8: 36, UInt8: 1>
+00000ebf: <PutNewOwnByIdShort>: <Reg8: 28, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+00000ec3: <JmpTrue>: <Addr8: 14, Reg8: 33>  # Address: 00000ed1
+00000ec6: <LoadConstString>: <Reg8: 33, string_id: 22255>  # String: 'ricetta.salva' (String)
+00000eca: <Call2>: <Reg8: 33, Reg8: 21, Reg8: 3, Reg8: 33>
+00000ecf: <Jmp>: <Addr8: 11>  # Address: 00000eda
+00000ed1: <LoadConstString>: <Reg8: 35, string_id: 22256>  # String: 'ricetta.salvato' (String)
+00000ed5: <Call2>: <Reg8: 33, Reg8: 21, Reg8: 3, Reg8: 35>
+00000eda: <PutNewOwnByIdShort>: <Reg8: 28, Reg8: 33, string_id: 74>  # String: 'children' (Identifier)
+00000ede: <Call3>: <Reg8: 28, Reg8: 31, Reg8: 3, Reg8: 29, Reg8: 28>
+00000ee4: <PutOwnByIndex>: <Reg8: 16, Reg8: 28, UInt8: 1>
+00000ee8: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+00000eec: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00000ef2: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 11>
+00000ef6: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000efa: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000eff: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+00000f03: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+00000f08: <NewObject>: <Reg8: 12>
+00000f0a: <GetById>: <Reg8: 16, Reg8: 20, UInt8: 82, string_id: 35426>  # String: 'planBtn' (Identifier)
+00000f10: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 238>  # String: 'style' (Identifier)
+00000f14: <CreateClosure>: <Reg8: 16, Reg8: 18, function_id: 19437>  # Function: [#19437 onPress of 18 bytes]: 1 params @ offset 0x004ef221
+00000f19: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 191>  # String: 'onPress' (Identifier)
+00000f1d: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 31>
+00000f21: <GetByIdShort>: <Reg8: 29, Reg8: 16, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000f26: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 3>
+00000f2a: <GetByIdShort>: <Reg8: 28, Reg8: 16, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000f2f: <NewObject>: <Reg8: 16>
+00000f31: <GetById>: <Reg8: 31, Reg8: 20, UInt8: 83, string_id: 43610>  # String: 'planTxt' (Identifier)
+00000f37: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+00000f3b: <JmpTrue>: <Addr8: 22, Reg8: 34>  # Address: 00000f51
+00000f3e: <LoadConstString>: <Reg8: 31, string_id: 8624>  # String: 'ricetta.aggiungiPiano' (String)
+00000f42: <Call2>: <Reg8: 33, Reg8: 21, Reg8: 3, Reg8: 31>
+00000f47: <LoadConstString>: <Reg8: 31, string_id: 22406>  # String: '🗓  ' (String)
+00000f4b: <Add>: <Reg8: 31, Reg8: 31, Reg8: 33>
+00000f4f: <Jmp>: <Addr8: 22>  # Address: 00000f65
+00000f51: <TryGetById>: <Reg8: 32, Reg8: 32, UInt8: 28, string_id: 7>  # String: 'HermesInternal' (Identifier)
+00000f57: <GetByIdShort>: <Reg8: 33, Reg8: 32, UInt8: 29, string_id: 79>  # String: 'concat' (Identifier)
+00000f5c: <LoadConstString>: <Reg8: 32, string_id: 31516>  # String: '✓ ' (String)
+00000f60: <Call2>: <Reg8: 31, Reg8: 33, Reg8: 32, Reg8: 34>
+00000f65: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+00000f69: <Call3>: <Reg8: 16, Reg8: 29, Reg8: 3, Reg8: 28, Reg8: 16>
+00000f6f: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+00000f73: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00000f79: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 12>
+00000f7d: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000f81: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000f86: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 20>
+00000f8a: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00000f8f: <NewObject>: <Reg8: 12>
+00000f91: <LoadConstString>: <Reg8: 16, string_id: 8771>  # String: 'Condividi questa scelta' (String)
+00000f95: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 41>  # String: 'label' (Identifier)
+00000f99: <NewObject>: <Reg8: 16>
+00000f9b: <LoadConstUInt8>: <Reg8: 28, UInt8: 10>
+00000f9e: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 28, string_id: 179>  # String: 'marginTop' (Identifier)
+00000fa2: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 238>  # String: 'style' (Identifier)
+00000fa6: <CreateClosure>: <Reg8: 16, Reg8: 18, function_id: 19438>  # Function: [#19438 renderCard of 154 bytes]: 3 params @ offset 0x004ef233
+00000fab: <PutNewOwnById>: <Reg8: 12, Reg8: 16, string_id: 40194>  # String: 'renderCard' (Identifier)
+00000fb0: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00000fb6: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 13>
+00000fba: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000fbe: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000fc3: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 30>
+00000fc7: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00000fcc: <NewObject>: <Reg8: 12>
+00000fce: <CreateClosure>: <Reg8: 16, Reg8: 18, function_id: 19439>  # Function: [#19439 snapshot of 220 bytes]: 1 params @ offset 0x004ef2cd
+00000fd3: <PutNewOwnById>: <Reg8: 12, Reg8: 16, string_id: 39779>  # String: 'snapshot' (Identifier)
+00000fd8: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00000fde: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 14>
+00000fe2: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00000fe6: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00000feb: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+00000fef: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00000ff4: <NewObject>: <Reg8: 12>
+00000ff6: <GetById>: <Reg8: 16, Reg8: 20, UInt8: 84, string_id: 43306>  # String: 'secTitle' (Identifier)
+00000ffc: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 238>  # String: 'style' (Identifier)
+00001000: <LoadConstString>: <Reg8: 16, string_id: 13208>  # String: 'ricetta.ingredienti' (String)
+00001004: <Call2>: <Reg8: 16, Reg8: 21, Reg8: 3, Reg8: 16>
+00001009: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+0000100d: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+00001013: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 15>
+00001017: <GetByIdShort>: <Reg8: 15, Reg8: 23, UInt8: 85, string_id: 161>  # String: 'ingredienti' (Identifier)
+0000101c: <GetByIdShort>: <Reg8: 13, Reg8: 15, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+00001021: <CreateClosure>: <Reg8: 12, Reg8: 18, function_id: 19440>  # Function: [#19440  of 287 bytes]: 3 params @ offset 0x004ef3a9
+00001026: <Call2>: <Reg8: 12, Reg8: 13, Reg8: 15, Reg8: 12>
+0000102b: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 16>
+0000102f: <GetByIdShort>: <Reg8: 15, Reg8: 23, UInt8: 85, string_id: 161>  # String: 'ingredienti' (Identifier)
+00001034: <GetById>: <Reg8: 13, Reg8: 15, UInt8: 86, string_id: 34372>  # String: 'some' (Identifier)
+0000103a: <CreateClosure>: <Reg8: 12, Reg8: 18, function_id: 19441>  # Function: [#19441  of 42 bytes]: 2 params @ offset 0x004ef4c8
+0000103f: <Call2>: <Reg8: 12, Reg8: 13, Reg8: 15, Reg8: 12>
+00001044: <JmpFalse>: <Addr8: 52, Reg8: 12>  # Address: 00001078
+00001047: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+0000104b: <GetByIdShort>: <Reg8: 16, Reg8: 13, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001050: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+00001054: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00001059: <NewObject>: <Reg8: 13>
+0000105b: <GetById>: <Reg8: 28, Reg8: 20, UInt8: 87, string_id: 32843>  # String: 'ingNota' (Identifier)
+00001061: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 28, string_id: 238>  # String: 'style' (Identifier)
+00001065: <LoadConstString>: <Reg8: 28, string_id: 15967>  # String: 'ricetta.ingCrudi' (String)
+00001069: <Call2>: <Reg8: 28, Reg8: 21, Reg8: 3, Reg8: 28>
+0000106e: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 28, string_id: 74>  # String: 'children' (Identifier)
+00001072: <Call3>: <Reg8: 12, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 13>
+00001078: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 17>
+0000107c: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00001080: <GetByIdShort>: <Reg8: 15, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001085: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+00001089: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000108e: <NewObject>: <Reg8: 12>
+00001090: <GetById>: <Reg8: 16, Reg8: 20, UInt8: 84, string_id: 43306>  # String: 'secTitle' (Identifier)
+00001096: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 238>  # String: 'style' (Identifier)
+0000109a: <LoadConstString>: <Reg8: 16, string_id: 22253>  # String: 'ricetta.preparazione' (String)
+0000109e: <Call2>: <Reg8: 16, Reg8: 21, Reg8: 3, Reg8: 16>
+000010a3: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+000010a7: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 13, Reg8: 12>
+000010ad: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 18>
+000010b1: <LoadConstString>: <Reg8: 12, string_id: 207>  # String: 'procedimento' (Identifier)
+000010b5: <Call3>: <Reg8: 15, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 12>
+000010bb: <JmpTrue>: <Addr8: 7, Reg8: 15>  # Address: 000010c2
+000010be: <NewArray>: <Reg8: 15, UInt16: 0>
+000010c2: <GetByIdShort>: <Reg8: 13, Reg8: 15, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+000010c7: <CreateClosure>: <Reg8: 12, Reg8: 18, function_id: 19442>  # Function: [#19442  of 88 bytes]: 3 params @ offset 0x004ef4f2
+000010cc: <Call2>: <Reg8: 12, Reg8: 13, Reg8: 15, Reg8: 12>
+000010d1: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 19>
+000010d5: <GetByIdShort>: <Reg8: 12, Reg8: 23, UInt8: 88, string_id: 33>  # String: 'alternative' (Identifier)
+000010da: <JmpFalse>: <Addr8: 17, Reg8: 12>  # Address: 000010eb
+000010dd: <GetByIdShort>: <Reg8: 13, Reg8: 23, UInt8: 88, string_id: 33>  # String: 'alternative' (Identifier)
+000010e2: <GetByIdShort>: <Reg8: 13, Reg8: 13, UInt8: 89, string_id: 171>  # String: 'length' (Identifier)
+000010e7: <Greater>: <Reg8: 12, Reg8: 13, Reg8: 14>
+000010eb: <JmpFalse>: <Addr8: 114, Reg8: 12>  # Address: 0000115d
+000010ee: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+000010f2: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+000010f7: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+000010fb: <GetByIdShort>: <Reg8: 14, Reg8: 13, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00001100: <NewObject>: <Reg8: 13>
+00001102: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 31>
+00001106: <GetByIdShort>: <Reg8: 29, Reg8: 16, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000110b: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 3>
+0000110f: <GetByIdShort>: <Reg8: 28, Reg8: 16, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00001114: <NewObject>: <Reg8: 16>
+00001116: <GetById>: <Reg8: 31, Reg8: 20, UInt8: 84, string_id: 43306>  # String: 'secTitle' (Identifier)
+0000111c: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+00001120: <LoadConstString>: <Reg8: 31, string_id: 8970>  # String: 'ricetta.alternative' (String)
+00001124: <Call2>: <Reg8: 31, Reg8: 21, Reg8: 3, Reg8: 31>
+00001129: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+0000112d: <Call3>: <Reg8: 28, Reg8: 29, Reg8: 3, Reg8: 28, Reg8: 16>
+00001133: <NewArray>: <Reg8: 16, UInt16: 2>
+00001137: <PutOwnByIndex>: <Reg8: 16, Reg8: 28, UInt8: 0>
+0000113b: <GetByIdShort>: <Reg8: 31, Reg8: 23, UInt8: 88, string_id: 33>  # String: 'alternative' (Identifier)
+00001140: <GetByIdShort>: <Reg8: 29, Reg8: 31, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+00001145: <CreateClosure>: <Reg8: 28, Reg8: 18, function_id: 19443>  # Function: [#19443  of 243 bytes]: 3 params @ offset 0x004ef54a
+0000114a: <Call2>: <Reg8: 28, Reg8: 29, Reg8: 31, Reg8: 28>
+0000114f: <PutOwnByIndex>: <Reg8: 16, Reg8: 28, UInt8: 1>
+00001153: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+00001157: <Call3>: <Reg8: 12, Reg8: 15, Reg8: 3, Reg8: 14, Reg8: 13>
+0000115d: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 20>
+00001161: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00001165: <GetByIdShort>: <Reg8: 14, Reg8: 12, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+0000116a: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+0000116e: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00001173: <NewObject>: <Reg8: 12>
+00001175: <GetById>: <Reg8: 15, Reg8: 20, UInt8: 90, string_id: 33488>  # String: 'tips' (Identifier)
+0000117b: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 15, string_id: 238>  # String: 'style' (Identifier)
+0000117f: <LoadFromEnvironment>: <Reg8: 15, Reg8: 17, UInt8: 31>
+00001183: <GetByIdShort>: <Reg8: 28, Reg8: 15, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001188: <LoadFromEnvironment>: <Reg8: 15, Reg8: 17, UInt8: 3>
+0000118c: <GetByIdShort>: <Reg8: 16, Reg8: 15, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00001191: <NewObject>: <Reg8: 15>
+00001193: <GetById>: <Reg8: 29, Reg8: 20, UInt8: 91, string_id: 40048>  # String: 'tipsH' (Identifier)
+00001199: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 29, string_id: 238>  # String: 'style' (Identifier)
+0000119d: <LoadConstString>: <Reg8: 29, string_id: 6693>  # String: 'ricetta.piuGraduale' (String)
+000011a1: <Call2>: <Reg8: 29, Reg8: 21, Reg8: 3, Reg8: 29>
+000011a6: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 29, string_id: 74>  # String: 'children' (Identifier)
+000011aa: <Call3>: <Reg8: 16, Reg8: 28, Reg8: 3, Reg8: 16, Reg8: 15>
+000011b0: <NewArray>: <Reg8: 15, UInt16: 2>
+000011b4: <PutOwnByIndex>: <Reg8: 15, Reg8: 16, UInt8: 0>
+000011b8: <LoadConstString>: <Reg8: 16, string_id: 81>  # String: 'consigli' (Identifier)
+000011bc: <Call3>: <Reg8: 29, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 16>
+000011c2: <JmpTrue>: <Addr8: 7, Reg8: 29>  # Address: 000011c9
+000011c5: <NewArray>: <Reg8: 29, UInt16: 0>
+000011c9: <GetByIdShort>: <Reg8: 28, Reg8: 29, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+000011ce: <CreateClosure>: <Reg8: 16, Reg8: 18, function_id: 19445>  # Function: [#19445  of 139 bytes]: 3 params @ offset 0x004ef73d
+000011d3: <Call2>: <Reg8: 16, Reg8: 28, Reg8: 29, Reg8: 16>
+000011d8: <PutOwnByIndex>: <Reg8: 15, Reg8: 16, UInt8: 1>
+000011dc: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 15, string_id: 74>  # String: 'children' (Identifier)
+000011e0: <Call3>: <Reg8: 12, Reg8: 14, Reg8: 3, Reg8: 13, Reg8: 12>
+000011e6: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 21>
+000011ea: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+000011ee: <GetByIdShort>: <Reg8: 14, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000011f3: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 16>
+000011f7: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+000011fc: <NewObject>: <Reg8: 12>
+000011fe: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 23, string_id: 38>  # String: 'base' (Identifier)
+00001202: <Call3>: <Reg8: 12, Reg8: 14, Reg8: 3, Reg8: 13, Reg8: 12>
+00001208: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 22>
+0000120c: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00001210: <GetByIdShort>: <Reg8: 14, Reg8: 12, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+00001215: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 3>
+00001219: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+0000121e: <NewObject>: <Reg8: 12>
+00001220: <GetById>: <Reg8: 15, Reg8: 20, UInt8: 92, string_id: 40027>  # String: 'tuoPiatto' (Identifier)
+00001226: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 15, string_id: 238>  # String: 'style' (Identifier)
+0000122a: <CreateClosure>: <Reg8: 15, Reg8: 18, function_id: 19446>  # Function: [#19446 onPress of 24 bytes]: 1 params @ offset 0x004920ba
+0000122f: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 15, string_id: 191>  # String: 'onPress' (Identifier)
+00001233: <LoadFromEnvironment>: <Reg8: 15, Reg8: 17, UInt8: 31>
+00001237: <GetByIdShort>: <Reg8: 28, Reg8: 15, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000123c: <LoadFromEnvironment>: <Reg8: 15, Reg8: 17, UInt8: 3>
+00001240: <GetByIdShort>: <Reg8: 16, Reg8: 15, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00001245: <NewObject>: <Reg8: 15>
+00001247: <GetById>: <Reg8: 29, Reg8: 20, UInt8: 93, string_id: 36545>  # String: 'tpIcon' (Identifier)
+0000124d: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 29, string_id: 238>  # String: 'style' (Identifier)
+00001251: <LoadFromEnvironment>: <Reg8: 29, Reg8: 17, UInt8: 31>
+00001255: <GetByIdShort>: <Reg8: 32, Reg8: 29, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000125a: <LoadFromEnvironment>: <Reg8: 29, Reg8: 17, UInt8: 7>
+0000125e: <GetByIdShort>: <Reg8: 31, Reg8: 29, UInt8: 72, string_id: 8>  # String: 'Ionicons' (Identifier)
+00001263: <NewObjectWithBufferLong>: <Reg8: 29, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 189337>  # Object: {'name': 'camera', 'size': 20}
+00001271: <GetById>: <Reg8: 33, Reg8: 30, UInt8: 94, string_id: 52886>  # String: 'goldInk' (Identifier)
+00001277: <PutNewOwnByIdShort>: <Reg8: 29, Reg8: 33, string_id: 78>  # String: 'color' (Identifier)
+0000127b: <Call3>: <Reg8: 29, Reg8: 32, Reg8: 3, Reg8: 31, Reg8: 29>
+00001281: <PutNewOwnByIdShort>: <Reg8: 15, Reg8: 29, string_id: 74>  # String: 'children' (Identifier)
+00001285: <Call3>: <Reg8: 16, Reg8: 28, Reg8: 3, Reg8: 16, Reg8: 15>
+0000128b: <NewArray>: <Reg8: 15, UInt16: 3>
+0000128f: <PutOwnByIndex>: <Reg8: 15, Reg8: 16, UInt8: 0>
+00001293: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 31>
+00001297: <GetByIdShort>: <Reg8: 29, Reg8: 16, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+0000129c: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 3>
+000012a0: <GetByIdShort>: <Reg8: 28, Reg8: 16, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+000012a5: <NewObject>: <Reg8: 16>
+000012a7: <NewObject>: <Reg8: 31>
+000012a9: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 25, string_id: 121>  # String: 'flex' (Identifier)
+000012ad: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 238>  # String: 'style' (Identifier)
+000012b1: <LoadFromEnvironment>: <Reg8: 31, Reg8: 17, UInt8: 31>
+000012b5: <GetByIdShort>: <Reg8: 33, Reg8: 31, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000012ba: <LoadFromEnvironment>: <Reg8: 31, Reg8: 17, UInt8: 3>
+000012be: <GetByIdShort>: <Reg8: 32, Reg8: 31, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000012c3: <NewObject>: <Reg8: 31>
+000012c5: <GetById>: <Reg8: 34, Reg8: 20, UInt8: 95, string_id: 40053>  # String: 'tpH' (Identifier)
+000012cb: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 34, string_id: 238>  # String: 'style' (Identifier)
+000012cf: <LoadConstString>: <Reg8: 34, string_id: 12364>  # String: 'ricetta.tuoPiattoH' (String)
+000012d3: <Call2>: <Reg8: 34, Reg8: 21, Reg8: 3, Reg8: 34>
+000012d8: <PutNewOwnByIdShort>: <Reg8: 31, Reg8: 34, string_id: 74>  # String: 'children' (Identifier)
+000012dc: <Call3>: <Reg8: 32, Reg8: 33, Reg8: 3, Reg8: 32, Reg8: 31>
+000012e2: <NewArray>: <Reg8: 31, UInt16: 2>
+000012e6: <PutOwnByIndex>: <Reg8: 31, Reg8: 32, UInt8: 0>
+000012ea: <LoadFromEnvironment>: <Reg8: 32, Reg8: 17, UInt8: 31>
+000012ee: <GetByIdShort>: <Reg8: 34, Reg8: 32, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000012f3: <LoadFromEnvironment>: <Reg8: 32, Reg8: 17, UInt8: 3>
+000012f7: <GetByIdShort>: <Reg8: 33, Reg8: 32, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000012fc: <NewObject>: <Reg8: 32>
+000012fe: <GetById>: <Reg8: 35, Reg8: 20, UInt8: 96, string_id: 32361>  # String: 'tpS' (Identifier)
+00001304: <PutNewOwnByIdShort>: <Reg8: 32, Reg8: 35, string_id: 238>  # String: 'style' (Identifier)
+00001308: <LoadConstString>: <Reg8: 35, string_id: 16929>  # String: 'ricetta.tuoPiattoS' (String)
+0000130c: <Call2>: <Reg8: 35, Reg8: 21, Reg8: 3, Reg8: 35>
+00001311: <PutNewOwnByIdShort>: <Reg8: 32, Reg8: 35, string_id: 74>  # String: 'children' (Identifier)
+00001315: <Call3>: <Reg8: 32, Reg8: 34, Reg8: 3, Reg8: 33, Reg8: 32>
+0000131b: <PutOwnByIndex>: <Reg8: 31, Reg8: 32, UInt8: 1>
+0000131f: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 31, string_id: 74>  # String: 'children' (Identifier)
+00001323: <Call3>: <Reg8: 16, Reg8: 29, Reg8: 3, Reg8: 28, Reg8: 16>
+00001329: <PutOwnByIndex>: <Reg8: 15, Reg8: 16, UInt8: 1>
+0000132d: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 31>
+00001331: <GetByIdShort>: <Reg8: 29, Reg8: 16, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001336: <LoadFromEnvironment>: <Reg8: 16, Reg8: 17, UInt8: 7>
+0000133a: <GetByIdShort>: <Reg8: 28, Reg8: 16, UInt8: 72, string_id: 8>  # String: 'Ionicons' (Identifier)
+0000133f: <NewObjectWithBufferLong>: <Reg8: 16, UInt16: 3, UInt16: 2, UInt32: 44637, UInt32: 179653>  # Object: {'name': 'chevron-forward', 'size': 18}
+0000134d: <GetById>: <Reg8: 30, Reg8: 30, UInt8: 94, string_id: 52886>  # String: 'goldInk' (Identifier)
+00001353: <PutNewOwnByIdShort>: <Reg8: 16, Reg8: 30, string_id: 78>  # String: 'color' (Identifier)
+00001357: <Call3>: <Reg8: 16, Reg8: 29, Reg8: 3, Reg8: 28, Reg8: 16>
+0000135d: <PutOwnByIndex>: <Reg8: 15, Reg8: 16, UInt8: 2>
+00001361: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 15, string_id: 74>  # String: 'children' (Identifier)
+00001365: <Call3>: <Reg8: 12, Reg8: 14, Reg8: 3, Reg8: 13, Reg8: 12>
+0000136b: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 23>
+0000136f: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 31>
+00001373: <GetByIdShort>: <Reg8: 14, Reg8: 12, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001378: <LoadFromEnvironment>: <Reg8: 12, Reg8: 17, UInt8: 18>
+0000137c: <GetByIdShort>: <Reg8: 13, Reg8: 12, UInt8: 11, string_id: 40>  # String: 'default' (Identifier)
+00001381: <NewObject>: <Reg8: 12>
+00001383: <Call3>: <Reg8: 15, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00001389: <PutNewOwnByIdShort>: <Reg8: 12, Reg8: 15, string_id: 75>  # String: 'cibo' (Identifier)
+0000138d: <LoadConstString>: <Reg8: 15, string_id: 33974>  # String: 'ricetta' (Identifier)
+00001391: <PutNewOwnById>: <Reg8: 12, Reg8: 15, string_id: 32276>  # String: 'fonte' (Identifier)
+00001396: <Call3>: <Reg8: 12, Reg8: 14, Reg8: 3, Reg8: 13, Reg8: 12>
+0000139c: <PutOwnByIndex>: <Reg8: 11, Reg8: 12, UInt8: 24>
+000013a0: <PutNewOwnByIdShort>: <Reg8: 8, Reg8: 11, string_id: 74>  # String: 'children' (Identifier)
+000013a4: <Call3>: <Reg8: 8, Reg8: 10, Reg8: 3, Reg8: 9, Reg8: 8>
+000013aa: <PutNewOwnByIdShort>: <Reg8: 4, Reg8: 8, string_id: 74>  # String: 'children' (Identifier)
+000013ae: <Call3>: <Reg8: 6, Reg8: 7, Reg8: 3, Reg8: 6, Reg8: 4>
+000013b4: <NewArray>: <Reg8: 4, UInt16: 2>
+000013b8: <PutOwnByIndex>: <Reg8: 4, Reg8: 6, UInt8: 0>
+000013bc: <JmpFalseLong>: <Addr32: 737, Reg8: 5>  # Address: 0000169d
+000013c2: <LoadFromEnvironment>: <Reg8: 6, Reg8: 17, UInt8: 31>
+000013c6: <GetByIdShort>: <Reg8: 8, Reg8: 6, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+000013cb: <LoadFromEnvironment>: <Reg8: 6, Reg8: 17, UInt8: 3>
+000013cf: <GetByIdShort>: <Reg8: 7, Reg8: 6, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+000013d4: <NewObject>: <Reg8: 6>
+000013d6: <GetById>: <Reg8: 9, Reg8: 20, UInt8: 97, string_id: 32766>  # String: 'overlay' (Identifier)
+000013dc: <PutNewOwnByIdShort>: <Reg8: 6, Reg8: 9, string_id: 238>  # String: 'style' (Identifier)
+000013e0: <LoadFromEnvironment>: <Reg8: 9, Reg8: 17, UInt8: 31>
+000013e4: <GetByIdShort>: <Reg8: 11, Reg8: 9, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000013e9: <LoadFromEnvironment>: <Reg8: 9, Reg8: 17, UInt8: 3>
+000013ed: <GetByIdShort>: <Reg8: 10, Reg8: 9, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+000013f2: <NewObject>: <Reg8: 9>
+000013f4: <GetById>: <Reg8: 12, Reg8: 20, UInt8: 98, string_id: 39474>  # String: 'overlayBg' (Identifier)
+000013fa: <PutNewOwnByIdShort>: <Reg8: 9, Reg8: 12, string_id: 238>  # String: 'style' (Identifier)
+000013fe: <CreateClosure>: <Reg8: 12, Reg8: 18, function_id: 19447>  # Function: [#19447 onPress of 18 bytes]: 1 params @ offset 0x004ef7c8
+00001403: <PutNewOwnByIdShort>: <Reg8: 9, Reg8: 12, string_id: 191>  # String: 'onPress' (Identifier)
+00001407: <Call3>: <Reg8: 10, Reg8: 11, Reg8: 3, Reg8: 10, Reg8: 9>
+0000140d: <NewArray>: <Reg8: 9, UInt16: 2>
+00001411: <PutOwnByIndex>: <Reg8: 9, Reg8: 10, UInt8: 0>
+00001415: <LoadFromEnvironment>: <Reg8: 10, Reg8: 17, UInt8: 31>
+00001419: <GetByIdShort>: <Reg8: 12, Reg8: 10, UInt8: 30, string_id: 166>  # String: 'jsxs' (Identifier)
+0000141e: <LoadFromEnvironment>: <Reg8: 10, Reg8: 17, UInt8: 3>
+00001422: <GetByIdShort>: <Reg8: 11, Reg8: 10, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00001427: <NewObject>: <Reg8: 10>
+00001429: <GetById>: <Reg8: 13, Reg8: 20, UInt8: 99, string_id: 32977>  # String: 'sheet' (Identifier)
+0000142f: <PutNewOwnByIdShort>: <Reg8: 10, Reg8: 13, string_id: 238>  # String: 'style' (Identifier)
+00001433: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 31>
+00001437: <GetByIdShort>: <Reg8: 15, Reg8: 13, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000143c: <LoadFromEnvironment>: <Reg8: 13, Reg8: 17, UInt8: 3>
+00001440: <GetByIdShort>: <Reg8: 14, Reg8: 13, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00001445: <NewObject>: <Reg8: 13>
+00001447: <GetById>: <Reg8: 16, Reg8: 20, UInt8: 100, string_id: 41030>  # String: 'sheetTitle' (Identifier)
+0000144d: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 16, string_id: 238>  # String: 'style' (Identifier)
+00001451: <LoadConstString>: <Reg8: 16, string_id: 8624>  # String: 'ricetta.aggiungiPiano' (String)
+00001455: <Call2>: <Reg8: 16, Reg8: 21, Reg8: 3, Reg8: 16>
+0000145a: <PutNewOwnByIdShort>: <Reg8: 13, Reg8: 16, string_id: 74>  # String: 'children' (Identifier)
+0000145e: <Call3>: <Reg8: 14, Reg8: 15, Reg8: 3, Reg8: 14, Reg8: 13>
+00001464: <NewArray>: <Reg8: 13, UInt16: 8>
+00001468: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 0>
+0000146c: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+00001470: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001475: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+00001479: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000147e: <NewObject>: <Reg8: 14>
+00001480: <GetById>: <Reg8: 28, Reg8: 20, UInt8: 101, string_id: 43678>  # String: 'sheetSub' (Identifier)
+00001486: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 28, string_id: 238>  # String: 'style' (Identifier)
+0000148a: <PutNewOwnById>: <Reg8: 14, Reg8: 25, string_id: 34550>  # String: 'numberOfLines' (Identifier)
+0000148f: <Call3>: <Reg8: 22, Reg8: 24, Reg8: 3, Reg8: 23, Reg8: 22>
+00001495: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+00001499: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+0000149f: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 1>
+000014a3: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+000014a7: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000014ac: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+000014b0: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000014b5: <NewObject>: <Reg8: 14>
+000014b7: <GetById>: <Reg8: 22, Reg8: 20, UInt8: 102, string_id: 36317>  # String: 'sheetLabel' (Identifier)
+000014bd: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+000014c1: <LoadConstString>: <Reg8: 22, string_id: 21772>  # String: 'ricetta.giorno' (String)
+000014c5: <Call2>: <Reg8: 22, Reg8: 21, Reg8: 3, Reg8: 22>
+000014ca: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+000014ce: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+000014d4: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 2>
+000014d8: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+000014dc: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000014e1: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+000014e5: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+000014ea: <NewObject>: <Reg8: 14>
+000014ec: <GetById>: <Reg8: 22, Reg8: 20, UInt8: 103, string_id: 35559>  # String: 'pickRow' (Identifier)
+000014f2: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+000014f6: <LoadFromEnvironment>: <Reg8: 22, Reg8: 17, UInt8: 27>
+000014fa: <GetById>: <Reg8: 24, Reg8: 22, UInt8: 104, string_id: 34878>  # String: 'GIORNI' (Identifier)
+00001500: <GetByIdShort>: <Reg8: 23, Reg8: 24, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+00001505: <CreateClosure>: <Reg8: 22, Reg8: 18, function_id: 19448>  # Function: [#19448  of 216 bytes]: 3 params @ offset 0x004ef7da
+0000150a: <Call2>: <Reg8: 22, Reg8: 23, Reg8: 24, Reg8: 22>
+0000150f: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+00001513: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+00001519: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 3>
+0000151d: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+00001521: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001526: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+0000152a: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+0000152f: <NewObject>: <Reg8: 14>
+00001531: <GetById>: <Reg8: 22, Reg8: 20, UInt8: 102, string_id: 36317>  # String: 'sheetLabel' (Identifier)
+00001537: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+0000153b: <LoadConstString>: <Reg8: 22, string_id: 13804>  # String: 'ricetta.pasto' (String)
+0000153f: <Call2>: <Reg8: 22, Reg8: 21, Reg8: 3, Reg8: 22>
+00001544: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+00001548: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+0000154e: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 4>
+00001552: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+00001556: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000155b: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+0000155f: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 14, string_id: 25>  # String: 'View' (Identifier)
+00001564: <NewObject>: <Reg8: 14>
+00001566: <GetById>: <Reg8: 22, Reg8: 20, UInt8: 103, string_id: 35559>  # String: 'pickRow' (Identifier)
+0000156c: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+00001570: <LoadFromEnvironment>: <Reg8: 22, Reg8: 17, UInt8: 27>
+00001574: <GetById>: <Reg8: 24, Reg8: 22, UInt8: 105, string_id: 40293>  # String: 'PASTI' (Identifier)
+0000157a: <GetByIdShort>: <Reg8: 23, Reg8: 24, UInt8: 56, string_id: 177>  # String: 'map' (Identifier)
+0000157f: <CreateClosure>: <Reg8: 22, Reg8: 18, function_id: 19450>  # Function: [#19450  of 220 bytes]: 2 params @ offset 0x004ef8c9
+00001584: <Call2>: <Reg8: 22, Reg8: 23, Reg8: 24, Reg8: 22>
+00001589: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 74>  # String: 'children' (Identifier)
+0000158d: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+00001593: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 5>
+00001597: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+0000159b: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000015a0: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+000015a4: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+000015a9: <NewObject>: <Reg8: 14>
+000015ab: <GetById>: <Reg8: 22, Reg8: 20, UInt8: 106, string_id: 39736>  # String: 'confirm' (Identifier)
+000015b1: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 22, string_id: 238>  # String: 'style' (Identifier)
+000015b5: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 19, string_id: 191>  # String: 'onPress' (Identifier)
+000015b9: <LoadFromEnvironment>: <Reg8: 19, Reg8: 17, UInt8: 31>
+000015bd: <GetByIdShort>: <Reg8: 23, Reg8: 19, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+000015c2: <LoadFromEnvironment>: <Reg8: 19, Reg8: 17, UInt8: 3>
+000015c6: <GetByIdShort>: <Reg8: 22, Reg8: 19, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+000015cb: <NewObject>: <Reg8: 19>
+000015cd: <GetById>: <Reg8: 24, Reg8: 20, UInt8: 107, string_id: 52840>  # String: 'confirmTxt' (Identifier)
+000015d3: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 24, string_id: 238>  # String: 'style' (Identifier)
+000015d7: <NewObject>: <Reg8: 25>
+000015d9: <LoadConstString>: <Reg8: 24, string_id: 3508>  # String: 'giorni.' (String)
+000015dd: <Add>: <Reg8: 24, Reg8: 24, Reg8: 27>
+000015e1: <Call2>: <Reg8: 24, Reg8: 21, Reg8: 3, Reg8: 24>
+000015e6: <PutNewOwnById>: <Reg8: 25, Reg8: 24, string_id: 31891>  # String: 'g' (Identifier)
+000015eb: <LoadConstString>: <Reg8: 24, string_id: 18968>  # String: 'pasti.' (String)
+000015ef: <Add>: <Reg8: 24, Reg8: 24, Reg8: 26>
+000015f3: <Call2>: <Reg8: 24, Reg8: 21, Reg8: 3, Reg8: 24>
+000015f8: <PutNewOwnById>: <Reg8: 25, Reg8: 24, string_id: 31914>  # String: 'p' (Identifier)
+000015fd: <LoadConstString>: <Reg8: 24, string_id: 6411>  # String: 'ricetta.aggiungiA' (String)
+00001601: <Call3>: <Reg8: 24, Reg8: 21, Reg8: 3, Reg8: 24, Reg8: 25>
+00001607: <PutNewOwnByIdShort>: <Reg8: 19, Reg8: 24, string_id: 74>  # String: 'children' (Identifier)
+0000160b: <Call3>: <Reg8: 19, Reg8: 23, Reg8: 3, Reg8: 22, Reg8: 19>
+00001611: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 19, string_id: 74>  # String: 'children' (Identifier)
+00001615: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+0000161b: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 6>
+0000161f: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 31>
+00001623: <GetByIdShort>: <Reg8: 16, Reg8: 14, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+00001628: <LoadFromEnvironment>: <Reg8: 14, Reg8: 17, UInt8: 3>
+0000162c: <GetByIdShort>: <Reg8: 15, Reg8: 14, UInt8: 46, string_id: 15>  # String: 'Pressable' (Identifier)
+00001631: <NewObject>: <Reg8: 14>
+00001633: <GetById>: <Reg8: 19, Reg8: 20, UInt8: 108, string_id: 33215>  # String: 'cancel' (Identifier)
+00001639: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 19, string_id: 238>  # String: 'style' (Identifier)
+0000163d: <CreateClosure>: <Reg8: 18, Reg8: 18, function_id: 19452>  # Function: [#19452 onPress of 18 bytes]: 1 params @ offset 0x004ef7c8
+00001642: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 18, string_id: 191>  # String: 'onPress' (Identifier)
+00001646: <LoadFromEnvironment>: <Reg8: 18, Reg8: 17, UInt8: 31>
+0000164a: <GetByIdShort>: <Reg8: 19, Reg8: 18, UInt8: 13, string_id: 165>  # String: 'jsx' (Identifier)
+0000164f: <LoadFromEnvironment>: <Reg8: 17, Reg8: 17, UInt8: 3>
+00001653: <GetByIdShort>: <Reg8: 18, Reg8: 17, UInt8: 16, string_id: 23>  # String: 'Text' (Identifier)
+00001658: <NewObject>: <Reg8: 17>
+0000165a: <GetById>: <Reg8: 20, Reg8: 20, UInt8: 109, string_id: 48815>  # String: 'cancelTxt' (Identifier)
+00001660: <PutNewOwnByIdShort>: <Reg8: 17, Reg8: 20, string_id: 238>  # String: 'style' (Identifier)
+00001664: <LoadConstString>: <Reg8: 20, string_id: 9085>  # String: 'ricetta.annulla' (String)
+00001668: <Call2>: <Reg8: 20, Reg8: 21, Reg8: 3, Reg8: 20>
+0000166d: <PutNewOwnByIdShort>: <Reg8: 17, Reg8: 20, string_id: 74>  # String: 'children' (Identifier)
+00001671: <Call3>: <Reg8: 17, Reg8: 19, Reg8: 3, Reg8: 18, Reg8: 17>
+00001677: <PutNewOwnByIdShort>: <Reg8: 14, Reg8: 17, string_id: 74>  # String: 'children' (Identifier)
+0000167b: <Call3>: <Reg8: 14, Reg8: 16, Reg8: 3, Reg8: 15, Reg8: 14>
+00001681: <PutOwnByIndex>: <Reg8: 13, Reg8: 14, UInt8: 7>
+00001685: <PutNewOwnByIdShort>: <Reg8: 10, Reg8: 13, string_id: 74>  # String: 'children' (Identifier)
+00001689: <Call3>: <Reg8: 10, Reg8: 12, Reg8: 3, Reg8: 11, Reg8: 10>
+0000168f: <PutOwnByIndex>: <Reg8: 9, Reg8: 10, UInt8: 1>
+00001693: <PutNewOwnByIdShort>: <Reg8: 6, Reg8: 9, string_id: 74>  # String: 'children' (Identifier)
+00001697: <Call3>: <Reg8: 5, Reg8: 8, Reg8: 3, Reg8: 7, Reg8: 6>
+0000169d: <PutOwnByIndex>: <Reg8: 4, Reg8: 5, UInt8: 1>
+000016a1: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 4, string_id: 74>  # String: 'children' (Identifier)
+000016a5: <Call3>: <Reg8: 0, Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 0>
+000016ab: <Ret>: <Reg8: 0>

@@ -1,0 +1,78 @@
+# Function #18432 'piattiPiuFacili'
+# offset=4974823 bytes=305
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000005: <LoadParam>: <Reg8: 6, UInt8: 2>
+00000008: <LoadConstUndefined>: <Reg8: 7>
+0000000a: <LoadConstUndefined>: <Reg8: 4>
+0000000c: <GetArgumentsLength>: <Reg8: 3, Reg8: 4>
+0000000f: <LoadConstUInt8>: <Reg8: 1, UInt8: 2>
+00000012: <Greater>: <Reg8: 5, Reg8: 3, Reg8: 1>
+00000016: <Mov>: <Reg8: 3, Reg8: 1>
+00000019: <JmpFalse>: <Addr8: 18, Reg8: 5>  # Address: 0000002b
+0000001c: <GetArgumentsPropByVal>: <Reg8: 5, Reg8: 1, Reg8: 4>
+00000020: <Mov>: <Reg8: 3, Reg8: 1>
+00000023: <JStrictEqual>: <Addr8: 8, Reg8: 5, Reg8: 7>  # Address: 0000002b
+00000027: <GetArgumentsPropByVal>: <Reg8: 3, Reg8: 1, Reg8: 4>
+0000002b: <GetGlobalObject>: <Reg8: 1>
+0000002d: <TryGetById>: <Reg8: 5, Reg8: 1, UInt8: 1, string_id: 18>  # String: 'Set' (Identifier)
+00000033: <GetByIdShort>: <Reg8: 4, Reg8: 6, UInt8: 2, string_id: 177>  # String: 'map' (Identifier)
+00000038: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18433>  # Function: [#18433  of 27 bytes]: 2 params @ offset 0x004bea18
+0000003d: <Call2>: <Reg8: 10, Reg8: 4, Reg8: 6, Reg8: 1>
+00000042: <GetByIdShort>: <Reg8: 4, Reg8: 5, UInt8: 3, string_id: 157>  # String: 'prototype' (Identifier)
+00000047: <CreateThis>: <Reg8: 4, Reg8: 4, Reg8: 5>
+0000004b: <Mov>: <Reg8: 11, Reg8: 4>
+0000004e: <Construct>: <Reg8: 1, Reg8: 5, UInt8: 2>
+00000052: <SelectObject>: <Reg8: 1, Reg8: 4, Reg8: 1>
+00000056: <StoreToEnvironment>: <Reg8: 0, UInt8: 0, Reg8: 1>
+0000005a: <CreateClosure>: <Reg8: 6, Reg8: 0, function_id: 18434>  # Function: [#18434 bassoCarico of 51 bytes]: 2 params @ offset 0x004bea33
+0000005f: <StoreToEnvironment>: <Reg8: 0, UInt8: 1, Reg8: 6>
+00000063: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18435>  # Function: [#18435 carbi of 32 bytes]: 2 params @ offset 0x004bea66
+00000068: <StoreToEnvironment>: <Reg8: 0, UInt8: 2, Reg8: 1>
+0000006c: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000006f: <LoadFromEnvironment>: <Reg8: 4, Reg8: 1, UInt8: 2>
+00000073: <GetById>: <Reg8: 7, Reg8: 4, UInt8: 4, string_id: 38777>  # String: 'RICETTE' (Identifier)
+00000079: <GetByIdShort>: <Reg8: 5, Reg8: 7, UInt8: 5, string_id: 119>  # String: 'filter' (Identifier)
+0000007e: <CreateClosure>: <Reg8: 4, Reg8: 0, function_id: 18436>  # Function: [#18436  of 38 bytes]: 2 params @ offset 0x004bea86
+00000083: <Call2>: <Reg8: 5, Reg8: 5, Reg8: 7, Reg8: 4>
+00000088: <GetByIdShort>: <Reg8: 4, Reg8: 5, UInt8: 6, string_id: 171>  # String: 'length' (Identifier)
+0000008d: <JNotLess>: <Addr8: 24, Reg8: 4, Reg8: 3>  # Address: 000000a5
+00000091: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 2>
+00000095: <GetById>: <Reg8: 4, Reg8: 1, UInt8: 4, string_id: 38777>  # String: 'RICETTE' (Identifier)
+0000009b: <GetByIdShort>: <Reg8: 1, Reg8: 4, UInt8: 5, string_id: 119>  # String: 'filter' (Identifier)
+000000a0: <Call2>: <Reg8: 5, Reg8: 1, Reg8: 4, Reg8: 6>
+000000a5: <LoadConstString>: <Reg8: 1, string_id: 33656>  # String: 'dimagrire' (Identifier)
+000000a9: <JStrictEqual>: <Addr8: 47, Reg8: 2, Reg8: 1>  # Address: 000000d8
+000000ad: <LoadConstString>: <Reg8: 1, string_id: 36612>  # String: 'massa' (Identifier)
+000000b1: <Mov>: <Reg8: 4, Reg8: 5>
+000000b4: <JStrictNotEqual>: <Addr8: 66, Reg8: 2, Reg8: 1>  # Address: 000000f6
+000000b8: <GetByIdShort>: <Reg8: 2, Reg8: 5, UInt8: 5, string_id: 119>  # String: 'filter' (Identifier)
+000000bd: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18438>  # Function: [#18438  of 39 bytes]: 2 params @ offset 0x004beadc
+000000c2: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 5, Reg8: 1>
+000000c7: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 6, string_id: 171>  # String: 'length' (Identifier)
+000000cc: <Mov>: <Reg8: 4, Reg8: 5>
+000000cf: <JNotGreaterEqual>: <Addr8: 39, Reg8: 2, Reg8: 3>  # Address: 000000f6
+000000d3: <Mov>: <Reg8: 4, Reg8: 1>
+000000d6: <Jmp>: <Addr8: 32>  # Address: 000000f6
+000000d8: <GetByIdShort>: <Reg8: 2, Reg8: 5, UInt8: 5, string_id: 119>  # String: 'filter' (Identifier)
+000000dd: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18437>  # Function: [#18437  of 48 bytes]: 2 params @ offset 0x004beaac
+000000e2: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 5, Reg8: 1>
+000000e7: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 6, string_id: 171>  # String: 'length' (Identifier)
+000000ec: <Mov>: <Reg8: 4, Reg8: 5>
+000000ef: <JNotGreaterEqual>: <Addr8: 7, Reg8: 2, Reg8: 3>  # Address: 000000f6
+000000f3: <Mov>: <Reg8: 4, Reg8: 1>
+000000f6: <GetByIdShort>: <Reg8: 2, Reg8: 4, UInt8: 5, string_id: 119>  # String: 'filter' (Identifier)
+000000fb: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18439>  # Function: [#18439  of 47 bytes]: 2 params @ offset 0x004beb03
+00000100: <Call2>: <Reg8: 9, Reg8: 2, Reg8: 4, Reg8: 1>
+00000105: <NewArray>: <Reg8: 4, UInt16: 0>
+00000109: <LoadConstZero>: <Reg8: 2>
+0000010b: <Mov>: <Reg8: 10, Reg8: 4>
+0000010e: <LoadConstZero>: <Reg8: 8>
+00000110: <CallBuiltin>: <Reg8: 1, UInt8: 46, UInt8: 4>  # Built-in function: [#46 arraySpread]
+00000114: <GetById>: <Reg8: 1, Reg8: 4, UInt8: 7, string_id: 36204>  # String: 'sort' (Identifier)
+0000011a: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18440>  # Function: [#18440  of 64 bytes]: 3 params @ offset 0x004beb32
+0000011f: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 4, Reg8: 0>
+00000124: <GetByIdShort>: <Reg8: 0, Reg8: 1, UInt8: 8, string_id: 228>  # String: 'slice' (Identifier)
+00000129: <Call3>: <Reg8: 0, Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 3>
+0000012f: <Ret>: <Reg8: 0>

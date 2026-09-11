@@ -3,12 +3,15 @@
 
 Produce un inventario strutturale delle funzioni con molti literal object/array,
 utile per trovare catalogo, ricette, quiz e contenuti senza affidarsi agli ID
-funzione della versione 1.0.0.
+funzione della baseline.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
+import os
+import re
 from io import BytesIO
 from pathlib import Path
 from typing import Any
@@ -16,12 +19,31 @@ from typing import Any
 from hermes_dec.parsers.hbc_bytecode_parser import parse_hbc_bytecode
 from hermes_dec.parsers.hbc_file_parser import HBCReader
 
+SOURCE_BRAND_PLACEHOLDER = "[SOURCE_BRAND]"
+
+
+def redact_source_brand(value: Any, source_brand: str) -> Any:
+    if isinstance(value, str):
+        return re.sub(
+            re.escape(source_brand),
+            SOURCE_BRAND_PLACEHOLDER,
+            value,
+            flags=re.IGNORECASE,
+        )
+    if isinstance(value, list):
+        return [redact_source_brand(item, source_brand) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: redact_source_brand(item, source_brand)
+            for key, item in value.items()
+        }
+    return value
+
 
 def load(path: Path) -> HBCReader:
     reader = HBCReader()
     source = BytesIO(path.read_bytes())
     reader.read_whole_file(source)
-    # hermes-dec usa ancora lo stream durante parse_hbc_bytecode.
     reader._dataset_source = source
     return reader
 
@@ -87,31 +109,52 @@ def inspect(reader: HBCReader) -> list[dict[str, Any]]:
     )
 
 
-def main() -> None:
+def parse_args() -> argparse.Namespace:
     project_root = Path(__file__).resolve().parents[1]
-    workspace_root = project_root.parent
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--baseline-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_BASELINE_BUNDLE"),
+    )
+    parser.add_argument(
+        "--candidate-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_CANDIDATE_BUNDLE"),
+    )
+    parser.add_argument("--source-brand", default=os.environ.get("SOURCE_BRAND"))
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=project_root / "docs" / "version-1.0.16-datasets.json",
+    )
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    if args.baseline_bundle is None or args.candidate_bundle is None:
+        raise ValueError("Configura entrambi i bundle con argomenti o variabili SOURCE_*")
+    if not args.source_brand:
+        raise ValueError("Imposta --source-brand o SOURCE_BRAND per la redazione")
+
     bundles = {
-        "1.0.0": workspace_root
-        / "resources"
-        / "com.fabiodenuzzo.diabetecibo.apk"
-        / "assets"
-        / "index.android.bundle",
-        "1.0.16": workspace_root
-        / "GLICODEN_1.0.16"
-        / "resources"
-        / "assets"
-        / "index.android.bundle",
+        "1.0.0": args.baseline_bundle,
+        "1.0.16": args.candidate_bundle,
     }
-    report = {version: inspect(load(path)) for version, path in bundles.items()}
-    output = project_root / "docs" / "version-1.0.16-datasets.json"
-    output.write_text(
+    report = {
+        version: redact_source_brand(inspect(load(path)), args.source_brand)
+        for version, path in bundles.items()
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
         json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
         encoding="utf-8",
     )
     print(
         "Dataset candidati: "
         + ", ".join(f"{version}={len(items)}" for version, items in report.items())
-        + f"; report {output}"
+        + f"; report {args.output}"
     )
 
 

@@ -246,10 +246,10 @@ def main() -> None:
         raise FileExistsError(f"Output già esistente (usa --force): {args.output}")
 
     sources = {
-        "catalog_baseline": extracted / "glicoden-1.0.0-catalog-14256.json",
-        "catalog_candidate": extracted / "glicoden-1.0.16-catalog-17813.json",
-        "recipes_baseline": extracted / "glicoden-1.0.0-recipes-14257.json",
-        "recipes_candidate": extracted / "glicoden-1.0.16-recipes-17814.json",
+        "catalog_baseline": extracted / "source-1.0.0-catalog-14256.json",
+        "catalog_candidate": extracted / "source-1.0.16-catalog-17813.json",
+        "recipes_baseline": extracted / "source-1.0.0-recipes-14257.json",
+        "recipes_candidate": extracted / "source-1.0.16-recipes-17814.json",
     }
     loaded = {key: load_json(path) for key, path in sources.items()}
     report = {

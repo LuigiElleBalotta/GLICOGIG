@@ -1,0 +1,15 @@
+# Function #18489 'cgMedio'
+# offset=4980105 bytes=45
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <GetByIdShort>: <Reg8: 2, Reg8: 1, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000008: <LoadConstZero>: <Reg8: 4>
+0000000a: <LoadConstZero>: <Reg8: 0>
+0000000c: <JmpFalse>: <Addr8: 31, Reg8: 2>  # Address: 0000002b
+0000000f: <GetById>: <Reg8: 3, Reg8: 1, UInt8: 2, string_id: 34456>  # String: 'reduce' (Identifier)
+00000015: <CreateEnvironment>: <Reg8: 2>
+00000017: <CreateClosure>: <Reg8: 2, Reg8: 2, function_id: 18490>  # Function: [#18490  of 18 bytes]: 3 params @ offset 0x004bfd38
+0000001c: <Call3>: <Reg8: 2, Reg8: 3, Reg8: 1, Reg8: 2, Reg8: 4>
+00000022: <GetByIdShort>: <Reg8: 1, Reg8: 1, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000027: <Div>: <Reg8: 0, Reg8: 2, Reg8: 1>
+0000002b: <Ret>: <Reg8: 0>

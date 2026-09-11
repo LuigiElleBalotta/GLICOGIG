@@ -3,26 +3,72 @@ import InstallPrompt from './InstallPrompt'
 import BottomTabs, { APP_TABS, type AppTab } from './BottomTabs'
 import { ShieldIcon } from './Icons'
 
-const VALID_TABS = new Set<AppTab>(APP_TABS.map(({ id }) => id))
+const VALID_TABS = new Set<string>(APP_TABS.map(({ id }) => id))
 
-function tabFromHash(): AppTab {
-  const value = window.location.hash.replace(/^#\/?/, '') as AppTab
-  return VALID_TABS.has(value) ? value : 'home'
+export type AppRoute =
+  | { page: AppTab; id?: string }
+  | { page: 'meal' | 'barcode' | 'explanation' | 'advice' }
+
+function isAppTab(value: string): value is AppTab {
+  return VALID_TABS.has(value)
+}
+
+function decodeSegment(value: string): string | null {
+  try {
+    const decoded = decodeURIComponent(value).trim()
+    return decoded || null
+  } catch {
+    return null
+  }
+}
+
+export function routeFromHash(hash: string = window.location.hash): AppRoute | null {
+  const path = hash.replace(/^#\/?/, '').replace(/\/$/, '')
+  if (!path) return { page: 'home' }
+  const segments = path.split('/')
+  if (segments.length === 1) {
+    const page = decodeSegment(segments[0])
+    if (!page) return null
+    if (isAppTab(page)) return { page }
+    if (page === 'meal' || page === 'barcode' || page === 'explanation' || page === 'advice') return { page }
+    return null
+  }
+  if (segments.length === 2) {
+    const page = decodeSegment(segments[0])
+    const id = decodeSegment(segments[1])
+    if (!page || !id) return null
+    if (page === 'recipes' || page === 'search' || page === 'learn') return { page, id }
+  }
+  return null
+}
+
+function tabForRoute(route: AppRoute): AppTab {
+  if (route.page === 'barcode') return 'search'
+  if (route.page === 'meal') return 'home'
+  if (route.page === 'advice') return 'diary'
+  if (route.page === 'explanation') return 'learn'
+  return route.page
 }
 
 interface AppShellProps {
-  children(activeTab: AppTab): ReactNode
+  children(route: AppRoute): ReactNode
 }
 
 export default function AppShell({ children }: AppShellProps) {
-  const [activeTab, setActiveTab] = useState<AppTab>(tabFromHash)
+  const [route, setRoute] = useState<AppRoute>(() => routeFromHash() ?? { page: 'home' })
 
   useEffect(() => {
-    if (!VALID_TABS.has(window.location.hash.replace(/^#\/?/, '') as AppTab)) {
+    if (!routeFromHash()) {
       window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#home`)
     }
     const syncHash = () => {
-      setActiveTab(tabFromHash())
+      const nextRoute = routeFromHash()
+      if (!nextRoute) {
+        window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#home`)
+        setRoute({ page: 'home' })
+      } else {
+        setRoute(nextRoute)
+      }
       window.scrollTo({ top: 0, behavior: 'auto' })
     }
     window.addEventListener('hashchange', syncHash)
@@ -51,9 +97,9 @@ export default function AppShell({ children }: AppShellProps) {
       </header>
 
       <main className="app-screen-shell relative mx-auto w-full max-w-6xl px-3 pb-28 pt-5 sm:px-6 sm:pt-7">
-        {children(activeTab)}
+        {children(route)}
       </main>
-      <BottomTabs activeTab={activeTab} />
+      <BottomTabs activeTab={tabForRoute(route)} />
     </div>
   )
 }

@@ -129,12 +129,21 @@ export async function cercaProdotto(
     throw new BarcodeServiceError('Servizio barcode non raggiungibile.', 'NETWORK_ERROR')
   }
 
+  const contentType = response.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase() ?? ''
   const text = await response.text()
+  if (contentType !== 'application/json' && !contentType.endsWith('+json')) {
+    throw new BarcodeServiceError(
+      'Proxy barcode non disponibile o non configurato.',
+      'PROXY_UNAVAILABLE',
+      response.status,
+    )
+  }
+
   let payload: unknown
   try {
     payload = text ? JSON.parse(text) as unknown : null
   } catch {
-    throw new BarcodeServiceError('Risposta barcode non valida.', 'INVALID_RESPONSE', response.status)
+    throw new BarcodeServiceError('Risposta JSON del proxy barcode non valida.', 'INVALID_RESPONSE', response.status)
   }
 
   if (!response.ok) {

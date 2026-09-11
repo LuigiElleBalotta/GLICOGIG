@@ -1,0 +1,10 @@
+# Function #18488 'buona'
+# offset=4980081 bytes=24
+
+00000000: <LoadParam>: <Reg8: 2, UInt8: 1>
+00000003: <LoadConstString>: <Reg8: 0, string_id: 35781>  # String: 'trascurabile' (Identifier)
+00000007: <StrictEq>: <Reg8: 0, Reg8: 2, Reg8: 0>
+0000000b: <JmpTrue>: <Addr8: 11, Reg8: 0>  # Address: 00000016
+0000000e: <LoadConstString>: <Reg8: 1, string_id: 34393>  # String: 'basso' (Identifier)
+00000012: <StrictEq>: <Reg8: 0, Reg8: 2, Reg8: 1>
+00000016: <Ret>: <Reg8: 0>

@@ -1,0 +1,18 @@
+# Function #18927 'setBevandaZero'
+# offset=5092902 bytes=53
+
+00000000: <CreateEnvironment>: <Reg8: 1>
+00000002: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 1, UInt8: 0, Reg8: 0>
+00000009: <LoadParam>: <Reg8: 0, UInt8: 2>
+0000000c: <StoreToEnvironment>: <Reg8: 1, UInt8: 1, Reg8: 0>
+00000010: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000013: <LoadFromEnvironment>: <Reg8: 2, Reg8: 0, UInt8: 11>
+00000017: <LoadConstUndefined>: <Reg8: 0>
+00000019: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 18928>  # Function: [#18928  of 22 bytes]: 2 params @ offset 0x004db65b
+0000001e: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+00000023: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+00000026: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 42>
+0000002a: <LoadConstString>: <Reg8: 1, string_id: 33652>  # String: 'soft' (Identifier)
+0000002e: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+00000033: <Ret>: <Reg8: 0>

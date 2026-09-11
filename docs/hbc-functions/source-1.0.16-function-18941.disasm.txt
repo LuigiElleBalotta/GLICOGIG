@@ -1,0 +1,22 @@
+# Function #18941 'nomeCottura'
+# offset=5093969 bytes=69
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <GetById>: <Reg8: 3, Reg8: 1, UInt8: 1, string_id: 36961>  # String: 'catalogo_id' (Identifier)
+00000009: <LoadConstUndefined>: <Reg8: 2>
+0000000b: <LoadConstUndefined>: <Reg8: 0>
+0000000d: <JmpFalse>: <Addr8: 46, Reg8: 3>  # Address: 0000003b
+00000010: <GetEnvironment>: <Reg8: 3, UInt8: 1>
+00000013: <LoadFromEnvironment>: <Reg8: 3, Reg8: 3, UInt8: 14>
+00000017: <GetById>: <Reg8: 4, Reg8: 3, UInt8: 2, string_id: 37466>  # String: 'alimentoById' (Identifier)
+0000001d: <GetById>: <Reg8: 3, Reg8: 1, UInt8: 1, string_id: 36961>  # String: 'catalogo_id' (Identifier)
+00000023: <Call2>: <Reg8: 3, Reg8: 4, Reg8: 2, Reg8: 3>
+00000028: <LoadConstNull>: <Reg8: 4>
+0000002a: <Eq>: <Reg8: 4, Reg8: 3, Reg8: 4>
+0000002e: <LoadConstUndefined>: <Reg8: 2>
+00000030: <JmpTrue>: <Addr8: 8, Reg8: 4>  # Address: 00000038
+00000033: <GetByIdShort>: <Reg8: 2, Reg8: 3, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000038: <Mov>: <Reg8: 0, Reg8: 2>
+0000003b: <JmpTrue>: <Addr8: 8, Reg8: 0>  # Address: 00000043
+0000003e: <GetByIdShort>: <Reg8: 0, Reg8: 1, UInt8: 3, string_id: 185>  # String: 'nome' (Identifier)
+00000043: <Ret>: <Reg8: 0>

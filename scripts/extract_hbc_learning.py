@@ -3,7 +3,8 @@
 
 La funzione #19701 costruisce il dataset italiano/inglese; #19714, #19716 e
 #19718 costruiscono le mappe ES/DE/FR. Il merge replica #19702-#19704 senza
-normalizzare, tradurre o completare contenuti.
+normalizzare, tradurre o completare contenuti. I soli foodId aggiunti dopo il
+merge provengono da una mappa esatta validata contro il catalogo estratto.
 """
 
 from __future__ import annotations
@@ -11,6 +12,8 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import os
+import re
 from dataclasses import dataclass
 from io import BytesIO
 from pathlib import Path
@@ -20,6 +23,49 @@ from hermes_dec.parsers.hbc_bytecode_parser import parse_hbc_bytecode
 from hermes_dec.parsers.hbc_file_parser import HBCReader
 
 from extract_hbc_datasets import decode_buffered_array, decode_buffered_object
+
+
+SOURCE_BRAND_PLACEHOLDER = "[SOURCE_BRAND]"
+
+# Collegamenti verificati contro source-1.0.16-catalog-17813.json.
+# La chiave è l'etichetta italiana embedded del blocco esempio: nessun fuzzy match.
+VERIFIED_EXAMPLE_FOOD_IDS: dict[str, str] = {
+    "Pane bianco": "pane-bianco",
+    "Banana": "banana",
+    "Anguria": "anguria",
+    "Lenticchie cotte": "lenticchie-cotte",
+    "Riso bianco cotto": "riso-bianco-cotto",
+    "Succo d’arancia": "succo-darancia",
+    "Pasta cotta al dente": "pasta-cotta-al-dente",
+    "Spaghetti al dente": "spaghetti-cotti-al-dente",
+    "Orzo perlato cotto": "orzo-perlato-cotto",
+    "Porridge d’avena": "porridge-davena",
+    "Mandorle": "mandorle",
+    "Cioccolato fondente": "cioccolato-fondente",
+    "Insalata di alghe (wakame)": "insalata-di-alghe",
+    "Mela con buccia": "mela-con-buccia",
+    "Pane integrale": "pane-integrale",
+    "Eritritolo": "eritritolo",
+    "Noci": "noci",
+}
+
+
+def redact_source_brand(value: Any, source_brand: str) -> Any:
+    if isinstance(value, str):
+        return re.sub(
+            re.escape(source_brand),
+            SOURCE_BRAND_PLACEHOLDER,
+            value,
+            flags=re.IGNORECASE,
+        )
+    if isinstance(value, list):
+        return [redact_source_brand(item, source_brand) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: redact_source_brand(item, source_brand)
+            for key, item in value.items()
+        }
+    return value
 
 
 @dataclass(frozen=True)
@@ -161,6 +207,58 @@ def merge_translation(
                     block[f"voci{suffix}"] = translated_block["voci"]
 
 
+def add_verified_example_food_links(
+    chapters: list[dict[str, Any]],
+    catalog_path: Path,
+) -> dict[str, Any]:
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    foods = catalog.get("alimenti")
+    if not isinstance(foods, list):
+        raise ValueError(f"Catalogo non valido: {catalog_path}")
+
+    catalog_ids = {
+        food.get("id")
+        for food in foods
+        if isinstance(food, dict) and isinstance(food.get("id"), str)
+    }
+    missing_ids = sorted(set(VERIFIED_EXAMPLE_FOOD_IDS.values()) - catalog_ids)
+    if missing_ids:
+        raise ValueError(f"foodId verificati assenti dal catalogo: {missing_ids}")
+
+    linked = 0
+    unlinked: list[dict[str, str]] = []
+    for chapter in chapters:
+        for block in chapter.get("blocchi", []):
+            if not isinstance(block, dict) or block.get("t") != "esempio":
+                continue
+            food_name = block.get("cibo")
+            food_id = (
+                VERIFIED_EXAMPLE_FOOD_IDS.get(food_name)
+                if isinstance(food_name, str)
+                else None
+            )
+            if food_id:
+                block["foodId"] = food_id
+                linked += 1
+            else:
+                unlinked.append({
+                    "chapter_id": str(chapter.get("id", "")),
+                    "cibo": str(food_name or ""),
+                })
+
+    expected_unlinked = [{"chapter_id": "calorie", "cibo": "Olio e frutta secca"}]
+    if linked != 28 or unlinked != expected_unlinked:
+        raise ValueError(
+            f"Collegamenti esempio inattesi: linked={linked}, unlinked={unlinked}"
+        )
+    return {
+        "linked": linked,
+        "unlinked": unlinked,
+        "catalog": "docs/extracted/source-1.0.16-catalog-17813.json",
+        "match": "etichetta italiana esatta",
+    }
+
+
 def validate(
     chapters: list[dict[str, Any]],
     raw_translations: dict[str, dict[str, Any]],
@@ -226,17 +324,31 @@ def validate(
     }
 
 
-def parse_args(default_output: Path) -> argparse.Namespace:
+def parse_args(default_output: Path, default_catalog: Path) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=default_output)
+    parser.add_argument("--catalog", type=Path, default=default_catalog)
+    parser.add_argument(
+        "--candidate-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_CANDIDATE_BUNDLE"),
+    )
+    parser.add_argument("--source-brand", default=os.environ.get("SOURCE_BRAND"))
     parser.add_argument("--force", action="store_true")
     return parser.parse_args()
 
 
 def main() -> None:
     project_root = Path(__file__).resolve().parents[1]
-    bundle = project_root.parent / "GLICODEN_1.0.16" / "resources" / "assets" / "index.android.bundle"
-    args = parse_args(project_root / "docs" / "extracted" / "glicoden-1.0.16-learning-19701.json")
+    args = parse_args(
+        project_root / "docs" / "extracted" / "source-1.0.16-learning-19701.json",
+        project_root / "docs" / "extracted" / "source-1.0.16-catalog-17813.json",
+    )
+    if args.candidate_bundle is None:
+        raise ValueError("Configura il bundle candidate con argomento o SOURCE_CANDIDATE_BUNDLE")
+    if not args.source_brand:
+        raise ValueError("Imposta --source-brand o SOURCE_BRAND per la redazione")
+    bundle = args.candidate_bundle
     if args.output.exists() and not args.force:
         raise FileExistsError(f"Output già esistente (usa --force): {args.output}")
 
@@ -262,6 +374,7 @@ def main() -> None:
     unified = copy.deepcopy(chapters)
     for language, translations in raw_translations.items():
         merge_translation(unified, translations, f"_{language}")
+    link_validation = add_verified_example_food_links(unified, args.catalog)
 
     base_sections = base_environment.get(0)
     section_maps = {
@@ -283,26 +396,29 @@ def main() -> None:
     }
 
     validation = validate(unified, raw_translations)
+    validation["example_food_links"] = link_validation
     output = {
         "_provenance": {
             "version": "1.0.16",
             "hermes_version": reader.header.version,
-            "bundle": str(bundle.relative_to(project_root.parent)),
+            "bundle": "candidate/resources/assets/index.android.bundle",
             "functions": {
                 key: {"function_id": spec.function_id, "offset": spec.offset}
                 for key, spec in specs.items()
             },
             "merge_functions": [19702, 19703, 19704],
             "merge_note": "Vista unificata ottenuta replicando esattamente i rami per p/nota/esempio/link/punti.",
+            "verified_enrichment": "foodId aggiunti solo da mappa esatta validata contro il catalogo estratto.",
         },
         "_validation": validation,
         "sezioni": sections,
         "capitoli": unified,
         "traduzioni_raw": raw_translations,
     }
+    redacted_output = redact_source_brand(output, args.source_brand)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
-        json.dumps(output, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+        json.dumps(redacted_output, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
         encoding="utf-8",
     )
     print(

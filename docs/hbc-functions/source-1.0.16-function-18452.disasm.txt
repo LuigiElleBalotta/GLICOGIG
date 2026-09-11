@@ -1,0 +1,13 @@
+# Function #18452 'sceltaDaSlot'
+# offset=4976316 bytes=34
+
+00000000: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000003: <LoadConstString>: <Reg8: 3, string_id: 41698>  # String: 'spuntino' (Identifier)
+00000007: <LoadConstString>: <Reg8: 2, string_id: 14699>  # String: 'spuntino_m' (String)
+0000000b: <Mov>: <Reg8: 0, Reg8: 3>
+0000000e: <JStrictEqual>: <Addr8: 18, Reg8: 1, Reg8: 2>  # Address: 00000020
+00000012: <LoadConstString>: <Reg8: 2, string_id: 7621>  # String: 'spuntino_p' (String)
+00000016: <Mov>: <Reg8: 0, Reg8: 3>
+00000019: <JStrictEqual>: <Addr8: 7, Reg8: 1, Reg8: 2>  # Address: 00000020
+0000001d: <Mov>: <Reg8: 0, Reg8: 1>
+00000020: <Ret>: <Reg8: 0>

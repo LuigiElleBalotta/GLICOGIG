@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
 from contextlib import redirect_stderr, redirect_stdout
 from io import BytesIO, StringIO
 from pathlib import Path
@@ -13,6 +15,30 @@ from typing import Any
 from hermes_dec.decompilation.hbc_decompiler import HermesDecompiler, decompile_function
 from hermes_dec.parsers.hbc_bytecode_parser import parse_hbc_bytecode
 from hermes_dec.parsers.hbc_file_parser import HBCReader
+
+SOURCE_BRAND_PLACEHOLDER = "[SOURCE_BRAND]"
+
+
+def redact_source_brand(value: Any, source_brand: str) -> Any:
+    if isinstance(value, str):
+        return re.sub(
+            re.escape(source_brand),
+            SOURCE_BRAND_PLACEHOLDER,
+            value,
+            flags=re.IGNORECASE,
+        )
+    if isinstance(value, list):
+        return [redact_source_brand(item, source_brand) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: redact_source_brand(item, source_brand)
+            for key, item in value.items()
+        }
+    return value
+
+
+def redact_text(value: str, source_brand: str) -> str:
+    return redact_source_brand(value, source_brand)
 
 
 def load_reader(path: Path) -> HBCReader:
@@ -112,25 +138,30 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--search", action="append", default=[])
     parser.add_argument("--function", action="append", type=parse_target, default=[])
     parser.add_argument("--output-dir", type=Path)
+    parser.add_argument(
+        "--baseline-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_BASELINE_BUNDLE"),
+    )
+    parser.add_argument(
+        "--candidate-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_CANDIDATE_BUNDLE"),
+    )
+    parser.add_argument("--source-brand", default=os.environ.get("SOURCE_BRAND"))
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    if not args.source_brand:
+        raise ValueError("Imposta --source-brand o SOURCE_BRAND per la redazione")
+
     project_root = Path(__file__).resolve().parents[1]
-    workspace_root = project_root.parent
     output_dir = args.output_dir or project_root / "docs" / "hbc-functions"
     bundles = {
-        "1.0.0": workspace_root
-        / "resources"
-        / "com.fabiodenuzzo.diabetecibo.apk"
-        / "assets"
-        / "index.android.bundle",
-        "1.0.16": workspace_root
-        / "GLICODEN_1.0.16"
-        / "resources"
-        / "assets"
-        / "index.android.bundle",
+        "1.0.0": args.baseline_bundle,
+        "1.0.16": args.candidate_bundle,
     }
     requested_versions = {version for version, _ in args.function}
     if args.search:
@@ -138,8 +169,17 @@ def main() -> None:
     unknown = requested_versions - set(bundles)
     if unknown:
         raise ValueError(f"Versioni sconosciute: {sorted(unknown)}")
+    missing = sorted(version for version in requested_versions if bundles[version] is None)
+    if missing:
+        raise ValueError(
+            "Configura i bundle richiesti con gli argomenti o le variabili SOURCE_*: "
+            + ", ".join(missing)
+        )
 
-    readers = {version: load_reader(bundles[version]) for version in requested_versions}
+    readers = {
+        version: load_reader(bundles[version])
+        for version in requested_versions
+    }
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.search:
@@ -147,6 +187,7 @@ def main() -> None:
             version: search_functions(readers[version], args.search)
             for version in sorted(readers)
         }
+        report = redact_source_brand(report, args.source_brand)
         output = output_dir / "search-results.json"
         output.write_text(
             json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
@@ -162,11 +203,17 @@ def main() -> None:
         reader = readers[version]
         if not 0 <= function_id < len(reader.function_headers):
             raise ValueError(f"{version}: ID funzione fuori intervallo: {function_id}")
-        stem = f"glicoden-{version}-function-{function_id}"
+        stem = f"source-{version}-function-{function_id}"
         disassembly_output = output_dir / f"{stem}.disasm.txt"
         decompiled_output = output_dir / f"{stem}.decompiled.js"
-        disassembly_output.write_text(disassemble(reader, function_id), encoding="utf-8")
-        decompiled_output.write_text(decompile(reader, function_id), encoding="utf-8")
+        disassembly_output.write_text(
+            redact_text(disassemble(reader, function_id), args.source_brand),
+            encoding="utf-8",
+        )
+        decompiled_output.write_text(
+            redact_text(decompile(reader, function_id), args.source_brand),
+            encoding="utf-8",
+        )
         print(f"{version} #{function_id}: {disassembly_output}; {decompiled_output}")
 
 

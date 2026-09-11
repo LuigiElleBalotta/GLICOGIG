@@ -78,7 +78,7 @@ export default async function handler(request: ApiRequest, response: ApiResponse
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS)
   try {
-    const url = `${OFF_ENDPOINT}/${encodeURIComponent(codice)}?fields=${OFF_FIELDS}`
+    const url = `${OFF_ENDPOINT}/${encodeURIComponent(codice)}.json?fields=${OFF_FIELDS}`
     const upstream = await fetch(url, {
       method: 'GET',
       redirect: 'error',

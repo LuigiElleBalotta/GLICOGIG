@@ -1,0 +1,22 @@
+# Function #18465 'bilancioOggi'
+# offset=4977894 bytes=81
+
+00000000: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 2, Reg8: 0, UInt8: 21>
+00000007: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 1>
+0000000b: <GetById>: <Reg8: 0, Reg8: 0, UInt8: 1, string_id: 34178>  # String: 'vociDelGiorno' (Identifier)
+00000011: <LoadConstUndefined>: <Reg8: 1>
+00000013: <Call1>: <Reg8: 0, Reg8: 0, Reg8: 1>
+00000017: <Call2>: <Reg8: 4, Reg8: 2, Reg8: 1, Reg8: 0>
+0000001c: <LoadConstNull>: <Reg8: 0>
+0000001e: <JEqual>: <Addr8: 49, Reg8: 4, Reg8: 0>  # Address: 0000004f
+00000022: <LoadConstString>: <Reg8: 1, string_id: 13012>  # String: 'buono' (String)
+00000026: <LoadConstDouble>: <Reg8: 2, Double: 0.6>
+00000030: <JGreaterEqual>: <Addr8: 29, Reg8: 4, Reg8: 2>  # Address: 0000004d
+00000034: <LoadConstString>: <Reg8: 2, string_id: 5423>  # String: 'daBilanciare' (String)
+00000038: <LoadConstDouble>: <Reg8: 3, Double: 0.3>
+00000042: <JNotGreaterEqual>: <Addr8: 8, Reg8: 4, Reg8: 3>  # Address: 0000004a
+00000046: <LoadConstString>: <Reg8: 2, string_id: 21734>  # String: 'discreto' (String)
+0000004a: <Mov>: <Reg8: 1, Reg8: 2>
+0000004d: <Ret>: <Reg8: 1>
+0000004f: <Ret>: <Reg8: 0>

@@ -1,0 +1,30 @@
+# Function #18944 'aggiungiPasto'
+# offset=5094159 bytes=102
+
+00000000: <GetEnvironment>: <Reg8: 2, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 8>
+00000007: <JmpFalse>: <Addr8: 91, Reg8: 0>  # Address: 00000062
+0000000a: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 16>
+0000000e: <JmpTrue>: <Addr8: 84, Reg8: 0>  # Address: 00000062
+00000011: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+00000014: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 20>
+00000018: <GetById>: <Reg8: 5, Reg8: 0, UInt8: 1, string_id: 36680>  # String: 'voceFromFoto' (Identifier)
+0000001e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 8>
+00000022: <GetById>: <Reg8: 4, Reg8: 0, UInt8: 2, string_id: 32932>  # String: 'piatto' (Identifier)
+00000028: <LoadFromEnvironment>: <Reg8: 3, Reg8: 2, UInt8: 44>
+0000002c: <LoadConstUndefined>: <Reg8: 0>
+0000002e: <Call3>: <Reg8: 4, Reg8: 5, Reg8: 0, Reg8: 4, Reg8: 3>
+00000034: <JmpTrue>: <Addr8: 5, Reg8: 4>  # Address: 00000039
+00000037: <Ret>: <Reg8: 0>
+00000039: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 20>
+0000003d: <GetById>: <Reg8: 3, Reg8: 3, UInt8: 3, string_id: 35849>  # String: 'aggiungiAlPasto' (Identifier)
+00000043: <Call2>: <Reg8: 3, Reg8: 3, Reg8: 0, Reg8: 4>
+00000048: <LoadFromEnvironment>: <Reg8: 3, Reg8: 2, UInt8: 17>
+0000004c: <LoadConstTrue>: <Reg8: 2>
+0000004e: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000053: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 42>
+00000057: <LoadConstString>: <Reg8: 1, string_id: 36786>  # String: 'ok' (Identifier)
+0000005b: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+00000060: <Ret>: <Reg8: 0>
+00000062: <LoadConstUndefined>: <Reg8: 0>
+00000064: <Ret>: <Reg8: 0>

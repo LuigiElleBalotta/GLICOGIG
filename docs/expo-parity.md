@@ -37,7 +37,7 @@ Legenda:
 
 | URL o schema | Uso osservato | Presenza nella web app |
 | --- | --- | --- |
-| `https://glico-foto.business-fabiodenuzzo.workers.dev` | Backend dell'analisi fotografica | Sì, come upstream protetto dalla Function Vercel |
+| `[SOURCE_APP_HOST]` | Backend dell'analisi fotografica | Sì, come upstream protetto dalla Function Vercel |
 | `https://world.openfoodfacts.org/api/v2/product/` | Lookup prodotto tramite barcode | No, perché lo scanner non è implementato |
 | `https://generativelanguage.googleapis.com/v1beta/models/` | Client Gemini presente nel bundle; raggiungibilità effettiva non dimostrata | No chiamata diretta dal browser |
 | `https://diabete.denuzzogaming.com` | Link esterno informativo | No |

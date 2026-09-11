@@ -12,7 +12,7 @@ export interface CatalogRipenessNote {
   nota: string
 }
 
-/** Schema reale del record alimentare embedded in GLICODEN 1.0.16. */
+/** Schema reale del record alimentare embedded nella versione sorgente 1.0.16. */
 export interface FoodCatalogEntry {
   id: string
   nome: string

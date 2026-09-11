@@ -1,0 +1,15 @@
+# Function #18431 'comeGestirlo'
+# offset=4974774 bytes=49
+
+00000000: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 4>
+00000007: <GetById>: <Reg8: 2, Reg8: 0, UInt8: 1, string_id: 47163>  # String: 'i18n' (Identifier)
+0000000d: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+00000012: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000015: <GetByIdShort>: <Reg8: 4, Reg8: 0, UInt8: 3, string_id: 114>  # String: 'fascia' (Identifier)
+0000001a: <LoadConstString>: <Reg8: 0, string_id: 13793>  # String: 'diario.gestMedio' (String)
+0000001e: <LoadConstString>: <Reg8: 3, string_id: 34023>  # String: 'alto' (Identifier)
+00000022: <JStrictNotEqual>: <Addr8: 8, Reg8: 4, Reg8: 3>  # Address: 0000002a
+00000026: <LoadConstString>: <Reg8: 0, string_id: 6090>  # String: 'diario.gestAlto' (String)
+0000002a: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+0000002f: <Ret>: <Reg8: 0>

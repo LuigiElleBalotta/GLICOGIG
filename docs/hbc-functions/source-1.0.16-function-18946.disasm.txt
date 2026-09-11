@@ -1,0 +1,40 @@
+# Function #18946 'avviaPastoCompleto'
+# offset=5094375 bytes=144
+
+00000000: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 0, Reg8: 1, UInt8: 25>
+00000007: <JmpTrue>: <Addr8: 48, Reg8: 0>  # Address: 00000037
+0000000a: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 24>
+0000000e: <LoadConstUndefined>: <Reg8: 0>
+00000010: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 0, Reg8: 0>
+00000015: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 23>
+00000019: <CreateEnvironment>: <Reg8: 2>
+0000001b: <CreateClosure>: <Reg8: 2, Reg8: 2, function_id: 18947>  # Function: [#18947  of 12 bytes]: 2 params @ offset 0x0037246e
+00000020: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000025: <GetEnvironment>: <Reg8: 2, UInt8: 1>
+00000028: <LoadFromEnvironment>: <Reg8: 3, Reg8: 2, UInt8: 42>
+0000002c: <LoadConstString>: <Reg8: 2, string_id: 33652>  # String: 'soft' (Identifier)
+00000030: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000035: <Ret>: <Reg8: 0>
+00000037: <GetEnvironment>: <Reg8: 2, UInt8: 1>
+0000003a: <LoadFromEnvironment>: <Reg8: 0, Reg8: 2, UInt8: 20>
+0000003e: <GetById>: <Reg8: 3, Reg8: 0, UInt8: 1, string_id: 39514>  # String: 'getIniziato' (Identifier)
+00000044: <LoadConstUndefined>: <Reg8: 0>
+00000046: <Call1>: <Reg8: 4, Reg8: 3, Reg8: 0>
+0000004a: <JmpFalse>: <Addr8: 49, Reg8: 4>  # Address: 0000007b
+0000004d: <GetGlobalObject>: <Reg8: 3>
+0000004f: <TryGetById>: <Reg8: 5, Reg8: 3, UInt8: 2, string_id: 3>  # String: 'Date' (Identifier)
+00000055: <GetById>: <Reg8: 3, Reg8: 5, UInt8: 3, string_id: 34390>  # String: 'now' (Identifier)
+0000005b: <Call1>: <Reg8: 3, Reg8: 3, Reg8: 5>
+0000005f: <Sub>: <Reg8: 4, Reg8: 3, Reg8: 4>
+00000063: <LoadConstInt>: <Reg8: 3, Imm32: 14400000>
+00000069: <JNotGreater>: <Addr8: 18, Reg8: 4, Reg8: 3>  # Address: 0000007b
+0000006d: <LoadFromEnvironment>: <Reg8: 2, Reg8: 2, UInt8: 20>
+00000071: <GetById>: <Reg8: 2, Reg8: 2, UInt8: 4, string_id: 35427>  # String: 'svuotaPasto' (Identifier)
+00000077: <Call1>: <Reg8: 2, Reg8: 2, Reg8: 0>
+0000007b: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 26>
+0000007f: <LoadConstTrue>: <Reg8: 2>
+00000081: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000086: <LoadFromEnvironment>: <Reg8: 1, Reg8: 1, UInt8: 49>
+0000008a: <Call1>: <Reg8: 1, Reg8: 1, Reg8: 0>
+0000008e: <Ret>: <Reg8: 0>

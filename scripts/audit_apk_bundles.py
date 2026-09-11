@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Confronta i bundle Hermes GLICODEN 1.0.0 e 1.0.16.
+"""Confronta i bundle Hermes delle versioni sorgente 1.0.0 e 1.0.16.
 
 Il report è intenzionalmente conservativo: distingue le stringhe presenti nel
 bundle dalle funzioni che le referenziano direttamente e non interpreta la sola
@@ -15,6 +15,7 @@ from collections import Counter, defaultdict
 from dataclasses import asdict, dataclass
 from io import BytesIO
 import json
+import os
 from pathlib import Path
 import re
 from typing import Any, Iterable
@@ -23,7 +24,7 @@ from hermes_dec.parsers.hbc_bytecode_parser import parse_hbc_bytecode
 from hermes_dec.parsers.hbc_file_parser import HBCReader
 
 
-URL_RE = re.compile(r"(?:https?://|glicoden://)[^\s\"'<>\\)\]]+")
+URL_RE = re.compile(r"(?:[a-z][a-z0-9+.-]*://)[^\s\"'<>\\)\]]+", re.IGNORECASE)
 
 KEYWORD_GROUPS: dict[str, tuple[str, ...]] = {
     "barcode": (
@@ -65,7 +66,7 @@ KEYWORD_GROUPS: dict[str, tuple[str, ...]] = {
         "login",
     ),
     "deep_link_share": (
-        "glicoden://",
+        "://",
         "/i/",
         "sharing",
         "condividi",
@@ -200,8 +201,31 @@ def load_reader(path: Path) -> HBCReader:
     return reader
 
 
+SOURCE_BRAND_PLACEHOLDER = "[SOURCE_BRAND]"
+
+
 def normalize(value: str) -> str:
     return value.casefold()
+
+
+def redact_source_brand(value: Any, source_brand: str) -> Any:
+    if isinstance(value, str):
+        return re.sub(
+            re.escape(source_brand),
+            SOURCE_BRAND_PLACEHOLDER,
+            value,
+            flags=re.IGNORECASE,
+        )
+    if isinstance(value, list):
+        return [redact_source_brand(item, source_brand) for item in value]
+    if isinstance(value, tuple):
+        return tuple(redact_source_brand(item, source_brand) for item in value)
+    if isinstance(value, dict):
+        return {
+            key: redact_source_brand(item, source_brand)
+            for key, item in value.items()
+        }
+    return value
 
 
 def matches_any(value: str, needles: Iterable[str]) -> bool:
@@ -345,11 +369,11 @@ def inspect_functions(reader: HBCReader) -> tuple[dict[str, list[FunctionHit]], 
     return grouped_hits, structural, named
 
 
-def summarize_bundle(path: Path) -> tuple[HBCReader, dict[str, Any]]:
+def summarize_bundle(path: Path, label: str) -> tuple[HBCReader, dict[str, Any]]:
     reader = load_reader(path)
     strings = list(reader.strings)
     summary = {
-        "path": str(path),
+        "path": label,
         "bytes": path.stat().st_size,
         "hermes_version": reader.header.version,
         "function_count": len(reader.function_headers),
@@ -388,35 +412,23 @@ def summarize_assets(manifest_path: Path) -> dict[str, Any]:
 
 def parse_args() -> argparse.Namespace:
     project_root = Path(__file__).resolve().parents[1]
-    workspace_root = project_root.parent
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--baseline",
         type=Path,
-        default=workspace_root
-        / "resources"
-        / "com.fabiodenuzzo.diabetecibo.apk"
-        / "assets"
-        / "index.android.bundle",
+        default=os.environ.get("SOURCE_BASELINE_BUNDLE"),
     )
     parser.add_argument(
         "--candidate",
         type=Path,
-        default=workspace_root
-        / "GLICODEN_1.0.16"
-        / "resources"
-        / "assets"
-        / "index.android.bundle",
+        default=os.environ.get("SOURCE_CANDIDATE_BUNDLE"),
     )
     parser.add_argument(
         "--asset-manifest",
         type=Path,
-        default=workspace_root
-        / "GLICODEN_1.0.16"
-        / "resources"
-        / "assets"
-        / "app.manifest",
+        default=os.environ.get("SOURCE_ASSET_MANIFEST"),
     )
+    parser.add_argument("--source-brand", default=os.environ.get("SOURCE_BRAND"))
     parser.add_argument(
         "--output",
         type=Path,
@@ -427,8 +439,19 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    baseline_reader, baseline = summarize_bundle(args.baseline.resolve())
-    candidate_reader, candidate = summarize_bundle(args.candidate.resolve())
+    if args.baseline is None or args.candidate is None or args.asset_manifest is None:
+        raise ValueError(
+            "Configura baseline, candidate e manifest con argomenti o variabili SOURCE_*"
+        )
+    if not args.source_brand:
+        raise ValueError("Imposta --source-brand o SOURCE_BRAND per la redazione")
+
+    baseline_reader, baseline = summarize_bundle(
+        args.baseline.resolve(), "baseline/assets/index.android.bundle"
+    )
+    candidate_reader, candidate = summarize_bundle(
+        args.candidate.resolve(), "candidate/assets/index.android.bundle"
+    )
 
     baseline_strings = set(baseline_reader.strings)
     candidate_strings = set(candidate_reader.strings)
@@ -478,6 +501,7 @@ def main() -> None:
         },
         "assets_1_0_16": summarize_assets(args.asset_manifest.resolve()),
     }
+    report = redact_source_brand(report, args.source_brand)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(

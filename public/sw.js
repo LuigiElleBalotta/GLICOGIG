@@ -1,8 +1,9 @@
-const CACHE_NAME = 'glicogig-shell-v3'
+const CACHE_NAME = 'glicogig-shell-v5'
 const APP_SHELL = [
   '/manifest.webmanifest',
   '/icons/glicogig-icon-192.svg',
   '/icons/glicogig-icon-512.svg',
+  '/icons/glicogig-apple-touch-icon.png',
 ]
 
 function sameOriginAssetsFromHtml(html) {

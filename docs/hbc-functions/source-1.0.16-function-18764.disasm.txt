@@ -1,0 +1,70 @@
+# Function #18764 'affidabilitaRicetta'
+# offset=5048413 bytes=218
+
+00000000: <LoadParam>: <Reg8: 3, UInt8: 1>
+00000003: <LoadConstUndefined>: <Reg8: 5>
+00000005: <LoadConstUndefined>: <Reg8: 6>
+00000007: <LoadConstUndefined>: <Reg8: 7>
+00000009: <LoadConstUndefined>: <Reg8: 8>
+0000000b: <LoadConstNull>: <Reg8: 0>
+0000000d: <LoadConstNull>: <Reg8: 2>
+0000000f: <Eq>: <Reg8: 4, Reg8: 3, Reg8: 0>
+00000013: <LoadConstUndefined>: <Reg8: 1>
+00000015: <JmpTrue>: <Addr8: 8, Reg8: 4>  # Address: 0000001d
+00000018: <GetByIdShort>: <Reg8: 1, Reg8: 3, UInt8: 1, string_id: 161>  # String: 'ingredienti' (Identifier)
+0000001d: <JmpTrue>: <Addr8: 7, Reg8: 1>  # Address: 00000024
+00000020: <NewArray>: <Reg8: 1, UInt16: 0>
+00000024: <Mov>: <Reg8: 4, Reg8: 1>
+00000027: <IteratorBegin>: <Reg8: 3, Reg8: 4>
+0000002a: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000002d: <IteratorNext>: <Reg8: 9, Reg8: 3, Reg8: 4>
+00000031: <Mov>: <Reg8: 10, Reg8: 3>
+00000034: <JStrictEqual>: <Addr8: 120, Reg8: 10, Reg8: 5>  # Address: 000000ac
+00000038: <Mov>: <Reg8: 6, Reg8: 9>
+0000003b: <Eq>: <Reg8: 11, Reg8: 9, Reg8: 0>
+0000003f: <LoadConstUndefined>: <Reg8: 10>
+00000041: <JmpTrue>: <Addr8: 8, Reg8: 11>  # Address: 00000049
+00000044: <GetByIdShort>: <Reg8: 10, Reg8: 9, UInt8: 2, string_id: 147>  # String: 'id' (Identifier)
+00000049: <LoadConstUndefined>: <Reg8: 9>
+0000004b: <JmpFalse>: <Addr8: 26, Reg8: 10>  # Address: 00000065
+0000004e: <LoadFromEnvironment>: <Reg8: 10, Reg8: 1, UInt8: 1>
+00000052: <GetById>: <Reg8: 11, Reg8: 10, UInt8: 3, string_id: 37466>  # String: 'alimentoById' (Identifier)
+00000058: <Mov>: <Reg8: 10, Reg8: 6>
+0000005b: <GetByIdShort>: <Reg8: 10, Reg8: 10, UInt8: 2, string_id: 147>  # String: 'id' (Identifier)
+00000060: <Call2>: <Reg8: 9, Reg8: 11, Reg8: 5, Reg8: 10>
+00000065: <Mov>: <Reg8: 7, Reg8: 9>
+00000068: <JmpFalse>: <Addr8: 59, Reg8: 9>  # Address: 000000a3
+0000006b: <Mov>: <Reg8: 9, Reg8: 7>
+0000006e: <GetByIdShort>: <Reg8: 9, Reg8: 9, UInt8: 4, string_id: 154>  # String: 'ig_medio' (Identifier)
+00000073: <JEqual>: <Addr8: 48, Reg8: 9, Reg8: 0>  # Address: 000000a3
+00000077: <LoadFromEnvironment>: <Reg8: 10, Reg8: 1, UInt8: 2>
+0000007b: <Mov>: <Reg8: 9, Reg8: 7>
+0000007e: <GetByIdShort>: <Reg8: 9, Reg8: 9, UInt8: 5, string_id: 149>  # String: 'ig_affidabilita' (Identifier)
+00000083: <GetByVal>: <Reg8: 9, Reg8: 10, Reg8: 9>
+00000087: <Mov>: <Reg8: 8, Reg8: 9>
+0000008a: <JmpFalse>: <Addr8: 23, Reg8: 9>  # Address: 000000a1
+0000008d: <Mov>: <Reg8: 9, Reg8: 2>
+00000090: <JEqual>: <Addr8: 14, Reg8: 9, Reg8: 0>  # Address: 0000009e
+00000094: <Mov>: <Reg8: 10, Reg8: 8>
+00000097: <Mov>: <Reg8: 9, Reg8: 2>
+0000009a: <JNotLess>: <Addr8: 7, Reg8: 10, Reg8: 9>  # Address: 000000a1
+0000009e: <Mov>: <Reg8: 2, Reg8: 8>
+000000a1: <Jmp>: <Addr8: -116>  # Address: 0000002d
+000000a3: <Jmp>: <Addr8: -118>  # Address: 0000002d
+000000a5: <Catch>: <Reg8: 1>
+000000a7: <IteratorClose>: <Reg8: 3, UInt8: 1>
+000000aa: <Throw>: <Reg8: 1>
+000000ac: <Mov>: <Reg8: 1, Reg8: 2>
+000000af: <JEqual>: <Addr8: 41, Reg8: 1, Reg8: 0>  # Address: 000000d8
+000000b3: <Mov>: <Reg8: 4, Reg8: 2>
+000000b6: <LoadConstString>: <Reg8: 1, string_id: 34772>  # String: 'alta' (Identifier)
+000000ba: <LoadConstUInt8>: <Reg8: 3, UInt8: 3>
+000000bd: <JStrictEqual>: <Addr8: 25, Reg8: 4, Reg8: 3>  # Address: 000000d6
+000000c1: <Mov>: <Reg8: 4, Reg8: 2>
+000000c4: <LoadConstString>: <Reg8: 2, string_id: 35157>  # String: 'bassa' (Identifier)
+000000c8: <LoadConstUInt8>: <Reg8: 3, UInt8: 2>
+000000cb: <JStrictNotEqual>: <Addr8: 8, Reg8: 4, Reg8: 3>  # Address: 000000d3
+000000cf: <LoadConstString>: <Reg8: 2, string_id: 33888>  # String: 'media' (Identifier)
+000000d3: <Mov>: <Reg8: 1, Reg8: 2>
+000000d6: <Ret>: <Reg8: 1>
+000000d8: <Ret>: <Reg8: 0>

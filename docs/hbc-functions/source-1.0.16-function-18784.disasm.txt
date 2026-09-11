@@ -1,0 +1,24 @@
+# Function #18784 'quandoHaSenso'
+# offset=5050367 bytes=72
+
+00000000: <LoadParam>: <Reg8: 3, UInt8: 2>
+00000003: <LoadParam>: <Reg8: 1, UInt8: 1>
+00000006: <LoadConstString>: <Reg8: 0, string_id: 34023>  # String: 'alto' (Identifier)
+0000000a: <StrictEq>: <Reg8: 0, Reg8: 1, Reg8: 0>
+0000000e: <JmpTrue>: <Addr8: 22, Reg8: 0>  # Address: 00000024
+00000011: <LoadConstNull>: <Reg8: 1>
+00000013: <Neq>: <Reg8: 1, Reg8: 3, Reg8: 1>
+00000017: <JmpFalse>: <Addr8: 10, Reg8: 1>  # Address: 00000021
+0000001a: <LoadConstUInt8>: <Reg8: 2, UInt8: 70>
+0000001d: <GreaterEq>: <Reg8: 1, Reg8: 3, Reg8: 2>
+00000021: <Mov>: <Reg8: 0, Reg8: 1>
+00000024: <JmpTrue>: <Addr8: 7, Reg8: 0>  # Address: 0000002b
+00000027: <LoadConstNull>: <Reg8: 0>
+00000029: <Ret>: <Reg8: 0>
+0000002b: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+0000002e: <LoadFromEnvironment>: <Reg8: 0, Reg8: 0, UInt8: 1>
+00000032: <GetById>: <Reg8: 2, Reg8: 0, UInt8: 1, string_id: 47163>  # String: 'i18n' (Identifier)
+00000038: <GetByIdShort>: <Reg8: 1, Reg8: 2, UInt8: 2, string_id: 4>  # String: 't' (Identifier)
+0000003d: <LoadConstString>: <Reg8: 0, string_id: 7054>  # String: 'gen.quandoHaSenso' (String)
+00000041: <Call2>: <Reg8: 0, Reg8: 1, Reg8: 2, Reg8: 0>
+00000046: <Ret>: <Reg8: 0>

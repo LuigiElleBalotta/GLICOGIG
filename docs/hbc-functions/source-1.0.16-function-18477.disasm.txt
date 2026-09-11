@@ -1,0 +1,25 @@
+# Function #18477 'verdettoSettimana'
+# offset=4979116 bytes=94
+
+00000000: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000003: <GetByIdShort>: <Reg8: 1, Reg8: 0, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000008: <JmpTrue>: <Addr8: 9, Reg8: 1>  # Address: 00000011
+0000000b: <LoadConstString>: <Reg8: 1, string_id: 38406>  # String: 'equilibrata' (Identifier)
+0000000f: <Ret>: <Reg8: 1>
+00000011: <GetByIdShort>: <Reg8: 2, Reg8: 0, UInt8: 2, string_id: 119>  # String: 'filter' (Identifier)
+00000016: <CreateEnvironment>: <Reg8: 1>
+00000018: <CreateClosure>: <Reg8: 1, Reg8: 1, function_id: 18478>  # Function: [#18478  of 37 bytes]: 2 params @ offset 0x004be876
+0000001d: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+00000022: <GetByIdShort>: <Reg8: 1, Reg8: 1, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000027: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+0000002c: <Div>: <Reg8: 1, Reg8: 1, Reg8: 0>
+00000030: <LoadConstDouble>: <Reg8: 0, Double: 0.5>
+0000003a: <JGreaterEqual>: <Addr8: 30, Reg8: 1, Reg8: 0>  # Address: 00000058
+0000003e: <LoadConstDouble>: <Reg8: 0, Double: 0.25>
+00000048: <JGreaterEqual>: <Addr8: 10, Reg8: 1, Reg8: 0>  # Address: 00000052
+0000004c: <LoadConstString>: <Reg8: 0, string_id: 38406>  # String: 'equilibrata' (Identifier)
+00000050: <Ret>: <Reg8: 0>
+00000052: <LoadConstString>: <Reg8: 0, string_id: 34467>  # String: 'moderata' (Identifier)
+00000056: <Ret>: <Reg8: 0>
+00000058: <LoadConstString>: <Reg8: 0, string_id: 45139>  # String: 'intensa' (Identifier)
+0000005c: <Ret>: <Reg8: 0>

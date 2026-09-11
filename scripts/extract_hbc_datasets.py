@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
 from dataclasses import dataclass
 from io import BytesIO
 from pathlib import Path
@@ -30,6 +32,27 @@ class DatasetSpec:
     root_key: str
     bundle: Path
     output_name: str
+
+
+SOURCE_BRAND_PLACEHOLDER = "[SOURCE_BRAND]"
+
+
+def redact_source_brand(value: Any, source_brand: str) -> Any:
+    if isinstance(value, str):
+        return re.sub(
+            re.escape(source_brand),
+            SOURCE_BRAND_PLACEHOLDER,
+            value,
+            flags=re.IGNORECASE,
+        )
+    if isinstance(value, list):
+        return [redact_source_brand(item, source_brand) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: redact_source_brand(item, source_brand)
+            for key, item in value.items()
+        }
+    return value
 
 
 def decode_values(reader: HBCReader, data: bytes, offset: int, count: int) -> list[Any]:
@@ -205,41 +228,27 @@ def validate_dataset(root: dict[str, Any], spec: DatasetSpec) -> dict[str, Any]:
     }
 
 
-def build_specs(workspace_root: Path) -> dict[str, DatasetSpec]:
-    baseline_bundle = (
-        workspace_root
-        / "resources"
-        / "com.fabiodenuzzo.diabetecibo.apk"
-        / "assets"
-        / "index.android.bundle"
-    )
-    candidate_bundle = (
-        workspace_root
-        / "GLICODEN_1.0.16"
-        / "resources"
-        / "assets"
-        / "index.android.bundle"
-    )
+def build_specs(baseline_bundle: Path, candidate_bundle: Path) -> dict[str, DatasetSpec]:
     return {
         "1.0.0-catalog": DatasetSpec(
             "1.0.0-catalog", "1.0.0", "catalog", 14256, 2938670, "alimenti",
-            baseline_bundle, "glicoden-1.0.0-catalog-14256.json",
+            baseline_bundle, "source-1.0.0-catalog-14256.json",
         ),
         "1.0.0-recipes": DatasetSpec(
             "1.0.0-recipes", "1.0.0", "recipes", 14257, 2947209, "ricette",
-            baseline_bundle, "glicoden-1.0.0-recipes-14257.json",
+            baseline_bundle, "source-1.0.0-recipes-14257.json",
         ),
         "1.0.16-catalog": DatasetSpec(
             "1.0.16-catalog", "1.0.16", "catalog", 17813, 4796823, "alimenti",
-            candidate_bundle, "glicoden-1.0.16-catalog-17813.json",
+            candidate_bundle, "source-1.0.16-catalog-17813.json",
         ),
         "1.0.16-recipes": DatasetSpec(
             "1.0.16-recipes", "1.0.16", "recipes", 17814, 4827615, "ricette",
-            candidate_bundle, "glicoden-1.0.16-recipes-17814.json",
+            candidate_bundle, "source-1.0.16-recipes-17814.json",
         ),
         "1.0.16-quiz": DatasetSpec(
             "1.0.16-quiz", "1.0.16", "quiz", 19765, 5261973, "domande",
-            candidate_bundle, "glicoden-1.0.16-quiz-19765.json",
+            candidate_bundle, "source-1.0.16-quiz-19765.json",
         ),
     }
 
@@ -254,6 +263,17 @@ def parse_args(spec_keys: tuple[str, ...], default_output: Path) -> argparse.Nam
     )
     parser.add_argument("--output-dir", type=Path, default=default_output)
     parser.add_argument(
+        "--baseline-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_BASELINE_BUNDLE"),
+    )
+    parser.add_argument(
+        "--candidate-bundle",
+        type=Path,
+        default=os.environ.get("SOURCE_CANDIDATE_BUNDLE"),
+    )
+    parser.add_argument("--source-brand", default=os.environ.get("SOURCE_BRAND"))
+    parser.add_argument(
         "--force",
         action="store_true",
         help="Consente di sostituire output documentali già esistenti.",
@@ -263,9 +283,19 @@ def parse_args(spec_keys: tuple[str, ...], default_output: Path) -> argparse.Nam
 
 def main() -> None:
     project_root = Path(__file__).resolve().parents[1]
-    workspace_root = project_root.parent
-    specs = build_specs(workspace_root)
-    args = parse_args(tuple(specs), project_root / "docs" / "extracted")
+    spec_keys = (
+        "1.0.0-catalog",
+        "1.0.0-recipes",
+        "1.0.16-catalog",
+        "1.0.16-recipes",
+        "1.0.16-quiz",
+    )
+    args = parse_args(spec_keys, project_root / "docs" / "extracted")
+    if args.baseline_bundle is None or args.candidate_bundle is None:
+        raise ValueError("Configura entrambi i bundle con argomenti o variabili SOURCE_*")
+    if not args.source_brand:
+        raise ValueError("Imposta --source-brand o SOURCE_BRAND per la redazione")
+    specs = build_specs(args.baseline_bundle, args.candidate_bundle)
     selected = [specs[key] for key in (args.only or specs.keys())]
 
     outputs = [args.output_dir / spec.output_name for spec in selected]
@@ -292,7 +322,12 @@ def main() -> None:
     for spec, root, summary in extracted:
         output = args.output_dir / spec.output_name
         output.write_text(
-            json.dumps(root, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+            json.dumps(
+                redact_source_brand(root, args.source_brand),
+                ensure_ascii=False,
+                indent=2,
+                allow_nan=False,
+            ) + "\n",
             encoding="utf-8",
         )
         totals = ", ".join(

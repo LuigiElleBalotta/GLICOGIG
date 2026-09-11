@@ -1,0 +1,51 @@
+# Function #18449 'slotDiPasto'
+# offset=4975993 bytes=169
+
+00000000: <LoadConstUndefined>: <Reg8: 3>
+00000002: <LoadConstUndefined>: <Reg8: 4>
+00000004: <LoadConstUndefined>: <Reg8: 0>
+00000006: <GetGlobalObject>: <Reg8: 1>
+00000008: <TryGetById>: <Reg8: 5, Reg8: 1, UInt8: 1, string_id: 3>  # String: 'Date' (Identifier)
+0000000e: <GetByIdShort>: <Reg8: 1, Reg8: 5, UInt8: 2, string_id: 157>  # String: 'prototype' (Identifier)
+00000013: <CreateThis>: <Reg8: 2, Reg8: 1, Reg8: 5>
+00000017: <LoadParam>: <Reg8: 7, UInt8: 1>
+0000001a: <Mov>: <Reg8: 8, Reg8: 2>
+0000001d: <Construct>: <Reg8: 1, Reg8: 5, UInt8: 2>
+00000021: <SelectObject>: <Reg8: 5, Reg8: 2, Reg8: 1>
+00000025: <GetById>: <Reg8: 1, Reg8: 5, UInt8: 3, string_id: 40197>  # String: 'getHours' (Identifier)
+0000002b: <Call1>: <Reg8: 2, Reg8: 1, Reg8: 5>
+0000002f: <GetById>: <Reg8: 1, Reg8: 5, UInt8: 4, string_id: 51405>  # String: 'getMinutes' (Identifier)
+00000035: <Call1>: <Reg8: 5, Reg8: 1, Reg8: 5>
+00000039: <LoadConstUInt8>: <Reg8: 1, UInt8: 60>
+0000003c: <Div>: <Reg8: 1, Reg8: 5, Reg8: 1>
+00000040: <Add>: <Reg8: 2, Reg8: 2, Reg8: 1>
+00000044: <Mov>: <Reg8: 4, Reg8: 2>
+00000047: <LoadConstUInt8>: <Reg8: 1, UInt8: 4>
+0000004a: <JNotLess>: <Addr8: 14, Reg8: 2, Reg8: 1>  # Address: 00000058
+0000004e: <Mov>: <Reg8: 2, Reg8: 4>
+00000051: <LoadConstUInt8>: <Reg8: 1, UInt8: 24>
+00000054: <Add>: <Reg8: 4, Reg8: 2, Reg8: 1>
+00000058: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000005b: <LoadFromEnvironment>: <Reg8: 5, Reg8: 1, UInt8: 7>
+0000005f: <Mov>: <Reg8: 2, Reg8: 5>
+00000062: <IteratorBegin>: <Reg8: 1, Reg8: 2>
+00000065: <IteratorNext>: <Reg8: 5, Reg8: 1, Reg8: 2>
+00000069: <Mov>: <Reg8: 6, Reg8: 1>
+0000006c: <JStrictEqual>: <Addr8: 55, Reg8: 6, Reg8: 3>  # Address: 000000a3
+00000070: <Mov>: <Reg8: 0, Reg8: 5>
+00000073: <Mov>: <Reg8: 6, Reg8: 4>
+00000076: <GetById>: <Reg8: 5, Reg8: 5, UInt8: 5, string_id: 32342>  # String: 'from' (Identifier)
+0000007c: <JNotGreaterEqual>: <Addr8: 20, Reg8: 6, Reg8: 5>  # Address: 00000090
+00000080: <Mov>: <Reg8: 6, Reg8: 4>
+00000083: <Mov>: <Reg8: 5, Reg8: 0>
+00000086: <GetById>: <Reg8: 5, Reg8: 5, UInt8: 6, string_id: 32054>  # String: 'to' (Identifier)
+0000008c: <JLess>: <Addr8: 6, Reg8: 6, Reg8: 5>  # Address: 00000092
+00000090: <Jmp>: <Addr8: -43>  # Address: 00000065
+00000092: <GetByIdShort>: <Reg8: 0, Reg8: 0, UInt8: 7, string_id: 168>  # String: 'key' (Identifier)
+00000097: <IteratorClose>: <Reg8: 1, UInt8: 0>
+0000009a: <Ret>: <Reg8: 0>
+0000009c: <Catch>: <Reg8: 0>
+0000009e: <IteratorClose>: <Reg8: 1, UInt8: 1>
+000000a1: <Throw>: <Reg8: 0>
+000000a3: <LoadConstString>: <Reg8: 0, string_id: 35100>  # String: 'cena' (Identifier)
+000000a7: <Ret>: <Reg8: 0>

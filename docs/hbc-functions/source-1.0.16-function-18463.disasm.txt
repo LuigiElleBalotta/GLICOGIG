@@ -1,0 +1,31 @@
+# Function #18463 'giorniConsecutivi'
+# offset=4977634 bytes=93
+
+00000000: <GetEnvironment>: <Reg8: 0, UInt8: 0>
+00000003: <LoadFromEnvironment>: <Reg8: 1, Reg8: 0, UInt8: 15>
+00000007: <LoadConstUndefined>: <Reg8: 0>
+00000009: <Call1>: <Reg8: 5, Reg8: 1, Reg8: 0>
+0000000d: <GetByIdShort>: <Reg8: 0, Reg8: 5, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000012: <LoadConstZero>: <Reg8: 4>
+00000014: <Less>: <Reg8: 1, Reg8: 4, Reg8: 0>
+00000018: <LoadConstZero>: <Reg8: 3>
+0000001a: <LoadConstZero>: <Reg8: 2>
+0000001c: <LoadConstZero>: <Reg8: 0>
+0000001e: <JmpFalse>: <Addr8: 61, Reg8: 1>  # Address: 0000005b
+00000021: <GetByVal>: <Reg8: 1, Reg8: 5, Reg8: 2>
+00000025: <GetById>: <Reg8: 1, Reg8: 1, UInt8: 2, string_id: 34177>  # String: 'voci' (Identifier)
+0000002b: <GetByIdShort>: <Reg8: 7, Reg8: 1, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000030: <Mov>: <Reg8: 6, Reg8: 3>
+00000033: <Mov>: <Reg8: 1, Reg8: 2>
+00000036: <JGreater>: <Addr8: 16, Reg8: 7, Reg8: 4>  # Address: 00000046
+0000003a: <Mov>: <Reg8: 7, Reg8: 6>
+0000003d: <Mov>: <Reg8: 0, Reg8: 7>
+00000040: <JStrictEqual>: <Addr8: 9, Reg8: 1, Reg8: 4>  # Address: 00000049
+00000044: <Jmp>: <Addr8: 23>  # Address: 0000005b
+00000046: <Inc>: <Reg8: 7, Reg8: 6>
+00000049: <Inc>: <Reg8: 2, Reg8: 1>
+0000004c: <GetByIdShort>: <Reg8: 1, Reg8: 5, UInt8: 1, string_id: 171>  # String: 'length' (Identifier)
+00000051: <Mov>: <Reg8: 3, Reg8: 7>
+00000054: <Mov>: <Reg8: 0, Reg8: 3>
+00000057: <JLess>: <Addr8: -54, Reg8: 2, Reg8: 1>  # Address: 00000021
+0000005b: <Ret>: <Reg8: 0>

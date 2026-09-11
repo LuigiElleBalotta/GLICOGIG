@@ -95,7 +95,7 @@ export interface LearningNoteBlock extends LearningLocalizedText {
 export interface LearningExampleBlock extends LearningLocalizedText {
   t: 'esempio'
   cibo: string
-  foodId: string
+  foodId?: string
   cibo_en: string
   cibo_es: string
   cibo_de: string

@@ -1,0 +1,22 @@
+# Function #18919 'aggiungi'
+# offset=5092337 bytes=70
+
+00000000: <CreateEnvironment>: <Reg8: 2>
+00000002: <LoadParam>: <Reg8: 0, UInt8: 1>
+00000005: <StoreToEnvironment>: <Reg8: 2, UInt8: 0, Reg8: 0>
+00000009: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+0000000c: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 11>
+00000010: <LoadConstUndefined>: <Reg8: 0>
+00000012: <CreateClosure>: <Reg8: 2, Reg8: 2, function_id: 18920>  # Function: [#18920  of 77 bytes]: 2 params @ offset 0x004db437
+00000017: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+0000001c: <LoadFromEnvironment>: <Reg8: 3, Reg8: 1, UInt8: 13>
+00000020: <LoadConstFalse>: <Reg8: 2>
+00000022: <Call2>: <Reg8: 2, Reg8: 3, Reg8: 0, Reg8: 2>
+00000027: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 15>
+0000002b: <LoadConstString>: <Reg8: 1, string_id: 31798>  # String: '' (Identifier)
+0000002f: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+00000034: <GetEnvironment>: <Reg8: 1, UInt8: 1>
+00000037: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 42>
+0000003b: <LoadConstString>: <Reg8: 1, string_id: 33652>  # String: 'soft' (Identifier)
+0000003f: <Call2>: <Reg8: 1, Reg8: 2, Reg8: 0, Reg8: 1>
+00000044: <Ret>: <Reg8: 0>

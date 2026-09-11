@@ -1,0 +1,75 @@
+# Function #18455 'datiCardOggi'
+# offset=4976663 bytes=298
+
+00000000: <CreateEnvironment>: <Reg8: 0>
+00000002: <GetEnvironment>: <Reg8: 1, UInt8: 0>
+00000005: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 1>
+00000009: <GetById>: <Reg8: 2, Reg8: 2, UInt8: 1, string_id: 34178>  # String: 'vociDelGiorno' (Identifier)
+0000000f: <LoadConstUndefined>: <Reg8: 8>
+00000011: <Call1>: <Reg8: 3, Reg8: 2, Reg8: 8>
+00000015: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 20>
+00000019: <Call2>: <Reg8: 7, Reg8: 2, Reg8: 8, Reg8: 3>
+0000001e: <LoadConstNull>: <Reg8: 2>
+00000020: <JNotEqual>: <Addr8: 6, Reg8: 7, Reg8: 2>  # Address: 00000026
+00000024: <LoadConstZero>: <Reg8: 7>
+00000026: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 1>
+0000002a: <GetById>: <Reg8: 2, Reg8: 2, UInt8: 2, string_id: 39480>  # String: 'giornoLocale' (Identifier)
+00000030: <Call1>: <Reg8: 13, Reg8: 2, Reg8: 8>
+00000034: <GetGlobalObject>: <Reg8: 2>
+00000036: <TryGetById>: <Reg8: 5, Reg8: 2, UInt8: 3, string_id: 34099>  # String: 'parseInt' (Identifier)
+0000003c: <GetByIdShort>: <Reg8: 6, Reg8: 13, UInt8: 4, string_id: 228>  # String: 'slice' (Identifier)
+00000041: <LoadConstUInt8>: <Reg8: 4, UInt8: 8>
+00000044: <LoadConstUInt8>: <Reg8: 10, UInt8: 10>
+00000047: <Call3>: <Reg8: 4, Reg8: 6, Reg8: 13, Reg8: 4, Reg8: 10>
+0000004d: <Call3>: <Reg8: 9, Reg8: 5, Reg8: 8, Reg8: 4, Reg8: 10>
+00000053: <LoadFromEnvironment>: <Reg8: 5, Reg8: 1, UInt8: 9>
+00000057: <TryGetById>: <Reg8: 6, Reg8: 2, UInt8: 3, string_id: 34099>  # String: 'parseInt' (Identifier)
+0000005d: <GetByIdShort>: <Reg8: 12, Reg8: 13, UInt8: 4, string_id: 228>  # String: 'slice' (Identifier)
+00000062: <LoadConstUInt8>: <Reg8: 11, UInt8: 5>
+00000065: <LoadConstUInt8>: <Reg8: 4, UInt8: 7>
+00000068: <Call3>: <Reg8: 4, Reg8: 12, Reg8: 13, Reg8: 11, Reg8: 4>
+0000006e: <Call3>: <Reg8: 6, Reg8: 6, Reg8: 8, Reg8: 4, Reg8: 10>
+00000074: <LoadConstUInt8>: <Reg8: 4, UInt8: 1>
+00000077: <Sub>: <Reg8: 4, Reg8: 6, Reg8: 4>
+0000007b: <GetByVal>: <Reg8: 6, Reg8: 5, Reg8: 4>
+0000007f: <TryGetById>: <Reg8: 2, Reg8: 2, UInt8: 5, string_id: 7>  # String: 'HermesInternal' (Identifier)
+00000085: <GetByIdShort>: <Reg8: 5, Reg8: 2, UInt8: 6, string_id: 79>  # String: 'concat' (Identifier)
+0000008a: <LoadConstString>: <Reg8: 4, string_id: 31798>  # String: '' (Identifier)
+0000008e: <LoadConstString>: <Reg8: 2, string_id: 1229>  # String: ' ' (String)
+00000092: <Call4>: <Reg8: 6, Reg8: 5, Reg8: 4, Reg8: 9, Reg8: 2, Reg8: 6>
+00000099: <LoadConstUInt8>: <Reg8: 2, UInt8: 85>
+0000009c: <GreaterEq>: <Reg8: 2, Reg8: 7, Reg8: 2>
+000000a0: <LoadConstString>: <Reg8: 5, string_id: 12153>  # String: 'Giornata molto stabile' (String)
+000000a4: <JmpTrue>: <Addr8: 41, Reg8: 2>  # Address: 000000cd
+000000a7: <LoadConstUInt8>: <Reg8: 2, UInt8: 70>
+000000aa: <GreaterEq>: <Reg8: 4, Reg8: 7, Reg8: 2>
+000000ae: <LoadConstString>: <Reg8: 2, string_id: 7082>  # String: 'Bella giornata di scelte' (String)
+000000b2: <JmpTrue>: <Addr8: 24, Reg8: 4>  # Address: 000000ca
+000000b5: <LoadConstUInt8>: <Reg8: 4, UInt8: 55>
+000000b8: <GreaterEq>: <Reg8: 9, Reg8: 7, Reg8: 4>
+000000bc: <LoadConstString>: <Reg8: 4, string_id: 4094>  # String: 'Giornata impegnativa' (String)
+000000c0: <JmpFalse>: <Addr8: 7, Reg8: 9>  # Address: 000000c7
+000000c3: <LoadConstString>: <Reg8: 4, string_id: 12154>  # String: 'Giornata nella media' (String)
+000000c7: <Mov>: <Reg8: 2, Reg8: 4>
+000000ca: <Mov>: <Reg8: 5, Reg8: 2>
+000000cd: <LoadFromEnvironment>: <Reg8: 2, Reg8: 1, UInt8: 6>
+000000d1: <GetById>: <Reg8: 9, Reg8: 3, UInt8: 7, string_id: 34456>  # String: 'reduce' (Identifier)
+000000d7: <CreateClosure>: <Reg8: 1, Reg8: 0, function_id: 18456>  # Function: [#18456  of 22 bytes]: 3 params @ offset 0x004bf141
+000000dc: <LoadConstZero>: <Reg8: 4>
+000000de: <Call3>: <Reg8: 1, Reg8: 9, Reg8: 3, Reg8: 1, Reg8: 4>
+000000e4: <Call2>: <Reg8: 2, Reg8: 2, Reg8: 8, Reg8: 1>
+000000e9: <GetByIdShort>: <Reg8: 1, Reg8: 3, UInt8: 8, string_id: 177>  # String: 'map' (Identifier)
+000000ee: <CreateClosure>: <Reg8: 0, Reg8: 0, function_id: 18457>  # Function: [#18457  of 39 bytes]: 2 params @ offset 0x004bf157
+000000f3: <Call2>: <Reg8: 1, Reg8: 1, Reg8: 3, Reg8: 0>
+000000f8: <NewObject>: <Reg8: 0>
+000000fa: <PutNewOwnById>: <Reg8: 0, Reg8: 7, string_id: 54474>  # String: 'punteggio' (Identifier)
+000000ff: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 6, string_id: 90>  # String: 'data' (Identifier)
+00000103: <GetByIdShort>: <Reg8: 6, Reg8: 3, UInt8: 9, string_id: 171>  # String: 'length' (Identifier)
+00000108: <PutNewOwnById>: <Reg8: 0, Reg8: 6, string_id: 33773>  # String: 'nPasti' (Identifier)
+0000010d: <PutNewOwnById>: <Reg8: 0, Reg8: 5, string_id: 40529>  # String: 'frase' (Identifier)
+00000112: <GetByIdShort>: <Reg8: 3, Reg8: 3, UInt8: 9, string_id: 171>  # String: 'length' (Identifier)
+00000117: <StrictEq>: <Reg8: 3, Reg8: 3, Reg8: 4>
+0000011b: <PutNewOwnById>: <Reg8: 0, Reg8: 3, string_id: 35115>  # String: 'vuoto' (Identifier)
+00000120: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 2, string_id: 109>  # String: 'kcal' (Identifier)
+00000124: <PutNewOwnByIdShort>: <Reg8: 0, Reg8: 1, string_id: 202>  # String: 'pasti' (Identifier)
+00000128: <Ret>: <Reg8: 0>
