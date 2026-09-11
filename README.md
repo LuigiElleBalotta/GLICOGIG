@@ -2,7 +2,7 @@
 
 Web app React/TypeScript per analizzare un piatto, consultare alimenti e ricette, comporre un Pasto, registrare un Diario locale e usare contenuti educativi verificati. L’interfaccia mantiene brand e palette GLICOGIG; non replica identità, componenti commerciali o telemetria dell’app mobile osservata.
 
-I dataset nutrizionali ed editoriali runtime provengono esclusivamente dall’estrazione verificata della versione sorgente 1.0.16. I valori mancanti restano `null` e vengono mostrati come `n.d.`: non vengono completati con stime o fonti nutrizionali esterne.
+I dataset nutrizionali e i contenuti educativi runtime provengono esclusivamente dall’estrazione verificata della versione sorgente 1.0.16. Il copy dell’interfaccia IT/EN/ES/DE/FR è invece editoriale per questa web app e non viene dichiarato come estratto dall’APK. I valori mancanti restano `null` e vengono mostrati con il fallback locale di `common.labels.notAvailable`: non vengono completati con stime, traduzioni inventate o fonti nutrizionali esterne. La milestone funzionale precedente è registrata nel commit `7ce4380`.
 
 ## Stato attuale
 
@@ -27,6 +27,14 @@ I conteggi UI derivano sempre dalla lunghezza degli array runtime:
 | Domande quiz | 157 |
 
 I dataset sono in `src/data/verified-1.0.16-*.json` e vengono esposti soltanto da `src/catalog/datasets.ts`. I metadati upstream con totali obsoleti non sono usati per i conteggi.
+
+## Localizzazione
+
+La UI usa le dipendenze pinned exact `i18next@26.4.2` e `react-i18next@17.0.13`. Italiano, inglese, spagnolo, tedesco e francese sono selezionabili dalla barra superiore; la scelta viene persistita localmente, mentre lingua browser non supportata e campi dataset localizzati assenti ricadono deterministicamente sull’italiano.
+
+Le risorse in `src/i18n/resources/` sono copy editoriale della web app, non provenienza APK. I selector in `src/i18n/datasetSelectors.ts` leggono invece soltanto i campi localizzati presenti nei dataset verified 1.0.16, non mutano i record canonici e non inventano traduzioni. Numeri e fallback visibili seguono il locale attivo. Gli errori di immagine, foto, testo e barcode vengono trasformati al boundary React da code/status stabili: messaggi remoti o diagnostici non diventano copy UI. I nomi di default del Pasto sono risolti nel boundary React senza riscrivere nomi utente o record canonici del Diario.
+
+Il bootstrap sincronizza `document.documentElement.lang` e il titolo del documento con la lingua attiva. `index.html` resta il fallback italiano prima dell’avvio JavaScript/no-JS; il singolo manifest PWA dichiara `lang: it` e conserva metadati statici italiani perché i metadati di installazione non possono essere localizzati in modo affidabile da i18next prima del bootstrap senza manifest distinti per lingua.
 
 ## Analisi Foto e testo
 
@@ -115,7 +123,7 @@ La password del sito resta nel solo `sessionStorage` della scheda. Non inserire 
 
 ## PWA e offline
 
-Manifest, icone, safe area e service worker rendono l’app installabile. In produzione il service worker precachea la shell, usa network-first per le navigazioni, cache-first per gli asset ed esclude sempre `/api/*`. Analisi foto/testo, lookup barcode e altre operazioni remote richiedono rete; UI, dataset e immagini embedded possono essere riaperti offline dopo un’installazione completata.
+Manifest, icone, safe area e service worker rendono l’app installabile. In produzione il service worker precachea la shell, usa network-first per le navigazioni, cache-first per gli asset ed esclude sempre `/api/*`. Il manifest unico resta intenzionalmente statico e italiano (`lang: it`) come fallback di installazione; lingua del documento e titolo vengono sincronizzati a runtime dopo il bootstrap. Analisi foto/testo, lookup barcode e altre operazioni remote richiedono rete; UI, dataset e immagini embedded possono essere riaperti offline dopo un’installazione completata.
 
 In sviluppo Vite il service worker non viene registrato. Camera e installazione PWA richiedono HTTPS oppure `localhost`.
 
@@ -141,6 +149,7 @@ Documenti principali:
 - TypeScript 5.9
 - Vite 7
 - Tailwind CSS 4
+- `i18next@26.4.2` e `react-i18next@17.0.13` (versioni exact)
 - Vercel Functions
 - PWA senza plugin runtime aggiuntivi
 

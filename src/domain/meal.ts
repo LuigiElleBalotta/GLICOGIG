@@ -1,7 +1,7 @@
 import { getFoodByCatalogId, resolveFoodByName } from '../catalog/foodCatalog'
 import type { AnalizzaResponse, AnalysisOrigin } from '../types/analysis'
 import type { ProdottoBarcode } from '../types/barcode'
-import type { FoodCatalogEntry } from '../types/catalog'
+import type { CatalogLanguage, FoodCatalogEntry } from '../types/catalog'
 import type { Recipe } from '../types/content'
 import type { MealItem } from '../types/meal'
 import type { GlycemicImpactBand } from '../types/nutrition'
@@ -28,6 +28,7 @@ function localizedNames(food: FoodCatalogEntry) {
 export function mealItemFromAnalysis(
   result: AnalizzaResponse,
   analysisOrigin: AnalysisOrigin,
+  fallbackName: string,
 ): MealItem | null {
   if (!result.e_cibo) return null
   const meal = calculateMealNutrition(result.ingredienti)
@@ -38,7 +39,7 @@ export function mealItemFromAnalysis(
   }
   return {
     source,
-    name: result.piatto || 'Piatto senza nome',
+    name: result.piatto || fallbackName,
     grams: meal.totalGrams,
     kcal: meal.nutrition.energia_kcal,
     carbs: impact.carbo,
@@ -51,8 +52,8 @@ export function mealItemFromAnalysis(
   }
 }
 
-export function mealItemFromPhoto(result: AnalizzaResponse): MealItem | null {
-  return mealItemFromAnalysis(result, 'photo')
+export function mealItemFromPhoto(result: AnalizzaResponse, fallbackName: string): MealItem | null {
+  return mealItemFromAnalysis(result, 'photo', fallbackName)
 }
 
 export function mealItemFromFood(food: FoodCatalogEntry, requestedGrams: number): MealItem {
@@ -82,6 +83,9 @@ export function mealItemFromBarcode(
   food: FoodCatalogEntry,
   requestedGrams: number,
 ): MealItem | null {
+  const productName = product.nome
+  if (!productName) return null
+
   const grams = Math.max(1, Math.min(2000, requestedGrams || 1))
   const carbs = scale(product.carbo100, grams)
   const glycemicIndex = food.ig_medio
@@ -103,12 +107,12 @@ export function mealItemFromBarcode(
     grassi100: product.grassi100,
     zuccheri100: product.zuccheri100,
     carbo100: product.carbo100,
-    liquido: isBevanda(product.nome, food.categoria),
+    liquido: isBevanda(productName, food.categoria),
   })
 
   return {
     source: { kind: 'barcode', code: product.codice, foodId: food.id },
-    name: product.nome,
+    name: productName,
     ...localizedNames(food),
     grams,
     kcal: null,
@@ -221,14 +225,28 @@ export interface ManualImpactEstimate {
   indexSource: 'catalogo' | 'stima'
 }
 
-/** Replica stimaImpattoManuale #18594, con risoluzione catalogo solo se univoca. */
-export function estimateManualImpact(input: ManualImpactInput): ManualImpactEstimate {
+function resolveManualFood(name: string, language: CatalogLanguage) {
+  const localized = resolveFoodByName(name, { language })
+  if (localized.kind !== 'not_found' || language === 'it') return localized
+  return resolveFoodByName(name, { language: 'it' })
+}
+
+/**
+ * Replica stimaImpattoManuale #18594. Il lookup prova la lingua UI attiva e poi il
+ * fallback canonico italiano, risolvendo solo un miglior match univoco.
+ */
+export function estimateManualImpact(
+  input: ManualImpactInput,
+  language: CatalogLanguage = 'it',
+): ManualImpactEstimate {
   const name = input.name.trim()
   const carbs = Math.max(0, input.carbs || 0)
   const protein = Math.max(0, input.protein || 0)
   const fat = Math.max(0, input.fat || 0)
   const fibre = Math.max(0, input.fibre || 0)
-  const resolution = name.length >= 3 ? resolveFoodByName(name) : { kind: 'not_found' as const }
+  const resolution = name.length >= 3
+    ? resolveManualFood(name, language)
+    : { kind: 'not_found' as const }
   const food = resolution.kind === 'resolved' ? resolution.food : null
   const liquid = isBevanda(name, food?.categoria)
   const indexSource = food?.ig_medio !== null && food?.ig_medio !== undefined ? 'catalogo' : 'stima'
@@ -266,8 +284,9 @@ export function estimateManualImpact(input: ManualImpactInput): ManualImpactEsti
 
 export function mealItemFromManual(
   input: ManualImpactInput & { grams: number },
+  language: CatalogLanguage = 'it',
 ): MealItem {
-  const estimate = estimateManualImpact(input)
+  const estimate = estimateManualImpact(input, language)
   return {
     source: { kind: 'manual' },
     name: input.name.trim(),
@@ -293,15 +312,4 @@ export function recipeReliability(recipe: Recipe): 'alta' | 'media' | 'bassa' | 
   if (!values.length) return null
   const minimum = Math.min(...values)
   return minimum === 3 ? 'alta' : minimum === 2 ? 'media' : 'bassa'
-}
-
-export function sourceLabel(source: MealItem['source']): string {
-  if (source.kind === 'photo') {
-    const analyzedSource = source as typeof source & { analysisOrigin?: AnalysisOrigin }
-    return analyzedSource.analysisOrigin === 'text' ? 'Testo' : 'Foto'
-  }
-  if (source.kind === 'catalog') return 'Catalogo'
-  if (source.kind === 'barcode') return 'Etichetta'
-  if (source.kind === 'recipe') return `${source.portions} porzioni ricetta`
-  return 'Manuale'
 }

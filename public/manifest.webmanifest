@@ -2,6 +2,7 @@
   "name": "GLICOGIG · Food intelligence locale",
   "short_name": "GLICOGIG",
   "description": "Analizza piatti, consulta alimenti e ricette, usa il diario locale e approfondisci con capitoli e quiz educativi.",
+  "lang": "it",
   "id": "/",
   "start_url": "/#home",
   "scope": "/",

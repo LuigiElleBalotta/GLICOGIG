@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { CloseIcon, PlusIcon, ShareIcon } from './Icons'
 
 type InstallChoice = { outcome: 'accepted' | 'dismissed'; platform: string }
@@ -24,6 +25,7 @@ function runsStandalone(): boolean {
 }
 
 export default function InstallPrompt() {
+  const { t } = useTranslation()
   const [installEvent, setInstallEvent] = useState<InstallPromptEvent | null>(null)
   const [iosBrowser, setIosBrowser] = useState<IosBrowser | null>(null)
   const [installed, setInstalled] = useState(false)
@@ -85,9 +87,9 @@ export default function InstallPrompt() {
     }
   }
 
-  const shareLocation = iosBrowser === 'chrome'
-    ? 'a destra della barra degli indirizzi'
-    : 'nella barra degli strumenti di Safari'
+  const shareLocation = t(iosBrowser === 'chrome'
+    ? 'install.ios.locationChrome'
+    : 'install.ios.locationSafari')
 
   return (
     <>
@@ -98,7 +100,7 @@ export default function InstallPrompt() {
         aria-haspopup={iosBrowser ? 'dialog' : undefined}
         aria-expanded={iosBrowser ? instructionsOpen : undefined}
       >
-        Installa app
+        {t('install.action')}
       </button>
 
       {instructionsOpen && (
@@ -111,36 +113,36 @@ export default function InstallPrompt() {
           >
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="section-label text-brand">Installazione su iPhone e iPad</p>
-                <h2 className="mt-1 text-2xl font-extrabold" id="ios-install-title">Aggiungi GLICOGIG alla Home</h2>
+                <p className="section-label text-brand">{t('install.ios.kicker')}</p>
+                <h2 className="mt-1 text-2xl font-extrabold" id="ios-install-title">{t('install.ios.title')}</h2>
               </div>
               <button
                 className="grid size-10 shrink-0 place-items-center rounded-full border border-line text-muted transition hover:border-brand hover:text-brand"
                 type="button"
                 onClick={() => setInstructionsOpen(false)}
-                aria-label="Chiudi le istruzioni"
+                aria-label={t('install.ios.closeAria')}
               >
                 <CloseIcon className="size-5" />
               </button>
             </div>
 
-            <p className="mt-3 text-sm leading-6 text-muted">Su iOS il browser non può aprire automaticamente il pannello di installazione. Completa questi passaggi:</p>
+            <p className="mt-3 text-sm leading-6 text-muted">{t('install.ios.intro')}</p>
             <ol className="mt-5 space-y-3">
               <li className="flex gap-3 rounded-2xl border border-line bg-surface p-3">
                 <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-soft font-black text-brand">1</span>
-                <div><strong className="flex items-center gap-2"><ShareIcon className="size-4 text-brand" /> Tocca Condividi</strong><p className="mt-1 text-xs leading-5 text-muted">Trovi il pulsante {shareLocation}.</p></div>
+                <div><strong className="flex items-center gap-2"><ShareIcon className="size-4 text-brand" /> {t('install.ios.shareTitle')}</strong><p className="mt-1 text-xs leading-5 text-muted">{t('install.ios.shareLocation', { location: shareLocation })}</p></div>
               </li>
               <li className="flex gap-3 rounded-2xl border border-line bg-surface p-3">
                 <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-soft font-black text-brand">2</span>
-                <div><strong className="flex items-center gap-2"><PlusIcon className="size-4 text-brand" /> Aggiungi alla schermata Home</strong><p className="mt-1 text-xs leading-5 text-muted">Se non compare subito, scorri le azioni disponibili.</p></div>
+                <div><strong className="flex items-center gap-2"><PlusIcon className="size-4 text-brand" /> {t('install.ios.addHomeTitle')}</strong><p className="mt-1 text-xs leading-5 text-muted">{t('install.ios.addHomeHint')}</p></div>
               </li>
               <li className="flex gap-3 rounded-2xl border border-line bg-surface p-3">
                 <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-soft font-black text-brand">3</span>
-                <div><strong>Conferma con Aggiungi</strong><p className="mt-1 text-xs leading-5 text-muted">GLICOGIG si aprirà dalla Home come app standalone.</p></div>
+                <div><strong>{t('install.ios.confirmTitle')}</strong><p className="mt-1 text-xs leading-5 text-muted">{t('install.ios.confirmHint')}</p></div>
               </li>
             </ol>
 
-            <button className="primary-button mt-5 w-full" type="button" onClick={() => setInstructionsOpen(false)}>Ho capito</button>
+            <button className="primary-button mt-5 w-full" type="button" onClick={() => setInstructionsOpen(false)}>{t('common.actions.understood')}</button>
           </section>
         </div>
       )}

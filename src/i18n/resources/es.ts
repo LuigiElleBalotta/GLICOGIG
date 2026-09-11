@@ -1,0 +1,370 @@
+/** Copy UI editorial en español; traducido para esta web, no extraído de los datasets APK verificados. */
+import type { UiTranslation } from './it'
+
+export const es = {
+  brand: { name: 'GLICOGIG', tagline: 'Inteligencia alimentaria' },
+  common: {
+    actions: {
+      retry: 'Reintentar', clear: 'Limpiar', change: 'Cambiar', search: 'Buscar', searching: 'Buscando…', share: 'Compartir',
+      sharePng: 'Compartir PNG', preparing: 'Preparando…', saving: 'Guardando…', registered: 'Registrado', registeredFeminine: 'Registrada',
+      ateIt: 'Me lo he comido', addToMeal: 'Añadir a la comida', addedToMeal: 'Añadido a la comida', addedToMealFeminine: 'Añadida a la comida',
+      openMeal: 'Abrir Comida', openTheMeal: 'Abrir la Comida', openProgress: 'Abrir Progreso', emptyMeal: 'Vaciar comida', understood: 'Entendido',
+    },
+    aria: {
+      removeFromMeal: 'Quitar {{name}} de la comida', gramsOf: 'Gramos de {{name}}', rename: 'Renombrar {{name}}', delete: 'Eliminar {{name}}',
+      ringValue: '{{label}}: {{value}}%',
+    },
+    labels: {
+      today: 'Hoy', notAvailable: 'n/d', localSource: 'fuente local', noSlot: 'Sin franja', index: 'Índice', level: 'Nivel', band: 'Franja',
+      quantity: 'Cantidad', preparation: 'Preparación', balance: 'Equilibrio', speed: 'Velocidad', actions: 'Acciones',
+    },
+    metrics: {
+      energy: 'Energía', carbohydrates: 'Carbohidratos', availableCarbohydrates: 'Carbohidratos disponibles', availableCarbohydratesShort: 'Carbohidratos disp.',
+      sugars: 'Azúcares', fibre: 'Fibra', protein: 'Proteínas', fat: 'Grasas', glycemicLoad: 'Carga glucémica', glycemicLoadShort: 'CG',
+      glycemicIndex: 'IG', weight: 'Peso', plates: 'Platos', entries: 'Entradas', activeDays: 'Días activos', kcalPerDay: 'Kcal / día',
+      glycemicLoadTrend: 'Tendencia CG', stabilityIndex: 'Índice de estabilidad', portion: 'Porción', totalGlycemicLoad: 'CG total',
+    },
+    progress: { balance: 'Equilibrio', brakes: 'Frenos', variety: 'Variedad', assessment: 'Balance', continuity: 'Continuidad', trend: 'Tendencia', verdict: 'Valoración' },
+    feedback: {
+      persistenceUnconfirmed: 'No se ha confirmado el almacenamiento local.',
+      sessionPersistenceUnconfirmed: 'La entrada está disponible en esta sesión, pero el navegador no ha confirmado el almacenamiento local.',
+      shareSuccess: 'Tarjeta compartida o descargada.', shareSaved: 'Tarjeta compartida o guardada en el dispositivo.',
+      shareUnavailable: 'La acción de compartir se canceló o no está disponible.', shareIncomplete: 'No se ha completado la acción de compartir.',
+    },
+  },
+  classification: {
+    stability: { veryStable: 'Muy estable', goodDay: 'Buen día', average: 'En la media', demanding: 'Exigente', unavailable: 'estabilidad n/d' },
+    balance: { good: 'Bueno', fair: 'Aceptable', improve: 'Por equilibrar' },
+    verdict: { balanced: 'Equilibrada', moderate: 'Moderada', intense: 'Intensa', insufficient: 'Datos insuficientes' },
+    impact: { negligible: 'insignificante', low: 'bajo', medium: 'medio', high: 'alto' },
+    reliability: { high: 'Alta', medium: 'Media', low: 'Baja' },
+    difficulty: { easy: 'Fácil', medium: 'Media' },
+    editorialState: { draftReview: 'Borrador pendiente de revisión' },
+  },
+  shell: { homeAria: 'GLICOGIG, ir al inicio', localDataBadge: 'Datos locales', languageLabel: 'Idioma de la app' },
+  nav: { mainAria: 'Navegación principal', tabs: { home: 'Inicio', search: 'Buscar', photo: 'Foto', recipes: 'Recetas', diary: 'Diario', learn: 'Aprender' } },
+  install: {
+    action: 'Instalar app',
+    ios: {
+      kicker: 'Instalación en iPhone y iPad', title: 'Añade GLICOGIG a la pantalla de inicio', closeAria: 'Cerrar instrucciones',
+      intro: 'En iOS, el navegador no puede abrir automáticamente el panel de instalación. Completa estos pasos:',
+      shareTitle: 'Toca Compartir', shareLocation: 'Encontrarás el botón {{location}}.', locationChrome: 'a la derecha de la barra de direcciones',
+      locationSafari: 'en la barra de herramientas de Safari', addHomeTitle: 'Añadir a la pantalla de inicio',
+      addHomeHint: 'Si no aparece de inmediato, desplázate por las acciones disponibles.', confirmTitle: 'Confirma con Añadir',
+      confirmHint: 'GLICOGIG se abrirá desde la pantalla de inicio como una app independiente.',
+    },
+  },
+  home: {
+    hero: {
+      kicker: 'Resumen local', title: 'Conoce la comida.', accent: 'Elige con más contexto.',
+      subtitle: 'El catálogo, las recetas, el diario y el aprendizaje funcionan en el dispositivo. Sin datos de usuario de demostración.',
+    },
+    verified: {
+      aria: 'Contenido verificado disponible', foods_one: '{{count}} alimento', foods_other: '{{count}} alimentos', recipes_one: '{{count}} receta',
+      recipes_other: '{{count}} recetas', chapters_one: '{{count}} capítulo', chapters_other: '{{count}} capítulos',
+      questions_one: '{{count}} pregunta de quiz', questions_other: '{{count}} preguntas de quiz',
+    },
+    today: {
+      entries_one: '{{count}} entrada', entries_other: '{{count}} entradas', empty: 'Diario vacío', openDiaryAria: 'Abrir el diario',
+      emptyHint: 'Guarda un alimento, una receta o una Comida para ver aquí tu progreso real.', index: 'Índice {{value}}',
+      localData_one: 'Los datos mostrados proceden exclusivamente de la {{count}} entrada local de hoy.',
+      localData_other: 'Los datos mostrados proceden exclusivamente de las {{count}} entradas locales de hoy.',
+    },
+    week: {
+      title: 'Últimos siete días', activeDays: '{{days}} de 7 días activos', entriesAria: 'Entradas del diario por día',
+      stabilityEmpty: 'La estabilidad aparece después del primer guardado.', summary: 'Índice {{index}} · {{level}}',
+    },
+    meal: { title: 'Comida en curso', plates_one: '{{count}} plato', plates_other: '{{count}} platos', summary: '{{carbs}} g carbohidratos · CG {{glycemicLoad}}' },
+    quick: {
+      kicker: 'Accesos rápidos', title: '¿Qué quieres hacer?', analyze: { label: 'Analizar un plato', note: 'Desde una foto' },
+      search: { label: 'Buscar alimento', note: 'Catálogo verificado' }, barcode: { label: 'Leer etiqueta', note: 'Open Food Facts mediante proxy' },
+      recipes: { label: 'Explorar recetas', note: 'Valores por porción' }, meal: { label: 'Componer Comida', note: 'Varios platos, un solo total' },
+      advice: { label: 'Consejos', note: 'De la Comida y del Diario local' }, learn: { label: 'Aprender', note: 'Capítulos y cuestionarios' },
+      explanation: { label: 'Explicación', note: 'Método y fórmulas' },
+    },
+  },
+  analysis: {
+    session: {
+      aria: 'Sesión de comida actual', title: 'Comida en curso', summary_one: '{{count}} plato · {{carbs}} g carbohidratos',
+      summary_other: '{{count}} platos · {{carbs}} g carbohidratos', totals: 'CG acumulada {{glycemicLoad}} · {{grams}} g totales', clear: 'Vaciar',
+      unresolved_one: '{{count}} elemento sin resolver no contribuye a los nutrientes.',
+      unresolved_other: '{{count}} elementos sin resolver no contribuyen a los nutrientes.',
+    },
+    hero: {
+      kicker: 'Análisis del plato', title: 'Tu plato,', accent: 'leído en un instante.',
+      subtitle: 'Usa una foto o describe el plato. Después corrige cantidades y pesos: los nutrientes y la carga glucémica se actualizan en el dispositivo.',
+    },
+    mode: {
+      input: 'Entrada', aria: 'Modo de análisis', photo: 'Foto', text: 'Texto', session: 'Sesión', mealAria: 'Modo de comida',
+      singleDish: 'Plato individual', completeMeal: 'Comida completa',
+      completeMealHint: 'Al iniciar una comida completa, se vacía una sesión de más de 4 horas antes de continuar.',
+    },
+    accessKey: {
+      label: 'Contraseña del sitio', placeholder: 'Introduce la contraseña', showAria: 'Mostrar contraseña', hideAria: 'Ocultar contraseña',
+      hint: 'Se usa para el análisis y permanece solo en la sesión de esta pestaña.',
+    },
+    text: {
+      step: 'Paso 1', title: 'Describe el plato', maxCharacters: 'máx. 2000', label: 'Ingredientes y cantidades del plato',
+      placeholder: 'Ej. 80 g de arroz integral cocido, 120 g de garbanzos y verduras…', hint: 'Indica la preparación y los gramos cuando los conozcas.',
+      analyzing: 'Análisis en curso…', action: 'Analizar descripción',
+      privacy: 'El navegador envía solo texto, idioma e identificador efímero al límite same-origin. No se asocia ninguna imagen a este modo.',
+    },
+    photo: {
+      preparing: 'Preparando…', analyzing: 'Análisis en curso…', action: 'Analizar el plato', step: 'Paso 1', title: 'Encuadra el plato',
+      selectedAlt: 'Plato seleccionado', activeVision: 'Visión activa', removeAria: 'Quitar foto', status: 'GLICOGIG está analizando la foto del plato.',
+      emptyTitle: 'Una foto nítida, desde arriba', emptyHint: 'Mantén todo el plato dentro del encuadre y usa buena luz. El archivo se optimiza antes del envío.',
+      takePhoto: 'Hacer foto', fromGallery: 'Desde la galería', dropHint: 'También puedes arrastrar aquí una imagen · máx. 20 MB',
+    },
+    result: {
+      loadingKicker: 'Análisis en curso', loadingTitle: 'Observamos tu plato', loadingBody: 'Reconocimiento de ingredientes y preparación de datos.',
+      emptyStep: 'Paso 2', emptyTitle: 'Descubre qué hay en el plato.',
+      emptyBody: 'Después del análisis puedes corregir los gramos: los nutrientes y el impacto se recalculan de inmediato desde el catálogo local.',
+      errorKicker: 'Algo ha salido mal', errorTitle: 'Análisis no completado', totalKicker: 'Total del plato', nutritionTitle: 'Valores nutricionales',
+      notRecognized: 'No se ha reconocido ningún plato', notRecognizedHint: 'Prueba con una foto más cercana y luminosa.', recognized: 'Plato reconocido',
+      unnamedDish: 'Plato sin nombre', reliability: 'Fiabilidad {{value}}', fromText: 'Desde texto', fromPhoto: 'Desde foto',
+      dryWeight: 'Peso seco', cookedWeight: 'Peso cocido', wholeDishOverride: 'Ajuste de todo el plato',
+    },
+    pump: {
+      kicker: 'Controlador de bomba de insulina', title: 'Carbohidratos que introducir',
+      body: 'Valor calculado a partir del impacto completo, incluido cualquier ajuste de todo el plato.',
+      outputAria: 'Carbohidratos que introducir: {{carbs}} gramos',
+      partial_one: 'Estimación parcial: {{count}} ingrediente queda excluido del cálculo nutricional. Corrige ingredientes y cantidades antes de usar el valor.',
+      partial_other: 'Estimación parcial: {{count}} ingredientes quedan excluidos del cálculo nutricional. Corrige ingredientes y cantidades antes de usar el valor.',
+      complete: 'Cálculo completo: se incluyen todos los ingredientes reconocidos. Comprueba igualmente ingredientes y gramos antes de confirmar en el dispositivo.',
+    },
+    impact: {
+      includedAll: 'Todos los ingredientes incluidos', includedCount: '{{found}} de {{total}} ingredientes incluidos', incidence: 'Incidencia de los ingredientes',
+      empty: 'Ningún ingrediente influye de forma relevante en la carga.',
+    },
+    portion: {
+      aria: 'Preajuste de porción', small: 'Pequeña', medium: 'Media', large: 'Grande',
+      hint: 'Cada preajuste parte de la instantánea original del análisis; un cambio manual de gramos deselecciona el preajuste.',
+    },
+    weight: {
+      title: 'Base del peso', aria: 'Peso cocido o seco', cooked: 'Cocido', dry: 'Seco',
+      conversion_one: 'Conversión disponible para {{count}} ingrediente reconocido con su factor cocido/seco.',
+      conversion_other: 'Conversión disponible para {{count}} ingredientes reconocidos con sus factores cocido/seco.',
+      unavailable: 'Ningún ingrediente contiene una preparación cocida convertible con las reglas disponibles.',
+    },
+    ingredients: {
+      kicker: 'Ingredientes', title: 'Corrige las cantidades', liveHint: 'Los cambios actualizan de inmediato todos los valores',
+      rawFactor: 'Factor cocido/seco ×{{factor}}', carbs: '{{category}} · {{carbs}} g de carbohidratos',
+      insufficient: 'Datos insuficientes para incluir este ingrediente', dryGrams: 'Gramos en seco', grams: 'Gramos',
+      per100: 'Mostrar valores por 100 g', lesson: 'Lección:', context: 'Cuándo tiene sentido:',
+    },
+    actions: { dishAdded: 'Plato añadido. ¿Quieres añadir otro plato?', openMealCount: 'Abrir Comida ({{count}})', analyzeAnother: 'Analizar otro plato' },
+    disclaimer: 'Las estimaciones son informativas y no sustituyen las indicaciones médicas o nutricionales profesionales.',
+  },
+  catalog: {
+    detail: {
+      also: 'También: {{synonyms}}', impactSummary: 'CG {{value}} · {{band}}', gramsLabel: 'Cantidad en gramos', averageGi: 'IG medio',
+      giRange: 'IG mín.–máx.', giReliability: 'Fiabilidad del IG', shareChoice: 'Compartir esta elección',
+    },
+    list: {
+      backCatalog: '← Catálogo de alimentos', backAll: '← Todos los alimentos', missing: 'El alimento solicitado no existe en el catálogo integrado.',
+      kicker: 'Catálogo verificado', title: 'Busca lo que', accent: 'estás comiendo.',
+      subtitle: 'Los alimentos ocultos permanecen excluidos. Cada resultado abre una ficha enlazable y los valores ausentes siguen como n/d.',
+      searchLabel: 'Nombre o sinónimo', searchPlaceholder: 'Ej. lentejas, pan, manzana…', category: 'Categoría', allCategories: 'Todas las categorías',
+      cardMeta: '{{category}} · porción {{grams}} g · IG {{gi}}', empty: 'Ningún alimento visible coincide con los filtros.',
+      barcodeTitle: '¿Tienes una etiqueta?', barcodeBody: 'Abre el flujo específico para introducir o leer el código.', openBarcode: 'Abrir código de barras',
+    },
+  },
+  barcode: {
+    camera: {
+      permission: 'Permiso de cámara denegado. Actívalo en los ajustes del navegador o usa una foto o el código manual.',
+      missing: 'No hay ninguna cámara disponible. Usa una foto o introduce el código manualmente.',
+      busy: 'La cámara está ocupada o no puede iniciarse. Cierra las otras apps que la usan y reinténtalo.',
+      constraints: 'La cámara no admite los parámetros solicitados. Usa una foto o el código manual.',
+      generic: 'No se puede iniciar la cámara. Usa una foto o introduce el código manualmente.',
+    },
+    product: {
+      normalized: 'Producto normalizado · {{code}}', per100: '{{label}} / 100 g', declaredServing: 'Porción declarada: {{value}}',
+      dryCorrection: 'Corrección verificada de producto seco', uniqueMatch: 'Coincidencia local única:',
+      uniqueMatchBody: '{{food}}. CG {{glycemicLoad}} · {{band}}, calculadas con el IG local y los carbohidratos declarados.',
+      missingGi: 'La coincidencia local no dispone de IG o el producto no declara carbohidratos válidos. El IG y la CG no se inventan.',
+      ambiguous: 'El nombre no se resuelve de forma única en el catálogo local. El IG y la CG no se inventan y el producto no puede añadirse.',
+    },
+    scan: {
+      invalidCode: 'Introduce un código de 6–14 dígitos.', notFound: 'Producto no encontrado.', timeout: 'La búsqueda ha superado 9 segundos. Reinténtalo.',
+      genericError: 'La búsqueda del código de barras ha fallado.',
+      secureContext: 'La cámara en directo requiere HTTPS (o localhost) y un navegador compatible. Puedes usar una foto o el código manual.',
+      previewUnavailable: 'Vista previa de la cámara no disponible. Usa una foto o el código manual.', starting: 'Iniciando cámara…',
+      detected: 'Código {{code}} detectado. Buscando…', frameHint: 'Encuadra el código de barras dentro del área central.', readingImage: 'Leyendo imagen…',
+      invalidImageCode: 'No se ha detectado ningún código EAN/UPC válido. Introdúcelo manualmente.',
+      unreadableImage: 'No hay ningún código EAN/UPC legible en la foto. Usa otra imagen o el código manual.',
+      cameraClosed: 'Cámara cerrada. Puedes introducir el código manualmente.',
+    },
+    panel: {
+      kicker: 'Etiqueta', title: 'Código de barras',
+      body: 'Open Food Facts proporciona el nombre y los macronutrientes declarados. GLICOGIG calcula el impacto solo si el nombre se resuelve de forma única en el catálogo local.',
+      placeholder: '6–14 dígitos', inputAria: 'Código de barras', closeCamera: 'Cerrar cámara', liveScan: 'Escanear en directo', scanPhoto: 'Leer desde una foto',
+      privacy: 'La cámara en directo requiere HTTPS o localhost. Las imágenes y el vídeo permanecen en el navegador; solo el código detectado pasa al proxy same-origin. La imagen remota del producto no se carga.',
+    },
+  },
+  recipes: {
+    impact: { high: 'Sabroso: vigila la porción y la frecuencia.', medium: 'Un buen plato para disfrutar con equilibrio.', low: 'Un plato de impacto ligero.' },
+    detail: {
+      backAll: '← Todas las recetas', photoAlt: 'Foto de {{name}}', imageUnavailable: 'Imagen no disponible', giReliability: 'Fiabilidad del IG {{value}}',
+      servingsTitle: 'Porciones que consumir', servingsAria: 'Número de porciones', method: 'Método en cuatro dimensiones', dominantUnavailable: 'Ingrediente dominante n/d',
+      reliability: 'Fiabilidad {{value}}', reliabilityUnavailable: 'Fiabilidad n/d', steps_one: '{{count}} paso', steps_other: '{{count}} pasos',
+      timing: '{{prep}} min prep. · {{cook}} min cocción', ingredients_one: 'Ingredientes para {{count}} porción', ingredients_other: 'Ingredientes para {{count}} porciones',
+      procedure: 'Preparación', alternatives: 'Alternativas integradas', alternativeBase: 'Base: {{base}} · IG {{gi}}', advice: 'Contexto y consejos',
+    },
+    list: {
+      missingTitle: 'Receta no encontrada', missingBody: 'El identificador no corresponde a las {{count}} recetas integradas.',
+      verified_one: '{{count}} receta verificada', verified_other: '{{count}} recetas verificadas', title: 'Recetas con valores', accent: 'por porción.',
+      subtitle: 'Cada receta abre un detalle específico. Las imágenes se muestran solo cuando el ID y el nombre coinciden con el mapa verificado 1.0.16.',
+      searchPlaceholder: 'Nombre, descripción o ingrediente', searchAria: 'Buscar recetas', categoryAria: 'Categoría de receta', mealAria: 'Comida',
+      bandAria: 'Franja glucémica', allCategories: 'Todas las categorías', allMeals: 'Todas las comidas', allBands: 'Todas las franjas',
+      results_one: '{{count}} resultado', results_other: '{{count}} resultados', empty: 'Ninguna receta coincide con los filtros.',
+    },
+  },
+  meal: {
+    hero: {
+      kicker: 'Composición de varios platos', title: 'Construye tu', accent: 'Comida.',
+      subtitle: 'Fotos, alimentos, etiquetas y recetas convergen en la misma sesión. El diario recibe una sola entrada agregada, solo cuando eliges “Me lo he comido”.',
+    },
+    form: { name: 'Nombre de la comida', startedAt: 'Iniciada a las {{time}}' },
+    unresolved_one: '{{count}} elemento sin resolver no contribuye a los nutrientes. Los totales n/d permanecen así en la sesión.',
+    unresolved_other: '{{count}} elementos sin resolver no contribuyen a los nutrientes. Los totales n/d permanecen así en la sesión.',
+    cannotSave: 'El Diario acepta esta Comida solo cuando todos los nutrientes están disponibles y no hay elementos sin resolver. Aun así puedes corregir, eliminar o compartir la sesión sin crear datos ausentes.',
+    saved: 'Comida registrada', empty: { title: 'La comida está vacía', body: 'Añade cada plato mediante su acción específica. Nada se registra automáticamente en el diario.' },
+    addAria: 'Añadir a la comida',
+    shortcuts: {
+      photo: { label: 'Foto', note: 'Analizar un plato' }, catalog: { label: 'Catálogo', note: 'Elegir alimento y gramos' },
+      barcode: { label: 'Etiqueta', note: 'Buscar el código de barras' }, recipes: { label: 'Recetas', note: 'Añadir una o más porciones' },
+    },
+  },
+  diary: {
+    slots: { breakfast: 'Desayuno', lunch: 'Almuerzo', dinner: 'Cena', snack: 'Tentempié', moment: 'Momento' },
+    row: { newNameAria: 'Nuevo nombre de entrada', confirmNameAria: 'Confirmar nombre' },
+    manual: {
+      name: 'Nombre del alimento o plato', placeholder: 'Ej. bocadillo preparado en casa', grams: 'Gramos', carbs: 'Carbohidratos g', fibre: 'Fibra g',
+      protein: 'Proteínas g', fat: 'Grasas g', catalogGi: 'IG del catálogo', estimatedGi: 'IG estimado',
+      estimateNote: 'Estimación verificada: coincidencia única en el catálogo cuando está disponible; de lo contrario, reglas locales para zero/light, azúcares/líquidos y una alternativa prudente. Sin datos nutricionales externos.',
+      saved: 'Entrada registrada hoy', action: 'Registrar entrada manual',
+    },
+    hero: {
+      kicker: 'Progreso en el dispositivo', title: 'Tus comidas,', accent: 'sin cuenta.',
+      subtitle: 'Consulta siete días reales, corrige la franja y añade manualmente lo que falta. Sin datos de demostración.',
+    },
+    day: {
+      selectAria: 'Seleccionar día', entries_one: '{{count}} entrada', entries_other: '{{count}} entradas', entriesMetric: 'entradas del día',
+      carbsMetric: 'g de carbohidratos', activeDaysMetric: 'días activos', emptyTitle: 'Sin entradas', emptyBody: 'Este día no contiene registros locales.',
+    },
+    rings: { title: 'Tus anillos', streak_one: '{{count}} día', streak_other: '{{count}} días' },
+    week: {
+      title: 'Últimos siete días', report: 'Informe semanal', glycemicSeries: 'Serie de carga glucémica', glycemicTitle: 'CG {{value}}',
+      hardestMeal: 'Comida más difícil', hardestMeta: 'CG {{value}} · franja {{band}}', noHardMealReport: 'No hay entradas de franja media o alta en el informe.',
+      sevenDays: 'Siete días', stability: 'Estabilidad', noDataTitle: 'Sin datos', indexTitle: 'Índice {{index}}', periodIndex: 'Índice del periodo',
+      addEntry: 'Añadir una entrada', manual: 'Manual', totals: 'Totales de siete días', share: 'Compartir progreso',
+    },
+    trend: { better: '{{pct}}% mejor', margin: '{{pct}}% de margen', aligned: 'En línea' },
+  },
+  advice: {
+    hero: {
+      kicker: 'Consejos a partir de tus datos locales', title: 'Más contexto,', accent: 'sin inventar objetivos.',
+      subtitle: 'Esta vista combina la Comida en curso y los registros reales del Diario. No se muestran las secciones que requieren preferencias no configuradas.',
+    },
+    meal: {
+      unresolved_one: '{{count}} elemento sin resolver hace que los totales sean parciales.',
+      unresolved_other: '{{count}} elementos sin resolver hacen que los totales sean parciales.',
+      emptyTitle: 'No hay ninguna Comida en curso', emptyBody: 'Compón una Comida para ver aquí su resumen local.', compose: 'Componer Comida',
+    },
+    todayTitle: 'Indicadores locales', weekTitle: 'Resumen semanal', noHardMeal: 'No hay entradas de franja media o alta esta semana.',
+    disclaimer: 'Los resúmenes proceden solo de la Comida efímera y del Diario local. No incluyen paywalls, referidos, analítica ni recomendaciones clínicas.',
+  },
+  learn: {
+    block: { example: 'Ejemplo · {{food}}', openFood: 'Abrir {{food}}' },
+    chapter: {
+      backAll: '← Todos los capítulos', kicker: 'Capítulo {{ordinal}} · {{section}}',
+      empty: 'Se han excluido los bloques personales o comerciales de este capítulo.',
+      disclaimer: 'Contenido educativo: no sustituye diagnósticos, tratamientos ni indicaciones personalizadas de profesionales sanitarios.',
+      missing: 'El capítulo solicitado no existe en el dataset integrado.',
+    },
+    quiz: {
+      unavailable: 'Quiz diario no disponible.', back: '← Aprender', kicker: 'Quiz diario · 10 preguntas', title: 'Pon a prueba lo que sabes',
+      streak: 'Racha {{count}}', record: 'Récord {{score}}/10',
+      editorialState: 'Estado editorial: {{state}}. Las preguntas integradas aún deben revisarse y no son indicaciones clínicas.',
+      saved: 'Resultado guardado localmente', sessionOnly: 'Resultado disponible en esta sesión', resultMeta: 'Récord {{record}}/10 · racha {{streak}}',
+      persistenceError: 'El navegador no ha confirmado la persistencia en localStorage.', progress: 'Pregunta {{current}} de {{total}}',
+      difficulty: 'Dificultad {{value}}', correct: 'Respuesta correcta.', incorrect: 'Respuesta incorrecta.', next: 'Siguiente pregunta', finish: 'Finalizar y guardar',
+      completedToday: 'Hoy ya has completado el quiz. Repetirlo no aumenta dos veces la racha.',
+      completedTodayScore: 'Hoy ya has completado el quiz con {{score}}/10. Repetirlo no aumenta dos veces la racha.',
+    },
+    list: {
+      kicker: '{{chapters}} capítulos · {{sections}} secciones', title: 'Aprende, comprueba,', accent: 'contextualiza.',
+      subtitle: 'Todas las secciones integradas son visibles. Los ejemplos abren una ficha de alimento solo cuando el enlace `foodId` está verificado.',
+      dailyQuiz: 'Quiz diario', quizDataset: '10 preguntas del dataset integrado', section: 'Sección {{number}}',
+      chapter: 'Capítulo {{ordinal}} · {{minutes}} min', footer: 'Contenido educativo integrado; bloques personales y comerciales excluidos.',
+      method: 'Cómo funciona el método',
+    },
+  },
+  method: {
+    hero: {
+      kicker: 'Método GLICOGIG', title: 'Cómo leemos', accent: 'un plato.',
+      subtitle: 'Cuatro dimensiones verificables, un cálculo local y límites mostrados con transparencia. La valoración nace de la carga total, no solo del IG.',
+    },
+    dimensionLabel: 'Dimensión',
+    dimensions: {
+      quantity: { title: '1. Cantidad', body: 'La cantidad de carbohidratos disponibles de la porción es el primer factor: duplicar la porción duplica la carga glucémica.' },
+      speed: { title: '2. Velocidad', body: 'El índice glucémico mide la velocidad de subida con la misma cantidad de carbohidratos. Por sí solo no describe el impacto real de la porción.' },
+      balance: { title: '3. Equilibrio', body: 'La fibra, las proteínas y las grasas se leen junto con los carbohidratos: pueden hacer que la subida sea más gradual, pero no eliminan la cantidad.' },
+      preparation: { title: '4. Preparación', body: 'La preparación importa: una cocción larga y una textura triturada pueden acelerar; al dente, el enfriamiento y la acidez pueden ralentizar.' },
+    },
+    formula: {
+      kicker: 'Fórmula verificada', title: 'Del ingrediente al plato', expression: 'CG = IG × carbohidratos disponibles de la porción ÷ 100',
+      body: 'La carga glucémica del plato es la suma de las contribuciones de los ingredientes resueltos. Por debajo de 5 g de carbohidratos la franja es insignificante; de lo contrario, el valor base es bajo hasta CG 10, medio hasta 19 y alto desde 20. Las reglas verificadas pueden elevar la franja para perfiles rápidos o líquidos.',
+    },
+    sources: {
+      title: 'De dónde proceden los números', catalog: 'El catálogo y las recetas usan exclusivamente los datasets integrados verificados.',
+      photo: 'La foto resuelve los ingredientes contra el mismo catálogo local.',
+      barcode: 'La etiqueta usa los macronutrientes declarados por Open Food Facts mediante un proxy same-origin; el IG y la CG solo aparecen con una coincidencia local única.',
+      missing: 'En los resultados y en la Comida, los valores ausentes siguen como n/d y no se sustituyen por datos nutricionales externos.',
+    },
+    limitations: {
+      title: 'Qué no mide', body: 'La estimación describe el alimento y la porción, no la respuesta personal. Las fotos, condimentos no visibles, preparación real y diferencias individuales pueden cambiar el resultado.',
+      openLearn: 'Abrir Aprender',
+    },
+    disclaimer: 'Información alimentaria y educativa: no sustituye diagnósticos, tratamientos ni indicaciones personalizadas de profesionales sanitarios.',
+  },
+  share: {
+    analysis: { subtitle: 'Resumen calculado por GLICOGIG', note: 'Estimación informativa basada en el catálogo local. Comprueba ingredientes y cantidades.' },
+    food: { impactBand: 'Franja de impacto', note: 'Valores y clasificación del catálogo local verificado.' },
+    recipe: {
+      subtitle_one: '{{category}} · {{count}} porción', subtitle_other: '{{category}} · {{count}} porciones',
+      note: 'Valores ajustados a partir de los datos integrados por porción de la receta.',
+    },
+    meal: {
+      fallbackTitle: 'Mi comida', subtitle_one: '{{count}} plato · {{grams}} g', subtitle_other: '{{count}} platos · {{grams}} g',
+      note: 'Total de los platos añadidos expresamente a la sesión Comida.',
+    },
+    progress: { title: 'Progreso GLICOGIG', activeDays: 'Días con entradas', totalEntries: 'Entradas totales', noData: 'No hay datos disponibles.' },
+  },
+  errors: {
+    accessKeyRequired: 'Introduce la contraseña del sitio antes de iniciar el análisis.', analysisGeneric: 'El análisis ha fallado. Vuelve a intentarlo en breve.',
+    textRequired: 'Describe el plato antes de iniciar el análisis.', textNotFood: 'La descripción no identifica un plato que se pueda analizar.',
+    image: {
+      prepareFallback: 'No puedo preparar esta foto.', read: 'No puedo leer esta imagen. Prueba con otro archivo.', prepare: 'No puedo preparar la foto para el análisis.',
+      convert: 'No puedo convertir la foto.', type: 'El archivo seleccionado no es una imagen.', sourceTooLarge: 'La foto supera los 20 MB. Elige una más ligera.',
+      unsupported: 'El navegador no admite el procesamiento de fotos.', compressedTooLarge: 'La foto comprimida sigue siendo demasiado grande. Prueba a recortarla.',
+    },
+    photo: {
+      invalidResponse: 'No he podido interpretar el resultado. Reinténtalo con datos más precisos.', badRequest: 'No puedo analizar esta foto. Prueba con una más nítida.',
+      badPassword: 'Contraseña incorrecta. Compruébala y reinténtalo.', unavailable: 'Ahora mismo no se puede iniciar otro análisis.',
+      tooLarge: 'La foto es demasiado grande. Elige una más ligera.', rateLimit: 'Has iniciado demasiados análisis seguidos. Espera un momento y reinténtalo.',
+      network: 'La conexión ha fallado. Comprueba la red y reinténtalo.', sameOrigin: 'El endpoint de análisis fotográfico debe ser same-origin.',
+    },
+    text: {
+      invalid: 'Descripción no válida. Indica alimentos y cantidades con mayor precisión.', badPassword: 'Contraseña incorrecta. Compruébala y reinténtalo.',
+      unavailable: 'Ahora mismo no se puede iniciar otro análisis.', tooLong: 'La descripción es demasiado larga.',
+      rateLimit: 'Has iniciado demasiados análisis seguidos. Espera un momento y reinténtalo.', required: 'Describe el plato antes de analizarlo.',
+      network: 'La conexión ha fallado. Comprueba la red y reinténtalo.', sameOrigin: 'El endpoint de análisis de texto debe ser same-origin.',
+    },
+    barcode: {
+      invalidResponse: 'Respuesta de código de barras no válida.', invalidCode: 'Código no válido.', network: 'No se puede acceder al servicio de códigos de barras.',
+      proxyUnavailable: 'El proxy de códigos de barras no está disponible o no está configurado.', invalidJson: 'Respuesta JSON no válida del proxy de códigos de barras.',
+      lookupFailed: 'La búsqueda del código de barras ha fallado.',
+    },
+  },
+} as const satisfies UiTranslation

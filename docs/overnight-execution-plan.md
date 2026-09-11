@@ -38,12 +38,12 @@ Vincoli invarianti:
 - [x] 3. Analizzare in profondità le funzionalità portabili mancanti di Foto, Progressi, immagini/detail/share e relative prove Hermes.
 - [x] 4. Implementare tutte le funzionalità portabili mancanti senza inventare dati e aggiornare documentazione/piano.
 - [x] 5. Verificare staticamente la milestone funzionale senza Vercel, lint, test, typecheck o build.
-- [ ] 6. Creare il primo commit funzionale e fare push.
-- [ ] 7. Verificare compatibilità i18next/react-i18next con React e selezionare dipendenze pinned appropriate.
-- [ ] 8. Estrarre e organizzare tutte le traduzioni UI e contenuto portabili per IT/EN/ES/DE/FR.
-- [ ] 9. Integrare provider i18next/react-i18next, persistenza lingua e selettore nella barra superiore.
-- [ ] 10. Localizzare tutte le schermate e i componenti portabili, aggiornare documentazione/piano.
-- [ ] 11. Verificare staticamente la milestone i18n senza Vercel, lint, test, typecheck o build.
+- [x] 6. Milestone funzionale registrata nel commit `7ce4380` e pubblicata su `origin/main`; `HEAD` e `origin/main` sono stati verificati coincidenti.
+- [x] 7. Verificare compatibilità i18next/react-i18next con React e selezionare dipendenze pinned appropriate.
+- [x] 8. Estrarre e organizzare tutte le traduzioni UI e contenuto portabili per IT/EN/ES/DE/FR.
+- [x] 9. Integrare provider i18next/react-i18next, persistenza lingua e selettore nella barra superiore.
+- [x] 10. Localizzare tutte le schermate e i componenti portabili, aggiornare documentazione/piano.
+- [x] 11. Verificare staticamente la milestone i18n mediante lettura e grep ragionato, senza Vercel, lint, test, typecheck o build.
 - [ ] 12. Creare il secondo commit i18n e fare push.
 - [ ] 13. Inventariare test/config esistenti e installare dipendenze di test/E2E pinned necessarie.
 - [ ] 14. Correggere ed eseguire lint e typecheck/build necessari alla validazione locale.
@@ -79,17 +79,21 @@ Vincoli invarianti:
 
 ### Ambito
 
-- pin exact di `i18next` e `react-i18next` compatibili con React;
-- estrazione delle traduzioni portabili dagli artefatti locali con fallback espliciti;
+- pin exact `i18next@26.4.2` e `react-i18next@17.0.13`, compatibili con React 19;
+- risorse UI editoriali IT/EN/ES/DE/FR dichiarate esplicitamente come non estratte dall’APK;
+- selector dei campi localizzati dei dataset verified 1.0.16 con fallback italiano, senza mutare record canonici né inventare traduzioni;
 - provider, persistenza e selettore accessibile nella barra superiore;
-- localizzazione di schermate, componenti, messaggi, navigazione e contenuti attendibili.
+- localizzazione di schermate, componenti, numeri, fallback ed errori visibili tramite code/status stabili ai boundary React;
+- titolo e lingua documento sincronizzati a runtime, con HTML e manifest unico statici in italiano come fallback pre-boot/installazione documentato.
 
 ### Criteri di completamento
 
 - italiano, inglese, spagnolo, tedesco e francese selezionabili;
 - cambio immediato e persistente;
-- nessuna traduzione dichiarata estratta se generata;
-- fallback deterministico e nessuna chiave visibile;
+- copy UI editoriale distinta dalla provenienza APK e traduzioni dataset mai inventate;
+- fallback deterministico italiano per campi verified assenti e nessuna chiave visibile;
+- errori renderizzati localizzati senza mostrare input remoto; contratti, payload, parsing, limiti e regex invariati;
+- limite dei metadati statici pre-boot/installazione documentato;
 - controlli statici senza Vercel e senza pipeline prima del secondo commit;
 - commit e push registrati sotto.
 
@@ -121,13 +125,17 @@ Vincoli invarianti:
 | 2026-09-10 | 3 | Audit Hermes completato: `analizzaTesto #19043/#19046`, `grammiCrudi #18400`, `fattoreCrudo #18401`, `nomeSenzaCottura #18402`, formule Progressi, detail/share e relazione asset ricette. |
 | 2026-09-10 | 4 | Implementazione completata; revisione semantica: corretti peso secco come rappresentazione senza alterare nutrienti/CG, salvataggio Pasto incompleto fail-closed, TTL quattro ore anche su sessione attiva e share Food limitata ai campi del dataset. La stima manuale 55/65 è mantenuta perché replica `stimaImpattoManuale #18594`. |
 | 2026-09-10 | 5 | `git diff --check`: OK (soli avvisi LF→CRLF); nessun marker Git; route `#advice` completa; client foto/testo fail-closed su path same-origin e barcode su `/api/barcode`; 209 record/report/JPEG/lookup, 209 SHA-256 payload e 209 MD5 packager coincidenti. Hash correnti: report `D90A3062608F14515AB63AF54AE150F9A661AF0F574A778BCB100CC75DF6CC4C`, lookup `6CBF92ED218C81DC8644C22D8C51EFCD64E5095667413F91564C186DF235ABFC`. Nessun lint/test/typecheck/build/Vercel eseguito. |
+| 2026-09-10 | 6 | Milestone 1 registrata nel commit `7ce4380` e pubblicata su `origin/main`; `HEAD` e `origin/main` verificati coincidenti. |
+| 2026-09-10 | 7–10 | Integrati `i18next@26.4.2` e `react-i18next@17.0.13` exact, provider/persistenza/selettore e risorse editoriali IT/EN/ES/DE/FR. I campi localizzati verified mantengono fallback IT senza mutare dati canonici. |
+| 2026-09-10 | 11 | Lettura e grep statico ragionato: rimossi fallback italiani visibili dal dominio, errori mappati ai boundary da code/status e titolo documento sincronizzato. Restano intenzionalmente commenti/contratti canonici, diagnostica non renderizzata e fallback statico italiano HTML/manifest. Nessun lint, test, typecheck, build o Vercel eseguito. |
+| 2026-09-10 | 11 | Revisione semantica finale `APPROVED`: lookup manuale lingua attiva con fallback IT solo su `not_found`; classificazioni tradotte ai boundary; errori asincroni ritraducibili; non-food senza copy remoto; nomi Diario e sessione Pasto localizzati preservando rinomine e dati canonici. I test sono differiti alla Milestone 3. |
 
 ## Registro commit e push
 
 | Milestone | Commit | Branch/remoto | Push | Note |
 |---|---|---|---|---|
-| 1 — Porting funzionale | da registrare | `main` → `origin/main` | da eseguire | Nessuna verifica Vercel; soli controlli statici pre-commit. |
-| 2 — i18n | da registrare | `main` → `origin/main` | da eseguire | IT/EN/ES/DE/FR e selettore top bar. |
+| 1 — Porting funzionale | `7ce4380` | `main` → `origin/main` | verificato | Nessuna interrogazione Vercel; `HEAD` e `origin/main` coincidevano dopo il push. |
+| 2 — i18n | da registrare | `main` → `origin/main` | da eseguire | IT/EN/ES/DE/FR e selettore top bar; nessuna pipeline eseguita. |
 | 3 — Qualità | da registrare | `main` → `origin/main` | da eseguire | Lint, build/typecheck, coverage ed E2E locali. |
 
 ## Registro validazione finale

@@ -55,11 +55,11 @@ function testo(value: unknown): string | undefined {
 }
 
 export function prodottoBarcodeDaBoundary(codice: string, raw: BarcodeProductBoundary): ProdottoBarcode {
-  const nome = testo(raw.product_name_it) ?? testo(raw.product_name) ?? 'Nome prodotto non disponibile'
+  const nome = testo(raw.product_name_it) ?? testo(raw.product_name) ?? null
   const marca = testo(raw.brands)?.split(',')[0]?.trim() || undefined
   const immagine = testo(raw.image_front_small_url)
   const nutriments = raw.nutriments ?? {}
-  const correzione = correggiSecco(nome, num(nutriments.carbohydrates_100g))
+  const correzione = correggiSecco(nome ?? '', num(nutriments.carbohydrates_100g))
 
   return {
     codice,

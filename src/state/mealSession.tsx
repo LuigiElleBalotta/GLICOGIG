@@ -2,10 +2,12 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react'
+import { useTranslation } from 'react-i18next'
 import { classificaFascia } from '../domain/impactCalculator'
 import type { MealItem } from '../types/meal'
 import type { GlycemicImpactBand } from '../types/nutrition'
@@ -42,7 +44,6 @@ interface MealSessionValue {
   clearMeal(): void
 }
 
-const DEFAULT_MEAL_NAME = 'Il mio pasto'
 const COMPLETE_MEAL_TTL_MS = 14_400_000
 const MealSessionContext = createContext<MealSessionValue | null>(null)
 let sessionCounter = 0
@@ -90,20 +91,29 @@ function summarize(entries: readonly MealSessionEntry[]): MealSessionSummary {
 }
 
 export function MealSessionProvider({ children }: { children: ReactNode }) {
-  const [name, setMealName] = useState(DEFAULT_MEAL_NAME)
+  const { t } = useTranslation()
+  const defaultMealName = t('share.meal.fallbackTitle')
+  const [name, setMealName] = useState(defaultMealName)
+  const [hasCustomName, setHasCustomName] = useState(false)
   const [startedAt, setStartedAt] = useState<number | null>(null)
   const [entries, setEntries] = useState<MealSessionEntry[]>([])
+
+  useEffect(() => {
+    if (!hasCustomName) setMealName(defaultMealName)
+  }, [defaultMealName, hasCustomName])
 
   const setName = useCallback((value: string) => {
     const normalized = value.slice(0, 60)
     setMealName(normalized)
+    setHasCustomName(true)
   }, [])
 
   const clearMeal = useCallback(() => {
     setEntries([])
     setStartedAt(null)
-    setMealName(DEFAULT_MEAL_NAME)
-  }, [])
+    setMealName(defaultMealName)
+    setHasCustomName(false)
+  }, [defaultMealName])
 
   const startCompleteMeal = useCallback(() => {
     if (startedAt !== null && Date.now() - startedAt > COMPLETE_MEAL_TTL_MS) {
@@ -119,13 +129,16 @@ export function MealSessionProvider({ children }: { children: ReactNode }) {
       item: { ...item, source: { ...item.source } } as MealItem,
       addedAt: now,
     }
-    if (expired) setMealName(DEFAULT_MEAL_NAME)
+    if (expired) {
+      setMealName(defaultMealName)
+      setHasCustomName(false)
+    }
     setStartedAt((current) => (
       current === null || now - current > COMPLETE_MEAL_TTL_MS ? now : current
     ))
     setEntries((current) => expired ? [entry] : [...current, entry])
     return entry
-  }, [startedAt])
+  }, [defaultMealName, startedAt])
 
   const updateItem = useCallback((id: string, item: MealItem) => {
     setEntries((current) => current.map((entry) => (

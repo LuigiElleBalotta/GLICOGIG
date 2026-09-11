@@ -2,7 +2,7 @@
 
 Data: 10 settembre 2026.
 
-Questo piano traduce il delta verificato in `version-1.0.16-delta.md` nell’architettura React. Tutti i contenuti e gli algoritmi portati provengono dagli artefatti locali; non vengono introdotti dati nutrizionali esterni, telemetria, account, referral, paywall o campi upstream non verificati.
+Questo piano traduce il delta verificato in `version-1.0.16-delta.md` nell’architettura React. La milestone funzionale è registrata nel commit `7ce4380`. Tutti i dati, contenuti e algoritmi portati provengono dagli artefatti locali; non vengono introdotti dati nutrizionali esterni, telemetria, account, referral, paywall o campi upstream non verificati. Il copy UI localizzato è invece produzione editoriale specifica della web app e non viene attribuito all’APK.
 
 ## Confini invarianti
 
@@ -11,7 +11,9 @@ Questo piano traduce il delta verificato in `version-1.0.16-delta.md` nell’arc
 - Foto, testo e barcode passano da boundary server-side same-origin. Il browser non contatta direttamente gli upstream.
 - Diario e quiz usano `localStorage`; il Pasto usa solo memoria React; immagini e Base64 non vengono persistiti.
 - `nascondi=true` esclude un alimento dalla ricerca, non dal lookup esatto.
-- Valori nutrizionali `null` restano sconosciuti e vengono mostrati come `n.d.`.
+- Valori nutrizionali `null` restano sconosciuti e vengono mostrati tramite `common.labels.notAvailable` nel locale attivo.
+- `i18next@26.4.2` e `react-i18next@17.0.13` sono pinned exact; la UI supporta IT/EN/ES/DE/FR.
+- Le risorse UI tradotte sono editoriali non-APK; i selector dei campi dataset verified usano fallback italiano, non mutano lo storage canonico e non inventano traduzioni.
 - Il contratto foto resta `{ image_base64, device_id, mime, premium }`; quello testo resta `{ text, device_id, premium, lang }`.
 - Nessuna immagine ricetta viene pubblicata senza identità verificata fra ID ricetta, chiave Hermes e nome manifest.
 
@@ -25,6 +27,7 @@ Questo piano traduce il delta verificato in `version-1.0.16-delta.md` nell’arc
 - `src/types/content.ts`, `src/types/diary.ts`, `src/types/barcode.ts`, `src/types/meal.ts`: soli campi dimostrati.
 - `src/catalog/datasets.ts`: unico boundary dei quattro dataset e conteggi reali.
 - `src/catalog/foodCatalog.ts`: lookup ID, fallback deterministico nome/sinonimi e rispetto di `nascondi`.
+- `src/i18n/`: inizializzazione `i18next`/`react-i18next`, persistenza, lingue IT/EN/ES/DE/FR, copy editoriale e selector dei soli campi localizzati verified con fallback IT.
 - `src/generated/recipeAssetMap.ts`: lookup ID→immagine generato da prove locali.
 
 ### Dominio puro
@@ -93,11 +96,19 @@ Dopo **Aggiungi al pasto**, l’utente può aprire il Pasto o analizzare un altr
 
 La shell mantiene sei tab (`home`, `search`, `photo`, `recipes`, `diary`, `learn`) e route ausiliarie `meal`, `barcode`, `advice`, `explanation`. `advice` evidenzia la tab Diario; i link Home e contestuali rendono ogni route raggiungibile.
 
+### Localizzazione e boundary UI
+
+`i18next@26.4.2` e `react-i18next@17.0.13` sono usati con versioni exact. Il selettore rende disponibili italiano, inglese, spagnolo, tedesco e francese; la scelta viene persistita e ogni lingua non supportata ricade sull’italiano. Le risorse `src/i18n/resources/*` sono traduzioni editoriali della web app, non estrazioni APK. `datasetSelectors.ts` legge solo campi localizzati presenti negli artefatti verified 1.0.16, mantiene fallback italiano e non modifica ID, numeri, classificazioni o record canonici.
+
+Formattazione numerica e fallback vengono risolti nel boundary React. Errori immagine, foto, testo e barcode sono rappresentati da code/status stabili e mappati alle chiavi `errors.*`; payload remoti e messaggi diagnostici non sono renderizzati. I nomi di default del Pasto e del piatto vengono risolti al boundary React senza sovrascrivere nomi inseriti dall’utente, mentre l’assenza del nome barcode resta `null`, salta il matching e diventa `common.labels.notAvailable` soltanto nel render. Contratti, limiti, abort, parsing e regex restano invariati.
+
 ### PWA e documentazione
 
 - `public/sw.js`: `/api/*` sempre escluso dalla cache.
-- `public/manifest.webmanifest`: descrizione allineata alle funzioni reali.
-- `README.md`: flussi, privacy, asset e configurazione aggiornati.
+- `public/manifest.webmanifest`: descrizione allineata alle funzioni reali; il manifest unico dichiara `lang: it` ed è il fallback statico di installazione.
+- `App.tsx`: sincronizza a runtime il titolo con le chiavi UI; `i18n/persistence.ts` sincronizza la lingua del documento.
+- `index.html`: titolo e descrizione italiani restano fallback pre-boot/no-JS, perché i18next non può localizzare in modo affidabile i metadati prima del bootstrap senza HTML/manifest distinti per lingua.
+- `README.md`: flussi, privacy, localizzazione, provenienza editoriale, fallback dataset, asset e configurazione aggiornati.
 
 ## Generazione riproducibile
 
@@ -118,3 +129,4 @@ Il secondo script fallisce chiuso se conteggi, header Hermes, dipendenze, identi
 6. Foto/testo, preset, crudo/cotto, Progressi, Consigli e share.
 7. Mappa immagini ricetta verificata e documentazione.
 8. Verifica statica e `git diff --check`; lint/test/typecheck/build rinviati alla milestone qualità come richiesto.
+9. Localizzazione editoriale IT/EN/ES/DE/FR, selector verified con fallback IT, boundary errori locale-aware e metadati runtime; revisione tramite lettura e grep statico, senza eseguire lint/test/typecheck/build.

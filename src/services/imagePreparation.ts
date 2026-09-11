@@ -3,6 +3,25 @@ const MAX_EDGE = 1600
 const MAX_OUTPUT_BYTES = 2.8 * 1024 * 1024
 const JPEG_QUALITIES = [0.86, 0.76, 0.66]
 
+export type ImagePreparationErrorCode =
+  | 'READ_FAILED'
+  | 'PREPARE_FAILED'
+  | 'CONVERT_FAILED'
+  | 'INVALID_TYPE'
+  | 'SOURCE_TOO_LARGE'
+  | 'UNSUPPORTED_PROCESSING'
+  | 'OUTPUT_TOO_LARGE'
+
+export class ImagePreparationError extends Error {
+  constructor(
+    readonly code: ImagePreparationErrorCode,
+    message: string,
+  ) {
+    super(message)
+    this.name = 'ImagePreparationError'
+  }
+}
+
 export interface PreparedImage {
   base64: string
   previewUrl: string
@@ -26,7 +45,7 @@ function loadImage(file: File): Promise<LoadedImage> {
     image.onload = () => resolve({ image, objectUrl })
     image.onerror = () => {
       URL.revokeObjectURL(objectUrl)
-      reject(new Error('Non riesco a leggere questa immagine. Prova con un altro file.'))
+      reject(new ImagePreparationError('READ_FAILED', 'Non riesco a leggere questa immagine. Prova con un altro file.'))
     }
     image.src = objectUrl
   })
@@ -37,7 +56,7 @@ function canvasToBlob(canvas: HTMLCanvasElement, quality: number): Promise<Blob>
     canvas.toBlob(
       (blob) => {
         if (blob) resolve(blob)
-        else reject(new Error('Non riesco a preparare la foto per l’analisi.'))
+        else reject(new ImagePreparationError('PREPARE_FAILED', 'Non riesco a preparare la foto per l’analisi.'))
       },
       'image/jpeg',
       quality,
@@ -52,14 +71,18 @@ function blobToBase64(blob: Blob): Promise<string> {
       const result = String(reader.result)
       resolve(result.slice(result.indexOf(',') + 1))
     }
-    reader.onerror = () => reject(new Error('Non riesco a convertire la foto.'))
+    reader.onerror = () => reject(new ImagePreparationError('CONVERT_FAILED', 'Non riesco a convertire la foto.'))
     reader.readAsDataURL(blob)
   })
 }
 
 export async function prepareImage(file: File): Promise<PreparedImage> {
-  if (!file.type.startsWith('image/')) throw new Error('Il file selezionato non è un’immagine.')
-  if (file.size > MAX_SOURCE_BYTES) throw new Error('La foto supera 20 MB. Scegline una più leggera.')
+  if (!file.type.startsWith('image/')) {
+    throw new ImagePreparationError('INVALID_TYPE', 'Il file selezionato non è un’immagine.')
+  }
+  if (file.size > MAX_SOURCE_BYTES) {
+    throw new ImagePreparationError('SOURCE_TOO_LARGE', 'La foto supera 20 MB. Scegline una più leggera.')
+  }
 
   const { image, objectUrl } = await loadImage(file)
 
@@ -70,7 +93,9 @@ export async function prepareImage(file: File): Promise<PreparedImage> {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d')
 
-    if (!context) throw new Error('Il browser non supporta l’elaborazione della foto.')
+    if (!context) {
+      throw new ImagePreparationError('UNSUPPORTED_PROCESSING', 'Il browser non supporta l’elaborazione della foto.')
+    }
 
     canvas.width = width
     canvas.height = height
@@ -85,7 +110,7 @@ export async function prepareImage(file: File): Promise<PreparedImage> {
     }
 
     if (!output || output.size > MAX_OUTPUT_BYTES) {
-      throw new Error('La foto compressa è ancora troppo grande. Prova a ritagliarla.')
+      throw new ImagePreparationError('OUTPUT_TOO_LARGE', 'La foto compressa è ancora troppo grande. Prova a ritagliarla.')
     }
 
     return {

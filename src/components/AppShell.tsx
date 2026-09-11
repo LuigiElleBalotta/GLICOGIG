@@ -1,5 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import InstallPrompt from './InstallPrompt'
+import LanguageSelector from './LanguageSelector'
 import BottomTabs, { APP_TABS, type AppTab } from './BottomTabs'
 import { ShieldIcon } from './Icons'
 
@@ -55,6 +57,7 @@ interface AppShellProps {
 }
 
 export default function AppShell({ children }: AppShellProps) {
+  const { t } = useTranslation()
   const [route, setRoute] = useState<AppRoute>(() => routeFromHash() ?? { page: 'home' })
 
   useEffect(() => {
@@ -82,15 +85,16 @@ export default function AppShell({ children }: AppShellProps) {
 
       <header className="app-safe-top sticky top-0 z-40 border-b border-line/70 bg-ivory/88 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-          <a className="rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand" href="#home" aria-label="GLICOGIG, vai alla home">
-            <p className="text-xl font-black tracking-[-0.05em] text-brand">GLICOGIG</p>
-            <p className="text-[9px] font-extrabold tracking-[0.22em] text-amber uppercase">Food intelligence</p>
+          <a className="rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand" href="#home" aria-label={t('shell.homeAria')}>
+            <p className="text-xl font-black tracking-[-0.05em] text-brand">{t('brand.name')}</p>
+            <p className="text-[9px] font-extrabold tracking-[0.22em] text-amber uppercase">{t('brand.tagline')}</p>
           </a>
           <div className="flex items-center gap-2">
+            <LanguageSelector />
             <InstallPrompt />
             <span className="inline-flex min-h-10 items-center gap-2 rounded-full border border-brand/25 bg-brand-soft/80 px-3 text-xs font-bold text-brand">
               <ShieldIcon className="size-4" />
-              <span className="hidden sm:inline">Dati locali</span>
+              <span className="hidden sm:inline">{t('shell.localDataBadge')}</span>
             </span>
           </div>
         </div>

@@ -21,7 +21,7 @@ export type BarcodeApiResponse =
 
 export interface ProdottoBarcode {
   codice: string
-  nome: string
+  nome: string | null
   marca?: string
   immagine?: string
   carbo100: number | null

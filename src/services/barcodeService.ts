@@ -102,10 +102,6 @@ function parseResponse(value: unknown): { status: 'found'; product: BarcodeProdu
   throw new BarcodeServiceError('Risposta barcode non valida.', 'INVALID_RESPONSE')
 }
 
-function errorMessage(value: unknown): string | undefined {
-  return isRecord(value) && typeof value.error === 'string' ? value.error : undefined
-}
-
 export async function cercaProdotto(
   value: string,
   options: BarcodeLookupOptions = {},
@@ -147,11 +143,7 @@ export async function cercaProdotto(
   }
 
   if (!response.ok) {
-    throw new BarcodeServiceError(
-      errorMessage(payload) ?? 'Ricerca barcode non riuscita.',
-      'LOOKUP_FAILED',
-      response.status,
-    )
+    throw new BarcodeServiceError('Ricerca barcode non riuscita.', 'LOOKUP_FAILED', response.status)
   }
 
   const result = parseResponse(payload)

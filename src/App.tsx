@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import AppShell from './components/AppShell'
 import AdviceScreen from './screens/AdviceScreen'
 import { mealItemFromAnalysis } from './domain/meal'
@@ -11,12 +12,16 @@ import MealScreen from './screens/MealScreen'
 import PhotoScreen from './screens/PhotoScreen'
 import RecipesScreen from './screens/RecipesScreen'
 import SearchScreen from './screens/SearchScreen'
-import { photoAnalysisService } from './services/photoAnalysisService'
-import { prepareImage, type PreparedImage } from './services/imagePreparation'
+import { resolveSupportedLanguage } from './i18n/languages'
+import { AnalysisError, photoAnalysisService } from './services/photoAnalysisService'
+import {
+  ImagePreparationError,
+  prepareImage,
+  type PreparedImage,
+} from './services/imagePreparation'
 import { textAnalysisService } from './services/textAnalysisService'
 import { MealSessionProvider, useMealSession } from './state/mealSession'
 import {
-  ANALYSIS_LANGUAGES,
   type AnalizzaResponse,
   type AnalysisLanguage,
   type AnalysisOrigin,
@@ -35,15 +40,47 @@ function initialAccessKey(): string {
   }
 }
 
-function currentAnalysisLanguage(): AnalysisLanguage {
-  const language = document.documentElement.lang.toLowerCase().split('-')[0]
-  return (ANALYSIS_LANGUAGES as readonly string[]).includes(language)
-    ? language as AnalysisLanguage
-    : 'it'
+function currentAnalysisLanguage(language: string | null | undefined): AnalysisLanguage {
+  return resolveSupportedLanguage(language)
 }
 
-function messageFromError(error: unknown, fallback: string): string {
-  return error instanceof Error && error.message ? error.message : fallback
+function imageErrorKey(error: unknown): string {
+  if (!(error instanceof ImagePreparationError)) return 'errors.image.prepareFallback'
+  if (error.code === 'READ_FAILED') return 'errors.image.read'
+  if (error.code === 'PREPARE_FAILED') return 'errors.image.prepare'
+  if (error.code === 'CONVERT_FAILED') return 'errors.image.convert'
+  if (error.code === 'INVALID_TYPE') return 'errors.image.type'
+  if (error.code === 'SOURCE_TOO_LARGE') return 'errors.image.sourceTooLarge'
+  if (error.code === 'UNSUPPORTED_PROCESSING') return 'errors.image.unsupported'
+  return 'errors.image.compressedTooLarge'
+}
+
+function photoErrorKey(error: unknown): string {
+  if (!(error instanceof AnalysisError)) return 'errors.analysisGeneric'
+  if (error.code === 'NETWORK_ERROR') return 'errors.photo.network'
+  if (error.status === 400) return 'errors.photo.badRequest'
+  if (error.status === 401) return 'errors.photo.badPassword'
+  if (error.status === 402) return 'errors.photo.unavailable'
+  if (error.status === 413) return 'errors.photo.tooLarge'
+  if (error.status === 429) return 'errors.photo.rateLimit'
+  if (error.status === 0 || (error.status >= 200 && error.status < 300)) {
+    return 'errors.photo.invalidResponse'
+  }
+  return 'errors.photo.unavailable'
+}
+
+function textErrorKey(error: unknown): string {
+  if (!(error instanceof AnalysisError)) return 'errors.analysisGeneric'
+  if (error.code === 'NETWORK_ERROR') return 'errors.text.network'
+  if (error.status === 400) return 'errors.text.invalid'
+  if (error.status === 401) return 'errors.text.badPassword'
+  if (error.status === 402) return 'errors.text.unavailable'
+  if (error.status === 413) return 'errors.text.tooLong'
+  if (error.status === 429) return 'errors.text.rateLimit'
+  if (error.status === 0 || (error.status >= 200 && error.status < 300)) {
+    return 'errors.text.invalid'
+  }
+  return 'errors.text.unavailable'
 }
 
 function deepAnalysisSnapshot(result: AnalizzaResponse): AnalizzaResponse {
@@ -51,6 +88,7 @@ function deepAnalysisSnapshot(result: AnalizzaResponse): AnalizzaResponse {
 }
 
 function AppContent() {
+  const { t, i18n } = useTranslation()
   const [analysisMode, setAnalysisMode] = useState<AnalysisOrigin>('photo')
   const [completeMeal, setCompleteMeal] = useState(false)
   const [image, setImage] = useState<PreparedImage | null>(null)
@@ -62,7 +100,7 @@ function AppContent() {
   const [rawWeightMode, setRawWeightMode] = useState<RawWeightMode>('cooked')
   const [addedToMeal, setAddedToMeal] = useState(false)
   const [status, setStatus] = useState<ViewStatus>('idle')
-  const [error, setError] = useState('')
+  const [errorKey, setErrorKey] = useState<string | null>(null)
   const [accessKey, setAccessKey] = useState(initialAccessKey)
   const [showAccessKey, setShowAccessKey] = useState(false)
   const requestController = useRef<AbortController | null>(null)
@@ -70,6 +108,10 @@ function AppContent() {
   const resultSection = useRef<HTMLDivElement>(null)
   const { addItem, startCompleteMeal, summary } = useMealSession()
   const busy = status === 'preparing' || status === 'analyzing'
+
+  useEffect(() => {
+    document.title = `${t('brand.name')} · ${t('analysis.hero.kicker')}`
+  }, [i18n.language, i18n.resolvedLanguage, t])
 
   useEffect(() => {
     try {
@@ -118,7 +160,7 @@ function AppContent() {
 
   function requireAccessKey(): boolean {
     if (!import.meta.env.PROD || accessKey.trim()) return true
-    setError('Inserisci la password del sito prima di avviare l’analisi.')
+    setErrorKey('errors.accessKeyRequired')
     setStatus('error')
     return false
   }
@@ -128,7 +170,7 @@ function AppContent() {
     requestController.current?.abort()
     setImage(null)
     setStatus('preparing')
-    setError('')
+    setErrorKey(null)
     resetResultState()
     try {
       const prepared = await prepareImage(file)
@@ -141,7 +183,7 @@ function AppContent() {
     } catch (caughtError) {
       if (preparationToken.current !== token) return
       setStatus('error')
-      setError(messageFromError(caughtError, 'Non riesco a preparare questa foto.'))
+      setErrorKey(imageErrorKey(caughtError))
     }
   }
 
@@ -151,7 +193,7 @@ function AppContent() {
     const controller = new AbortController()
     requestController.current = controller
     setStatus('analyzing')
-    setError('')
+    setErrorKey(null)
     resetResultState()
 
     try {
@@ -165,7 +207,7 @@ function AppContent() {
       window.navigator.vibrate?.(30)
     } catch (caughtError) {
       if (caughtError instanceof Error && caughtError.name === 'AbortError') return
-      setError(messageFromError(caughtError, 'Analisi non riuscita. Riprova tra poco.'))
+      setErrorKey(photoErrorKey(caughtError))
       setStatus('error')
     } finally {
       if (requestController.current === controller) requestController.current = null
@@ -176,7 +218,7 @@ function AppContent() {
     const normalizedText = text.trim()
     if (!normalizedText || busy || !requireAccessKey()) {
       if (!normalizedText) {
-        setError('Descrivi il piatto prima di avviare l’analisi.')
+        setErrorKey('errors.textRequired')
         setStatus('error')
       }
       return
@@ -185,18 +227,18 @@ function AppContent() {
     const controller = new AbortController()
     requestController.current = controller
     setStatus('analyzing')
-    setError('')
+    setErrorKey(null)
     resetResultState()
 
     try {
       const analysis = await textAnalysisService.analyze({
         text: normalizedText,
-        lang: currentAnalysisLanguage(),
+        lang: currentAnalysisLanguage(i18n.resolvedLanguage ?? i18n.language),
         accessKey: accessKey.trim(),
         signal: controller.signal,
       })
       if (!analysis.e_cibo) {
-        setError(analysis.descrizione || 'La descrizione non identifica un piatto analizzabile.')
+        setErrorKey('errors.textNotFood')
         setStatus('error')
         return
       }
@@ -206,7 +248,7 @@ function AppContent() {
       window.navigator.vibrate?.(30)
     } catch (caughtError) {
       if (caughtError instanceof Error && caughtError.name === 'AbortError') return
-      setError(messageFromError(caughtError, 'Analisi non riuscita. Riprova tra poco.'))
+      setErrorKey(textErrorKey(caughtError))
       setStatus('error')
     } finally {
       if (requestController.current === controller) requestController.current = null
@@ -256,7 +298,7 @@ function AppContent() {
     setImage(null)
     setText('')
     resetResultState()
-    setError('')
+    setErrorKey(null)
     setStatus('idle')
   }
 
@@ -274,7 +316,11 @@ function AppContent() {
   function addCurrentMeal(): void {
     if (!result?.e_cibo || addedToMeal) return
     if (!completeMeal) beginCompleteMeal()
-    const item = mealItemFromAnalysis(result, resultOrigin)
+    const item = mealItemFromAnalysis(
+      result,
+      resultOrigin,
+      t('analysis.result.unnamedDish'),
+    )
     if (!item) return
     addItem(item)
     setAddedToMeal(true)
@@ -310,7 +356,7 @@ function AppContent() {
             addedToMeal={addedToMeal}
             mealItemCount={summary.plates}
             status={status}
-            error={error}
+            error={errorKey ? t(errorKey) : ''}
             accessKey={accessKey}
             showAccessKey={showAccessKey}
             resultSection={resultSection}
