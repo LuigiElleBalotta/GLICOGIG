@@ -2,7 +2,8 @@ import { act, renderHook } from '@testing-library/react'
 import type { PropsWithChildren } from 'react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { MealItem } from '../types/meal'
-import { MealSessionProvider, useMealSession } from './mealSession'
+import { MealSessionProvider } from './mealSession'
+import { useMealSession } from './mealSessionContext'
 
 const translations = vi.hoisted(() => ({
   fallbackName: 'Pasto predefinito test-only',

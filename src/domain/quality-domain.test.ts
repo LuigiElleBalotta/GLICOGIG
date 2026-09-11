@@ -638,7 +638,7 @@ describe('barcodeProduct', () => {
       product_name_it: ' Nome italiano ',
       product_name: 'Generic name',
       brands: ' Marca uno, Marca due ',
-      image_front_small_url: ' https://example.test/image.jpg ',
+      image_front_small_url: ' https://images.openfoodfacts.org/images/products/123/456/78/front_small.jpg ',
       serving_size: '30,5 g',
       nutriments: {
         carbohydrates_100g: '20.5',
@@ -653,7 +653,7 @@ describe('barcodeProduct', () => {
       codice: '12345678',
       nome: 'Nome italiano',
       marca: 'Marca uno',
-      immagine: 'https://example.test/image.jpg',
+      immagine: 'https://images.openfoodfacts.org/images/products/123/456/78/front_small.jpg',
       carbo100: 20.5,
       carboCorretto: false,
       zuccheri100: 2,

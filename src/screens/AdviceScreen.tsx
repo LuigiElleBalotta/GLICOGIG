@@ -17,7 +17,7 @@ import {
 import { selectDiaryEntryName } from '../i18n/diarySelectors'
 import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { useDayKey } from '../lib/useDayKey'
-import { useMealSession } from '../state/mealSession'
+import { useMealSession } from '../state/mealSessionContext'
 import { useDiario } from '../storage/diaryStore'
 import type { GlycemicImpactBand } from '../types/nutrition'
 
@@ -55,7 +55,7 @@ export default function AdviceScreen() {
   const diaryEntries = useDiario()
   const { entries: mealEntries, summary } = useMealSession()
   const progress = useMemo(() => {
-    const reference = new Date()
+    const reference = new Date(`${localDay}T12:00:00`)
     return {
       rings: datiAnelliOggi(diaryEntries, reference),
       balance: bilancioOggi(diaryEntries, reference),

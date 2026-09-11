@@ -1,7 +1,5 @@
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useState,
@@ -10,42 +8,14 @@ import {
 import { useTranslation } from 'react-i18next'
 import { classificaFascia } from '../domain/impactCalculator'
 import type { MealItem } from '../types/meal'
-import type { GlycemicImpactBand } from '../types/nutrition'
-
-export interface MealSessionEntry {
-  id: string
-  item: MealItem
-  addedAt: number
-}
-
-export interface MealSessionSummary {
-  plates: number
-  totalGrams: number
-  kcal: number | null
-  carbs: number
-  protein: number | null
-  fat: number | null
-  fibre: number | null
-  glycemicLoad: number
-  band: GlycemicImpactBand
-  unresolved: number
-}
-
-interface MealSessionValue {
-  name: string
-  startedAt: number | null
-  entries: readonly MealSessionEntry[]
-  summary: MealSessionSummary
-  setName(value: string): void
-  startCompleteMeal(): void
-  addItem(item: MealItem): MealSessionEntry
-  updateItem(id: string, item: MealItem): void
-  removeItem(id: string): void
-  clearMeal(): void
-}
+import {
+  MealSessionContext,
+  type MealSessionEntry,
+  type MealSessionSummary,
+  type MealSessionValue,
+} from './mealSessionContext'
 
 const COMPLETE_MEAL_TTL_MS = 14_400_000
-const MealSessionContext = createContext<MealSessionValue | null>(null)
 let sessionCounter = 0
 
 function sumNullable(values: readonly (number | null)[]): number | null {
@@ -182,10 +152,4 @@ export function MealSessionProvider({ children }: { children: ReactNode }) {
   ])
 
   return <MealSessionContext.Provider value={value}>{children}</MealSessionContext.Provider>
-}
-
-export function useMealSession(): MealSessionValue {
-  const value = useContext(MealSessionContext)
-  if (!value) throw new Error('useMealSession must be used inside MealSessionProvider')
-  return value
 }

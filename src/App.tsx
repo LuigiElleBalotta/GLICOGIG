@@ -20,7 +20,8 @@ import {
   type PreparedImage,
 } from './services/imagePreparation'
 import { textAnalysisService } from './services/textAnalysisService'
-import { MealSessionProvider, useMealSession } from './state/mealSession'
+import { MealSessionProvider } from './state/mealSession'
+import { useMealSession } from './state/mealSessionContext'
 import {
   type AnalizzaResponse,
   type AnalysisLanguage,

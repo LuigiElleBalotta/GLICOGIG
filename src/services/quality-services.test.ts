@@ -281,7 +281,7 @@ describe('barcodeService', () => {
         product_name_it: '  Pane integrale ',
         brands: 'Marca Uno, Marca Due',
         serving_size: '30,5 g',
-        image_front_small_url: ' https://img.test/p.png ',
+        image_front_small_url: ' https://images.openfoodfacts.org/images/products/123/456/78/front_small.png ',
         nutriments: {
           carbohydrates_100g: '42.5',
           sugars_100g: 3,
@@ -298,7 +298,7 @@ describe('barcodeService', () => {
         codice: '123456',
         nome: 'Pane integrale',
         marca: 'Marca Uno',
-        immagine: 'https://img.test/p.png',
+        immagine: 'https://images.openfoodfacts.org/images/products/123/456/78/front_small.png',
         carbo100: 42.5,
         carboCorretto: false,
         zuccheri100: 3,

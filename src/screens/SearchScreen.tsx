@@ -1,4 +1,4 @@
-import { BarcodeFormat, BrowserMultiFormatReader, type IScannerControls } from '@zxing/browser'
+import type { BrowserMultiFormatReader, IScannerControls } from '@zxing/browser'
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -29,7 +29,7 @@ import { selectFoodDatasetFields, type LocalizedFoodView } from '../i18n/dataset
 import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { BarcodeServiceError, cercaProdotto } from '../services/barcodeService'
 import { condividiCard, type ShareCardData } from '../services/shareCard'
-import { useMealSession } from '../state/mealSession'
+import { useMealSession } from '../state/mealSessionContext'
 import { DIARY_STORAGE_KEY, registraMangiato } from '../storage/diaryStore'
 import type { ProdottoBarcode } from '../types/barcode'
 import type { FoodCatalogEntry } from '../types/catalog'
@@ -216,6 +216,33 @@ function FoodDetail({ food }: { food: FoodCatalogEntry }) {
   )
 }
 
+function BarcodeProductImage({ product }: { product: ProdottoBarcode }) {
+  const { t } = useTranslation()
+  const [failed, setFailed] = useState(false)
+  const name = product.nome ?? product.marca ?? product.codice
+
+  return (
+    <div className="grid aspect-square w-full max-w-40 place-items-center overflow-hidden rounded-2xl border border-line bg-paper">
+      {product.immagine && !failed ? (
+        <img
+          className="h-full w-full object-contain p-2"
+          src={product.immagine}
+          alt={t('recipes.detail.photoAlt', { name })}
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div className="grid place-items-center gap-2 p-4 text-center text-xs text-muted">
+          <ImageIcon className="size-8" aria-hidden="true" />
+          <span>{t('recipes.detail.imageUnavailable')}</span>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function BarcodeProductCard({ product }: { product: ProdottoBarcode }) {
   const { t, i18n } = useTranslation()
   const language = resolveSupportedLanguage(i18n.resolvedLanguage ?? i18n.language)
@@ -282,7 +309,7 @@ function BarcodeProductCard({ product }: { product: ProdottoBarcode }) {
 
   return (
     <article className="mt-5 rounded-3xl border border-brand/35 bg-brand-soft/30 p-5">
-      <p className="section-label">{t('barcode.product.normalized', { code: product.codice })}</p><h2 className="mt-1 text-xl font-extrabold text-ink">{product.nome ?? t('common.labels.notAvailable')}</h2>{product.marca && <p className="mt-1 text-sm text-muted">{product.marca}</p>}
+      <div className="mt-1 grid gap-4 sm:grid-cols-[minmax(0,1fr)_10rem] sm:items-start"><div><p className="section-label">{t('barcode.product.normalized', { code: product.codice })}</p><h2 className="mt-1 text-xl font-extrabold text-ink">{product.nome ?? t('common.labels.notAvailable')}</h2>{product.marca && <p className="mt-1 text-sm text-muted">{product.marca}</p>}</div><BarcodeProductImage product={product} /></div>
       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">{nutrientRows.map(([label, value]) => <div className="data-tile" key={label}><span>{t('barcode.product.per100', { label })}</span><strong>{formatNumber(value)} g</strong></div>)}</div>
       <div className="mt-4 flex flex-wrap items-end gap-3"><label className="text-xs font-bold text-muted">{t('common.labels.quantity')}<input className="field mt-1 block w-32" type="number" inputMode="decimal" min={1} max={2000} value={grams} onChange={(event) => updateGrams(event.target.value)} /></label><span className="status-badge">{t('barcode.product.declaredServing', { value: product.porzioneG === null ? t('common.labels.notAvailable') : `${formatNumber(product.porzioneG)} g` })}</span>{product.carboCorretto && <span className="status-badge border-amber/30 bg-amber-soft text-amber">{t('barcode.product.dryCorrection')}</span>}</div>
       {item && localFood && localFoodView ? <div className="mt-4 rounded-2xl border border-mint/25 bg-mint-soft p-4 text-sm text-mint"><p><strong>{t('barcode.product.uniqueMatch')}</strong> {t('barcode.product.uniqueMatchBody', { food: localFoodView.displayName, glycemicLoad: formatNumber(item.glycemicLoad), band: itemBandLabel })}</p><div className="mt-3 grid gap-2 sm:grid-cols-2"><button className="primary-button" type="button" onClick={addToMeal} disabled={mealState === 'success'}>{mealState === 'success' ? <CheckIcon className="size-5" /> : <LayersIcon className="size-5" />}{mealState === 'success' ? t('common.actions.addedToMeal') : t('common.actions.addToMeal')}</button><button className="secondary-button" type="button" onClick={save} disabled={saveState === 'success'}>{saveState === 'success' ? <CheckIcon className="size-5" /> : <SaveIcon className="size-5" />}{saveState === 'success' ? t('common.actions.registered') : t('common.actions.ateIt')}</button></div></div> : <p className="mt-4 rounded-2xl border border-amber/25 bg-amber-soft p-4 text-sm leading-6 text-amber"><AlertIcon className="mr-2 inline size-4" />{localFood ? t('barcode.product.missingGi') : t('barcode.product.ambiguous')}</p>}
@@ -303,19 +330,22 @@ function BarcodePanel() {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const scannerControls = useRef<IScannerControls | null>(null)
   const scanSession = useRef(0)
-  const readerRef = useRef<BrowserMultiFormatReader | null>(null)
+  const readerRef = useRef<Promise<BrowserMultiFormatReader> | null>(null)
 
-  function getReader(): BrowserMultiFormatReader {
-    if (readerRef.current) return readerRef.current
-    const reader = new BrowserMultiFormatReader()
-    reader.possibleFormats = [
-      BarcodeFormat.EAN_13,
-      BarcodeFormat.EAN_8,
-      BarcodeFormat.UPC_A,
-      BarcodeFormat.UPC_E,
-    ]
-    readerRef.current = reader
-    return reader
+  async function getReader(): Promise<BrowserMultiFormatReader> {
+    if (!readerRef.current) {
+      readerRef.current = import('@zxing/browser').then(({ BarcodeFormat, BrowserMultiFormatReader }) => {
+        const reader = new BrowserMultiFormatReader()
+        reader.possibleFormats = [
+          BarcodeFormat.EAN_13,
+          BarcodeFormat.EAN_8,
+          BarcodeFormat.UPC_A,
+          BarcodeFormat.UPC_E,
+        ]
+        return reader
+      })
+    }
+    return readerRef.current
   }
 
   function releaseCamera(): void {
@@ -426,7 +456,9 @@ function BarcodePanel() {
     setProduct(null)
 
     try {
-      const controls = await getReader().decodeFromConstraints(
+      const reader = await getReader()
+      if (session !== scanSession.current) return
+      const controls = await reader.decodeFromConstraints(
         {
           audio: false,
           video: {
@@ -474,7 +506,9 @@ function BarcodePanel() {
     setLookupMessage(null)
     setProduct(null)
     try {
-      const result = await getReader().decodeFromImageUrl(imageUrl)
+      const reader = await getReader()
+      if (session !== scanSession.current) return
+      const result = await reader.decodeFromImageUrl(imageUrl)
       if (session !== scanSession.current) return
       const detected = result.getText().trim()
       if (!BARCODE_PATTERN.test(detected)) {

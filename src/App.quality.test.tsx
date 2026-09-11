@@ -1,6 +1,6 @@
 import { act, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { AppRoute } from './components/AppShell'
+import type { AppRoute } from './components/appNavigation'
 import { getFoodByCatalogId } from './catalog/foodCatalog'
 import type PhotoScreen from './screens/PhotoScreen'
 import { AnalysisError } from './services/photoAnalysisService'
@@ -98,13 +98,15 @@ vi.mock('./state/mealSession', async () => {
   const React = await import('react')
   return {
     MealSessionProvider: ({ children }: { children: React.ReactNode }) => React.createElement(React.Fragment, null, children),
-    useMealSession: () => ({
-      addItem: mocks.addItem,
-      startCompleteMeal: mocks.startCompleteMeal,
-      summary: { plates: 2 },
-    }),
   }
 })
+vi.mock('./state/mealSessionContext', () => ({
+  useMealSession: () => ({
+    addItem: mocks.addItem,
+    startCompleteMeal: mocks.startCompleteMeal,
+    summary: { plates: 2 },
+  }),
+}))
 
 function currentPhotoProps(): React.ComponentProps<typeof PhotoScreen> {
   return mocks.photoProps as React.ComponentProps<typeof PhotoScreen>

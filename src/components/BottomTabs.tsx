@@ -1,29 +1,5 @@
-import type { ComponentType, SVGProps } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  BookOpenIcon,
-  CameraIcon,
-  ChefHatIcon,
-  DiaryIcon,
-  HomeIcon,
-  SearchIcon,
-} from './Icons'
-
-export type AppTab = 'home' | 'search' | 'photo' | 'recipes' | 'diary' | 'learn'
-
-interface TabDefinition {
-  id: AppTab
-  icon: ComponentType<SVGProps<SVGSVGElement>>
-}
-
-export const APP_TABS: readonly TabDefinition[] = [
-  { id: 'home', icon: HomeIcon },
-  { id: 'search', icon: SearchIcon },
-  { id: 'photo', icon: CameraIcon },
-  { id: 'recipes', icon: ChefHatIcon },
-  { id: 'diary', icon: DiaryIcon },
-  { id: 'learn', icon: BookOpenIcon },
-]
+import { APP_TABS, type AppTab } from './appNavigation'
 
 interface BottomTabsProps {
   activeTab: AppTab

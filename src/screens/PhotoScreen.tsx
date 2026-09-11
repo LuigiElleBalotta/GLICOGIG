@@ -14,7 +14,7 @@ import {
 import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { selectMealItemName } from '../i18n/mealSelectors'
 import type { PreparedImage } from '../services/imagePreparation'
-import { useMealSession } from '../state/mealSession'
+import { useMealSession } from '../state/mealSessionContext'
 import type {
   AnalizzaResponse,
   AnalysisOrigin,

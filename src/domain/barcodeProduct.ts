@@ -54,10 +54,28 @@ function testo(value: unknown): string | undefined {
   return normalized || undefined
 }
 
+function urlImmagineProdotto(value: unknown): string | undefined {
+  const normalized = testo(value)
+  if (!normalized) return undefined
+
+  try {
+    const url = new URL(normalized)
+    if (
+      url.protocol !== 'https:'
+      || url.hostname.toLowerCase() !== 'images.openfoodfacts.org'
+      || url.username
+      || url.password
+    ) return undefined
+    return url.toString()
+  } catch {
+    return undefined
+  }
+}
+
 export function prodottoBarcodeDaBoundary(codice: string, raw: BarcodeProductBoundary): ProdottoBarcode {
   const nome = testo(raw.product_name_it) ?? testo(raw.product_name) ?? null
   const marca = testo(raw.brands)?.split(',')[0]?.trim() || undefined
-  const immagine = testo(raw.image_front_small_url)
+  const immagine = urlImmagineProdotto(raw.image_front_small_url)
   const nutriments = raw.nutriments ?? {}
   const correzione = correggiSecco(nome ?? '', num(nutriments.carbohydrates_100g))
 

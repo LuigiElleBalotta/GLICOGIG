@@ -17,7 +17,7 @@ import { reliabilityTranslationKey, recipeDifficultyTranslationKey } from '../i1
 import { selectRecipeDatasetFields } from '../i18n/datasetSelectors'
 import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { condividiCard } from '../services/shareCard'
-import { useMealSession } from '../state/mealSession'
+import { useMealSession } from '../state/mealSessionContext'
 import { DIARY_STORAGE_KEY, registraMangiato } from '../storage/diaryStore'
 import type { Recipe } from '../types/content'
 

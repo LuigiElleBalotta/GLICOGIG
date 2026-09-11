@@ -5,7 +5,7 @@ import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getFoodByCatalogId } from '../catalog/foodCatalog'
 import { LEARNING_CHAPTERS, QUIZ_QUESTIONS, RECIPES } from '../catalog/datasets'
 import { mealItemFromFood } from '../domain/meal'
-import type { MealSessionEntry, MealSessionSummary } from '../state/mealSession'
+import type { MealSessionEntry, MealSessionSummary } from '../state/mealSessionContext'
 import type { DiaryEntry } from '../types/diary'
 import type { MealItem } from '../types/meal'
 import AdviceScreen from './AdviceScreen'
@@ -66,7 +66,7 @@ vi.mock('react-i18next', () => ({
 }))
 
 vi.mock('../lib/useDayKey', () => ({ useDayKey: () => mocks.dayKey }))
-vi.mock('../state/mealSession', () => ({ useMealSession: () => mocks.meal }))
+vi.mock('../state/mealSessionContext', () => ({ useMealSession: () => mocks.meal }))
 vi.mock('../storage/diaryStore', () => ({
   DIARY_STORAGE_KEY: 'quality-diary',
   registraMangiato: mocks.registerDiary,

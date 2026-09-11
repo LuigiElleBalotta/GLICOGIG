@@ -11,6 +11,48 @@ const barcodePattern = /^\d{6,14}$/
 const barcodeTimeoutMs = 9_000
 const maxAnalyzeBodyBytes = 4_100_000
 
+const SOURCE_CHUNKS = new Map<string, string>([
+  ['/src/data/verified-1.0.16-catalog.json', 'dataset-catalog'],
+  ['/src/data/verified-1.0.16-learning.json', 'dataset-learning'],
+  ['/src/data/verified-1.0.16-quiz.json', 'dataset-quiz'],
+  ['/src/data/verified-1.0.16-recipes-01.json', 'dataset-recipes-01'],
+  ['/src/data/verified-1.0.16-recipes-02.json', 'dataset-recipes-02'],
+  ['/src/data/verified-1.0.16-recipes-03.json', 'dataset-recipes-03'],
+  ['/src/i18n/resources/it.ts', 'i18n-it'],
+  ['/src/i18n/resources/en.ts', 'i18n-en'],
+  ['/src/i18n/resources/es.ts', 'i18n-es'],
+  ['/src/i18n/resources/de.ts', 'i18n-de'],
+  ['/src/i18n/resources/fr.ts', 'i18n-fr'],
+  ['/src/screens/AdviceScreen.tsx', 'screen-advice'],
+  ['/src/screens/DiaryScreen.tsx', 'screen-diary'],
+  ['/src/screens/ExplanationScreen.tsx', 'screen-explanation'],
+  ['/src/screens/HomeScreen.tsx', 'screen-home'],
+  ['/src/screens/LearnScreen.tsx', 'screen-learn'],
+  ['/src/screens/MealScreen.tsx', 'screen-meal'],
+  ['/src/screens/PhotoScreen.tsx', 'screen-photo'],
+  ['/src/screens/RecipesScreen.tsx', 'screen-recipes'],
+  ['/src/screens/SearchScreen.tsx', 'screen-search'],
+])
+
+const FRAMEWORK_PACKAGES = ['react', 'react-dom', 'scheduler', 'i18next', 'react-i18next'] as const
+
+function isNodeModulePackage(id: string, packageName: string): boolean {
+  return id.includes(`/node_modules/${packageName}/`)
+}
+
+function manualChunks(id: string): string | undefined {
+  const normalizedId = id.replace(/\\/g, '/').split('?', 1)[0]
+
+  for (const [modulePath, chunkName] of SOURCE_CHUNKS) {
+    if (normalizedId.endsWith(modulePath)) return chunkName
+  }
+  if (normalizedId.includes('/node_modules/@zxing/')) return 'zxing'
+  if (FRAMEWORK_PACKAGES.some((packageName) => isNodeModulePackage(normalizedId, packageName))) {
+    return 'framework'
+  }
+  return undefined
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
@@ -209,5 +251,13 @@ export default defineConfig(({ mode }) => {
       }),
       barcodeDevMiddleware(),
     ],
+    build: {
+      manifest: 'vite-manifest.json',
+      rollupOptions: {
+        output: {
+          manualChunks,
+        },
+      },
+    },
   }
 })

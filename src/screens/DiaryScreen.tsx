@@ -225,7 +225,7 @@ export default function DiaryScreen() {
   const localDay = useDayKey('local')
   const entries = useDiario()
   const progress = useMemo(() => {
-    const reference = new Date()
+    const reference = new Date(`${localDay}T12:00:00`)
     return {
       week: progressiSetteGiorni(entries, reference),
       rings: datiAnelliOggi(entries, reference),

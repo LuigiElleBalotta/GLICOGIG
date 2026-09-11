@@ -16,7 +16,7 @@ import { progressiOggi, progressiSetteGiorni } from '../domain/progress'
 import type { StabilityLevel } from '../domain/stability'
 import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { useDayKey } from '../lib/useDayKey'
-import { useMealSession } from '../state/mealSession'
+import { useMealSession } from '../state/mealSessionContext'
 import { useDiario } from '../storage/diaryStore'
 
 const LEVEL_KEYS: Record<StabilityLevel, 'classification.stability.veryStable' | 'classification.stability.goodDay' | 'classification.stability.average' | 'classification.stability.demanding'> = {
@@ -46,8 +46,8 @@ export default function HomeScreen() {
   const formatNumber = (value: number) => numberFormatter.format(value)
   const localDay = useDayKey('local')
   const diaryEntries = useDiario()
-  const today = useMemo(() => progressiOggi(diaryEntries), [diaryEntries, localDay])
-  const week = useMemo(() => progressiSetteGiorni(diaryEntries), [diaryEntries, localDay])
+  const today = useMemo(() => progressiOggi(diaryEntries, new Date(`${localDay}T12:00:00`)), [diaryEntries, localDay])
+  const week = useMemo(() => progressiSetteGiorni(diaryEntries, new Date(`${localDay}T12:00:00`)), [diaryEntries, localDay])
   const { summary } = useMealSession()
   const todayEntries = diaryEntries.filter((entry) => entry.giorno === today.giorno)
 

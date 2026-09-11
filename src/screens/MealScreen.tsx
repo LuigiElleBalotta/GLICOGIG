@@ -14,7 +14,7 @@ import {
 import { selectMealItemName } from '../i18n/mealSelectors'
 import { LANGUAGE_LOCALES, resolveSupportedLanguage } from '../i18n/languages'
 import { condividiCard } from '../services/shareCard'
-import { useMealSession } from '../state/mealSession'
+import { useMealSession } from '../state/mealSessionContext'
 import { DIARY_STORAGE_KEY, registraMangiato } from '../storage/diaryStore'
 import type { MealItemSource } from '../types/meal'
 import type { GlycemicImpactBand } from '../types/nutrition'
